@@ -1,0 +1,552 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Family: AO_*
+
+class "AO_Activity" <<element>> {
+  +type: AO_ActivityMT
+}
+class "AO_Capability" <<element>> {
+  +type: AO_CapabilityMT
+}
+class "AO_CapabilityStatus" <<element>> {
+  +type: AO_CapabilityStatusMT
+}
+class "AO_Command" <<element>> {
+  +type: AO_CommandMT
+}
+class "AO_CommandStatus" <<element>> {
+  +type: AO_CommandStatusMT
+}
+class "AO_ConsentRequest" <<element>> {
+  +type: AO_ConsentRequestMT
+}
+class "AO_ConsentRequestStatus" <<element>> {
+  +type: AO_ConsentRequestStatusMT
+}
+class "AO_SettingsCommand" <<element>> {
+  +type: AO_SettingsCommandMT
+}
+class "AO_SettingsCommandStatus" <<element>> {
+  +type: AO_SettingsCommandStatusMT
+}
+
+class "AO_ActivityMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +Activity: AO_ActivityType
+}
+class "AO_ActivityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: AO_ActivityMDT
+}
+class "AO_ActivityType" <<complexType>> {
+  +FOV: NED_ConeType
+  +EmissionFootPrint2D: PolygonType
+  +Target: TargetType
+  +ComponentSettings: AO_ComponentSettingsType
+  +Repetition: RepetitionType
+  +ConsentRequired: boolean
+  +ConsentState: ConsentEnum
+}
+class "AO_CapabilityMDT" <<complexType>> {
+  +Capability: AO_CapabilityType
+  +AO_Component: AO_ComponentType
+}
+class "AO_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: AO_CapabilityMDT
+}
+class "AO_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+}
+class "AO_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +ComponentSetting: AO_ComponentSettingsType
+  +CurrentMessageOutput: AO_MessageOutputsEnum
+  +DefaultPackingPlan: NITF_PackingPlanPET
+  +DefaultJPEG_Settings: JPEG_SettingsType
+}
+class "AO_CapabilityStatusMT" <<complexType>> {
+  +MessageData: AO_CapabilityStatusMDT
+}
+class "AO_CapabilityType" <<complexType>> {
+  +CapabilityType: AO_CapabilityEnum
+  +CapabilityOptions: AO_CapabilityOptionsType
+  +EyeSafe: boolean
+  +AssociatedComponentID: ComponentID_Type
+  +MessageOutput: AO_MessageOutputsEnum
+}
+class "AO_CodeType" <<complexType>> {
+  +PRF_Code: AO_PRF_CodeType
+  +PIM_Code: AO_PIM_CodeType
+}
+class "AO_CommandMDT" <<complexType>> {
+  +Command: AO_CommandType
+}
+class "AO_CommandMT" <<complexType>> {
+  +MessageData: AO_CommandMDT
+}
+class "AO_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "AO_CommandStatusMT" <<complexType>> {
+  +MessageData: AO_CommandStatusMDT
+}
+class "AO_CommandType" <<complexType>> {
+  --
+}
+class "AO_ComponentSettingsType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +Power: PowerType
+  +AO_Code: AO_CodeType
+}
+class "AO_ComponentType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +MinimumPower: PowerType
+  +MaximumPower: PowerType
+  +MinimumWavelength: DistanceType
+  +MaximumWavelength: DistanceType
+  +SupportedCode: AO_CodeType
+}
+class "AO_ConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: AO_ConsentRequestType
+}
+class "AO_ConsentRequestMT" <<complexType>> {
+  +MessageData: AO_ConsentRequestMDT
+}
+class "AO_ConsentRequestStatusMDT" <<complexType>> {
+  --
+}
+class "AO_ConsentRequestStatusMT" <<complexType>> {
+  +MessageData: AO_ConsentRequestStatusMDT
+}
+class "AO_ConsentRequestType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+}
+class "AO_SettingsCommandMDT" <<complexType>> {
+  +AO_ComponentSettings: AO_ComponentSettingsType
+  +MessageOutput: AO_MessageOutputsEnum
+  +DefaultPackingPlan: NITF_PackingPlanPET
+  +DefaultJPEG_Settings: JPEG_SettingsType
+}
+class "AO_SettingsCommandMT" <<complexType>> {
+  +MessageData: AO_SettingsCommandMDT
+}
+class "AO_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "AO_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: AO_SettingsCommandStatusMDT
+}
+class "ActivityBaseType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +CapabilityID: CapabilityID_Type
+  +Interactive: boolean
+  +ActivityState: ActivityStateEnum
+  +Basis: ActivityBasisEnum
+  +ActivityRank: ComparableRankingType
+  +ActivityReason: CannotComplyType
+  +Source: ActivitySourceType
+  +EstimatedStartTime: DateTimeType
+  +EstimatedCompletionTime: DateTimeType
+  +EstimatedPercentComplete: PercentType
+}
+class "ActivityID_Type" <<complexType>> {
+  --
+}
+class "ActivitySourceType" <<complexType>> {
+  --
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AvailabilityInfoType" <<complexType>> {
+  +Availability: CapabilityAvailabilityEnum
+  +AvailabilityReason: CannotComplyType
+  +NextAvailableWindow: DateTimeType
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityBaseType" <<complexType>> {
+  +AvailableMDF: MDF_Type
+}
+class "CapabilityCommandStatusBaseType" <<complexType>> {
+  +Activity: ResultingActivityType
+}
+class "CapabilityConsentRequestStatusBaseType" <<complexType>> {
+  +ApprovalState: ApprovalStatusEnum
+  +ApprovalRejectedReason: CannotComplyType
+}
+class "CapabilityDeclarationBaseType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +DomainPairing: EnvironmentPairingEnum
+  +ProductOutput: ProductOutputType
+  +PackageOperation: PackageOperationEnum
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CapabilityPrecedenceType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityPrecedence: unsignedInt
+}
+class "CapabilitySettingsCommandBaseType" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ActivateMDF: MDF_CommandType
+  +CapabilityPrecedence: CapabilityPrecedenceType
+  +CapabilityState: CapabilityStateType
+  +RepresentationKey: ForeignKeyType
+}
+class "CapabilitySettingsCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "CapabilityStateType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityCommandState: CapabilityCommandStateEnum
+}
+class "CapabilityStatusBaseType" <<complexType>> {
+  +MDF_Status: MDF_StatusType
+}
+class "CapabilityStatusType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +AvailabilityInfo: AvailabilityInfoType
+  +CapabilityPrecedence: unsignedInt
+  +RepresentationKey: ForeignKeyType
+}
+class "CommandBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandState: CommandStateEnum
+}
+class "CommandID_Type" <<complexType>> {
+  --
+}
+class "CommandStatusBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+}
+class "CommandableCapabilityDeclarationType" <<complexType>> {
+  +AcceptedInterface: CapabilityControlInterfacesEnum
+  +CommsRequired: boolean
+}
+class "ComparableRankingType" <<complexType>> {
+  +Priority: unsignedShort
+  +PrecedenceWithinPriority: unsignedShort
+}
+class "ComponentID_Type" <<complexType>> {
+  --
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "FileFormatType" <<complexType>> {
+  --
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "JPEG_SettingsType" <<complexType>> {
+  +CompressionRatio: float
+  +PeakSNR: float
+  +RateDistortionSlope: float
+  +WaveletTransform: JPEG_WaveletTransformType
+}
+class "JPEG_WaveletTransformType" <<complexType>> {
+  +Type: JPEG_WaveletTypeEnum
+  +Level: unsignedInt
+}
+class "MDF_CommandSubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +FileID: MDF_SubCategoryFileID_Type
+}
+class "MDF_CommandType" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +SubCategory: MDF_CommandSubCategoryType
+}
+class "MDF_FileType" <<complexType>> {
+  +FileID: MDF_SubCategoryFileID_Type
+  +FileStatus: MDF_StatusEnum
+}
+class "MDF_ID_Type" <<complexType>> {
+  --
+}
+class "MDF_StatusType" <<complexType>> {
+  +CurrentMDF: MDF_CommandType
+  +CommandedMDF: MDF_CommandType
+  +FailedMDF: MDF_CommandType
+}
+class "MDF_SubCategoryFileID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +SubCategoryStatus: MDF_StatusEnum
+  +File: MDF_FileType
+}
+class "MDF_Type" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +MDF_Status: MDF_StatusEnum
+  +SubCategory: MDF_SubCategoryType
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "NED_ConeType" <<complexType>> {
+  +NED_LOS: NED_LOS_Type
+  +AzimuthExtents: AnglePositiveType
+  +ElevationExtents: AnglePositiveType
+}
+class "NED_LOS_Type" <<complexType>> {
+  +Bearing: AnglePositiveType
+  +Elevation: AngleType
+  +SlantRange: DistanceType
+}
+class "NITF_PackingPlanPET" <<complexType>> {
+  --
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PolygonPointChoiceType" <<complexType>> {
+  --
+}
+class "PolygonType" <<complexType>> {
+  +LineProjection: LineProjectionEnum
+  +BoundingPolygon: PolygonPointChoiceType
+  +InteriorPolygon: PolygonPointChoiceType
+}
+class "ProductOutputType" <<complexType>> {
+  +ProductType: ProductTypeEnum
+  +ProcessingType: ProcessingTypeEnum
+  +ProductFormat: FileFormatType
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RepetitionType" <<complexType>> {
+  --
+}
+class "RequestBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestState: RequestStateEnum
+}
+class "RequestID_Type" <<complexType>> {
+  --
+}
+class "RequestStatusBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestProcessingState: RequestProcessingStateEnum
+  +RequestProcessingStateReason: CannotComplyType
+}
+class "ResultingActivityType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +NewActivity: boolean
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "SubsystemID_Type" <<complexType>> {
+  --
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TargetType" <<complexType>> {
+  --
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+
+"AO_Activity" --> "AO_ActivityMT" : payload
+"AO_Capability" --> "AO_CapabilityMT" : payload
+"AO_CapabilityStatus" --> "AO_CapabilityStatusMT" : payload
+"AO_Command" --> "AO_CommandMT" : payload
+"AO_CommandStatus" --> "AO_CommandStatusMT" : payload
+"AO_ConsentRequest" --> "AO_ConsentRequestMT" : payload
+"AO_ConsentRequestStatus" --> "AO_ConsentRequestStatusMT" : payload
+"AO_SettingsCommand" --> "AO_SettingsCommandMT" : payload
+"AO_SettingsCommandStatus" --> "AO_SettingsCommandStatusMT" : payload
+"AO_ActivityMDT" --> "SubsystemID_Type" : SubsystemID
+"AO_ActivityMDT" --> "AO_ActivityType" : Activity
+"MessageType" <|-- "AO_ActivityMT"
+"AO_ActivityMT" --> "AO_ActivityMDT" : MessageData
+"ActivityBaseType" <|-- "AO_ActivityType"
+"AO_ActivityType" --> "NED_ConeType" : FOV
+"AO_ActivityType" --> "PolygonType" : EmissionFootPrint2D
+"AO_ActivityType" --> "TargetType" : Target
+"AO_ActivityType" --> "AO_ComponentSettingsType" : ComponentSettings
+"AO_ActivityType" --> "RepetitionType" : Repetition
+"CapabilityBaseType" <|-- "AO_CapabilityMDT"
+"AO_CapabilityMDT" --> "AO_CapabilityType" : Capability
+"AO_CapabilityMDT" --> "AO_ComponentType" : AO_Component
+"MessageType" <|-- "AO_CapabilityMT"
+"AO_CapabilityMT" --> "AO_CapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "AO_CapabilityStatusMDT"
+"AO_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"AO_CapabilityStatusMDT" --> "AO_ComponentSettingsType" : ComponentSetting
+"AO_CapabilityStatusMDT" --> "NITF_PackingPlanPET" : DefaultPackingPlan
+"AO_CapabilityStatusMDT" --> "JPEG_SettingsType" : DefaultJPEG_Settings
+"MessageType" <|-- "AO_CapabilityStatusMT"
+"AO_CapabilityStatusMT" --> "AO_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "AO_CapabilityType"
+"AO_CapabilityType" --> "AO_CapabilityOptionsType" : CapabilityOptions
+"AO_CapabilityType" --> "ComponentID_Type" : AssociatedComponentID
+"AO_CommandMDT" --> "AO_CommandType" : Command
+"MessageType" <|-- "AO_CommandMT"
+"AO_CommandMT" --> "AO_CommandMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "AO_CommandStatusMDT"
+"MessageType" <|-- "AO_CommandStatusMT"
+"AO_CommandStatusMT" --> "AO_CommandStatusMDT" : MessageData
+"AO_ComponentSettingsType" --> "ComponentID_Type" : ComponentID
+"AO_ComponentSettingsType" --> "AO_CodeType" : AO_Code
+"AO_ComponentType" --> "ComponentID_Type" : ComponentID
+"AO_ComponentType" --> "AO_CodeType" : SupportedCode
+"AO_ConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"AO_ConsentRequestMDT" --> "AO_ConsentRequestType" : ConsentRequest
+"MessageType" <|-- "AO_ConsentRequestMT"
+"AO_ConsentRequestMT" --> "AO_ConsentRequestMDT" : MessageData
+"CapabilityConsentRequestStatusBaseType" <|-- "AO_ConsentRequestStatusMDT"
+"MessageType" <|-- "AO_ConsentRequestStatusMT"
+"AO_ConsentRequestStatusMT" --> "AO_ConsentRequestStatusMDT" : MessageData
+"RequestBaseType" <|-- "AO_ConsentRequestType"
+"AO_ConsentRequestType" --> "ActivityID_Type" : ActivityID
+"CapabilitySettingsCommandBaseType" <|-- "AO_SettingsCommandMDT"
+"AO_SettingsCommandMDT" --> "AO_ComponentSettingsType" : AO_ComponentSettings
+"AO_SettingsCommandMDT" --> "NITF_PackingPlanPET" : DefaultPackingPlan
+"AO_SettingsCommandMDT" --> "JPEG_SettingsType" : DefaultJPEG_Settings
+"MessageType" <|-- "AO_SettingsCommandMT"
+"AO_SettingsCommandMT" --> "AO_SettingsCommandMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "AO_SettingsCommandStatusMDT"
+"MessageType" <|-- "AO_SettingsCommandStatusMT"
+"AO_SettingsCommandStatusMT" --> "AO_SettingsCommandStatusMDT" : MessageData
+"ActivityBaseType" --> "ActivityID_Type" : ActivityID
+"ActivityBaseType" --> "CapabilityID_Type" : CapabilityID
+"ActivityBaseType" --> "ComparableRankingType" : ActivityRank
+"ActivityBaseType" --> "CannotComplyType" : ActivityReason
+"ActivityBaseType" --> "ActivitySourceType" : Source
+"ID_Type" <|-- "ActivityID_Type"
+"AvailabilityInfoType" --> "CannotComplyType" : AvailabilityReason
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"CapabilityBaseType" --> "MDF_Type" : AvailableMDF
+"CommandStatusBaseType" <|-- "CapabilityCommandStatusBaseType"
+"CapabilityCommandStatusBaseType" --> "ResultingActivityType" : Activity
+"RequestStatusBaseType" <|-- "CapabilityConsentRequestStatusBaseType"
+"CapabilityConsentRequestStatusBaseType" --> "CannotComplyType" : ApprovalRejectedReason
+"CapabilityDeclarationBaseType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityDeclarationBaseType" --> "ProductOutputType" : ProductOutput
+"ID_Type" <|-- "CapabilityID_Type"
+"CapabilityPrecedenceType" --> "CapabilityID_Type" : CapabilityID
+"CommandBaseType" <|-- "CapabilitySettingsCommandBaseType"
+"CapabilitySettingsCommandBaseType" --> "SubsystemID_Type" : SubsystemID
+"CapabilitySettingsCommandBaseType" --> "MDF_CommandType" : ActivateMDF
+"CapabilitySettingsCommandBaseType" --> "CapabilityPrecedenceType" : CapabilityPrecedence
+"CapabilitySettingsCommandBaseType" --> "CapabilityStateType" : CapabilityState
+"CapabilitySettingsCommandBaseType" --> "ForeignKeyType" : RepresentationKey
+"CommandStatusBaseType" <|-- "CapabilitySettingsCommandStatusBaseType"
+"CapabilityStateType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusBaseType" --> "MDF_StatusType" : MDF_Status
+"CapabilityStatusType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusType" --> "AvailabilityInfoType" : AvailabilityInfo
+"CapabilityStatusType" --> "ForeignKeyType" : RepresentationKey
+"CommandBaseType" --> "CommandID_Type" : CommandID
+"ID_Type" <|-- "CommandID_Type"
+"CommandStatusBaseType" --> "CommandID_Type" : CommandID
+"CommandStatusBaseType" --> "CannotComplyType" : CommandProcessingStateReason
+"CapabilityDeclarationBaseType" <|-- "CommandableCapabilityDeclarationType"
+"ID_Type" <|-- "ComponentID_Type"
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"JPEG_SettingsType" --> "JPEG_WaveletTransformType" : WaveletTransform
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryFileID_Type" : FileID
+"MDF_CommandType" --> "MDF_ID_Type" : MDF_ID
+"MDF_CommandType" --> "MDF_CommandSubCategoryType" : SubCategory
+"MDF_FileType" --> "MDF_SubCategoryFileID_Type" : FileID
+"ID_Type" <|-- "MDF_ID_Type"
+"MDF_StatusType" --> "MDF_CommandType" : CurrentMDF
+"MDF_StatusType" --> "MDF_CommandType" : CommandedMDF
+"MDF_StatusType" --> "MDF_CommandType" : FailedMDF
+"ID_Type" <|-- "MDF_SubCategoryFileID_Type"
+"ID_Type" <|-- "MDF_SubCategoryID_Type"
+"MDF_SubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_SubCategoryType" --> "MDF_FileType" : File
+"MDF_Type" --> "MDF_ID_Type" : MDF_ID
+"MDF_Type" --> "MDF_SubCategoryType" : SubCategory
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"VersionedID_Type" <|-- "MissionID_Type"
+"NED_ConeType" --> "NED_LOS_Type" : NED_LOS
+"PolygonType" --> "PolygonPointChoiceType" : BoundingPolygon
+"PolygonType" --> "PolygonPointChoiceType" : InteriorPolygon
+"ProductOutputType" --> "FileFormatType" : ProductFormat
+"RequestBaseType" --> "RequestID_Type" : RequestID
+"ID_Type" <|-- "RequestID_Type"
+"RequestStatusBaseType" --> "RequestID_Type" : RequestID
+"RequestStatusBaseType" --> "CannotComplyType" : RequestProcessingStateReason
+"ResultingActivityType" --> "ActivityID_Type" : ActivityID
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"ID_Type" <|-- "ServiceID_Type"
+"ID_Type" <|-- "SubsystemID_Type"
+"ID_Type" <|-- "SystemID_Type"
+"ID_Type" <|-- "VersionedID_Type"
+@enduml

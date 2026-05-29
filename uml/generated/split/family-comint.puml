@@ -1,0 +1,689 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Family: COMINT_*
+
+class "COMINT_Activity" <<element>> {
+  +type: COMINT_ActivityMT
+}
+class "COMINT_Capability" <<element>> {
+  +type: COMINT_CapabilityMT
+}
+class "COMINT_CapabilityStatus" <<element>> {
+  +type: COMINT_CapabilityStatusMT
+}
+class "COMINT_Command" <<element>> {
+  +type: COMINT_CommandMT
+}
+class "COMINT_CommandStatus" <<element>> {
+  +type: COMINT_CommandStatusMT
+}
+class "COMINT_ConsentRequest" <<element>> {
+  +type: COMINT_ConsentRequestMT
+}
+class "COMINT_ConsentRequestStatus" <<element>> {
+  +type: COMINT_ConsentRequestStatusMT
+}
+class "COMINT_SettingsCommand" <<element>> {
+  +type: COMINT_SettingsCommandMT
+}
+class "COMINT_SettingsCommandStatus" <<element>> {
+  +type: COMINT_SettingsCommandStatusMT
+}
+
+class "ActivityBaseType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +CapabilityID: CapabilityID_Type
+  +Interactive: boolean
+  +ActivityState: ActivityStateEnum
+  +Basis: ActivityBasisEnum
+  +ActivityRank: ComparableRankingType
+  +ActivityReason: CannotComplyType
+  +Source: ActivitySourceType
+  +EstimatedStartTime: DateTimeType
+  +EstimatedCompletionTime: DateTimeType
+  +EstimatedPercentComplete: PercentType
+}
+class "ActivityID_Type" <<complexType>> {
+  --
+}
+class "ActivitySourceType" <<complexType>> {
+  --
+}
+class "AntennaResourceChoiceType" <<complexType>> {
+  --
+}
+class "AreaChoiceType" <<complexType>> {
+  --
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AvailabilityInfoType" <<complexType>> {
+  +Availability: CapabilityAvailabilityEnum
+  +AvailabilityReason: CannotComplyType
+  +NextAvailableWindow: DateTimeType
+}
+class "COMINT_AcquisitionTargetType" <<complexType>> {
+  +Target: COMINT_TargetType
+  +Priority: ComparableRankingType
+}
+class "COMINT_ActivityMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +EntityListCleared: DateTimeType
+  +EntityOverload: boolean
+  +ExcessiveAttitude: boolean
+  +PulseDensityOverload: boolean
+  +LookThroughLimited: boolean
+  +ReceiverUtilization: PercentType
+  +Activity: COMINT_ActivityType
+}
+class "COMINT_ActivityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: COMINT_ActivityMDT
+}
+class "COMINT_ActivityType" <<complexType>> {
+  +SubCapability: COMINT_SubCapabilityEnum
+  +ReceiveDwell: COMINT_ReceiveDwellType
+  +SubCapabilityDetails: COMINT_SubCapabilityDetailsType
+  +ConsentRequired: boolean
+  +ConsentState: ConsentEnum
+  +ActualStartTime: DateTimeType
+  +ActualEndTime: DateTimeType
+  +SpectralDensityReporting: boolean
+}
+class "COMINT_CapabilityMDT" <<complexType>> {
+  +Capability: COMINT_CapabilityType
+}
+class "COMINT_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: COMINT_CapabilityMDT
+}
+class "COMINT_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +NumberOfChannels: int
+  +AGC_Supported: boolean
+  +ArchiveAvailable: boolean
+  +CapabilityDependencyID: CapabilityID_Type
+  +ScanSupport: boolean
+  +SupportedModes: ForeignKeyType
+  +AudioFormats: MIME_Type
+  +CompressionType: ForeignKeyType
+}
+class "COMINT_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: CapabilityRF_ProfileStatusType
+  +AmbiguityOrdering: AmbiguityOrderingEnum
+  +SpectralDensityReporting: boolean
+  +CurrentMessageOutput: ESM_MessageOutputsEnum
+}
+class "COMINT_CapabilityStatusMT" <<complexType>> {
+  +MessageData: COMINT_CapabilityStatusMDT
+}
+class "COMINT_CapabilityType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +SubCapabilityType: COMINT_SubCapabilityEnum
+  +GeolocationType: SignalGeolocationMethodEnum
+  +CapabilityOptions: COMINT_CapabilityOptionsType
+  +DwellCoverage: ESM_DwellCoverageType
+  +MessageOutput: ESM_MessageOutputsEnum
+  +ApplicationKey: ForeignKeyType
+}
+class "COMINT_CommandMDT" <<complexType>> {
+  +Command: COMINT_CommandType
+}
+class "COMINT_CommandMT" <<complexType>> {
+  +MessageData: COMINT_CommandMDT
+}
+class "COMINT_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "COMINT_CommandStatusMT" <<complexType>> {
+  +MessageData: COMINT_CommandStatusMDT
+}
+class "COMINT_CommandType" <<complexType>> {
+  --
+}
+class "COMINT_ConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: COMINT_ConsentRequestType
+}
+class "COMINT_ConsentRequestMT" <<complexType>> {
+  +MessageData: COMINT_ConsentRequestMDT
+}
+class "COMINT_ConsentRequestStatusMDT" <<complexType>> {
+  --
+}
+class "COMINT_ConsentRequestStatusMT" <<complexType>> {
+  +MessageData: COMINT_ConsentRequestStatusMDT
+}
+class "COMINT_ConsentRequestType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+}
+class "COMINT_InteractiveType" <<complexType>> {
+  +Threshold: MilliwattPowerRatioType
+  +NoiseAdaptiveThresholdStatus: NoiseAdaptiveThresholdStatusEnum
+  +GainControlMethod: GainControlMethodEnum
+  +Gain: MilliwattPowerRatioType
+  +CenterFrequency: FrequencyType
+  +ScanRange: FrequencyRangeType
+  +ScanLockout: FrequencyRangeType
+  +DwellTarget: COMINT_AcquisitionTargetType
+  +IgnoreTarget: COMINT_AcquisitionTargetType
+  +TechniqueInUse: ForeignKeyType
+  +TechniqueParameters: ForeignKeyType
+  +AudioEnable: boolean
+  +IQ_Enable: boolean
+}
+class "COMINT_ReceiveDwellType" <<complexType>> {
+  +DwellID: DwellID_Type
+  +DwellState: COMINT_DwellStateEnum
+  +DwellType: COMINT_DwellTypeEnum
+  +DwellFOV: NED_ConeType
+  +StartTime: DateTimeType
+  +CumulativeDwellTime: DurationType
+  +ComponentID: ComponentID_Type
+  +Frequency: FrequencyRangeType
+  +DwellRevisitInterval: DurationType
+  +PulseWidthLow: DurationType
+  +PulseWidthHigh: DurationType
+  +PRI_High: DurationType
+  +NativeSensitivity: DecibelType
+  +Desensitization: MilliwattPowerRatioType
+  +VideoBandwidth: FrequencyType
+  +COMINT_Interactive: COMINT_InteractiveType
+  +StopTime: DateTimeType
+  +SampleRate: float
+  +FFT_PointsPerSample: int
+}
+class "COMINT_SettingsCommandMDT" <<complexType>> {
+  +SetAmbiguityOrdering: AmbiguityOrderingEnum
+  +SpectralDensityReporting: boolean
+  +MessageOutput: ESM_MessageOutputsEnum
+}
+class "COMINT_SettingsCommandMT" <<complexType>> {
+  +MessageData: COMINT_SettingsCommandMDT
+}
+class "COMINT_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "COMINT_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: COMINT_SettingsCommandStatusMDT
+}
+class "COMINT_SubCapabilityDetailsType" <<complexType>> {
+  --
+}
+class "COMINT_TargetType" <<complexType>> {
+  --
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityBaseType" <<complexType>> {
+  +AvailableMDF: MDF_Type
+}
+class "CapabilityCommandStatusBaseType" <<complexType>> {
+  +Activity: ResultingActivityType
+}
+class "CapabilityConsentRequestStatusBaseType" <<complexType>> {
+  +ApprovalState: ApprovalStatusEnum
+  +ApprovalRejectedReason: CannotComplyType
+}
+class "CapabilityDeclarationBaseType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +DomainPairing: EnvironmentPairingEnum
+  +ProductOutput: ProductOutputType
+  +PackageOperation: PackageOperationEnum
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CapabilityPrecedenceType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityPrecedence: unsignedInt
+}
+class "CapabilityRF_ProfileStatusType" <<complexType>> {
+  +RF_ProfileID: RF_ProfileID_Type
+  +TimedZone: TimedZoneType
+  +Expires: DateTimeType
+}
+class "CapabilitySettingsCommandBaseType" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ActivateMDF: MDF_CommandType
+  +CapabilityPrecedence: CapabilityPrecedenceType
+  +CapabilityState: CapabilityStateType
+  +RepresentationKey: ForeignKeyType
+}
+class "CapabilitySettingsCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "CapabilityStateType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityCommandState: CapabilityCommandStateEnum
+}
+class "CapabilityStatusBaseType" <<complexType>> {
+  +MDF_Status: MDF_StatusType
+}
+class "CapabilityStatusType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +AvailabilityInfo: AvailabilityInfoType
+  +CapabilityPrecedence: unsignedInt
+  +RepresentationKey: ForeignKeyType
+}
+class "CommandBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandState: CommandStateEnum
+}
+class "CommandID_Type" <<complexType>> {
+  --
+}
+class "CommandStatusBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+}
+class "CommandableCapabilityDeclarationType" <<complexType>> {
+  +AcceptedInterface: CapabilityControlInterfacesEnum
+  +CommsRequired: boolean
+}
+class "ComparableRankingType" <<complexType>> {
+  +Priority: unsignedShort
+  +PrecedenceWithinPriority: unsignedShort
+}
+class "ComponentID_Type" <<complexType>> {
+  --
+}
+class "DependentActivityType" <<complexType>> {
+  +TypeOfDependency: TypeOfDependencyEnum
+  +DependentActivityID: ActivityID_Type
+}
+class "DwellID_Type" <<complexType>> {
+  --
+}
+class "ESM_DwellCoverageType" <<complexType>> {
+  +Band: FrequencyRangeType
+  +ComponentID: ComponentID_Type
+  +Emitter: EmitterIdentityType
+  +SpecificEmitter: SpecificEmitterIdentityType
+}
+class "EmitterIdentityCategoryType" <<complexType>> {
+  --
+}
+class "EmitterIdentityType" <<complexType>> {
+  +EmitterCategory: EmitterIdentityCategoryType
+  +NATO_SpotNumber: OctalValueType
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "FileFormatType" <<complexType>> {
+  --
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "FrequencyRangeType" <<complexType>> {
+  +Min: FrequencyType
+  +Max: FrequencyType
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "MDF_CommandSubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +FileID: MDF_SubCategoryFileID_Type
+}
+class "MDF_CommandType" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +SubCategory: MDF_CommandSubCategoryType
+}
+class "MDF_FileType" <<complexType>> {
+  +FileID: MDF_SubCategoryFileID_Type
+  +FileStatus: MDF_StatusEnum
+}
+class "MDF_ID_Type" <<complexType>> {
+  --
+}
+class "MDF_StatusType" <<complexType>> {
+  +CurrentMDF: MDF_CommandType
+  +CommandedMDF: MDF_CommandType
+  +FailedMDF: MDF_CommandType
+}
+class "MDF_SubCategoryFileID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +SubCategoryStatus: MDF_StatusEnum
+  +File: MDF_FileType
+}
+class "MDF_Type" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +MDF_Status: MDF_StatusEnum
+  +SubCategory: MDF_SubCategoryType
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MetricValueType" <<complexType>> {
+  +MetricIdentifier: ForeignKeyType
+  +DescriptionOfMetric: VisibleString256Type
+  +NegotiableOptions: NegotiableOptionsEnum
+  +Weight: UnitIntervalFloatType
+  +Value: float
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "NED_ConeType" <<complexType>> {
+  +NED_LOS: NED_LOS_Type
+  +AzimuthExtents: AnglePositiveType
+  +ElevationExtents: AnglePositiveType
+}
+class "NED_LOS_Type" <<complexType>> {
+  +Bearing: AnglePositiveType
+  +Elevation: AngleType
+  +SlantRange: DistanceType
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PerformanceMetricSetType" <<complexType>> {
+  +PerformanceConstraintIndex: unsignedInt
+  +Merit: int
+  +NegotiableOptions: NegotiableOptionsEnum
+  +PerformanceMetricSet: MetricValueType
+}
+class "PeriodPerformanceFeedbackType" <<complexType>> {
+  +AccessPeriodIndex: unsignedInt
+  +PercentAccessAllocated: PercentType
+  +PercentAccessRequested: PercentType
+  +PercentAccessAchieved: PercentType
+  +UnusableGrantedTime: PercentType
+  +PercentInterruption: PercentType
+  +LongestUninterruptedTime: DurationType
+}
+class "ProductOutputType" <<complexType>> {
+  +ProductType: ProductTypeEnum
+  +ProcessingType: ProcessingTypeEnum
+  +ProductFormat: FileFormatType
+}
+class "RF_ProfileID_Type" <<complexType>> {
+  --
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RequestBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestState: RequestStateEnum
+}
+class "RequestID_Type" <<complexType>> {
+  --
+}
+class "RequestStatusBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestProcessingState: RequestProcessingStateEnum
+  +RequestProcessingStateReason: CannotComplyType
+}
+class "ResourceStatusSelectedType" <<complexType>> {
+  +SystemThreadIndex: unsignedInt
+  +SelectedAntenna: SelectAntennaType
+  +RF_Mode: RF_TypeEnum
+  +ResourceAccessPriority: unsignedInt
+  +PeriodPerformanceFeedback: PeriodPerformanceFeedbackType
+}
+class "ResultingActivityType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +NewActivity: boolean
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "ScheduleType" <<complexType>> {
+  --
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "SelectAntennaType" <<complexType>> {
+  +SupportCapabilityID: SupportCapabilityID_Type
+  +AntennaResourceChoice: AntennaResourceChoiceType
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "SharedRF_ApertureActivityBaseType" <<complexType>> {
+  +DependentActivity: DependentActivityType
+  +SharedApertureResourceStatus: ResourceStatusSelectedType
+  +ActivityPerformanceFeedback: PerformanceMetricSetType
+}
+class "SpecificEmitterIdentityType" <<complexType>> {
+  +SpecificEmitterKey: ForeignKeyType
+}
+class "SubsystemID_Type" <<complexType>> {
+  --
+}
+class "SupportCapabilityID_Type" <<complexType>> {
+  --
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TimedZoneType" <<complexType>> {
+  +Schedule: ScheduleType
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+class "ZoneType" <<complexType>> {
+  +Shape: AreaChoiceType
+  +MinAltitude: AltitudeType
+  +MaxAltitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+}
+
+"COMINT_Activity" --> "COMINT_ActivityMT" : payload
+"COMINT_Capability" --> "COMINT_CapabilityMT" : payload
+"COMINT_CapabilityStatus" --> "COMINT_CapabilityStatusMT" : payload
+"COMINT_Command" --> "COMINT_CommandMT" : payload
+"COMINT_CommandStatus" --> "COMINT_CommandStatusMT" : payload
+"COMINT_ConsentRequest" --> "COMINT_ConsentRequestMT" : payload
+"COMINT_ConsentRequestStatus" --> "COMINT_ConsentRequestStatusMT" : payload
+"COMINT_SettingsCommand" --> "COMINT_SettingsCommandMT" : payload
+"COMINT_SettingsCommandStatus" --> "COMINT_SettingsCommandStatusMT" : payload
+"ActivityBaseType" --> "ActivityID_Type" : ActivityID
+"ActivityBaseType" --> "CapabilityID_Type" : CapabilityID
+"ActivityBaseType" --> "ComparableRankingType" : ActivityRank
+"ActivityBaseType" --> "CannotComplyType" : ActivityReason
+"ActivityBaseType" --> "ActivitySourceType" : Source
+"ID_Type" <|-- "ActivityID_Type"
+"AvailabilityInfoType" --> "CannotComplyType" : AvailabilityReason
+"COMINT_AcquisitionTargetType" --> "COMINT_TargetType" : Target
+"COMINT_AcquisitionTargetType" --> "ComparableRankingType" : Priority
+"COMINT_ActivityMDT" --> "SubsystemID_Type" : SubsystemID
+"COMINT_ActivityMDT" --> "COMINT_ActivityType" : Activity
+"MessageType" <|-- "COMINT_ActivityMT"
+"COMINT_ActivityMT" --> "COMINT_ActivityMDT" : MessageData
+"SharedRF_ApertureActivityBaseType" <|-- "COMINT_ActivityType"
+"COMINT_ActivityType" --> "COMINT_ReceiveDwellType" : ReceiveDwell
+"COMINT_ActivityType" --> "COMINT_SubCapabilityDetailsType" : SubCapabilityDetails
+"CapabilityBaseType" <|-- "COMINT_CapabilityMDT"
+"COMINT_CapabilityMDT" --> "COMINT_CapabilityType" : Capability
+"MessageType" <|-- "COMINT_CapabilityMT"
+"COMINT_CapabilityMT" --> "COMINT_CapabilityMDT" : MessageData
+"COMINT_CapabilityOptionsType" --> "CapabilityID_Type" : CapabilityDependencyID
+"COMINT_CapabilityOptionsType" --> "ForeignKeyType" : SupportedModes
+"COMINT_CapabilityOptionsType" --> "ForeignKeyType" : CompressionType
+"CapabilityStatusBaseType" <|-- "COMINT_CapabilityStatusMDT"
+"COMINT_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"COMINT_CapabilityStatusMDT" --> "CapabilityRF_ProfileStatusType" : RF_Profile
+"MessageType" <|-- "COMINT_CapabilityStatusMT"
+"COMINT_CapabilityStatusMT" --> "COMINT_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "COMINT_CapabilityType"
+"COMINT_CapabilityType" --> "COMINT_CapabilityOptionsType" : CapabilityOptions
+"COMINT_CapabilityType" --> "ESM_DwellCoverageType" : DwellCoverage
+"COMINT_CapabilityType" --> "ForeignKeyType" : ApplicationKey
+"COMINT_CommandMDT" --> "COMINT_CommandType" : Command
+"MessageType" <|-- "COMINT_CommandMT"
+"COMINT_CommandMT" --> "COMINT_CommandMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "COMINT_CommandStatusMDT"
+"MessageType" <|-- "COMINT_CommandStatusMT"
+"COMINT_CommandStatusMT" --> "COMINT_CommandStatusMDT" : MessageData
+"COMINT_ConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"COMINT_ConsentRequestMDT" --> "COMINT_ConsentRequestType" : ConsentRequest
+"MessageType" <|-- "COMINT_ConsentRequestMT"
+"COMINT_ConsentRequestMT" --> "COMINT_ConsentRequestMDT" : MessageData
+"CapabilityConsentRequestStatusBaseType" <|-- "COMINT_ConsentRequestStatusMDT"
+"MessageType" <|-- "COMINT_ConsentRequestStatusMT"
+"COMINT_ConsentRequestStatusMT" --> "COMINT_ConsentRequestStatusMDT" : MessageData
+"RequestBaseType" <|-- "COMINT_ConsentRequestType"
+"COMINT_ConsentRequestType" --> "ActivityID_Type" : ActivityID
+"COMINT_InteractiveType" --> "FrequencyRangeType" : ScanRange
+"COMINT_InteractiveType" --> "FrequencyRangeType" : ScanLockout
+"COMINT_InteractiveType" --> "COMINT_AcquisitionTargetType" : DwellTarget
+"COMINT_InteractiveType" --> "COMINT_AcquisitionTargetType" : IgnoreTarget
+"COMINT_InteractiveType" --> "ForeignKeyType" : TechniqueInUse
+"COMINT_InteractiveType" --> "ForeignKeyType" : TechniqueParameters
+"COMINT_ReceiveDwellType" --> "DwellID_Type" : DwellID
+"COMINT_ReceiveDwellType" --> "NED_ConeType" : DwellFOV
+"COMINT_ReceiveDwellType" --> "ComponentID_Type" : ComponentID
+"COMINT_ReceiveDwellType" --> "FrequencyRangeType" : Frequency
+"COMINT_ReceiveDwellType" --> "COMINT_InteractiveType" : COMINT_Interactive
+"CapabilitySettingsCommandBaseType" <|-- "COMINT_SettingsCommandMDT"
+"MessageType" <|-- "COMINT_SettingsCommandMT"
+"COMINT_SettingsCommandMT" --> "COMINT_SettingsCommandMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "COMINT_SettingsCommandStatusMDT"
+"MessageType" <|-- "COMINT_SettingsCommandStatusMT"
+"COMINT_SettingsCommandStatusMT" --> "COMINT_SettingsCommandStatusMDT" : MessageData
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"CapabilityBaseType" --> "MDF_Type" : AvailableMDF
+"CommandStatusBaseType" <|-- "CapabilityCommandStatusBaseType"
+"CapabilityCommandStatusBaseType" --> "ResultingActivityType" : Activity
+"RequestStatusBaseType" <|-- "CapabilityConsentRequestStatusBaseType"
+"CapabilityConsentRequestStatusBaseType" --> "CannotComplyType" : ApprovalRejectedReason
+"CapabilityDeclarationBaseType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityDeclarationBaseType" --> "ProductOutputType" : ProductOutput
+"ID_Type" <|-- "CapabilityID_Type"
+"CapabilityPrecedenceType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityRF_ProfileStatusType" --> "RF_ProfileID_Type" : RF_ProfileID
+"CapabilityRF_ProfileStatusType" --> "TimedZoneType" : TimedZone
+"CommandBaseType" <|-- "CapabilitySettingsCommandBaseType"
+"CapabilitySettingsCommandBaseType" --> "SubsystemID_Type" : SubsystemID
+"CapabilitySettingsCommandBaseType" --> "MDF_CommandType" : ActivateMDF
+"CapabilitySettingsCommandBaseType" --> "CapabilityPrecedenceType" : CapabilityPrecedence
+"CapabilitySettingsCommandBaseType" --> "CapabilityStateType" : CapabilityState
+"CapabilitySettingsCommandBaseType" --> "ForeignKeyType" : RepresentationKey
+"CommandStatusBaseType" <|-- "CapabilitySettingsCommandStatusBaseType"
+"CapabilityStateType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusBaseType" --> "MDF_StatusType" : MDF_Status
+"CapabilityStatusType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusType" --> "AvailabilityInfoType" : AvailabilityInfo
+"CapabilityStatusType" --> "ForeignKeyType" : RepresentationKey
+"CommandBaseType" --> "CommandID_Type" : CommandID
+"ID_Type" <|-- "CommandID_Type"
+"CommandStatusBaseType" --> "CommandID_Type" : CommandID
+"CommandStatusBaseType" --> "CannotComplyType" : CommandProcessingStateReason
+"CapabilityDeclarationBaseType" <|-- "CommandableCapabilityDeclarationType"
+"ID_Type" <|-- "ComponentID_Type"
+"DependentActivityType" --> "ActivityID_Type" : DependentActivityID
+"ID_Type" <|-- "DwellID_Type"
+"ESM_DwellCoverageType" --> "FrequencyRangeType" : Band
+"ESM_DwellCoverageType" --> "ComponentID_Type" : ComponentID
+"ESM_DwellCoverageType" --> "EmitterIdentityType" : Emitter
+"ESM_DwellCoverageType" --> "SpecificEmitterIdentityType" : SpecificEmitter
+"EmitterIdentityType" --> "EmitterIdentityCategoryType" : EmitterCategory
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryFileID_Type" : FileID
+"MDF_CommandType" --> "MDF_ID_Type" : MDF_ID
+"MDF_CommandType" --> "MDF_CommandSubCategoryType" : SubCategory
+"MDF_FileType" --> "MDF_SubCategoryFileID_Type" : FileID
+"ID_Type" <|-- "MDF_ID_Type"
+"MDF_StatusType" --> "MDF_CommandType" : CurrentMDF
+"MDF_StatusType" --> "MDF_CommandType" : CommandedMDF
+"MDF_StatusType" --> "MDF_CommandType" : FailedMDF
+"ID_Type" <|-- "MDF_SubCategoryFileID_Type"
+"ID_Type" <|-- "MDF_SubCategoryID_Type"
+"MDF_SubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_SubCategoryType" --> "MDF_FileType" : File
+"MDF_Type" --> "MDF_ID_Type" : MDF_ID
+"MDF_Type" --> "MDF_SubCategoryType" : SubCategory
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"MetricValueType" --> "ForeignKeyType" : MetricIdentifier
+"VersionedID_Type" <|-- "MissionID_Type"
+"NED_ConeType" --> "NED_LOS_Type" : NED_LOS
+"PerformanceMetricSetType" --> "MetricValueType" : PerformanceMetricSet
+"ProductOutputType" --> "FileFormatType" : ProductFormat
+"ID_Type" <|-- "RF_ProfileID_Type"
+"RequestBaseType" --> "RequestID_Type" : RequestID
+"ID_Type" <|-- "RequestID_Type"
+"RequestStatusBaseType" --> "RequestID_Type" : RequestID
+"RequestStatusBaseType" --> "CannotComplyType" : RequestProcessingStateReason
+"ResourceStatusSelectedType" --> "SelectAntennaType" : SelectedAntenna
+"ResourceStatusSelectedType" --> "PeriodPerformanceFeedbackType" : PeriodPerformanceFeedback
+"ResultingActivityType" --> "ActivityID_Type" : ActivityID
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"SelectAntennaType" --> "SupportCapabilityID_Type" : SupportCapabilityID
+"SelectAntennaType" --> "AntennaResourceChoiceType" : AntennaResourceChoice
+"ID_Type" <|-- "ServiceID_Type"
+"ActivityBaseType" <|-- "SharedRF_ApertureActivityBaseType"
+"SharedRF_ApertureActivityBaseType" --> "DependentActivityType" : DependentActivity
+"SharedRF_ApertureActivityBaseType" --> "ResourceStatusSelectedType" : SharedApertureResourceStatus
+"SharedRF_ApertureActivityBaseType" --> "PerformanceMetricSetType" : ActivityPerformanceFeedback
+"SpecificEmitterIdentityType" --> "ForeignKeyType" : SpecificEmitterKey
+"ID_Type" <|-- "SubsystemID_Type"
+"ID_Type" <|-- "SupportCapabilityID_Type"
+"ID_Type" <|-- "SystemID_Type"
+"ZoneType" <|-- "TimedZoneType"
+"TimedZoneType" --> "ScheduleType" : Schedule
+"ID_Type" <|-- "VersionedID_Type"
+"ZoneType" --> "AreaChoiceType" : Shape
+@enduml

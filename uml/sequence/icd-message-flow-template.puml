@@ -1,0 +1,20 @@
+@startuml
+' Copy this file and replace participants/messages from ICD sections.
+title ICD Message Flow Template
+
+autonumber
+
+actor Operator
+participant "Mission Service" as MissionSvc
+participant "Vehicle Service" as VehicleSvc
+participant "Peer Service" as PeerSvc
+
+Operator -> MissionSvc: ActionPlanCommand
+MissionSvc --> Operator: ActionPlanCommandStatus
+MissionSvc -> VehicleSvc: ActionPlan
+VehicleSvc --> MissionSvc: ActionPlanStatus
+MissionSvc -> PeerSvc: Action
+PeerSvc --> MissionSvc: ActionStatus
+MissionSvc --> Operator: MissionPlanActivationStatus
+
+@enduml

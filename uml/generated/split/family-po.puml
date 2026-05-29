@@ -1,0 +1,1717 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Family: PO_*
+
+class "PO_Activity" <<element>> {
+  +type: PO_ActivityMT
+}
+class "PO_Capability" <<element>> {
+  +type: PO_CapabilityMT
+}
+class "PO_CapabilityStatus" <<element>> {
+  +type: PO_CapabilityStatusMT
+}
+class "PO_Command" <<element>> {
+  +type: PO_CommandMT
+}
+class "PO_CommandStatus" <<element>> {
+  +type: PO_CommandStatusMT
+}
+class "PO_SettingsCommand" <<element>> {
+  +type: PO_SettingsCommandMT
+}
+class "PO_SettingsCommandStatus" <<element>> {
+  +type: PO_SettingsCommandStatusMT
+}
+
+class "ActivityBaseType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +CapabilityID: CapabilityID_Type
+  +Interactive: boolean
+  +ActivityState: ActivityStateEnum
+  +Basis: ActivityBasisEnum
+  +ActivityRank: ComparableRankingType
+  +ActivityReason: CannotComplyType
+  +Source: ActivitySourceType
+  +EstimatedStartTime: DateTimeType
+  +EstimatedCompletionTime: DateTimeType
+  +EstimatedPercentComplete: PercentType
+}
+class "ActivityID_Type" <<complexType>> {
+  --
+}
+class "ActivitySourceType" <<complexType>> {
+  --
+}
+class "AngleHalfPairType" <<complexType>> {
+  +Min: AngleHalfType
+  +Max: AngleHalfType
+}
+class "AnglePairType" <<complexType>> {
+  +Min: AngleType
+  +Max: AngleType
+}
+class "AngleQuarterPairType" <<complexType>> {
+  +Min: AngleQuarterType
+  +Max: AngleQuarterType
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AvailabilityInfoType" <<complexType>> {
+  +Availability: CapabilityAvailabilityEnum
+  +AvailabilityReason: CannotComplyType
+  +NextAvailableWindow: DateTimeType
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityBaseType" <<complexType>> {
+  +AvailableMDF: MDF_Type
+}
+class "CapabilityCommandStatusBaseType" <<complexType>> {
+  +Activity: ResultingActivityType
+}
+class "CapabilityDeclarationBaseType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +DomainPairing: EnvironmentPairingEnum
+  +ProductOutput: ProductOutputType
+  +PackageOperation: PackageOperationEnum
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CapabilityPrecedenceType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityPrecedence: unsignedInt
+}
+class "CapabilitySettingsCommandBaseType" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ActivateMDF: MDF_CommandType
+  +CapabilityPrecedence: CapabilityPrecedenceType
+  +CapabilityState: CapabilityStateType
+  +RepresentationKey: ForeignKeyType
+}
+class "CapabilitySettingsCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "CapabilityStateType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityCommandState: CapabilityCommandStateEnum
+}
+class "CapabilityStatusBaseType" <<complexType>> {
+  +MDF_Status: MDF_StatusType
+}
+class "CapabilityStatusType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +AvailabilityInfo: AvailabilityInfoType
+  +CapabilityPrecedence: unsignedInt
+  +RepresentationKey: ForeignKeyType
+}
+class "CollectionConstraintsType" <<complexType>> {
+  +MapAngleConstraints: AngleHalfPairType
+  +GrazingAngleConstraints: AngleQuarterPairType
+  +LookAngleConstraints: AnglePairType
+  +ElevationAngleConstraints: AngleHalfPairType
+  +SlantRangeConstraints: SlantRangeConstraintsType
+  +CollectionPattern: CollectionPatternEnum
+}
+class "ColorDepthSettingsType" <<complexType>> {
+  --
+}
+class "CommandBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandState: CommandStateEnum
+}
+class "CommandID_Type" <<complexType>> {
+  --
+}
+class "CommandStatusBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+}
+class "CommandableCapabilityDeclarationType" <<complexType>> {
+  +AcceptedInterface: CapabilityControlInterfacesEnum
+  +CommsRequired: boolean
+}
+class "ComparableRankingType" <<complexType>> {
+  +Priority: unsignedShort
+  +PrecedenceWithinPriority: unsignedShort
+}
+class "ComponentControllabilityA_Type" <<complexType>> {
+  +EnableDisable: ComponentControlInterfacesEnum
+  +Configurable: ComponentControlInterfacesEnum
+  +Reset: ComponentControlInterfacesEnum
+}
+class "ComponentControllabilityB_Type" <<complexType>> {
+  +EnableDisable: ComponentControlInterfacesEnum
+  +Reset: ComponentControlInterfacesEnum
+}
+class "ComponentControlsA_Type" <<complexType>> {
+  +EnableDisable: boolean
+  +AutoEnableDisable: boolean
+  +Reset: EmptyType
+}
+class "ComponentControlsStatusType" <<complexType>> {
+  +EnableDisable: boolean
+  +AutoEnableDisable: boolean
+}
+class "ComponentID_Type" <<complexType>> {
+  --
+}
+class "CompressionRatioSettingsType" <<complexType>> {
+  --
+}
+class "CountryCodeType" <<complexType>> {
+  --
+}
+class "CropSettingsType" <<complexType>> {
+  +Origin: FrameOriginEnum
+  +X_Position: unsignedInt
+  +Y_Position: unsignedInt
+  +Width: unsignedInt
+  +Height: unsignedInt
+}
+class "CropType" <<complexType>> {
+  +Enable: boolean
+  +Settings: CropSettingsType
+}
+class "DoubleMinMaxType" <<complexType>> {
+  +Min: double
+  +Max: double
+}
+class "DurationRangeType" <<complexType>> {
+  +Min: DurationType
+  +Max: DurationType
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "FOR_Type" <<complexType>> {
+  +FOR_Type: FOR_Enum
+  +LOS: LOS_VariableA_Type
+  +WarningThreshold: AnglePositiveType
+}
+class "FOV_ActivityType" <<complexType>> {
+  +GroundFOV: PolygonType
+  +FOV_Timestamp: DateTimeType
+  +MaximumEffectiveRange: DistanceType
+}
+class "FOV_Type" <<complexType>> {
+  +LOS: LOS_InertialB_Type
+  +AzimuthWidth: AnglePositiveType
+  +ElevationWidth: AnglePositiveType
+}
+class "FileFormatType" <<complexType>> {
+  --
+}
+class "FloatMinMaxType" <<complexType>> {
+  +Min: float
+  +Max: float
+}
+class "FocalPlaneArrayNonUniformityCorrectionReferenceType" <<complexType>> {
+  +NUC_Reference: FocalPlaneArrayNonUniformityCorrectionReferenceEnum
+  +NUC_Offset: FocalPlaneArrayNonUniformityCorrectionOffsetEnum
+}
+class "FocalPlaneArrayOperationNonUniformityCorrectionType" <<complexType>> {
+  +NUC_TablesSettings: UnsignedIntegerMinMaxType
+  +NUC_ReferenceOffsetSettings: FocalPlaneArrayNonUniformityCorrectionReferenceType
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "FrequencyRangeType" <<complexType>> {
+  +Min: FrequencyType
+  +Max: FrequencyType
+}
+class "GimbalAxisControlStatusType" <<complexType>> {
+  +AxisID: GimbalAxisID_Type
+  +Axis: PO_AngleConstraintControlsStatusType
+}
+class "GimbalAxisControlType" <<complexType>> {
+  +AxisID: GimbalAxisID_Type
+  +Axis: PO_AngleConstraintControlsType
+}
+class "GimbalAxisID_Type" <<complexType>> {
+  --
+}
+class "GimbalAxisPairType" <<complexType>> {
+  +AxisID: GimbalAxisID_Type
+  +Axis: AnglePairType
+}
+class "GimbalOrientationPairType" <<complexType>> {
+  +ReferenceFrame: PO_GimbalOrientationReferenceFrameEnum
+  +ComponentID: ComponentID_Type
+  +Pitch: AnglePairType
+  +Roll: AnglePairType
+  +Yaw: AnglePairType
+  +Axis: GimbalAxisPairType
+}
+class "HSB_ColorControlType" <<complexType>> {
+  +Hue: PercentType
+  +Saturation: PercentType
+  +Brightness: PercentType
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "IdentityBasicType" <<complexType>> {
+  +Standard: StandardIdentityType
+  +Platform: PlatformIdentityType
+  +Specific: SpecificIdentityType
+}
+class "IntegerMinMaxType" <<complexType>> {
+  +Min: int
+  +Max: int
+}
+class "JPEG_SettingsType" <<complexType>> {
+  +CompressionRatio: float
+  +PeakSNR: float
+  +RateDistortionSlope: float
+  +WaveletTransform: JPEG_WaveletTransformType
+}
+class "JPEG_WaveletTransformType" <<complexType>> {
+  +Type: JPEG_WaveletTypeEnum
+  +Level: unsignedInt
+}
+class "LOS_InertialB_Type" <<complexType>> {
+  +Azimuth: AnglePositiveType
+  +Elevation: AngleType
+  +SlantRange: DistanceType
+}
+class "LOS_RatesType" <<complexType>> {
+  +AzimuthRate: AngleRateType
+  +ElevationRate: AngleRateType
+  +RollRate: AngleRateType
+}
+class "LOS_VariableA_Type" <<complexType>> {
+  +Reference: LOS_ReferenceEnum
+  +Azimuth: AnglePositiveType
+  +Elevation: AngleType
+}
+class "LOS_VariableB_Type" <<complexType>> {
+  +Roll: AngleType
+  +Rates: LOS_RatesType
+}
+class "MDF_CommandSubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +FileID: MDF_SubCategoryFileID_Type
+}
+class "MDF_CommandType" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +SubCategory: MDF_CommandSubCategoryType
+}
+class "MDF_FileType" <<complexType>> {
+  +FileID: MDF_SubCategoryFileID_Type
+  +FileStatus: MDF_StatusEnum
+}
+class "MDF_ID_Type" <<complexType>> {
+  --
+}
+class "MDF_StatusType" <<complexType>> {
+  +CurrentMDF: MDF_CommandType
+  +CommandedMDF: MDF_CommandType
+  +FailedMDF: MDF_CommandType
+}
+class "MDF_SubCategoryFileID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +SubCategoryStatus: MDF_StatusEnum
+  +File: MDF_FileType
+}
+class "MDF_Type" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +MDF_Status: MDF_StatusEnum
+  +SubCategory: MDF_SubCategoryType
+}
+class "MISP_PackingPlanType" <<complexType>> {
+  +MissionID: MissionID_Type
+  +PlatformDesignation: AlphanumericDashSpaceUnderscoreString20Type
+  +ImageSourceSensor: VisibleString20Type
+  +PlatformTailNumber: TailNumberType
+  +AirfieldBarometricPressure: double
+  +AirFieldElevation: double
+  +PlatformCallSign: VisibleString10Type
+  +OperationalMode: MISP_OperationalModeEnum
+  +ClassificationOrMarkingSystem: AlphanumericDashSpaceUnderscoreString40Type
+  +ClassificationComment: VisibleString480Type
+  +UMID_VideoID: UMID_VideoID_Type
+  +UMID_AudioID: UMID_AudioID_Type
+  +UMID_DataID: UMID_DataID_Type
+  +UMID_SystemID: UMID_SystemID_Type
+  +ItemDesignator: AlphanumericDashSpaceUnderscoreString16Type
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "NITF_PackingPlanPET" <<complexType>> {
+  --
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OpticalCollectionConstraintsType" <<complexType>> {
+  +SunElevAngles: AngleHalfPairType
+  +SunAzimuthAngles: AnglePairType
+  +SweepSpeed: SpeedType
+  +GimbalOrientation: GimbalOrientationPairType
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PO_ActivityMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +Activity: PO_ActivityType
+}
+class "PO_ActivityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: PO_ActivityMDT
+}
+class "PO_ActivityType" <<complexType>> {
+  +ActualStartTime: DateTimeType
+  +ActualCompletionTime: DateTimeType
+  +AllProductsAndMessagesProduced: boolean
+  +FOV: FOV_ActivityType
+  +PointingActivityReport: PO_TargetType
+  +SubCapabilityStatus: PO_SubCapabilitySettingsType
+  +ComponentStatus: PO_ComponentStatusType
+  +CollectionConstraintsStatus: PO_CollectionConstraintsStatusType
+  +TrackOptionsStatus: PO_TrackDetailsType
+  +ProductOutputStatus: ProductOutputCapabilityStatusImageryType
+  +SearchActivity: SearchTrackActivityDetailsType
+  +TrackActivity: PO_TrackActivityType
+  +FOR_State: FOR_Enum
+  +ThermalBlankingFOR_State: FOR_Enum
+  +Repetition: RepetitionType
+}
+class "PO_AirTargetVolumeType" <<complexType>> {
+  --
+}
+class "PO_AngleConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Settings: AnglePairType
+}
+class "PO_AngleConstraintControlsType" <<complexType>> {
+  --
+}
+class "PO_ApertureID_Type" <<complexType>> {
+  --
+}
+class "PO_CapabilityMDT" <<complexType>> {
+  +Capability: PO_CapabilityType
+  +PointingCapability: PointingTypeEnum
+  +SubCapability: PO_SubCapabilityType
+  +PO_Component: PO_ComponentType
+  +TrackOption: PO_TrackCapabilityType
+  +CollectionConstraints: PO_CollectionConstraintsType
+  +CapabilityFOR: FOR_Type
+  +CapabilityThermalBlankingFOR: FOR_Type
+}
+class "PO_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: PO_CapabilityMDT
+}
+class "PO_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CalibrateOnActivity: boolean
+}
+class "PO_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: PO_CapabilityStatusType
+  +SubCapabilityStatus: PO_SubCapabilitySettingsType
+  +TrackStatus: PO_TrackStatusType
+  +ComponentStatus: PO_ComponentStatusType
+  +CollectionConstraintsStatus: PO_CollectionConstraintsStatusType
+  +CurrentMessageOutput: PO_MessageOutputsEnum
+  +CurrentFOR: FOR_Type
+  +CurrentThermalBlankingFOR: FOR_Type
+}
+class "PO_CapabilityStatusMT" <<complexType>> {
+  +MessageData: PO_CapabilityStatusMDT
+}
+class "PO_CapabilityStatusType" <<complexType>> {
+  +ProductOutputStatus: ProductOutputStatusType
+}
+class "PO_CapabilityType" <<complexType>> {
+  +CapabilityType: PO_CapabilityEnum
+  +AssociatedSubCapabilityID: SubCapabilityID_Type
+  +CapabilityOptions: PO_CapabilityOptionsType
+  +AssociatedComponentID: ComponentID_Type
+  +AssociatedTrackOptionID: TrackOptionsID_Type
+  +MessageOutput: PO_MessageOutputsEnum
+}
+class "PO_CoastSettingOptionsType" <<complexType>> {
+  +CoastTimeSettings: DurationRangeType
+  +Environment: EnvironmentEnum
+}
+class "PO_CoastSettingValueType" <<complexType>> {
+  +CoastTime: DurationType
+  +Environment: EnvironmentEnum
+}
+class "PO_CollectionConstraintsSettingsType" <<complexType>> {
+  +MapAngle: PO_AngleConstraintControlsType
+  +GrazingAngle: PO_AngleConstraintControlsType
+  +LookAngle: PO_AngleConstraintControlsType
+  +ElevationAngle: PO_AngleConstraintControlsType
+  +SlantRange: PO_SlantRangeConstraintControlsType
+  +CollectionPattern: PO_CollectionPatternConstraintControlsType
+  +SunElevAngles: PO_AngleConstraintControlsType
+  +SunAzimuthAngles: PO_AngleConstraintControlsType
+  +SweepSpeed: PO_SweepSpeedConstraintControlsType
+  +GimbalOrientation: PO_GimbalOrientationConstraintType
+}
+class "PO_CollectionConstraintsStatusType" <<complexType>> {
+  +MapAngleConstraints: PO_AngleConstraintControlsStatusType
+  +GrazingAngleConstraints: PO_AngleConstraintControlsStatusType
+  +LookAngleConstraints: PO_AngleConstraintControlsStatusType
+  +ElevationAngleConstraints: PO_AngleConstraintControlsStatusType
+  +SlantRangeConstraints: PO_SlantRangeConstraintControlsStatusType
+  +CollectionPattern: PO_ColorPatternConstraintControlsStatusType
+  +SunElevAngles: PO_AngleConstraintControlsStatusType
+  +SunAzimuthAngles: PO_AngleConstraintControlsStatusType
+  +SweepSpeed: PO_SweepSpeedConstraintControlsStatusType
+  +GimbalOrientation: PO_GimbalOrientationConstraintControlsStatusType
+}
+class "PO_CollectionConstraintsType" <<complexType>> {
+  +ConstraintType: PO_CollectionConstraintsEnum
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_CollectionPatternConstraintControlsType" <<complexType>> {
+  --
+}
+class "PO_ColorPatternConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Setting: CollectionPatternEnum
+}
+class "PO_CommandMDT" <<complexType>> {
+  +Command: PO_CommandType
+}
+class "PO_CommandMT" <<complexType>> {
+  +MessageData: PO_CommandMDT
+}
+class "PO_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "PO_CommandStatusMT" <<complexType>> {
+  +MessageData: PO_CommandStatusMDT
+}
+class "PO_CommandType" <<complexType>> {
+  --
+}
+class "PO_ComponentApertureSettingsType" <<complexType>> {
+  +ApertureID: PO_ApertureID_Type
+  +F_Stop: PO_ComponentF_StopSettingsType
+  +ApertureControls: ComponentControlsA_Type
+}
+class "PO_ComponentApertureType" <<complexType>> {
+  +ApertureID: PO_ApertureID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +F_Stop: PO_ComponentF_StopType
+}
+class "PO_ComponentF_StopSettingsType" <<complexType>> {
+  --
+}
+class "PO_ComponentF_StopType" <<complexType>> {
+  --
+}
+class "PO_ComponentFilterType" <<complexType>> {
+  +FilterID: PO_FilterID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +FilterType: PO_FilterEnum
+  +BandpassFrequency: FrequencyRangeType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_ComponentFocalPlaneArrayChannelType" <<complexType>> {
+  +ChannelID: PO_FPA_ChannelID_Type
+  +Controllability: ComponentControllabilityB_Type
+  +OpticalBand: PO_ComponentFocalPlaneArrayOpticalBandType
+  +Operation: PO_ComponentFocalPlaneArrayOperationType
+}
+class "PO_ComponentFocalPlaneArrayOperationType" <<complexType>> {
+  +OperationType: PO_FPA_ChannelOperationEnum
+  +PixelAggregationSettings: UnsignedIntegerMinMaxType
+  +TimeDelayIntegrationSettings: DoubleMinMaxType
+  +PixelScalingSettings: PixelScalingSettingsType
+  +CollectionTimeSettings: DurationRangeType
+  +NonUniformityCorrectionSettings: FocalPlaneArrayOperationNonUniformityCorrectionType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_ComponentFocalPlaneArrayOpticalBandType" <<complexType>> {
+  +Band: FrequencyRangeType
+  +Configurable: ComponentControlInterfacesEnum
+  +Reset: ComponentControlInterfacesEnum
+}
+class "PO_ComponentFocalPlaneArrayType" <<complexType>> {
+  +FocalPlaneArrayID: PO_FPA_ID_Type
+  +Channel: PO_ComponentFocalPlaneArrayChannelType
+  +Window: PO_ComponentWindowType
+  +Controllability: ComponentControllabilityB_Type
+}
+class "PO_ComponentLensAssemblyFieldOfViewType" <<complexType>> {
+  --
+}
+class "PO_ComponentLensAssemblyFocusType" <<complexType>> {
+  +PercentageFocusControl: ComponentControlInterfacesEnum
+  +AutoFocusZoomControl: ComponentControlInterfacesEnum
+  +IncrementalFocusControl: ComponentControlInterfacesEnum
+}
+class "PO_ComponentLensAssemblyType" <<complexType>> {
+  +LensID: PO_LensID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +FOV: PO_ComponentLensAssemblyFieldOfViewType
+  +Focus: PO_ComponentLensAssemblyFocusType
+  +FocusSweepSettings: PO_ComponentSettingsFocusSweepSettingsType
+  +Controllability: ComponentControllabilityB_Type
+}
+class "PO_ComponentProcessingStageType" <<complexType>> {
+  +StageID: PO_ProcessingStageID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +StageType: PO_ProcessingStageTypeEnum
+  +PixelScalingSettings: PixelScalingSettingsType
+  +GammaValueSettings: DoubleMinMaxType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_ComponentProductGeneratorType" <<complexType>> {
+  +GeneratorID: PO_ProductGeneratorID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +Controllability: ComponentControllabilityA_Type
+  +ProductGeneratorSettings: PO_ComponentSettingsProductGeneratorSettingsType
+  +ComponentProductOutput: ProductOutputCapabilityImageryType
+  +OutputProductSettings: PO_ComponentSettingsOutputProductSettingsType
+}
+class "PO_ComponentSettingsBandpassFrequencyType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFilterType" <<complexType>> {
+  +FilterID: PO_FilterID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +FilterControls: ComponentControlsA_Type
+  +BandpassFrequency: PO_ComponentSettingsBandpassFrequencyType
+}
+class "PO_ComponentSettingsFocalPlaneArrayChannelType" <<complexType>> {
+  +ChannelID: PO_FPA_ChannelID_Type
+  +ChannelControls: ComponentControlsA_Type
+  +OpticalBand: PO_ComponentSettingsFocalPlaneArrayOpticalBandType
+  +PixelAggregation: PO_ComponentSettingsFocalPlaneArrayPixelAggregationType
+  +TimeDelayIntegration: PO_ComponentSettingsFocalPlaneArrayTimeDelayIntegrationType
+  +PixelScaling: PO_ComponentSettingsFocalPlaneArrayPixelScalingType
+  +PixelPolarity: PO_ComponentSettingsFocalPlaneArrayPixelPolarityType
+  +CollectionTime: PO_ComponentSettingsFocalPlaneArrayCollectionType
+  +NonUniformityCorrection: PO_ComponentSettingsFocalPlaneArrayNonUniformityCorrectionType
+  +ScanDirection: PO_ComponentSettingsFocalPlaneArrayScanDirectionType
+}
+class "PO_ComponentSettingsFocalPlaneArrayCollectionType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayNonUniformityCorrectionType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayOpticalBandType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayPixelAggregationType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayPixelPolarityType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayPixelScalingType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayScanDirectionType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayTimeDelayIntegrationType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocalPlaneArrayType" <<complexType>> {
+  +FocalPlaneArrayID: PO_FPA_ID_Type
+  +WindowSelectionID: PO_WindowID_Type
+  +FPA_Controls: ComponentControlsA_Type
+  +Channel: PO_ComponentSettingsFocalPlaneArrayChannelType
+}
+class "PO_ComponentSettingsFocusSweepSettingsStartingPositionType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocusSweepSettingsStepIncrementType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocusSweepSettingsStepTimeType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocusSweepSettingsType" <<complexType>> {
+  +NumberOfStages: unsignedInt
+  +StepTime: PO_ComponentSettingsFocusSweepSettingsStepTimeType
+  +StartingPosition: PO_ComponentSettingsFocusSweepSettingsStartingPositionType
+  +StepIncrement: PO_ComponentSettingsFocusSweepSettingsStepIncrementType
+}
+class "PO_ComponentSettingsLensAssemblyFieldOfViewType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsLensAssemblyFocusType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsLensAssemblyType" <<complexType>> {
+  +LensID: PO_LensID_Type
+  +LensControls: ComponentControlsA_Type
+  +FOV: PO_ComponentSettingsLensAssemblyFieldOfViewType
+  +Focus: PO_ComponentSettingsLensAssemblyFocusType
+  +FocusSweepSettings: PO_ComponentSettingsFocusSweepSettingsType
+}
+class "PO_ComponentSettingsOutputProductSettingsType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsProcessingStageSettingsType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsProcessingStageType" <<complexType>> {
+  +ProcessingStageID: PO_ProcessingStageID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +ProcessingStageControls: ComponentControlsA_Type
+  +Settings: PO_ComponentSettingsProcessingStageSettingsType
+}
+class "PO_ComponentSettingsProductGeneratorSettingsType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsProductGeneratorType" <<complexType>> {
+  +GeneratorID: PO_ProductGeneratorID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +ProductGeneratorControls: ComponentControlsA_Type
+  +ProductGeneratorSettings: PO_ComponentSettingsProductGeneratorSettingsType
+  +OutputProductSettings: PO_ComponentSettingsOutputProductSettingsType
+}
+class "PO_ComponentSettingsType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FocalPlaneArray: PO_ComponentSettingsFocalPlaneArrayType
+  +Lens: PO_ComponentSettingsLensAssemblyType
+  +Aperture: PO_ComponentApertureSettingsType
+  +Filter: PO_ComponentSettingsFilterType
+  +ProcessingStage: PO_ComponentSettingsProcessingStageType
+  +ProductGenerator: PO_ComponentSettingsProductGeneratorType
+}
+class "PO_ComponentStatusApertureSettingsType" <<complexType>> {
+  +ApertureID: PO_ApertureID_Type
+  +ApertureControlsStatus: ComponentControlsStatusType
+  +F_StopSetting: float
+  +Reset: EmptyType
+}
+class "PO_ComponentStatusBandpassFrequencyType" <<complexType>> {
+  +Band: FrequencyRangeType
+  +AutoFrequency: boolean
+}
+class "PO_ComponentStatusFilterType" <<complexType>> {
+  +FilterID: PO_FilterID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +FilterControlsStatus: ComponentControlsStatusType
+  +BandpassFrequency: PO_ComponentStatusBandpassFrequencyType
+}
+class "PO_ComponentStatusFocalPlaneArrayChannelType" <<complexType>> {
+  +ChannelID: PO_FPA_ChannelID_Type
+  +ChannelControlsStatus: ComponentControlsStatusType
+  +OpticalBand: PO_ComponentStatusFocalPlaneArrayOpticalBandType
+  +PixelAggregation: PO_ComponentStatusFocalPlaneArrayPixelAggregationType
+  +TimeDelayIntegration: PO_ComponentStatusFocalPlaneArrayTimeDelayIntegrationType
+  +PixelScaling: PO_ComponentStatusFocalPlaneArrayPixelScalingType
+  +PixelPolarity: PO_ComponentStatusFocalPlaneArrayPixelPolarityType
+  +CollectionTime: PO_ComponentStatusFocalPlaneArrayCollectionTimeType
+  +NonUniformityCorrection: PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType
+  +ScanDirection: PO_ComponentStatusFocalPlaneArrayScanDirectionType
+}
+class "PO_ComponentStatusFocalPlaneArrayCollectionTimeType" <<complexType>> {
+  +CollectionTimeSetting: DurationType
+  +AutoCollectionTime: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionDataType" <<complexType>> {
+  --
+}
+class "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType" <<complexType>> {
+  +NUC_Setting: PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionDataType
+  +AutoNUC: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayOpticalBandType" <<complexType>> {
+  +BandSetting: FrequencyRangeType
+  +AutoBand: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayPixelAggregationType" <<complexType>> {
+  +AggregationSetting: unsignedInt
+  +AutoAggregation: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayPixelPolarityType" <<complexType>> {
+  +PolaritySetting: boolean
+  +AutoPolarity: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayPixelScalingType" <<complexType>> {
+  +Gain: double
+  +Offset: double
+  +AutoScaling: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayScanDirectionType" <<complexType>> {
+  +DirectionSetting: RelativeDirectionEnum
+  +AutoDirection: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayTimeDelayIntegrationType" <<complexType>> {
+  +TDI_Setting: double
+  +AutoTDI: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayType" <<complexType>> {
+  +FocalPlaneArrayID: PO_FPA_ID_Type
+  +FPA_ControlsStatus: ComponentControlsStatusType
+  +Channel: PO_ComponentStatusFocalPlaneArrayChannelType
+  +Window: PO_ComponentWindowType
+}
+class "PO_ComponentStatusFocusSweepSettingsType" <<complexType>> {
+  +NumberOfStages: unsignedInt
+  +StepTime: PO_ComponentSettingsFocusSweepSettingsStepTimeType
+  +StartingPosition: PO_ComponentSettingsFocusSweepSettingsStartingPositionType
+  +StepIncrement: PO_ComponentSettingsFocusSweepSettingsStepIncrementType
+}
+class "PO_ComponentStatusGeneratorSettingsType" <<complexType>> {
+  +VisibleImageSetting: DoubleMinMaxType
+  +InfraredImageSetting: DoubleMinMaxType
+  +HyperspectralImageSetting: DoubleMinMaxType
+  +ImageSetting: DoubleMinMaxType
+  +VideoClipVisibleSetting: DoubleMinMaxType
+  +VideoClipInfraredSetting: DoubleMinMaxType
+  +VideoClipHyperspectralSetting: DoubleMinMaxType
+  +VideoClipSetting: DoubleMinMaxType
+  +VideoStreamVisibleSetting: DoubleMinMaxType
+  +VideoStreamInfraredSetting: DoubleMinMaxType
+  +VideoStreamHyperspectralSetting: DoubleMinMaxType
+  +VideoStreamSetting: DoubleMinMaxType
+}
+class "PO_ComponentStatusLensAssemblyFieldOfViewType" <<complexType>> {
+  +FOV_Setting: AngleQuarterType
+  +AutoZoom: boolean
+  +ChangeType: IncrementalChangeEnum
+}
+class "PO_ComponentStatusLensAssemblyFocusType" <<complexType>> {
+  --
+}
+class "PO_ComponentStatusLensAssemblyType" <<complexType>> {
+  +LensID: PO_LensID_Type
+  +LensControlsStatus: ComponentControlsStatusType
+  +FOV: PO_ComponentStatusLensAssemblyFieldOfViewType
+  +Focus: PO_ComponentStatusLensAssemblyFocusType
+  +FocusSweepSettings: PO_ComponentStatusFocusSweepSettingsType
+}
+class "PO_ComponentStatusOutputProductSettingsType" <<complexType>> {
+  +ProductSettings: PO_ComponentStatusProductSettingsType
+  +AutoOutputProductSettings: boolean
+}
+class "PO_ComponentStatusProcessingStagePixelScalingType" <<complexType>> {
+  +Offset: int
+  +Gain: double
+}
+class "PO_ComponentStatusProcessingStageProcessingSettingsType" <<complexType>> {
+  +PixelScaling: PO_ComponentStatusProcessingStagePixelScalingType
+  +HSB_ColorControlStatus: HSB_ColorControlType
+  +RGB_ColorControlStatus: RGB_ColorControlType
+  +GammaValue: double
+  +SharpnessValue: PercentType
+  +EdgeEnhancement: PercentType
+  +Zoom: PercentType
+}
+class "PO_ComponentStatusProcessingStageSettingsType" <<complexType>> {
+  +ProcessingSettings: PO_ComponentStatusProcessingStageProcessingSettingsType
+  +AutoProcessingSettings: boolean
+}
+class "PO_ComponentStatusProcessingStageType" <<complexType>> {
+  +ProcessingStageID: PO_ProcessingStageID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +ProcessingStageControlsStatus: ComponentControlsStatusType
+  +Settings: PO_ComponentStatusProcessingStageSettingsType
+}
+class "PO_ComponentStatusProductGeneratorSettingsType" <<complexType>> {
+  +GeneratorSettings: PO_ComponentStatusGeneratorSettingsType
+  +AutoGeneratorSettings: boolean
+}
+class "PO_ComponentStatusProductGeneratorType" <<complexType>> {
+  +GeneratorID: PO_ProductGeneratorID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +ProductGeneratorStatus: ComponentControlsStatusType
+  +ProductGeneratorSettings: PO_ComponentStatusProductGeneratorSettingsType
+  +OutputProductSettings: PO_ComponentStatusOutputProductSettingsType
+}
+class "PO_ComponentStatusProductSettingsType" <<complexType>> {
+  +GeneratorOutputID: PO_ProductGeneratorOutputID_Type
+  +ProductClassification: SecurityInformationType
+  +JPEG_Settings: JPEG_SettingsType
+  +NITF_PackingPlan: NITF_PackingPlanPET
+  +MISP_Settings: MISP_PackingPlanType
+  +CompressionRatio: float
+  +ProductRate: unsignedInt
+  +Interlaced: boolean
+  +ProductSize: unsignedInt
+  +ProductResolution: ProductResolutionType
+  +VideoOutput: VideoOutputSettingsType
+  +ProductOutputStatus: ComponentControlsStatusType
+}
+class "PO_ComponentStatusType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FocalPlane: PO_ComponentStatusFocalPlaneArrayType
+  +Lens: PO_ComponentStatusLensAssemblyType
+  +Aperture: PO_ComponentStatusApertureSettingsType
+  +Filter: PO_ComponentStatusFilterType
+  +ProcessingStage: PO_ComponentStatusProcessingStageType
+  +ProductGenerator: PO_ComponentStatusProductGeneratorType
+}
+class "PO_ComponentType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FocalPlaneArray: PO_ComponentFocalPlaneArrayType
+  +Lens: PO_ComponentLensAssemblyType
+  +Aperture: PO_ComponentApertureType
+  +Filter: PO_ComponentFilterType
+  +ProcessingStage: PO_ComponentProcessingStageType
+  +ProductGenerator: PO_ComponentProductGeneratorType
+}
+class "PO_ComponentWindowType" <<complexType>> {
+  +PO_WindowID: PO_WindowID_Type
+  +WindowSizeX: unsignedInt
+  +WindowSizeY: unsignedInt
+  +LowerLeftX: unsignedInt
+  +LowerLeftY: unsignedInt
+  +ColorDepth: unsignedInt
+}
+class "PO_FPA_ChannelID_Type" <<complexType>> {
+  --
+}
+class "PO_FPA_ID_Type" <<complexType>> {
+  --
+}
+class "PO_FilterID_Type" <<complexType>> {
+  --
+}
+class "PO_GimbalOrientationConstraintControlsStatusType" <<complexType>> {
+  +ReferenceFrame: PO_GimbalOrientationReferenceFrameEnum
+  +ComponentID: ComponentID_Type
+  +PitchAngle: PO_AngleConstraintControlsStatusType
+  +RollAngle: PO_AngleConstraintControlsStatusType
+  +YawAngle: PO_AngleConstraintControlsStatusType
+  +Axis: GimbalAxisControlStatusType
+}
+class "PO_GimbalOrientationConstraintType" <<complexType>> {
+  +ReferenceFrame: PO_GimbalOrientationReferenceFrameEnum
+  +ComponentID: ComponentID_Type
+  +PitchAngle: PO_AngleConstraintControlsType
+  +RollAngle: PO_AngleConstraintControlsType
+  +YawAngle: PO_AngleConstraintControlsType
+  +Axis: GimbalAxisControlType
+}
+class "PO_LensID_Type" <<complexType>> {
+  --
+}
+class "PO_OffsetTrackSettingsType" <<complexType>> {
+  +AzimuthSettings: DoubleMinMaxType
+  +ElevationSettings: DoubleMinMaxType
+  +RollSettings: DoubleMinMaxType
+  +RatesSettings: RatesSettingsType
+}
+class "PO_ProcessingStageID_Type" <<complexType>> {
+  --
+}
+class "PO_ProductGeneratorID_Type" <<complexType>> {
+  --
+}
+class "PO_ProductGeneratorOutputID_Type" <<complexType>> {
+  --
+}
+class "PO_SettingsCommandMDT" <<complexType>> {
+  +SubCapability: PO_SubCapabilitySettingsType
+  +TrackSettings: PO_TrackSettingsType
+  +ComponentSettings: PO_ComponentSettingsType
+  +CollectionConstraintsSettings: PO_CollectionConstraintsSettingsType
+  +MessageOutput: PO_MessageOutputsEnum
+  +FOR_Settings: FOR_Type
+  +ThermalBlankingFOR_Settings: FOR_Type
+}
+class "PO_SettingsCommandMT" <<complexType>> {
+  +MessageData: PO_SettingsCommandMDT
+}
+class "PO_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "PO_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: PO_SettingsCommandStatusMDT
+}
+class "PO_SlantRangeConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Minimum: DistanceType
+  +Maximum: DistanceType
+}
+class "PO_SlantRangeConstraintControlsType" <<complexType>> {
+  --
+}
+class "PO_SubCapabilitySettingsType" <<complexType>> {
+  +SubCapabilityID: SubCapabilityID_Type
+  +TechniqueSettings: PO_TechniqueSettingType
+}
+class "PO_SubCapabilityType" <<complexType>> {
+  +SubCapabilityID: SubCapabilityID_Type
+  +Spectrum: SensorSpectrumEnum
+  +TechniqueSettings: PO_TechniqueCapabilityType
+  +Environment: PO_EnvironmentEnum
+}
+class "PO_SweepSpeedConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Speed: SpeedType
+}
+class "PO_SweepSpeedConstraintControlsType" <<complexType>> {
+  --
+}
+class "PO_TargetType" <<complexType>> {
+  --
+}
+class "PO_TechniqueCapabilityType" <<complexType>> {
+  +Technique: PO_TechniqueEnum
+  +Intensity: FloatMinMaxType
+  +Constellation: FloatMinMaxType
+  +Stride: FloatMinMaxType
+  +PointIntensity: FloatMinMaxType
+  +EdgeIntensity: FloatMinMaxType
+  +FalseAlarmLevelUpperLimit: unsignedByte
+}
+class "PO_TechniqueSettingType" <<complexType>> {
+  +Technique: PO_TechniqueEnum
+  +IntensityValue: float
+  +ConstellationValue: float
+  +StrideValue: float
+  +PointIntensityValue: float
+  +EdgeIntensityValue: float
+  +FalseAlarmLevel: unsignedByte
+}
+class "PO_TrackActivityType" <<complexType>> {
+  +TrackMode: PO_TrackModeEnum
+}
+class "PO_TrackCapabilityType" <<complexType>> {
+  +TrackOptionID: TrackOptionsID_Type
+  +TrackControlOptions: PO_TrackCapabilityTypeEnum
+  +ATR_Filter: IdentityBasicType
+  +OffsetTrackSettings: PO_OffsetTrackSettingsType
+  +ObservedEntityThresholdSettings: DurationRangeType
+  +TrackingRange: DoubleMinMaxType
+  +CoastSettingOptions: PO_CoastSettingOptionsType
+  +BlankingVolumeSupported: boolean
+}
+class "PO_TrackDetailsType" <<complexType>> {
+  +TrackOptionID: TrackOptionsID_Type
+  +Mode: PO_TrackCommandEnum
+  +TrackArea: IncreaseDecreaseEnum
+  +LockPersistence: PO_LockPersistenceEnum
+  +ATR_Filter: IdentityBasicType
+  +OffsetTrackSetting: LOS_VariableB_Type
+  +ObservedEntityThreshold: DurationType
+  +TrackingRange: DistanceType
+  +CoastSetting: PO_CoastSettingValueType
+  +BlankingVolume: PO_AirTargetVolumeType
+}
+class "PO_TrackSettingsType" <<complexType>> {
+  +TrackOptionID: TrackOptionsID_Type
+  +Mode: PO_TrackCommandEnum
+  +TrackArea: IncreaseDecreaseEnum
+  +LockPersistence: PO_LockPersistenceEnum
+  +ATR_Filter: IdentityBasicType
+  +OffsetTrackSetting: LOS_VariableB_Type
+  +ObservedEntityThreshold: DurationType
+  +TrackingRange: DistanceType
+  +CoastSetting: PO_CoastSettingValueType
+  +BlankingVolume: PO_AirTargetVolumeType
+}
+class "PO_TrackStatusType" <<complexType>> {
+  +TrackOptionID: TrackOptionsID_Type
+  +Mode: PO_TrackCommandEnum
+  +TrackArea: IncreaseDecreaseEnum
+  +LockPersistence: PO_LockPersistenceEnum
+  +ATR_FilterStatus: IdentityBasicType
+  +OffsetTrackSetting: LOS_VariableB_Type
+  +ObservedEntityThreshold: DurationType
+  +TrackingRange: DistanceType
+  +CoastSetting: PO_CoastSettingValueType
+  +BlankingVolumeStatus: PO_AirTargetVolumeType
+}
+class "PO_WindowID_Type" <<complexType>> {
+  --
+}
+class "PixelCountSettingsType" <<complexType>> {
+  --
+}
+class "PixelScalingSettingsType" <<complexType>> {
+  +GainSettings: DoubleMinMaxType
+  +OffsetSettings: IntegerMinMaxType
+}
+class "PlatformIdentityType" <<complexType>> {
+  +PlatformType: unsignedInt
+  +PlatformTypeCategory: EnvironmentEnum
+  +ThreatType: ThreatEnum
+  +UnitType: UnitTypeEnum
+  +LaunchCapability: LaunchCapabilityEnum
+  +SubmarineConfidenceLevel: SubmarineConfidenceLevelEnum
+}
+class "PolygonPointChoiceType" <<complexType>> {
+  --
+}
+class "PolygonType" <<complexType>> {
+  +LineProjection: LineProjectionEnum
+  +BoundingPolygon: PolygonPointChoiceType
+  +InteriorPolygon: PolygonPointChoiceType
+}
+class "ProductOutputCapabilityImageryType" <<complexType>> {
+  +GeneratorOutputID: PO_ProductGeneratorOutputID_Type
+  +CompressionRatioSettings: CompressionRatioSettingsType
+  +ProductRateSettings: ProductRateSettingsType
+  +Interlaceability: boolean
+  +ProductSizeSettings: ProductSizeSettingsType
+  +ProductResolutionSettings: ProductResolutionSettingsType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "ProductOutputCapabilityStatusImageryType" <<complexType>> {
+  +ProductOutputGeneratorID: PO_ProductGeneratorOutputID_Type
+  +CompressionRatio: float
+  +ProductRate: unsignedInt
+  +Interlaced: boolean
+  +ProductSize: unsignedInt
+  +ProductResolution: ProductResolutionType
+  +VideoOutput: VideoOutputSettingsType
+}
+class "ProductOutputStatusType" <<complexType>> {
+  --
+}
+class "ProductOutputType" <<complexType>> {
+  +ProductType: ProductTypeEnum
+  +ProcessingType: ProcessingTypeEnum
+  +ProductFormat: FileFormatType
+}
+class "ProductRateSettingsType" <<complexType>> {
+  --
+}
+class "ProductResolutionSettingsType" <<complexType>> {
+  +PixelHorizontalSettings: PixelCountSettingsType
+  +PixelVerticalSettings: PixelCountSettingsType
+  +ColorDepthSettings: ColorDepthSettingsType
+}
+class "ProductResolutionType" <<complexType>> {
+  +HorizontalPixelCount: unsignedInt
+  +VerticalPixelCount: unsignedInt
+  +ColorDepth: unsignedInt
+}
+class "ProductSizeSettingsType" <<complexType>> {
+  --
+}
+class "RGB_ColorControlType" <<complexType>> {
+  +Red: PercentType
+  +Green: PercentType
+  +Blue: PercentType
+}
+class "RatesSettingsType" <<complexType>> {
+  +AzimuthRateSettings: DoubleMinMaxType
+  +ElevationRateSettings: DoubleMinMaxType
+  +RollRateSettings: DoubleMinMaxType
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RepetitionType" <<complexType>> {
+  --
+}
+class "ResultingActivityType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +NewActivity: boolean
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "SearchTrackActivityDetailsType" <<complexType>> {
+  +NumberOfTimesSearched: unsignedInt
+  +TimeLastSearched: DateTimeType
+  +Attempts: unsignedInt
+  +ActualRevisitPeriod: DurationType
+  +PercentageInFOR: PercentType
+  +ActualStartTime: DateTimeType
+  +ActualStopTime: DateTimeType
+  +PercentSearched: PercentType
+  +EntitiesReported: unsignedInt
+  +CueAcquired: boolean
+  +ProductsProduced: unsignedInt
+  +HitsReported: unsignedInt
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "SlantRangeConstraintsType" <<complexType>> {
+  +Min: DistanceType
+  +Max: DistanceType
+  +Absolute: boolean
+}
+class "SpecificIdentityType" <<complexType>> {
+  +SpecificType: unsignedInt
+  +SpecificTypeCategory: EnvironmentEnum
+  +SiteType: SiteTypeEnum
+  +SpecificTypeModel: SpecificTypeModelType
+}
+class "StandardIdentityType" <<complexType>> {
+  +StandardIdentity: StandardIdentityEnum
+  +Allegiance: CountryCodeType
+}
+class "SubCapabilityID_Type" <<complexType>> {
+  --
+}
+class "SubsystemID_Type" <<complexType>> {
+  --
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TrackOptionsID_Type" <<complexType>> {
+  --
+}
+class "UMID_AudioID_Type" <<complexType>> {
+  --
+}
+class "UMID_DataID_Type" <<complexType>> {
+  --
+}
+class "UMID_SystemID_Type" <<complexType>> {
+  --
+}
+class "UMID_VideoID_Type" <<complexType>> {
+  --
+}
+class "UnsignedIntegerMinMaxType" <<complexType>> {
+  +Min: unsignedInt
+  +Max: unsignedInt
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+class "VideoEncoderOutputType" <<complexType>> {
+  --
+}
+class "VideoEncoderSettingsType" <<complexType>> {
+  +EncodingType: ForeignKeyType
+  +Profile: VisibleString32Type
+  +EncodingBlocks: VideoBlockSizeEnum
+  +ChromaSubsample: VideoChromaSubsampleEnum
+  +FrameRate: FrequencyType
+  +HDR: boolean
+  +BitRate: unsignedInt
+  +EmbedKLV_Metadata: boolean
+  +EmbedPlatformMetadata: boolean
+  +SkipFrames: unsignedByte
+  +QuantMinMax: UnsignedIntegerMinMaxType
+  +CompressionMode: VideoEncoderCompressionModeEnum
+  +B_Frames: unsignedByte
+  +GOP_Size: unsignedShort
+  +IntraRefreshMode: boolean
+  +IntraRefreshPercentage: PercentType
+  +ColorBitDepth: unsignedByte
+  +Crop: CropType
+  +Scaling: PercentType
+}
+class "VideoOutputSettingsType" <<complexType>> {
+  +Enable: boolean
+  +SourceChannel: unsignedShort
+  +Output: VideoEncoderOutputType
+  +EncoderSettings: VideoEncoderSettingsType
+}
+
+"PO_Activity" --> "PO_ActivityMT" : payload
+"PO_Capability" --> "PO_CapabilityMT" : payload
+"PO_CapabilityStatus" --> "PO_CapabilityStatusMT" : payload
+"PO_Command" --> "PO_CommandMT" : payload
+"PO_CommandStatus" --> "PO_CommandStatusMT" : payload
+"PO_SettingsCommand" --> "PO_SettingsCommandMT" : payload
+"PO_SettingsCommandStatus" --> "PO_SettingsCommandStatusMT" : payload
+"ActivityBaseType" --> "ActivityID_Type" : ActivityID
+"ActivityBaseType" --> "CapabilityID_Type" : CapabilityID
+"ActivityBaseType" --> "ComparableRankingType" : ActivityRank
+"ActivityBaseType" --> "CannotComplyType" : ActivityReason
+"ActivityBaseType" --> "ActivitySourceType" : Source
+"ID_Type" <|-- "ActivityID_Type"
+"AvailabilityInfoType" --> "CannotComplyType" : AvailabilityReason
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"CapabilityBaseType" --> "MDF_Type" : AvailableMDF
+"CommandStatusBaseType" <|-- "CapabilityCommandStatusBaseType"
+"CapabilityCommandStatusBaseType" --> "ResultingActivityType" : Activity
+"CapabilityDeclarationBaseType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityDeclarationBaseType" --> "ProductOutputType" : ProductOutput
+"ID_Type" <|-- "CapabilityID_Type"
+"CapabilityPrecedenceType" --> "CapabilityID_Type" : CapabilityID
+"CommandBaseType" <|-- "CapabilitySettingsCommandBaseType"
+"CapabilitySettingsCommandBaseType" --> "SubsystemID_Type" : SubsystemID
+"CapabilitySettingsCommandBaseType" --> "MDF_CommandType" : ActivateMDF
+"CapabilitySettingsCommandBaseType" --> "CapabilityPrecedenceType" : CapabilityPrecedence
+"CapabilitySettingsCommandBaseType" --> "CapabilityStateType" : CapabilityState
+"CapabilitySettingsCommandBaseType" --> "ForeignKeyType" : RepresentationKey
+"CommandStatusBaseType" <|-- "CapabilitySettingsCommandStatusBaseType"
+"CapabilityStateType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusBaseType" --> "MDF_StatusType" : MDF_Status
+"CapabilityStatusType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusType" --> "AvailabilityInfoType" : AvailabilityInfo
+"CapabilityStatusType" --> "ForeignKeyType" : RepresentationKey
+"CollectionConstraintsType" --> "AngleHalfPairType" : MapAngleConstraints
+"CollectionConstraintsType" --> "AngleQuarterPairType" : GrazingAngleConstraints
+"CollectionConstraintsType" --> "AnglePairType" : LookAngleConstraints
+"CollectionConstraintsType" --> "AngleHalfPairType" : ElevationAngleConstraints
+"CollectionConstraintsType" --> "SlantRangeConstraintsType" : SlantRangeConstraints
+"UnsignedIntegerMinMaxType" <|-- "ColorDepthSettingsType"
+"CommandBaseType" --> "CommandID_Type" : CommandID
+"ID_Type" <|-- "CommandID_Type"
+"CommandStatusBaseType" --> "CommandID_Type" : CommandID
+"CommandStatusBaseType" --> "CannotComplyType" : CommandProcessingStateReason
+"CapabilityDeclarationBaseType" <|-- "CommandableCapabilityDeclarationType"
+"ID_Type" <|-- "ComponentID_Type"
+"FloatMinMaxType" <|-- "CompressionRatioSettingsType"
+"CropType" --> "CropSettingsType" : Settings
+"FOR_Type" --> "LOS_VariableA_Type" : LOS
+"FOV_Type" <|-- "FOV_ActivityType"
+"FOV_ActivityType" --> "PolygonType" : GroundFOV
+"FOV_Type" --> "LOS_InertialB_Type" : LOS
+"FocalPlaneArrayOperationNonUniformityCorrectionType" --> "UnsignedIntegerMinMaxType" : NUC_TablesSettings
+"FocalPlaneArrayOperationNonUniformityCorrectionType" --> "FocalPlaneArrayNonUniformityCorrectionReferenceType" : NUC_ReferenceOffsetSettings
+"GimbalAxisControlStatusType" --> "GimbalAxisID_Type" : AxisID
+"GimbalAxisControlStatusType" --> "PO_AngleConstraintControlsStatusType" : Axis
+"GimbalAxisControlType" --> "GimbalAxisID_Type" : AxisID
+"GimbalAxisControlType" --> "PO_AngleConstraintControlsType" : Axis
+"ID_Type" <|-- "GimbalAxisID_Type"
+"GimbalAxisPairType" --> "GimbalAxisID_Type" : AxisID
+"GimbalAxisPairType" --> "AnglePairType" : Axis
+"GimbalOrientationPairType" --> "ComponentID_Type" : ComponentID
+"GimbalOrientationPairType" --> "AnglePairType" : Pitch
+"GimbalOrientationPairType" --> "AnglePairType" : Roll
+"GimbalOrientationPairType" --> "AnglePairType" : Yaw
+"GimbalOrientationPairType" --> "GimbalAxisPairType" : Axis
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"IdentityBasicType" --> "StandardIdentityType" : Standard
+"IdentityBasicType" --> "PlatformIdentityType" : Platform
+"IdentityBasicType" --> "SpecificIdentityType" : Specific
+"JPEG_SettingsType" --> "JPEG_WaveletTransformType" : WaveletTransform
+"LOS_VariableA_Type" <|-- "LOS_VariableB_Type"
+"LOS_VariableB_Type" --> "LOS_RatesType" : Rates
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryFileID_Type" : FileID
+"MDF_CommandType" --> "MDF_ID_Type" : MDF_ID
+"MDF_CommandType" --> "MDF_CommandSubCategoryType" : SubCategory
+"MDF_FileType" --> "MDF_SubCategoryFileID_Type" : FileID
+"ID_Type" <|-- "MDF_ID_Type"
+"MDF_StatusType" --> "MDF_CommandType" : CurrentMDF
+"MDF_StatusType" --> "MDF_CommandType" : CommandedMDF
+"MDF_StatusType" --> "MDF_CommandType" : FailedMDF
+"ID_Type" <|-- "MDF_SubCategoryFileID_Type"
+"ID_Type" <|-- "MDF_SubCategoryID_Type"
+"MDF_SubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_SubCategoryType" --> "MDF_FileType" : File
+"MDF_Type" --> "MDF_ID_Type" : MDF_ID
+"MDF_Type" --> "MDF_SubCategoryType" : SubCategory
+"MISP_PackingPlanType" --> "MissionID_Type" : MissionID
+"MISP_PackingPlanType" --> "UMID_VideoID_Type" : UMID_VideoID
+"MISP_PackingPlanType" --> "UMID_AudioID_Type" : UMID_AudioID
+"MISP_PackingPlanType" --> "UMID_DataID_Type" : UMID_DataID
+"MISP_PackingPlanType" --> "UMID_SystemID_Type" : UMID_SystemID
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"VersionedID_Type" <|-- "MissionID_Type"
+"CollectionConstraintsType" <|-- "OpticalCollectionConstraintsType"
+"OpticalCollectionConstraintsType" --> "AngleHalfPairType" : SunElevAngles
+"OpticalCollectionConstraintsType" --> "AnglePairType" : SunAzimuthAngles
+"OpticalCollectionConstraintsType" --> "GimbalOrientationPairType" : GimbalOrientation
+"PO_ActivityMDT" --> "SubsystemID_Type" : SubsystemID
+"PO_ActivityMDT" --> "PO_ActivityType" : Activity
+"MessageType" <|-- "PO_ActivityMT"
+"PO_ActivityMT" --> "PO_ActivityMDT" : MessageData
+"ActivityBaseType" <|-- "PO_ActivityType"
+"PO_ActivityType" --> "FOV_ActivityType" : FOV
+"PO_ActivityType" --> "PO_TargetType" : PointingActivityReport
+"PO_ActivityType" --> "PO_SubCapabilitySettingsType" : SubCapabilityStatus
+"PO_ActivityType" --> "PO_ComponentStatusType" : ComponentStatus
+"PO_ActivityType" --> "PO_CollectionConstraintsStatusType" : CollectionConstraintsStatus
+"PO_ActivityType" --> "PO_TrackDetailsType" : TrackOptionsStatus
+"PO_ActivityType" --> "ProductOutputCapabilityStatusImageryType" : ProductOutputStatus
+"PO_ActivityType" --> "SearchTrackActivityDetailsType" : SearchActivity
+"PO_ActivityType" --> "PO_TrackActivityType" : TrackActivity
+"PO_ActivityType" --> "RepetitionType" : Repetition
+"PO_AngleConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_AngleConstraintControlsStatusType" --> "AnglePairType" : Settings
+"ID_Type" <|-- "PO_ApertureID_Type"
+"CapabilityBaseType" <|-- "PO_CapabilityMDT"
+"PO_CapabilityMDT" --> "PO_CapabilityType" : Capability
+"PO_CapabilityMDT" --> "PO_SubCapabilityType" : SubCapability
+"PO_CapabilityMDT" --> "PO_ComponentType" : PO_Component
+"PO_CapabilityMDT" --> "PO_TrackCapabilityType" : TrackOption
+"PO_CapabilityMDT" --> "PO_CollectionConstraintsType" : CollectionConstraints
+"PO_CapabilityMDT" --> "FOR_Type" : CapabilityFOR
+"PO_CapabilityMDT" --> "FOR_Type" : CapabilityThermalBlankingFOR
+"MessageType" <|-- "PO_CapabilityMT"
+"PO_CapabilityMT" --> "PO_CapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "PO_CapabilityStatusMDT"
+"PO_CapabilityStatusMDT" --> "PO_CapabilityStatusType" : CapabilityStatus
+"PO_CapabilityStatusMDT" --> "PO_SubCapabilitySettingsType" : SubCapabilityStatus
+"PO_CapabilityStatusMDT" --> "PO_TrackStatusType" : TrackStatus
+"PO_CapabilityStatusMDT" --> "PO_ComponentStatusType" : ComponentStatus
+"PO_CapabilityStatusMDT" --> "PO_CollectionConstraintsStatusType" : CollectionConstraintsStatus
+"PO_CapabilityStatusMDT" --> "FOR_Type" : CurrentFOR
+"PO_CapabilityStatusMDT" --> "FOR_Type" : CurrentThermalBlankingFOR
+"MessageType" <|-- "PO_CapabilityStatusMT"
+"PO_CapabilityStatusMT" --> "PO_CapabilityStatusMDT" : MessageData
+"CapabilityStatusType" <|-- "PO_CapabilityStatusType"
+"PO_CapabilityStatusType" --> "ProductOutputStatusType" : ProductOutputStatus
+"CommandableCapabilityDeclarationType" <|-- "PO_CapabilityType"
+"PO_CapabilityType" --> "SubCapabilityID_Type" : AssociatedSubCapabilityID
+"PO_CapabilityType" --> "PO_CapabilityOptionsType" : CapabilityOptions
+"PO_CapabilityType" --> "ComponentID_Type" : AssociatedComponentID
+"PO_CapabilityType" --> "TrackOptionsID_Type" : AssociatedTrackOptionID
+"PO_CoastSettingOptionsType" --> "DurationRangeType" : CoastTimeSettings
+"PO_CollectionConstraintsSettingsType" --> "PO_AngleConstraintControlsType" : MapAngle
+"PO_CollectionConstraintsSettingsType" --> "PO_AngleConstraintControlsType" : GrazingAngle
+"PO_CollectionConstraintsSettingsType" --> "PO_AngleConstraintControlsType" : LookAngle
+"PO_CollectionConstraintsSettingsType" --> "PO_AngleConstraintControlsType" : ElevationAngle
+"PO_CollectionConstraintsSettingsType" --> "PO_SlantRangeConstraintControlsType" : SlantRange
+"PO_CollectionConstraintsSettingsType" --> "PO_CollectionPatternConstraintControlsType" : CollectionPattern
+"PO_CollectionConstraintsSettingsType" --> "PO_AngleConstraintControlsType" : SunElevAngles
+"PO_CollectionConstraintsSettingsType" --> "PO_AngleConstraintControlsType" : SunAzimuthAngles
+"PO_CollectionConstraintsSettingsType" --> "PO_SweepSpeedConstraintControlsType" : SweepSpeed
+"PO_CollectionConstraintsSettingsType" --> "PO_GimbalOrientationConstraintType" : GimbalOrientation
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : MapAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : GrazingAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : LookAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : ElevationAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_SlantRangeConstraintControlsStatusType" : SlantRangeConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_ColorPatternConstraintControlsStatusType" : CollectionPattern
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : SunElevAngles
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : SunAzimuthAngles
+"PO_CollectionConstraintsStatusType" --> "PO_SweepSpeedConstraintControlsStatusType" : SweepSpeed
+"PO_CollectionConstraintsStatusType" --> "PO_GimbalOrientationConstraintControlsStatusType" : GimbalOrientation
+"OpticalCollectionConstraintsType" <|-- "PO_CollectionConstraintsType"
+"PO_CollectionConstraintsType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ColorPatternConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_CommandMDT" --> "PO_CommandType" : Command
+"MessageType" <|-- "PO_CommandMT"
+"PO_CommandMT" --> "PO_CommandMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "PO_CommandStatusMDT"
+"MessageType" <|-- "PO_CommandStatusMT"
+"PO_CommandStatusMT" --> "PO_CommandStatusMDT" : MessageData
+"PO_ComponentApertureSettingsType" --> "PO_ApertureID_Type" : ApertureID
+"PO_ComponentApertureSettingsType" --> "PO_ComponentF_StopSettingsType" : F_Stop
+"PO_ComponentApertureSettingsType" --> "ComponentControlsA_Type" : ApertureControls
+"PO_ComponentApertureType" --> "PO_ApertureID_Type" : ApertureID
+"PO_ComponentApertureType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentApertureType" --> "PO_ComponentF_StopType" : F_Stop
+"PO_ComponentFilterType" --> "PO_FilterID_Type" : FilterID
+"PO_ComponentFilterType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentFilterType" --> "FrequencyRangeType" : BandpassFrequency
+"PO_ComponentFilterType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentFocalPlaneArrayChannelType" --> "PO_FPA_ChannelID_Type" : ChannelID
+"PO_ComponentFocalPlaneArrayChannelType" --> "ComponentControllabilityB_Type" : Controllability
+"PO_ComponentFocalPlaneArrayChannelType" --> "PO_ComponentFocalPlaneArrayOpticalBandType" : OpticalBand
+"PO_ComponentFocalPlaneArrayChannelType" --> "PO_ComponentFocalPlaneArrayOperationType" : Operation
+"PO_ComponentFocalPlaneArrayOperationType" --> "UnsignedIntegerMinMaxType" : PixelAggregationSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "DoubleMinMaxType" : TimeDelayIntegrationSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "PixelScalingSettingsType" : PixelScalingSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "DurationRangeType" : CollectionTimeSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "FocalPlaneArrayOperationNonUniformityCorrectionType" : NonUniformityCorrectionSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentFocalPlaneArrayOpticalBandType" --> "FrequencyRangeType" : Band
+"PO_ComponentFocalPlaneArrayType" --> "PO_FPA_ID_Type" : FocalPlaneArrayID
+"PO_ComponentFocalPlaneArrayType" --> "PO_ComponentFocalPlaneArrayChannelType" : Channel
+"PO_ComponentFocalPlaneArrayType" --> "PO_ComponentWindowType" : Window
+"PO_ComponentFocalPlaneArrayType" --> "ComponentControllabilityB_Type" : Controllability
+"PO_ComponentLensAssemblyType" --> "PO_LensID_Type" : LensID
+"PO_ComponentLensAssemblyType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentLensAssemblyType" --> "PO_ComponentLensAssemblyFieldOfViewType" : FOV
+"PO_ComponentLensAssemblyType" --> "PO_ComponentLensAssemblyFocusType" : Focus
+"PO_ComponentLensAssemblyType" --> "PO_ComponentSettingsFocusSweepSettingsType" : FocusSweepSettings
+"PO_ComponentLensAssemblyType" --> "ComponentControllabilityB_Type" : Controllability
+"PO_ComponentProcessingStageType" --> "PO_ProcessingStageID_Type" : StageID
+"PO_ComponentProcessingStageType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentProcessingStageType" --> "PixelScalingSettingsType" : PixelScalingSettings
+"PO_ComponentProcessingStageType" --> "DoubleMinMaxType" : GammaValueSettings
+"PO_ComponentProcessingStageType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentProductGeneratorType" --> "PO_ProductGeneratorID_Type" : GeneratorID
+"PO_ComponentProductGeneratorType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentProductGeneratorType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentProductGeneratorType" --> "PO_ComponentSettingsProductGeneratorSettingsType" : ProductGeneratorSettings
+"PO_ComponentProductGeneratorType" --> "ProductOutputCapabilityImageryType" : ComponentProductOutput
+"PO_ComponentProductGeneratorType" --> "PO_ComponentSettingsOutputProductSettingsType" : OutputProductSettings
+"PO_ComponentSettingsFilterType" --> "PO_FilterID_Type" : FilterID
+"PO_ComponentSettingsFilterType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentSettingsFilterType" --> "ComponentControlsA_Type" : FilterControls
+"PO_ComponentSettingsFilterType" --> "PO_ComponentSettingsBandpassFrequencyType" : BandpassFrequency
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_FPA_ChannelID_Type" : ChannelID
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "ComponentControlsA_Type" : ChannelControls
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayOpticalBandType" : OpticalBand
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayPixelAggregationType" : PixelAggregation
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayTimeDelayIntegrationType" : TimeDelayIntegration
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayPixelScalingType" : PixelScaling
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayPixelPolarityType" : PixelPolarity
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayCollectionType" : CollectionTime
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayNonUniformityCorrectionType" : NonUniformityCorrection
+"PO_ComponentSettingsFocalPlaneArrayChannelType" --> "PO_ComponentSettingsFocalPlaneArrayScanDirectionType" : ScanDirection
+"PO_ComponentSettingsFocalPlaneArrayType" --> "PO_FPA_ID_Type" : FocalPlaneArrayID
+"PO_ComponentSettingsFocalPlaneArrayType" --> "PO_WindowID_Type" : WindowSelectionID
+"PO_ComponentSettingsFocalPlaneArrayType" --> "ComponentControlsA_Type" : FPA_Controls
+"PO_ComponentSettingsFocalPlaneArrayType" --> "PO_ComponentSettingsFocalPlaneArrayChannelType" : Channel
+"PO_ComponentSettingsFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepTimeType" : StepTime
+"PO_ComponentSettingsFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStartingPositionType" : StartingPosition
+"PO_ComponentSettingsFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepIncrementType" : StepIncrement
+"PO_ComponentSettingsLensAssemblyType" --> "PO_LensID_Type" : LensID
+"PO_ComponentSettingsLensAssemblyType" --> "ComponentControlsA_Type" : LensControls
+"PO_ComponentSettingsLensAssemblyType" --> "PO_ComponentSettingsLensAssemblyFieldOfViewType" : FOV
+"PO_ComponentSettingsLensAssemblyType" --> "PO_ComponentSettingsLensAssemblyFocusType" : Focus
+"PO_ComponentSettingsLensAssemblyType" --> "PO_ComponentSettingsFocusSweepSettingsType" : FocusSweepSettings
+"PO_ComponentSettingsProcessingStageType" --> "PO_ProcessingStageID_Type" : ProcessingStageID
+"PO_ComponentSettingsProcessingStageType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentSettingsProcessingStageType" --> "ComponentControlsA_Type" : ProcessingStageControls
+"PO_ComponentSettingsProcessingStageType" --> "PO_ComponentSettingsProcessingStageSettingsType" : Settings
+"PO_ComponentSettingsProductGeneratorType" --> "PO_ProductGeneratorID_Type" : GeneratorID
+"PO_ComponentSettingsProductGeneratorType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentSettingsProductGeneratorType" --> "ComponentControlsA_Type" : ProductGeneratorControls
+"PO_ComponentSettingsProductGeneratorType" --> "PO_ComponentSettingsProductGeneratorSettingsType" : ProductGeneratorSettings
+"PO_ComponentSettingsProductGeneratorType" --> "PO_ComponentSettingsOutputProductSettingsType" : OutputProductSettings
+"PO_ComponentSettingsType" --> "ComponentID_Type" : ComponentID
+"PO_ComponentSettingsType" --> "PO_ComponentSettingsFocalPlaneArrayType" : FocalPlaneArray
+"PO_ComponentSettingsType" --> "PO_ComponentSettingsLensAssemblyType" : Lens
+"PO_ComponentSettingsType" --> "PO_ComponentApertureSettingsType" : Aperture
+"PO_ComponentSettingsType" --> "PO_ComponentSettingsFilterType" : Filter
+"PO_ComponentSettingsType" --> "PO_ComponentSettingsProcessingStageType" : ProcessingStage
+"PO_ComponentSettingsType" --> "PO_ComponentSettingsProductGeneratorType" : ProductGenerator
+"PO_ComponentStatusApertureSettingsType" --> "PO_ApertureID_Type" : ApertureID
+"PO_ComponentStatusApertureSettingsType" --> "ComponentControlsStatusType" : ApertureControlsStatus
+"PO_ComponentStatusBandpassFrequencyType" --> "FrequencyRangeType" : Band
+"PO_ComponentStatusFilterType" --> "PO_FilterID_Type" : FilterID
+"PO_ComponentStatusFilterType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentStatusFilterType" --> "ComponentControlsStatusType" : FilterControlsStatus
+"PO_ComponentStatusFilterType" --> "PO_ComponentStatusBandpassFrequencyType" : BandpassFrequency
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_FPA_ChannelID_Type" : ChannelID
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "ComponentControlsStatusType" : ChannelControlsStatus
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayOpticalBandType" : OpticalBand
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayPixelAggregationType" : PixelAggregation
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayTimeDelayIntegrationType" : TimeDelayIntegration
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayPixelScalingType" : PixelScaling
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayPixelPolarityType" : PixelPolarity
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayCollectionTimeType" : CollectionTime
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType" : NonUniformityCorrection
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayScanDirectionType" : ScanDirection
+"PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType" --> "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionDataType" : NUC_Setting
+"PO_ComponentStatusFocalPlaneArrayOpticalBandType" --> "FrequencyRangeType" : BandSetting
+"PO_ComponentStatusFocalPlaneArrayType" --> "PO_FPA_ID_Type" : FocalPlaneArrayID
+"PO_ComponentStatusFocalPlaneArrayType" --> "ComponentControlsStatusType" : FPA_ControlsStatus
+"PO_ComponentStatusFocalPlaneArrayType" --> "PO_ComponentStatusFocalPlaneArrayChannelType" : Channel
+"PO_ComponentStatusFocalPlaneArrayType" --> "PO_ComponentWindowType" : Window
+"PO_ComponentStatusFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepTimeType" : StepTime
+"PO_ComponentStatusFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStartingPositionType" : StartingPosition
+"PO_ComponentStatusFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepIncrementType" : StepIncrement
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VisibleImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : InfraredImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : HyperspectralImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : ImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipVisibleSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipInfraredSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipHyperspectralSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamVisibleSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamInfraredSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamHyperspectralSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamSetting
+"PO_ComponentStatusLensAssemblyType" --> "PO_LensID_Type" : LensID
+"PO_ComponentStatusLensAssemblyType" --> "ComponentControlsStatusType" : LensControlsStatus
+"PO_ComponentStatusLensAssemblyType" --> "PO_ComponentStatusLensAssemblyFieldOfViewType" : FOV
+"PO_ComponentStatusLensAssemblyType" --> "PO_ComponentStatusLensAssemblyFocusType" : Focus
+"PO_ComponentStatusLensAssemblyType" --> "PO_ComponentStatusFocusSweepSettingsType" : FocusSweepSettings
+"PO_ComponentStatusOutputProductSettingsType" --> "PO_ComponentStatusProductSettingsType" : ProductSettings
+"PO_ComponentStatusProcessingStageProcessingSettingsType" --> "PO_ComponentStatusProcessingStagePixelScalingType" : PixelScaling
+"PO_ComponentStatusProcessingStageProcessingSettingsType" --> "HSB_ColorControlType" : HSB_ColorControlStatus
+"PO_ComponentStatusProcessingStageProcessingSettingsType" --> "RGB_ColorControlType" : RGB_ColorControlStatus
+"PO_ComponentStatusProcessingStageSettingsType" --> "PO_ComponentStatusProcessingStageProcessingSettingsType" : ProcessingSettings
+"PO_ComponentStatusProcessingStageType" --> "PO_ProcessingStageID_Type" : ProcessingStageID
+"PO_ComponentStatusProcessingStageType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentStatusProcessingStageType" --> "ComponentControlsStatusType" : ProcessingStageControlsStatus
+"PO_ComponentStatusProcessingStageType" --> "PO_ComponentStatusProcessingStageSettingsType" : Settings
+"PO_ComponentStatusProductGeneratorSettingsType" --> "PO_ComponentStatusGeneratorSettingsType" : GeneratorSettings
+"PO_ComponentStatusProductGeneratorType" --> "PO_ProductGeneratorID_Type" : GeneratorID
+"PO_ComponentStatusProductGeneratorType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentStatusProductGeneratorType" --> "ComponentControlsStatusType" : ProductGeneratorStatus
+"PO_ComponentStatusProductGeneratorType" --> "PO_ComponentStatusProductGeneratorSettingsType" : ProductGeneratorSettings
+"PO_ComponentStatusProductGeneratorType" --> "PO_ComponentStatusOutputProductSettingsType" : OutputProductSettings
+"PO_ComponentStatusProductSettingsType" --> "PO_ProductGeneratorOutputID_Type" : GeneratorOutputID
+"PO_ComponentStatusProductSettingsType" --> "SecurityInformationType" : ProductClassification
+"PO_ComponentStatusProductSettingsType" --> "JPEG_SettingsType" : JPEG_Settings
+"PO_ComponentStatusProductSettingsType" --> "NITF_PackingPlanPET" : NITF_PackingPlan
+"PO_ComponentStatusProductSettingsType" --> "MISP_PackingPlanType" : MISP_Settings
+"PO_ComponentStatusProductSettingsType" --> "ProductResolutionType" : ProductResolution
+"PO_ComponentStatusProductSettingsType" --> "VideoOutputSettingsType" : VideoOutput
+"PO_ComponentStatusProductSettingsType" --> "ComponentControlsStatusType" : ProductOutputStatus
+"PO_ComponentStatusType" --> "ComponentID_Type" : ComponentID
+"PO_ComponentStatusType" --> "PO_ComponentStatusFocalPlaneArrayType" : FocalPlane
+"PO_ComponentStatusType" --> "PO_ComponentStatusLensAssemblyType" : Lens
+"PO_ComponentStatusType" --> "PO_ComponentStatusApertureSettingsType" : Aperture
+"PO_ComponentStatusType" --> "PO_ComponentStatusFilterType" : Filter
+"PO_ComponentStatusType" --> "PO_ComponentStatusProcessingStageType" : ProcessingStage
+"PO_ComponentStatusType" --> "PO_ComponentStatusProductGeneratorType" : ProductGenerator
+"PO_ComponentType" --> "ComponentID_Type" : ComponentID
+"PO_ComponentType" --> "PO_ComponentFocalPlaneArrayType" : FocalPlaneArray
+"PO_ComponentType" --> "PO_ComponentLensAssemblyType" : Lens
+"PO_ComponentType" --> "PO_ComponentApertureType" : Aperture
+"PO_ComponentType" --> "PO_ComponentFilterType" : Filter
+"PO_ComponentType" --> "PO_ComponentProcessingStageType" : ProcessingStage
+"PO_ComponentType" --> "PO_ComponentProductGeneratorType" : ProductGenerator
+"PO_ComponentWindowType" --> "PO_WindowID_Type" : PO_WindowID
+"ID_Type" <|-- "PO_FPA_ChannelID_Type"
+"ID_Type" <|-- "PO_FPA_ID_Type"
+"ID_Type" <|-- "PO_FilterID_Type"
+"PO_GimbalOrientationConstraintControlsStatusType" --> "ComponentID_Type" : ComponentID
+"PO_GimbalOrientationConstraintControlsStatusType" --> "PO_AngleConstraintControlsStatusType" : PitchAngle
+"PO_GimbalOrientationConstraintControlsStatusType" --> "PO_AngleConstraintControlsStatusType" : RollAngle
+"PO_GimbalOrientationConstraintControlsStatusType" --> "PO_AngleConstraintControlsStatusType" : YawAngle
+"PO_GimbalOrientationConstraintControlsStatusType" --> "GimbalAxisControlStatusType" : Axis
+"PO_GimbalOrientationConstraintType" --> "ComponentID_Type" : ComponentID
+"PO_GimbalOrientationConstraintType" --> "PO_AngleConstraintControlsType" : PitchAngle
+"PO_GimbalOrientationConstraintType" --> "PO_AngleConstraintControlsType" : RollAngle
+"PO_GimbalOrientationConstraintType" --> "PO_AngleConstraintControlsType" : YawAngle
+"PO_GimbalOrientationConstraintType" --> "GimbalAxisControlType" : Axis
+"ID_Type" <|-- "PO_LensID_Type"
+"PO_OffsetTrackSettingsType" --> "DoubleMinMaxType" : AzimuthSettings
+"PO_OffsetTrackSettingsType" --> "DoubleMinMaxType" : ElevationSettings
+"PO_OffsetTrackSettingsType" --> "DoubleMinMaxType" : RollSettings
+"PO_OffsetTrackSettingsType" --> "RatesSettingsType" : RatesSettings
+"ID_Type" <|-- "PO_ProcessingStageID_Type"
+"ID_Type" <|-- "PO_ProductGeneratorID_Type"
+"ID_Type" <|-- "PO_ProductGeneratorOutputID_Type"
+"CapabilitySettingsCommandBaseType" <|-- "PO_SettingsCommandMDT"
+"PO_SettingsCommandMDT" --> "PO_SubCapabilitySettingsType" : SubCapability
+"PO_SettingsCommandMDT" --> "PO_TrackSettingsType" : TrackSettings
+"PO_SettingsCommandMDT" --> "PO_ComponentSettingsType" : ComponentSettings
+"PO_SettingsCommandMDT" --> "PO_CollectionConstraintsSettingsType" : CollectionConstraintsSettings
+"PO_SettingsCommandMDT" --> "FOR_Type" : FOR_Settings
+"PO_SettingsCommandMDT" --> "FOR_Type" : ThermalBlankingFOR_Settings
+"MessageType" <|-- "PO_SettingsCommandMT"
+"PO_SettingsCommandMT" --> "PO_SettingsCommandMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "PO_SettingsCommandStatusMDT"
+"MessageType" <|-- "PO_SettingsCommandStatusMT"
+"PO_SettingsCommandStatusMT" --> "PO_SettingsCommandStatusMDT" : MessageData
+"PO_SlantRangeConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_SubCapabilitySettingsType" --> "SubCapabilityID_Type" : SubCapabilityID
+"PO_SubCapabilitySettingsType" --> "PO_TechniqueSettingType" : TechniqueSettings
+"PO_SubCapabilityType" --> "SubCapabilityID_Type" : SubCapabilityID
+"PO_SubCapabilityType" --> "PO_TechniqueCapabilityType" : TechniqueSettings
+"PO_SweepSpeedConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : Intensity
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : Constellation
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : Stride
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : PointIntensity
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : EdgeIntensity
+"PO_TrackCapabilityType" --> "TrackOptionsID_Type" : TrackOptionID
+"PO_TrackCapabilityType" --> "IdentityBasicType" : ATR_Filter
+"PO_TrackCapabilityType" --> "PO_OffsetTrackSettingsType" : OffsetTrackSettings
+"PO_TrackCapabilityType" --> "DurationRangeType" : ObservedEntityThresholdSettings
+"PO_TrackCapabilityType" --> "DoubleMinMaxType" : TrackingRange
+"PO_TrackCapabilityType" --> "PO_CoastSettingOptionsType" : CoastSettingOptions
+"PO_TrackDetailsType" --> "TrackOptionsID_Type" : TrackOptionID
+"PO_TrackDetailsType" --> "IdentityBasicType" : ATR_Filter
+"PO_TrackDetailsType" --> "LOS_VariableB_Type" : OffsetTrackSetting
+"PO_TrackDetailsType" --> "PO_CoastSettingValueType" : CoastSetting
+"PO_TrackDetailsType" --> "PO_AirTargetVolumeType" : BlankingVolume
+"PO_TrackSettingsType" --> "TrackOptionsID_Type" : TrackOptionID
+"PO_TrackSettingsType" --> "IdentityBasicType" : ATR_Filter
+"PO_TrackSettingsType" --> "LOS_VariableB_Type" : OffsetTrackSetting
+"PO_TrackSettingsType" --> "PO_CoastSettingValueType" : CoastSetting
+"PO_TrackSettingsType" --> "PO_AirTargetVolumeType" : BlankingVolume
+"PO_TrackStatusType" --> "TrackOptionsID_Type" : TrackOptionID
+"PO_TrackStatusType" --> "IdentityBasicType" : ATR_FilterStatus
+"PO_TrackStatusType" --> "LOS_VariableB_Type" : OffsetTrackSetting
+"PO_TrackStatusType" --> "PO_CoastSettingValueType" : CoastSetting
+"PO_TrackStatusType" --> "PO_AirTargetVolumeType" : BlankingVolumeStatus
+"ID_Type" <|-- "PO_WindowID_Type"
+"UnsignedIntegerMinMaxType" <|-- "PixelCountSettingsType"
+"PixelScalingSettingsType" --> "DoubleMinMaxType" : GainSettings
+"PixelScalingSettingsType" --> "IntegerMinMaxType" : OffsetSettings
+"PolygonType" --> "PolygonPointChoiceType" : BoundingPolygon
+"PolygonType" --> "PolygonPointChoiceType" : InteriorPolygon
+"ProductOutputType" <|-- "ProductOutputCapabilityImageryType"
+"ProductOutputCapabilityImageryType" --> "PO_ProductGeneratorOutputID_Type" : GeneratorOutputID
+"ProductOutputCapabilityImageryType" --> "CompressionRatioSettingsType" : CompressionRatioSettings
+"ProductOutputCapabilityImageryType" --> "ProductRateSettingsType" : ProductRateSettings
+"ProductOutputCapabilityImageryType" --> "ProductSizeSettingsType" : ProductSizeSettings
+"ProductOutputCapabilityImageryType" --> "ProductResolutionSettingsType" : ProductResolutionSettings
+"ProductOutputCapabilityImageryType" --> "ComponentControllabilityA_Type" : Controllability
+"ProductOutputCapabilityStatusImageryType" --> "PO_ProductGeneratorOutputID_Type" : ProductOutputGeneratorID
+"ProductOutputCapabilityStatusImageryType" --> "ProductResolutionType" : ProductResolution
+"ProductOutputCapabilityStatusImageryType" --> "VideoOutputSettingsType" : VideoOutput
+"ProductOutputCapabilityStatusImageryType" <|-- "ProductOutputStatusType"
+"ProductOutputType" --> "FileFormatType" : ProductFormat
+"UnsignedIntegerMinMaxType" <|-- "ProductRateSettingsType"
+"ProductResolutionSettingsType" --> "PixelCountSettingsType" : PixelHorizontalSettings
+"ProductResolutionSettingsType" --> "PixelCountSettingsType" : PixelVerticalSettings
+"ProductResolutionSettingsType" --> "ColorDepthSettingsType" : ColorDepthSettings
+"UnsignedIntegerMinMaxType" <|-- "ProductSizeSettingsType"
+"RatesSettingsType" --> "DoubleMinMaxType" : AzimuthRateSettings
+"RatesSettingsType" --> "DoubleMinMaxType" : ElevationRateSettings
+"RatesSettingsType" --> "DoubleMinMaxType" : RollRateSettings
+"ResultingActivityType" --> "ActivityID_Type" : ActivityID
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"ID_Type" <|-- "ServiceID_Type"
+"StandardIdentityType" --> "CountryCodeType" : Allegiance
+"ID_Type" <|-- "SubCapabilityID_Type"
+"ID_Type" <|-- "SubsystemID_Type"
+"ID_Type" <|-- "SystemID_Type"
+"ID_Type" <|-- "TrackOptionsID_Type"
+"ID_Type" <|-- "UMID_AudioID_Type"
+"ID_Type" <|-- "UMID_DataID_Type"
+"ID_Type" <|-- "UMID_SystemID_Type"
+"ID_Type" <|-- "UMID_VideoID_Type"
+"ID_Type" <|-- "VersionedID_Type"
+"VideoEncoderSettingsType" --> "ForeignKeyType" : EncodingType
+"VideoEncoderSettingsType" --> "UnsignedIntegerMinMaxType" : QuantMinMax
+"VideoEncoderSettingsType" --> "CropType" : Crop
+"VideoOutputSettingsType" --> "VideoEncoderOutputType" : Output
+"VideoOutputSettingsType" --> "VideoEncoderSettingsType" : EncoderSettings
+@enduml

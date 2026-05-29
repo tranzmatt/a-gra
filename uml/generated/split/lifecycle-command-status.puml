@@ -1,0 +1,2383 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Lifecycle: CommandStatus
+
+class "AMTI_CommandStatus" <<element>> {
+  +type: AMTI_CommandStatusMT
+}
+class "AMTI_SettingsCommandStatus" <<element>> {
+  +type: AMTI_SettingsCommandStatusMT
+}
+class "AO_CommandStatus" <<element>> {
+  +type: AO_CommandStatusMT
+}
+class "AO_SettingsCommandStatus" <<element>> {
+  +type: AO_SettingsCommandStatusMT
+}
+class "ActionCancelCommandStatus" <<element>> {
+  +type: ActionCancelCommandStatusMT
+}
+class "ActionCommandStatus" <<element>> {
+  +type: ActionCommandStatusMT
+}
+class "ActionPlanCommandStatus" <<element>> {
+  +type: ActionPlanCommandStatusMT
+}
+class "ActionPlanValidationCommandStatus" <<element>> {
+  +type: ActionPlanValidationCommandStatusMT
+}
+class "ActivityPlanCommandStatus" <<element>> {
+  +type: ActivityPlanCommandStatusMT
+}
+class "ActivityPlanValidationCommandStatus" <<element>> {
+  +type: ActivityPlanValidationCommandStatusMT
+}
+class "AirSampleCommandStatus" <<element>> {
+  +type: AirSampleCommandStatusMT
+}
+class "AirSampleSettingsCommandStatus" <<element>> {
+  +type: AirSampleSettingsCommandStatusMT
+}
+class "ApprovalManagementCommandStatus" <<element>> {
+  +type: ApprovalManagementCommandStatusMT
+}
+class "COMINT_CommandStatus" <<element>> {
+  +type: COMINT_CommandStatusMT
+}
+class "COMINT_SettingsCommandStatus" <<element>> {
+  +type: COMINT_SettingsCommandStatusMT
+}
+class "CommPointingCommandStatus" <<element>> {
+  +type: CommPointingCommandStatusMT
+}
+class "CommRelayCommandStatus" <<element>> {
+  +type: CommRelayCommandStatusMT
+}
+class "CommRelaySettingsCommandStatus" <<element>> {
+  +type: CommRelaySettingsCommandStatusMT
+}
+class "CommTerminalCommandStatus" <<element>> {
+  +type: CommTerminalCommandStatusMT
+}
+class "CommTerminalPlanActivationCommandStatus" <<element>> {
+  +type: CommTerminalPlanActivationCommandStatusMT
+}
+class "CommTerminalSettingsCommandStatus" <<element>> {
+  +type: CommTerminalSettingsCommandStatusMT
+}
+class "ComponentSettingsCommandStatus" <<element>> {
+  +type: ComponentSettingsCommandStatusMT
+}
+class "ControlInterfacesCommandStatus" <<element>> {
+  +type: ControlInterfacesCommandStatusMT
+}
+class "ControlSourcesCommandStatus" <<element>> {
+  +type: ControlSourcesCommandStatusMT
+}
+class "CryptoCommandStatus" <<element>> {
+  +type: CryptoCommandStatusMT
+}
+class "DMPI_CancelCommandStatus" <<element>> {
+  +type: DMPI_CancelCommandStatusMT
+}
+class "DataPlanActivationCommandStatus" <<element>> {
+  +type: DataPlanActivationCommandStatusMT
+}
+class "DoorCommandStatus" <<element>> {
+  +type: DoorCommandStatusMT
+}
+class "EA_CommandStatus" <<element>> {
+  +type: EA_CommandStatusMT
+}
+class "EA_SettingsCommandStatus" <<element>> {
+  +type: EA_SettingsCommandStatusMT
+}
+class "ESM_CommandStatus" <<element>> {
+  +type: ESM_CommandStatusMT
+}
+class "ESM_SettingsCommandStatus" <<element>> {
+  +type: ESM_SettingsCommandStatusMT
+}
+class "EffectCancelCommandStatus" <<element>> {
+  +type: EffectCancelCommandStatusMT
+}
+class "EffectCommandStatus" <<element>> {
+  +type: EffectCommandStatusMT
+}
+class "EffectPlanCommandStatus" <<element>> {
+  +type: EffectPlanCommandStatusMT
+}
+class "EffectPlanValidationCommandStatus" <<element>> {
+  +type: EffectPlanValidationCommandStatusMT
+}
+class "GatewayCommandStatus" <<element>> {
+  +type: GatewayCommandStatusMT
+}
+class "GatewaySettingsCommandStatus" <<element>> {
+  +type: GatewaySettingsCommandStatusMT
+}
+class "IFF_CommandStatus" <<element>> {
+  +type: IFF_CommandStatusMT
+}
+class "IFF_SettingsCommandStatus" <<element>> {
+  +type: IFF_SettingsCommandStatusMT
+}
+class "IO_PortCommandStatus" <<element>> {
+  +type: IO_PortCommandStatusMT
+}
+class "MA_AcceptableLevelOfRiskCommandStatus" <<element>> {
+  +type: MA_AcceptableLevelOfRiskCommandStatusMT
+}
+class "MA_ActionCommandStatus" <<element>> {
+  +type: MA_ActionCommandStatusMT
+}
+class "MA_ActionPlanCommandStatus" <<element>> {
+  +type: MA_ActionPlanCommandStatusMT
+}
+class "MA_ActivityPlanCommandStatus" <<element>> {
+  +type: MA_ActivityPlanCommandStatusMT
+}
+class "MA_ApprovalManagementCommandStatus" <<element>> {
+  +type: MA_ApprovalManagementCommandStatusMT
+}
+class "MA_COP_ConfigurationSettingsCommandStatus" <<element>> {
+  +type: MA_COP_ConfigurationSettingsCommandStatusMT
+}
+class "MA_ConstraintPriorityListCommandStatus" <<element>> {
+  +type: MA_ConstraintPriorityListCommandStatusMT
+}
+class "MA_EffectPlanCommandStatus" <<element>> {
+  +type: MA_EffectPlanCommandStatusMT
+}
+class "MA_EscortCommandStatus" <<element>> {
+  +type: MA_EscortCommandStatusMT
+}
+class "MA_ExecutionPriorityListCommandStatus" <<element>> {
+  +type: MA_ExecutionPriorityListCommandStatusMT
+}
+class "MA_FlightCommandStatus" <<element>> {
+  +type: MA_FlightCommandStatusMT
+}
+class "MA_IgnoreConstraintCommandStatus" <<element>> {
+  +type: MA_IgnoreConstraintCommandStatusMT
+}
+class "MA_MessagingSubscriptionSettingCommandStatus" <<element>> {
+  +type: MA_MessagingSubscriptionSettingCommandStatusMT
+}
+class "MA_MissionPlanActivationCommandStatus" <<element>> {
+  +type: MA_MissionPlanActivationCommandStatusMT
+}
+class "MA_MissionPlanCommandStatus" <<element>> {
+  +type: MA_MissionPlanCommandStatusMT
+}
+class "MA_MissionPlanValidationCommandStatus" <<element>> {
+  +type: MA_MissionPlanValidationCommandStatusMT
+}
+class "MA_OpCommandStatus" <<element>> {
+  +type: MA_OpCommandStatusMT
+}
+class "MA_OrbitActivityPlanCommandStatus" <<element>> {
+  +type: MA_OrbitActivityPlanCommandStatusMT
+}
+class "MA_PackageManagementCommandStatus" <<element>> {
+  +type: MA_PackageManagementCommandStatusMT
+}
+class "MA_PlanningFunctionSettingsCommandStatus" <<element>> {
+  +type: MA_PlanningFunctionSettingsCommandStatusMT
+}
+class "MA_ResponsePlanCommandStatus" <<element>> {
+  +type: MA_ResponsePlanCommandStatusMT
+}
+class "MA_RouteActivityPlanCommandStatus" <<element>> {
+  +type: MA_RouteActivityPlanCommandStatusMT
+}
+class "MA_RulesOfEngagementCommandStatus" <<element>> {
+  +type: MA_RulesOfEngagementCommandStatusMT
+}
+class "MA_TaskCommandStatus" <<element>> {
+  +type: MA_TaskCommandStatusMT
+}
+class "MA_TaskPlanCommandStatus" <<element>> {
+  +type: MA_TaskPlanCommandStatusMT
+}
+class "MA_TxDataPayloadCommandStatus" <<element>> {
+  +type: MA_TxDataPayloadCommandStatusMT
+}
+class "MissionPlanActivationCommandStatus" <<element>> {
+  +type: MissionPlanActivationCommandStatusMT
+}
+class "MissionPlanCommandStatus" <<element>> {
+  +type: MissionPlanCommandStatusMT
+}
+class "MissionPlanValidationCommandStatus" <<element>> {
+  +type: MissionPlanValidationCommandStatusMT
+}
+class "OpaqueSettingsCommandStatus" <<element>> {
+  +type: OpaqueSettingsCommandStatusMT
+}
+class "OperatorActionCommandStatus" <<element>> {
+  +type: OperatorActionCommandStatusMT
+}
+class "OrbitActivityPlanCommandStatus" <<element>> {
+  +type: OrbitActivityPlanCommandStatusMT
+}
+class "OrbitActivityPlanValidationCommandStatus" <<element>> {
+  +type: OrbitActivityPlanValidationCommandStatusMT
+}
+class "OrbitPlanCommandStatus" <<element>> {
+  +type: OrbitPlanCommandStatusMT
+}
+class "OrbitPlanValidationCommandStatus" <<element>> {
+  +type: OrbitPlanValidationCommandStatusMT
+}
+class "PO_CommandStatus" <<element>> {
+  +type: PO_CommandStatusMT
+}
+class "PO_SettingsCommandStatus" <<element>> {
+  +type: PO_SettingsCommandStatusMT
+}
+class "PlanningFunctionSettingsCommandStatus" <<element>> {
+  +type: PlanningFunctionSettingsCommandStatusMT
+}
+class "RF_ControlCommandStatus" <<element>> {
+  +type: RF_ControlCommandStatusMT
+}
+class "RF_ThreadInstanceSetupCommandStatus" <<element>> {
+  +type: RF_ThreadInstanceSetupCommandStatusMT
+}
+class "RadarAltimeterCommandStatus" <<element>> {
+  +type: RadarAltimeterCommandStatusMT
+}
+class "RadarAltimeterSettingsCommandStatus" <<element>> {
+  +type: RadarAltimeterSettingsCommandStatusMT
+}
+class "RefuelCommandStatus" <<element>> {
+  +type: RefuelCommandStatusMT
+}
+class "RefuelSettingsCommandStatus" <<element>> {
+  +type: RefuelSettingsCommandStatusMT
+}
+class "RequirementOptionsCommandStatus" <<element>> {
+  +type: RequirementOptionsCommandStatusMT
+}
+class "ResponseCancelCommandStatus" <<element>> {
+  +type: ResponseCancelCommandStatusMT
+}
+class "ResponseCommandStatus" <<element>> {
+  +type: ResponseCommandStatusMT
+}
+class "ResponsePlanCommandStatus" <<element>> {
+  +type: ResponsePlanCommandStatusMT
+}
+class "ResponsePlanValidationCommandStatus" <<element>> {
+  +type: ResponsePlanValidationCommandStatusMT
+}
+class "RouteActivityPlanCommandStatus" <<element>> {
+  +type: RouteActivityPlanCommandStatusMT
+}
+class "RouteActivityPlanValidationCommandStatus" <<element>> {
+  +type: RouteActivityPlanValidationCommandStatusMT
+}
+class "RoutePlanCommandStatus" <<element>> {
+  +type: RoutePlanCommandStatusMT
+}
+class "RoutePlanValidationCommandStatus" <<element>> {
+  +type: RoutePlanValidationCommandStatusMT
+}
+class "SAR_CommandStatus" <<element>> {
+  +type: SAR_CommandStatusMT
+}
+class "SAR_SettingsCommandStatus" <<element>> {
+  +type: SAR_SettingsCommandStatusMT
+}
+class "SMTI_CommandStatus" <<element>> {
+  +type: SMTI_CommandStatusMT
+}
+class "SMTI_SettingsCommandStatus" <<element>> {
+  +type: SMTI_SettingsCommandStatusMT
+}
+class "ServiceLifecycleCommandStatus" <<element>> {
+  +type: ServiceLifecycleCommandStatusMT
+}
+class "ServiceSettingsCommandStatus" <<element>> {
+  +type: ServiceSettingsCommandStatusMT
+}
+class "StoreManagementCommandStatus" <<element>> {
+  +type: StoreManagementCommandStatusMT
+}
+class "StrikeCommandStatus" <<element>> {
+  +type: StrikeCommandStatusMT
+}
+class "StrikeSettingsCommandStatus" <<element>> {
+  +type: StrikeSettingsCommandStatusMT
+}
+class "SubsystemBIT_CommandStatus" <<element>> {
+  +type: SubsystemBIT_CommandStatusMT
+}
+class "SubsystemCalibrationCommandStatus" <<element>> {
+  +type: SubsystemCalibrationCommandStatusMT
+}
+class "SubsystemEraseCommandStatus" <<element>> {
+  +type: SubsystemEraseCommandStatusMT
+}
+class "SubsystemMaintenanceCommandStatus" <<element>> {
+  +type: SubsystemMaintenanceCommandStatusMT
+}
+class "SubsystemSettingsCommandStatus" <<element>> {
+  +type: SubsystemSettingsCommandStatusMT
+}
+class "SubsystemStateCommandStatus" <<element>> {
+  +type: SubsystemStateCommandStatusMT
+}
+class "TaskCancelCommandStatus" <<element>> {
+  +type: TaskCancelCommandStatusMT
+}
+class "TaskCommandStatus" <<element>> {
+  +type: TaskCommandStatusMT
+}
+class "TaskPlanCommandStatus" <<element>> {
+  +type: TaskPlanCommandStatusMT
+}
+class "TaskPlanValidationCommandStatus" <<element>> {
+  +type: TaskPlanValidationCommandStatusMT
+}
+class "TurretCommandStatus" <<element>> {
+  +type: TurretCommandStatusMT
+}
+class "WeatherRadarCommandStatus" <<element>> {
+  +type: WeatherRadarCommandStatusMT
+}
+class "WeatherRadarSettingsCommandStatus" <<element>> {
+  +type: WeatherRadarSettingsCommandStatusMT
+}
+
+class "AMTI_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "AMTI_CommandStatusMT" <<complexType>> {
+  +MessageData: AMTI_CommandStatusMDT
+}
+class "AMTI_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "AMTI_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: AMTI_SettingsCommandStatusMDT
+}
+class "AO_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "AO_CommandStatusMT" <<complexType>> {
+  +MessageData: AO_CommandStatusMDT
+}
+class "AO_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "AO_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: AO_SettingsCommandStatusMDT
+}
+class "ActionCancelCommandStatusMDT" <<complexType>> {
+  +SourceIdentifier: SourceID_ChoiceType
+}
+class "ActionCancelCommandStatusMT" <<complexType>> {
+  +MessageData: ActionCancelCommandStatusMDT
+}
+class "ActionCommandStatusMDT" <<complexType>> {
+  --
+}
+class "ActionCommandStatusMT" <<complexType>> {
+  +MessageData: ActionCommandStatusMDT
+}
+class "ActionID_Type" <<complexType>> {
+  --
+}
+class "ActionPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "ActionPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: ActionPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: ActionPlanningResultType
+  +ResultingPlanID: ActionPlanID_Type
+}
+class "ActionPlanCommandStatusMT" <<complexType>> {
+  +MessageData: ActionPlanCommandStatusMDT
+}
+class "ActionPlanID_Type" <<complexType>> {
+  --
+}
+class "ActionPlanValidationCommandStatusMDT" <<complexType>> {
+  +ActionPlanValidationID: ActionPlanValidationID_Type
+}
+class "ActionPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: ActionPlanValidationCommandStatusMDT
+}
+class "ActionPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "ActionPlanningResultType" <<complexType>> {
+  +ActionID: ActionID_Type
+}
+class "ActivityID_Type" <<complexType>> {
+  --
+}
+class "ActivityPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "ActivityPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: ActivityPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ActivityPlanningResult: RequirementPlanningResultType
+  +ResultingPlanID: ActivityPlanID_Type
+}
+class "ActivityPlanCommandStatusMT" <<complexType>> {
+  +MessageData: ActivityPlanCommandStatusMDT
+}
+class "ActivityPlanID_Type" <<complexType>> {
+  --
+}
+class "ActivityPlanValidationCommandStatusMDT" <<complexType>> {
+  +ActivityPlanValidationID: ActivityPlanValidationID_Type
+}
+class "ActivityPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: ActivityPlanValidationCommandStatusMDT
+}
+class "ActivityPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "AirSampleCommandStatusMDT" <<complexType>> {
+  --
+}
+class "AirSampleCommandStatusMT" <<complexType>> {
+  +MessageData: AirSampleCommandStatusMDT
+}
+class "AirSampleSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "AirSampleSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: AirSampleSettingsCommandStatusMDT
+}
+class "ApprovalManagementCommandStatusMDT" <<complexType>> {
+  +ApprovalManagementCommandStatus: ProcessingStatusEnum
+  +CompletionStatus: CompletionStatusType
+  +IncompleteItem: IncompleteProcessingType
+  +ApprovalRequestID: RequestID_Type
+}
+class "ApprovalManagementCommandStatusMT" <<complexType>> {
+  +MessageData: ApprovalManagementCommandStatusMDT
+}
+class "AreaChoiceType" <<complexType>> {
+  --
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "BoundaryType" <<complexType>> {
+  --
+}
+class "COMINT_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "COMINT_CommandStatusMT" <<complexType>> {
+  +MessageData: COMINT_CommandStatusMDT
+}
+class "COMINT_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "COMINT_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: COMINT_SettingsCommandStatusMDT
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityCommandStatusBaseType" <<complexType>> {
+  +Activity: ResultingActivityType
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CapabilitySettingsCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "CommPointingCommandStatusMDT" <<complexType>> {
+  +CommPointingID: CommPointingID_Type
+  +PointingVectorCommandStatus: PointingVectorStatusEnum
+}
+class "CommPointingCommandStatusMT" <<complexType>> {
+  +MessageData: CommPointingCommandStatusMDT
+}
+class "CommPointingID_Type" <<complexType>> {
+  --
+}
+class "CommRelayCommandStatusMDT" <<complexType>> {
+  --
+}
+class "CommRelayCommandStatusMT" <<complexType>> {
+  +MessageData: CommRelayCommandStatusMDT
+}
+class "CommRelaySettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "CommRelaySettingsCommandStatusMT" <<complexType>> {
+  +MessageData: CommRelaySettingsCommandStatusMDT
+}
+class "CommScheduleAllocationID_Type" <<complexType>> {
+  --
+}
+class "CommTerminalCommandStatusMDT" <<complexType>> {
+  --
+}
+class "CommTerminalCommandStatusMT" <<complexType>> {
+  +MessageData: CommTerminalCommandStatusMDT
+}
+class "CommTerminalPlanActivationCommandStatusMDT" <<complexType>> {
+  +PlanActivationCommandStatus: PlanActivationStateEnum
+}
+class "CommTerminalPlanActivationCommandStatusMT" <<complexType>> {
+  +MessageData: CommTerminalPlanActivationCommandStatusMDT
+}
+class "CommTerminalSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "CommTerminalSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: CommTerminalSettingsCommandStatusMDT
+}
+class "CommandID_Type" <<complexType>> {
+  --
+}
+class "CommandStatusBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+}
+class "CompletionStatusType" <<complexType>> {
+  +EstimatedTimeComplete: DateTimeType
+  +EstimatedPercentComplete: PercentType
+  +ActualTimeStarted: DateTimeType
+  +ActualTimeComplete: DateTimeType
+  +Description: VisibleString1024Type
+}
+class "ComponentSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "ComponentSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: ComponentSettingsCommandStatusMDT
+}
+class "ControlInterfacesCommandStatusMDT" <<complexType>> {
+  --
+}
+class "ControlInterfacesCommandStatusMT" <<complexType>> {
+  +MessageData: ControlInterfacesCommandStatusMDT
+}
+class "ControlSourcesCommandStatusMDT" <<complexType>> {
+  --
+}
+class "ControlSourcesCommandStatusMT" <<complexType>> {
+  +MessageData: ControlSourcesCommandStatusMDT
+}
+class "CryptoCommandStatusMDT" <<complexType>> {
+  --
+}
+class "CryptoCommandStatusMT" <<complexType>> {
+  +MessageData: CryptoCommandStatusMDT
+}
+class "DMPI_CancelCommandStatusMDT" <<complexType>> {
+  +StateReason: CannotComplyType
+  +SourceID: SourceID_ChoiceType
+}
+class "DMPI_CancelCommandStatusMT" <<complexType>> {
+  +MessageData: DMPI_CancelCommandStatusMDT
+}
+class "DataPlanActivationCommandStatusMDT" <<complexType>> {
+  +PlanActivationCommandStatus: PlanActivationStateEnum
+}
+class "DataPlanActivationCommandStatusMT" <<complexType>> {
+  +MessageData: DataPlanActivationCommandStatusMDT
+}
+class "DoorCommandStatusMDT" <<complexType>> {
+  --
+}
+class "DoorCommandStatusMT" <<complexType>> {
+  +MessageData: DoorCommandStatusMDT
+}
+class "EA_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "EA_CommandStatusMT" <<complexType>> {
+  +MessageData: EA_CommandStatusMDT
+}
+class "EA_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "EA_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: EA_SettingsCommandStatusMDT
+}
+class "ESM_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "ESM_CommandStatusMT" <<complexType>> {
+  +MessageData: ESM_CommandStatusMDT
+}
+class "ESM_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "ESM_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: ESM_SettingsCommandStatusMDT
+}
+class "EffectCancelCommandStatusMDT" <<complexType>> {
+  +SourceIdentifier: SourceID_ChoiceType
+}
+class "EffectCancelCommandStatusMT" <<complexType>> {
+  +MessageData: EffectCancelCommandStatusMDT
+}
+class "EffectCommandStatusMDT" <<complexType>> {
+  --
+}
+class "EffectCommandStatusMT" <<complexType>> {
+  +MessageData: EffectCommandStatusMDT
+}
+class "EffectID_Type" <<complexType>> {
+  --
+}
+class "EffectPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "EffectPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: EffectPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: EffectPlanningResultType
+  +ResultingPlanID: EffectPlanID_Type
+}
+class "EffectPlanCommandStatusMT" <<complexType>> {
+  +MessageData: EffectPlanCommandStatusMDT
+}
+class "EffectPlanID_Type" <<complexType>> {
+  --
+}
+class "EffectPlanValidationCommandStatusMDT" <<complexType>> {
+  +EffectPlanValidationID: EffectPlanValidationID_Type
+}
+class "EffectPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: EffectPlanValidationCommandStatusMDT
+}
+class "EffectPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "EffectPlanningResultType" <<complexType>> {
+  +EffectID: EffectID_Type
+}
+class "EnduranceBaseType" <<complexType>> {
+  +Fuel: MassType
+  +Duration: DurationType
+  +DurationEnd: DateTimeType
+  +Percent: PercentType
+}
+class "EnduranceFootprintType" <<complexType>> {
+  +Boundary: BoundaryType
+  +ReferenceAltitude: AltitudeType
+  +Duration: DurationType
+}
+class "EnduranceRemainingType" <<complexType>> {
+  +EnduranceRemaining: EnduranceType
+  +LogicalOperator: EqualityExpressionEnum
+}
+class "EnduranceType" <<complexType>> {
+  +Footprint: EnduranceFootprintType
+}
+class "EntityID_Type" <<complexType>> {
+  --
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "GatewayCommandStatusMDT" <<complexType>> {
+  --
+}
+class "GatewayCommandStatusMT" <<complexType>> {
+  +MessageData: GatewayCommandStatusMDT
+}
+class "GatewaySettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "GatewaySettingsCommandStatusMT" <<complexType>> {
+  +MessageData: GatewaySettingsCommandStatusMDT
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "IFF_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "IFF_CommandStatusMT" <<complexType>> {
+  +MessageData: IFF_CommandStatusMDT
+}
+class "IFF_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "IFF_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: IFF_SettingsCommandStatusMDT
+}
+class "IO_PortCommandStatusMDT" <<complexType>> {
+  --
+}
+class "IO_PortCommandStatusMT" <<complexType>> {
+  +MessageData: IO_PortCommandStatusMDT
+}
+class "IncompleteProcessingType" <<complexType>> {
+  +IncompleteItemID: ID_Type
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+}
+class "LAR_DetailsType" <<complexType>> {
+  +Composite: boolean
+  +WeaponTargetPairing: WeaponTargetPairingChoiceType
+  +PlannedReleaseConditions: PlannedReleaseConditionsType
+  +WeaponRoute: RoutePlanReferenceType
+}
+class "LAR_ID_Type" <<complexType>> {
+  --
+}
+class "LAR_MDT" <<complexType>> {
+  +LAR_ID: LAR_ID_Type
+  +RequestID: RequestID_Type
+  +CapabilityID: CapabilityID_Type
+  +LAR_Type: LAR_RelationEnum
+  +Basis: LAR_BasisEnum
+  +GeneratedByWeapon: boolean
+  +Region: ZoneType
+  +LAR_Details: LAR_DetailsType
+}
+class "MA_AcceptableLevelOfRiskCommandStatusMDT" <<complexType>> {
+  +AppliesToIDs: MA_PackageSystemType
+}
+class "MA_AcceptableLevelOfRiskCommandStatusMT" <<complexType>> {
+  +MessageData: MA_AcceptableLevelOfRiskCommandStatusMDT
+}
+class "MA_ActionCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_ActionCommandStatusMT" <<complexType>> {
+  +MessageData: MA_ActionCommandStatusMDT
+}
+class "MA_ActionPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: ActionPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: MA_ActionPlanningResultType
+  +ResultingPlanID: ActionPlanID_Type
+}
+class "MA_ActionPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_ActionPlanCommandStatusMDT
+}
+class "MA_ActionPlanningResultType" <<complexType>> {
+  +ActionID: ActionID_Type
+}
+class "MA_ActivityPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: ActivityPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ActivityPlanningResult: MA_RequirementPlanningResultType
+  +ResultingPlanID: ActivityPlanID_Type
+}
+class "MA_ActivityPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_ActivityPlanCommandStatusMDT
+}
+class "MA_ApprovalManagementCommandStatusMDT" <<complexType>> {
+  +ApprovalManagementCommandStatus: ProcessingStatusEnum
+  +CompletionStatus: CompletionStatusType
+  +IncompleteItem: IncompleteProcessingType
+  +ApprovalRequestID: RequestID_Type
+}
+class "MA_ApprovalManagementCommandStatusMT" <<complexType>> {
+  +MessageData: MA_ApprovalManagementCommandStatusMDT
+}
+class "MA_COP_ConfigurationSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_COP_ConfigurationSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: MA_COP_ConfigurationSettingsCommandStatusMDT
+}
+class "MA_CannotComplyDetailsType" <<complexType>> {
+  +ValidationResult: MA_ValidationResultEnum
+  +ValidationResultReason: MA_ValidationResultReasonType
+}
+class "MA_ConstraintPriorityListCommandStatusMDT" <<complexType>> {
+  +AppliesToIDs: MA_PackageSystemType
+}
+class "MA_ConstraintPriorityListCommandStatusMT" <<complexType>> {
+  +MessageData: MA_ConstraintPriorityListCommandStatusMDT
+}
+class "MA_CurveSectionType" <<complexType>> {
+  +StartCurveParameterValue: DoubleNonNegativeType
+  +EndCurveParameterValue: DoubleNonNegativeType
+  +SegmentNumber: int
+}
+class "MA_EffectPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: EffectPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: MA_EffectPlanningResultType
+  +ResultingPlanID: EffectPlanID_Type
+}
+class "MA_EffectPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_EffectPlanCommandStatusMDT
+}
+class "MA_EffectPlanningResultType" <<complexType>> {
+  +EffectID: EffectID_Type
+}
+class "MA_EscortCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_EscortCommandStatusMT" <<complexType>> {
+  +MessageData: MA_EscortCommandStatusMDT
+}
+class "MA_ExecutionPriorityListCommandStatusMDT" <<complexType>> {
+  +AppliesToIDs: MA_PackageSystemType
+}
+class "MA_ExecutionPriorityListCommandStatusMT" <<complexType>> {
+  +MessageData: MA_ExecutionPriorityListCommandStatusMDT
+}
+class "MA_FlightCommandStatusMDT" <<complexType>> {
+  +CannotComplyDetails: MA_CannotComplyDetailsType
+}
+class "MA_FlightCommandStatusMT" <<complexType>> {
+  +MessageData: MA_FlightCommandStatusMDT
+}
+class "MA_IgnoreConstraintCommandStatusMDT" <<complexType>> {
+  +AppliesToIDs: MA_PackageSystemType
+}
+class "MA_IgnoreConstraintCommandStatusMT" <<complexType>> {
+  +MessageData: MA_IgnoreConstraintCommandStatusMDT
+}
+class "MA_InsufficientEnduranceType" <<complexType>> {
+  +EnduranceRemaining: EnduranceRemainingType
+  +EnduranceRequired: EnduranceType
+}
+class "MA_MessagingSubscriptionSettingCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_MessagingSubscriptionSettingCommandStatusMT" <<complexType>> {
+  +MessageData: MA_MessagingSubscriptionSettingCommandStatusMDT
+}
+class "MA_MissionPlanActivationCommandStatusMDT" <<complexType>> {
+  +CommandID: MissionPlanActivationCommandID_Type
+  +ActivationStatus: PlanCommandStatusType
+  +ActivationCommandByState: MA_PlanActivationStatusType
+}
+class "MA_MissionPlanActivationCommandStatusMT" <<complexType>> {
+  +MessageData: MA_MissionPlanActivationCommandStatusMDT
+}
+class "MA_MissionPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: MissionPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: MA_RequirementPlanningResultType
+  +ResultingPlanIdentifier: MA_PlansReferenceType
+}
+class "MA_MissionPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_MissionPlanCommandStatusMDT
+}
+class "MA_MissionPlanValidationCommandStatusMDT" <<complexType>> {
+  +MissionPlanValidationID: MissionPlanValidationID_Type
+}
+class "MA_MissionPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: MA_MissionPlanValidationCommandStatusMDT
+}
+class "MA_OpCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_OpCommandStatusMT" <<complexType>> {
+  +MessageData: MA_OpCommandStatusMDT
+}
+class "MA_OpPlanID_Type" <<complexType>> {
+  --
+}
+class "MA_OrbitActivityPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: OrbitActivityPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ActivityPlanningResult: MA_RequirementPlanningResultType
+  +ResultingPlanID: OrbitActivityPlanID_Type
+}
+class "MA_OrbitActivityPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_OrbitActivityPlanCommandStatusMDT
+}
+class "MA_PackageManagementCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_PackageManagementCommandStatusMT" <<complexType>> {
+  +MessageData: MA_PackageManagementCommandStatusMDT
+}
+class "MA_PackageSystemType" <<complexType>> {
+  --
+}
+class "MA_PlanActivationStatusType" <<complexType>> {
+  +PlanActivationCommandState: PlanActivationStateEnum
+  +Plans: MA_PlansReferenceType
+}
+class "MA_PlanReferenceType" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+  +TaskPlanID: TaskPlanID_Type
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +RoutePlanID: RoutePlanID_Type
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +CommScheduleAllocationID: CommScheduleAllocationID_Type
+  +ActivityPlanID: ActivityPlanID_Type
+  +EffectPlanID: EffectPlanID_Type
+  +ActionPlanID: ActionPlanID_Type
+  +ResponsePlanID: ResponsePlanID_Type
+  +OpPlanID: MA_OpPlanID_Type
+}
+class "MA_PlanningFunctionSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_PlanningFunctionSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: MA_PlanningFunctionSettingsCommandStatusMDT
+}
+class "MA_PlansReferenceBaseType" <<complexType>> {
+  +TaskPlanID: TaskPlanID_Type
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +RoutePlanID: RoutePlanID_Type
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +ActivityPlanID: ActivityPlanID_Type
+  +EffectPlanID: EffectPlanID_Type
+  +ActionPlanID: ActionPlanID_Type
+  +ResponsePlanID: ResponsePlanID_Type
+  +OpPlanID: MA_OpPlanID_Type
+}
+class "MA_PlansReferenceType" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+}
+class "MA_RequirementPlanningResultBaseType" <<complexType>> {
+  +PlanningResult: PlanningResultEnum
+  +SystemID: SystemID_Type
+  +AssociatedPlans: MA_PlanReferenceType
+  +NotAllocatedReason: UnallocatedReasonType
+}
+class "MA_RequirementPlanningResultType" <<complexType>> {
+  +RequirementID: RequirementInstanceID_ChoiceType
+}
+class "MA_ResponsePlanCommandStatusMDT" <<complexType>> {
+  +CommandID: ResponsePlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: MA_ResponsePlanningResultType
+  +ResultingPlanID: ResponsePlanID_Type
+}
+class "MA_ResponsePlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_ResponsePlanCommandStatusMDT
+}
+class "MA_ResponsePlanningResultType" <<complexType>> {
+  +ResponseID: ResponseID_Type
+}
+class "MA_RouteActivityPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: RouteActivityPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ActivityPlanningResult: MA_RequirementPlanningResultType
+  +ResultingPlanID: RouteActivityPlanID_Type
+}
+class "MA_RouteActivityPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_RouteActivityPlanCommandStatusMDT
+}
+class "MA_RulesOfEngagementCommandStatusMDT" <<complexType>> {
+  +AppliesToIDs: MA_PackageSystemType
+}
+class "MA_RulesOfEngagementCommandStatusMT" <<complexType>> {
+  +MessageData: MA_RulesOfEngagementCommandStatusMDT
+}
+class "MA_TaskCommandStatusMDT" <<complexType>> {
+  --
+}
+class "MA_TaskCommandStatusMT" <<complexType>> {
+  +MessageData: MA_TaskCommandStatusMDT
+}
+class "MA_TaskPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: TaskPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: MA_TaskPlanningResultType
+  +ResultingPlanID: TaskPlanID_Type
+}
+class "MA_TaskPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MA_TaskPlanCommandStatusMDT
+}
+class "MA_TaskPlanningResultType" <<complexType>> {
+  +TaskID: TaskID_Type
+}
+class "MA_TransmissionStatusType" <<complexType>> {
+  +TransmissionStatus: MA_TransmissionStatusEnum
+  +SpecificDestinationID: SystemID_Type
+}
+class "MA_TxDataPayloadCommandStatusMDT" <<complexType>> {
+  +DestinationTransmissionStatus: MA_TransmissionStatusType
+}
+class "MA_TxDataPayloadCommandStatusMT" <<complexType>> {
+  +MessageData: MA_TxDataPayloadCommandStatusMDT
+}
+class "MA_ValidationResultReasonType" <<complexType>> {
+  +InsufficientEndurance: MA_InsufficientEnduranceType
+  +PerformanceConstraint: MA_PerformanceConstraintEnum
+  +RouteValidationInvalidPath: RouteValidationInvalidPathType
+  +CurveValidationInvalidSection: MA_CurveSectionType
+  +GeofenceConstraintID: OpZoneID_Type
+  +EntityConstraintID: EntityID_Type
+  +TerrainConstraint: Point4D_Type
+  +CapabilityID: CapabilityID_Type
+  +Description: VisibleString1024Type
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "MissionPlanActivationCommandID_Type" <<complexType>> {
+  --
+}
+class "MissionPlanActivationCommandStatusMDT" <<complexType>> {
+  +CommandID: MissionPlanActivationCommandID_Type
+  +ActivationStatus: PlanCommandStatusType
+  +ActivationCommandByState: PlanActivationStatusType
+}
+class "MissionPlanActivationCommandStatusMT" <<complexType>> {
+  +MessageData: MissionPlanActivationCommandStatusMDT
+}
+class "MissionPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "MissionPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: MissionPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: RequirementPlanningResultType
+  +ResultingPlanIdentifier: PlansReferenceType
+}
+class "MissionPlanCommandStatusMT" <<complexType>> {
+  +MessageData: MissionPlanCommandStatusMDT
+}
+class "MissionPlanID_Type" <<complexType>> {
+  --
+}
+class "MissionPlanValidationCommandStatusMDT" <<complexType>> {
+  +MissionPlanValidationID: MissionPlanValidationID_Type
+}
+class "MissionPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: MissionPlanValidationCommandStatusMDT
+}
+class "MissionPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OpZoneID_Type" <<complexType>> {
+  --
+}
+class "OpaqueSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "OpaqueSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: OpaqueSettingsCommandStatusMDT
+}
+class "OperatorActionCommandStatusMDT" <<complexType>> {
+  --
+}
+class "OperatorActionCommandStatusMT" <<complexType>> {
+  +MessageData: OperatorActionCommandStatusMDT
+}
+class "OrbitActivityPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "OrbitActivityPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: OrbitActivityPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ActivityPlanningResult: RequirementPlanningResultType
+  +ResultingPlanID: OrbitActivityPlanID_Type
+}
+class "OrbitActivityPlanCommandStatusMT" <<complexType>> {
+  +MessageData: OrbitActivityPlanCommandStatusMDT
+}
+class "OrbitActivityPlanID_Type" <<complexType>> {
+  --
+}
+class "OrbitActivityPlanValidationCommandStatusMDT" <<complexType>> {
+  +OrbitActivityPlanValidationID: OrbitActivityPlanValidationID_Type
+}
+class "OrbitActivityPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: OrbitActivityPlanValidationCommandStatusMDT
+}
+class "OrbitActivityPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "OrbitPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "OrbitPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: OrbitPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ResultingPlanID: OrbitPlanID_Type
+}
+class "OrbitPlanCommandStatusMT" <<complexType>> {
+  +MessageData: OrbitPlanCommandStatusMDT
+}
+class "OrbitPlanID_Type" <<complexType>> {
+  --
+}
+class "OrbitPlanValidationCommandStatusMDT" <<complexType>> {
+  +OrbitPlanValidationID: OrbitPlanValidationID_Type
+}
+class "OrbitPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: OrbitPlanValidationCommandStatusMDT
+}
+class "OrbitPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "OrientationType" <<complexType>> {
+  +Yaw: AngleType
+  +Pitch: AngleHalfType
+  +Roll: AngleType
+  +Timestamp: DateTimeType
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PO_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "PO_CommandStatusMT" <<complexType>> {
+  +MessageData: PO_CommandStatusMDT
+}
+class "PO_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "PO_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: PO_SettingsCommandStatusMDT
+}
+class "PathID_Type" <<complexType>> {
+  --
+}
+class "PlanActivationStatusType" <<complexType>> {
+  +PlanActivationCommandState: PlanActivationStateEnum
+  +Plans: PlansReferenceType
+}
+class "PlanCommandStatusType" <<complexType>> {
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+  +CommandStatus: ProcessingStatusEnum
+  +CompletionStatus: CompletionStatusType
+  +IncompleteItem: IncompleteProcessingType
+}
+class "PlanReferenceType" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+  +TaskPlanID: TaskPlanID_Type
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +RoutePlanID: RoutePlanID_Type
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +CommScheduleAllocationID: CommScheduleAllocationID_Type
+  +ActivityPlanID: ActivityPlanID_Type
+  +EffectPlanID: EffectPlanID_Type
+  +ActionPlanID: ActionPlanID_Type
+  +ResponsePlanID: ResponsePlanID_Type
+}
+class "PlannedReleaseConditionsType" <<complexType>> {
+  +Position: Point3D_Type
+  +Velocity: Velocity2D_Type
+  +Orientation: OrientationType
+  +WindVelocity: Velocity2D_Type
+  +AssociatedRoutePlan: RoutePlanReferenceType
+}
+class "PlanningFunctionSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "PlanningFunctionSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: PlanningFunctionSettingsCommandStatusMDT
+}
+class "PlansReferenceBaseType" <<complexType>> {
+  +TaskPlanID: TaskPlanID_Type
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +RoutePlanID: RoutePlanID_Type
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +ActivityPlanID: ActivityPlanID_Type
+  +EffectPlanID: EffectPlanID_Type
+  +ActionPlanID: ActionPlanID_Type
+  +ResponsePlanID: ResponsePlanID_Type
+}
+class "PlansReferenceType" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+}
+class "Point3D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+}
+class "Point4D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+  +DepthCategory: Link16DepthEnum
+  +HAE_Adjustment: DistanceOffsetType
+}
+class "RF_ControlCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RF_ControlCommandStatusMT" <<complexType>> {
+  +MessageData: RF_ControlCommandStatusMDT
+}
+class "RF_ThreadInstanceSetupCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RF_ThreadInstanceSetupCommandStatusMT" <<complexType>> {
+  +MessageData: RF_ThreadInstanceSetupCommandStatusMDT
+}
+class "RadarAltimeterCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RadarAltimeterCommandStatusMT" <<complexType>> {
+  +MessageData: RadarAltimeterCommandStatusMDT
+}
+class "RadarAltimeterSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RadarAltimeterSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: RadarAltimeterSettingsCommandStatusMDT
+}
+class "RefuelCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RefuelCommandStatusMT" <<complexType>> {
+  +MessageData: RefuelCommandStatusMDT
+}
+class "RefuelSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RefuelSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: RefuelSettingsCommandStatusMDT
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RequestID_Type" <<complexType>> {
+  --
+}
+class "RequirementInstanceID_ChoiceType" <<complexType>> {
+  --
+}
+class "RequirementOptionsCommandStatusMDT" <<complexType>> {
+  +CommandID: CommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ResultingOptionsID: RequirementOptionsID_Type
+}
+class "RequirementOptionsCommandStatusMT" <<complexType>> {
+  +MessageData: RequirementOptionsCommandStatusMDT
+}
+class "RequirementOptionsID_Type" <<complexType>> {
+  --
+}
+class "RequirementPlanningResultBaseType" <<complexType>> {
+  +PlanningResult: PlanningResultEnum
+  +SystemID: SystemID_Type
+  +AssociatedPlans: PlanReferenceType
+  +NotAllocatedReason: UnallocatedReasonType
+}
+class "RequirementPlanningResultType" <<complexType>> {
+  +RequirementID: RequirementInstanceID_ChoiceType
+}
+class "ResponseCancelCommandStatusMDT" <<complexType>> {
+  +SourceIdentifier: SourceID_ChoiceType
+}
+class "ResponseCancelCommandStatusMT" <<complexType>> {
+  +MessageData: ResponseCancelCommandStatusMDT
+}
+class "ResponseCommandStatusMDT" <<complexType>> {
+  --
+}
+class "ResponseCommandStatusMT" <<complexType>> {
+  +MessageData: ResponseCommandStatusMDT
+}
+class "ResponseID_Type" <<complexType>> {
+  +OptionIndex: unsignedInt
+}
+class "ResponsePlanCommandID_Type" <<complexType>> {
+  --
+}
+class "ResponsePlanCommandStatusMDT" <<complexType>> {
+  +CommandID: ResponsePlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: ResponsePlanningResultType
+  +ResultingPlanID: ResponsePlanID_Type
+}
+class "ResponsePlanCommandStatusMT" <<complexType>> {
+  +MessageData: ResponsePlanCommandStatusMDT
+}
+class "ResponsePlanID_Type" <<complexType>> {
+  --
+}
+class "ResponsePlanValidationCommandStatusMDT" <<complexType>> {
+  +ResponsePlanValidationID: ResponsePlanValidationID_Type
+}
+class "ResponsePlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: ResponsePlanValidationCommandStatusMDT
+}
+class "ResponsePlanValidationID_Type" <<complexType>> {
+  --
+}
+class "ResponsePlanningResultType" <<complexType>> {
+  +ResponseID: ResponseID_Type
+}
+class "ResultingActivityType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +NewActivity: boolean
+}
+class "RouteActivityPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "RouteActivityPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: RouteActivityPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ActivityPlanningResult: RequirementPlanningResultType
+  +ResultingPlanID: RouteActivityPlanID_Type
+}
+class "RouteActivityPlanCommandStatusMT" <<complexType>> {
+  +MessageData: RouteActivityPlanCommandStatusMDT
+}
+class "RouteActivityPlanID_Type" <<complexType>> {
+  --
+}
+class "RouteActivityPlanValidationCommandStatusMDT" <<complexType>> {
+  +RouteActivityPlanValidationID: RouteActivityPlanValidationID_Type
+}
+class "RouteActivityPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: RouteActivityPlanValidationCommandStatusMDT
+}
+class "RouteActivityPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "RoutePlanCommandID_Type" <<complexType>> {
+  --
+}
+class "RoutePlanCommandStatusMDT" <<complexType>> {
+  +CommandID: RoutePlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +ResultingPlanID: RoutePlanID_Type
+}
+class "RoutePlanCommandStatusMT" <<complexType>> {
+  +MessageData: RoutePlanCommandStatusMDT
+}
+class "RoutePlanID_Type" <<complexType>> {
+  --
+}
+class "RoutePlanReferenceType" <<complexType>> {
+  +RoutePlanID: RoutePlanID_Type
+  +MissionPlanID: MissionPlanID_Type
+  +PathID: PathID_Type
+  +SegmentID: SegmentID_Type
+}
+class "RoutePlanValidationCommandStatusMDT" <<complexType>> {
+  +RoutePlanValidationID: RoutePlanValidationID_Type
+}
+class "RoutePlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: RoutePlanValidationCommandStatusMDT
+}
+class "RoutePlanValidationID_Type" <<complexType>> {
+  --
+}
+class "RouteValidationErrorType" <<complexType>> {
+  +InvalidReason: RouteValidationErrorEnum
+  +SpecificReasonCode: unsignedInt
+  +Description: VisibleString256Type
+}
+class "RouteValidationInvalidPathType" <<complexType>> {
+  +PathID: PathID_Type
+  +KinematicInvalidReason: RouteValidationErrorType
+  +InvalidSegment: RouteValidationInvalidSegmentType
+  +ValidLAR: LAR_MDT
+  +OtherInvalidReason: CannotComplyType
+}
+class "RouteValidationInvalidSegmentType" <<complexType>> {
+  +PathSegmentID: SegmentID_Type
+  +InvalidReason: RouteValidationErrorType
+}
+class "SAR_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "SAR_CommandStatusMT" <<complexType>> {
+  +MessageData: SAR_CommandStatusMDT
+}
+class "SAR_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SAR_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: SAR_SettingsCommandStatusMDT
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "SMTI_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "SMTI_CommandStatusMT" <<complexType>> {
+  +MessageData: SMTI_CommandStatusMDT
+}
+class "SMTI_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SMTI_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: SMTI_SettingsCommandStatusMDT
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "SegmentID_Type" <<complexType>> {
+  --
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "ServiceLifecycleCommandStatusMDT" <<complexType>> {
+  +LifecycleCommandStatus: ServiceLifecycleCommandStatusEnum
+  +ServiceID: ServiceID_Type
+}
+class "ServiceLifecycleCommandStatusMT" <<complexType>> {
+  +MessageData: ServiceLifecycleCommandStatusMDT
+}
+class "ServiceSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "ServiceSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: ServiceSettingsCommandStatusMDT
+}
+class "SourceID_ChoiceType" <<complexType>> {
+  --
+}
+class "StoreManagementCommandStatusMDT" <<complexType>> {
+  --
+}
+class "StoreManagementCommandStatusMT" <<complexType>> {
+  +MessageData: StoreManagementCommandStatusMDT
+}
+class "StrikeCommandStatusMDT" <<complexType>> {
+  --
+}
+class "StrikeCommandStatusMT" <<complexType>> {
+  +MessageData: StrikeCommandStatusMDT
+}
+class "StrikeSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "StrikeSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: StrikeSettingsCommandStatusMDT
+}
+class "SubsystemBIT_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "SubsystemBIT_CommandStatusMT" <<complexType>> {
+  +MessageData: SubsystemBIT_CommandStatusMDT
+}
+class "SubsystemCalibrationCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SubsystemCalibrationCommandStatusMT" <<complexType>> {
+  +MessageData: SubsystemCalibrationCommandStatusMDT
+}
+class "SubsystemCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "SubsystemEraseCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SubsystemEraseCommandStatusMT" <<complexType>> {
+  +MessageData: SubsystemEraseCommandStatusMDT
+}
+class "SubsystemMaintenanceCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SubsystemMaintenanceCommandStatusMT" <<complexType>> {
+  +MessageData: SubsystemMaintenanceCommandStatusMDT
+}
+class "SubsystemSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SubsystemSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: SubsystemSettingsCommandStatusMDT
+}
+class "SubsystemStateCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SubsystemStateCommandStatusMT" <<complexType>> {
+  +MessageData: SubsystemStateCommandStatusMDT
+}
+class "SupportCapabilityCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TaskCancelCommandStatusMDT" <<complexType>> {
+  +SourceIdentifier: SourceID_ChoiceType
+}
+class "TaskCancelCommandStatusMT" <<complexType>> {
+  +MessageData: TaskCancelCommandStatusMDT
+}
+class "TaskCommandStatusMDT" <<complexType>> {
+  --
+}
+class "TaskCommandStatusMT" <<complexType>> {
+  +MessageData: TaskCommandStatusMDT
+}
+class "TaskID_Type" <<complexType>> {
+  --
+}
+class "TaskPlanCommandID_Type" <<complexType>> {
+  --
+}
+class "TaskPlanCommandStatusMDT" <<complexType>> {
+  +CommandID: TaskPlanCommandID_Type
+  +PlanningStatus: PlanCommandStatusType
+  +AllocationResult: TaskPlanningResultType
+  +ResultingPlanID: TaskPlanID_Type
+}
+class "TaskPlanCommandStatusMT" <<complexType>> {
+  +MessageData: TaskPlanCommandStatusMDT
+}
+class "TaskPlanID_Type" <<complexType>> {
+  --
+}
+class "TaskPlanValidationCommandStatusMDT" <<complexType>> {
+  +TaskPlanValidationID: TaskPlanValidationID_Type
+}
+class "TaskPlanValidationCommandStatusMT" <<complexType>> {
+  +MessageData: TaskPlanValidationCommandStatusMDT
+}
+class "TaskPlanValidationID_Type" <<complexType>> {
+  --
+}
+class "TaskPlanningResultType" <<complexType>> {
+  +TaskID: TaskID_Type
+}
+class "TurretCommandStatusMDT" <<complexType>> {
+  --
+}
+class "TurretCommandStatusMT" <<complexType>> {
+  +MessageData: TurretCommandStatusMDT
+}
+class "UnallocatedReasonType" <<complexType>> {
+  +SystemID: SystemID_Type
+}
+class "ValidationCommandStatusBaseType" <<complexType>> {
+  +CommandStatus: ProcessingStatusEnum
+  +CompletionStatus: CompletionStatusType
+  +IncompleteItem: IncompleteProcessingType
+}
+class "Velocity2D_Type" <<complexType>> {
+  +NorthSpeed: SpeedType
+  +EastSpeed: SpeedType
+  +DownSpeed: SpeedType
+  +Timestamp: DateTimeType
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+class "WeaponTargetPairingChoiceType" <<complexType>> {
+  --
+}
+class "WeatherRadarCommandStatusMDT" <<complexType>> {
+  --
+}
+class "WeatherRadarCommandStatusMT" <<complexType>> {
+  +MessageData: WeatherRadarCommandStatusMDT
+}
+class "WeatherRadarSettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "WeatherRadarSettingsCommandStatusMT" <<complexType>> {
+  +MessageData: WeatherRadarSettingsCommandStatusMDT
+}
+class "ZoneType" <<complexType>> {
+  +Shape: AreaChoiceType
+  +MinAltitude: AltitudeType
+  +MaxAltitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+}
+
+"AMTI_CommandStatus" --> "AMTI_CommandStatusMT" : payload
+"AMTI_SettingsCommandStatus" --> "AMTI_SettingsCommandStatusMT" : payload
+"AO_CommandStatus" --> "AO_CommandStatusMT" : payload
+"AO_SettingsCommandStatus" --> "AO_SettingsCommandStatusMT" : payload
+"ActionCancelCommandStatus" --> "ActionCancelCommandStatusMT" : payload
+"ActionCommandStatus" --> "ActionCommandStatusMT" : payload
+"ActionPlanCommandStatus" --> "ActionPlanCommandStatusMT" : payload
+"ActionPlanValidationCommandStatus" --> "ActionPlanValidationCommandStatusMT" : payload
+"ActivityPlanCommandStatus" --> "ActivityPlanCommandStatusMT" : payload
+"ActivityPlanValidationCommandStatus" --> "ActivityPlanValidationCommandStatusMT" : payload
+"AirSampleCommandStatus" --> "AirSampleCommandStatusMT" : payload
+"AirSampleSettingsCommandStatus" --> "AirSampleSettingsCommandStatusMT" : payload
+"ApprovalManagementCommandStatus" --> "ApprovalManagementCommandStatusMT" : payload
+"COMINT_CommandStatus" --> "COMINT_CommandStatusMT" : payload
+"COMINT_SettingsCommandStatus" --> "COMINT_SettingsCommandStatusMT" : payload
+"CommPointingCommandStatus" --> "CommPointingCommandStatusMT" : payload
+"CommRelayCommandStatus" --> "CommRelayCommandStatusMT" : payload
+"CommRelaySettingsCommandStatus" --> "CommRelaySettingsCommandStatusMT" : payload
+"CommTerminalCommandStatus" --> "CommTerminalCommandStatusMT" : payload
+"CommTerminalPlanActivationCommandStatus" --> "CommTerminalPlanActivationCommandStatusMT" : payload
+"CommTerminalSettingsCommandStatus" --> "CommTerminalSettingsCommandStatusMT" : payload
+"ComponentSettingsCommandStatus" --> "ComponentSettingsCommandStatusMT" : payload
+"ControlInterfacesCommandStatus" --> "ControlInterfacesCommandStatusMT" : payload
+"ControlSourcesCommandStatus" --> "ControlSourcesCommandStatusMT" : payload
+"CryptoCommandStatus" --> "CryptoCommandStatusMT" : payload
+"DMPI_CancelCommandStatus" --> "DMPI_CancelCommandStatusMT" : payload
+"DataPlanActivationCommandStatus" --> "DataPlanActivationCommandStatusMT" : payload
+"DoorCommandStatus" --> "DoorCommandStatusMT" : payload
+"EA_CommandStatus" --> "EA_CommandStatusMT" : payload
+"EA_SettingsCommandStatus" --> "EA_SettingsCommandStatusMT" : payload
+"ESM_CommandStatus" --> "ESM_CommandStatusMT" : payload
+"ESM_SettingsCommandStatus" --> "ESM_SettingsCommandStatusMT" : payload
+"EffectCancelCommandStatus" --> "EffectCancelCommandStatusMT" : payload
+"EffectCommandStatus" --> "EffectCommandStatusMT" : payload
+"EffectPlanCommandStatus" --> "EffectPlanCommandStatusMT" : payload
+"EffectPlanValidationCommandStatus" --> "EffectPlanValidationCommandStatusMT" : payload
+"GatewayCommandStatus" --> "GatewayCommandStatusMT" : payload
+"GatewaySettingsCommandStatus" --> "GatewaySettingsCommandStatusMT" : payload
+"IFF_CommandStatus" --> "IFF_CommandStatusMT" : payload
+"IFF_SettingsCommandStatus" --> "IFF_SettingsCommandStatusMT" : payload
+"IO_PortCommandStatus" --> "IO_PortCommandStatusMT" : payload
+"MA_AcceptableLevelOfRiskCommandStatus" --> "MA_AcceptableLevelOfRiskCommandStatusMT" : payload
+"MA_ActionCommandStatus" --> "MA_ActionCommandStatusMT" : payload
+"MA_ActionPlanCommandStatus" --> "MA_ActionPlanCommandStatusMT" : payload
+"MA_ActivityPlanCommandStatus" --> "MA_ActivityPlanCommandStatusMT" : payload
+"MA_ApprovalManagementCommandStatus" --> "MA_ApprovalManagementCommandStatusMT" : payload
+"MA_COP_ConfigurationSettingsCommandStatus" --> "MA_COP_ConfigurationSettingsCommandStatusMT" : payload
+"MA_ConstraintPriorityListCommandStatus" --> "MA_ConstraintPriorityListCommandStatusMT" : payload
+"MA_EffectPlanCommandStatus" --> "MA_EffectPlanCommandStatusMT" : payload
+"MA_EscortCommandStatus" --> "MA_EscortCommandStatusMT" : payload
+"MA_ExecutionPriorityListCommandStatus" --> "MA_ExecutionPriorityListCommandStatusMT" : payload
+"MA_FlightCommandStatus" --> "MA_FlightCommandStatusMT" : payload
+"MA_IgnoreConstraintCommandStatus" --> "MA_IgnoreConstraintCommandStatusMT" : payload
+"MA_MessagingSubscriptionSettingCommandStatus" --> "MA_MessagingSubscriptionSettingCommandStatusMT" : payload
+"MA_MissionPlanActivationCommandStatus" --> "MA_MissionPlanActivationCommandStatusMT" : payload
+"MA_MissionPlanCommandStatus" --> "MA_MissionPlanCommandStatusMT" : payload
+"MA_MissionPlanValidationCommandStatus" --> "MA_MissionPlanValidationCommandStatusMT" : payload
+"MA_OpCommandStatus" --> "MA_OpCommandStatusMT" : payload
+"MA_OrbitActivityPlanCommandStatus" --> "MA_OrbitActivityPlanCommandStatusMT" : payload
+"MA_PackageManagementCommandStatus" --> "MA_PackageManagementCommandStatusMT" : payload
+"MA_PlanningFunctionSettingsCommandStatus" --> "MA_PlanningFunctionSettingsCommandStatusMT" : payload
+"MA_ResponsePlanCommandStatus" --> "MA_ResponsePlanCommandStatusMT" : payload
+"MA_RouteActivityPlanCommandStatus" --> "MA_RouteActivityPlanCommandStatusMT" : payload
+"MA_RulesOfEngagementCommandStatus" --> "MA_RulesOfEngagementCommandStatusMT" : payload
+"MA_TaskCommandStatus" --> "MA_TaskCommandStatusMT" : payload
+"MA_TaskPlanCommandStatus" --> "MA_TaskPlanCommandStatusMT" : payload
+"MA_TxDataPayloadCommandStatus" --> "MA_TxDataPayloadCommandStatusMT" : payload
+"MissionPlanActivationCommandStatus" --> "MissionPlanActivationCommandStatusMT" : payload
+"MissionPlanCommandStatus" --> "MissionPlanCommandStatusMT" : payload
+"MissionPlanValidationCommandStatus" --> "MissionPlanValidationCommandStatusMT" : payload
+"OpaqueSettingsCommandStatus" --> "OpaqueSettingsCommandStatusMT" : payload
+"OperatorActionCommandStatus" --> "OperatorActionCommandStatusMT" : payload
+"OrbitActivityPlanCommandStatus" --> "OrbitActivityPlanCommandStatusMT" : payload
+"OrbitActivityPlanValidationCommandStatus" --> "OrbitActivityPlanValidationCommandStatusMT" : payload
+"OrbitPlanCommandStatus" --> "OrbitPlanCommandStatusMT" : payload
+"OrbitPlanValidationCommandStatus" --> "OrbitPlanValidationCommandStatusMT" : payload
+"PO_CommandStatus" --> "PO_CommandStatusMT" : payload
+"PO_SettingsCommandStatus" --> "PO_SettingsCommandStatusMT" : payload
+"PlanningFunctionSettingsCommandStatus" --> "PlanningFunctionSettingsCommandStatusMT" : payload
+"RF_ControlCommandStatus" --> "RF_ControlCommandStatusMT" : payload
+"RF_ThreadInstanceSetupCommandStatus" --> "RF_ThreadInstanceSetupCommandStatusMT" : payload
+"RadarAltimeterCommandStatus" --> "RadarAltimeterCommandStatusMT" : payload
+"RadarAltimeterSettingsCommandStatus" --> "RadarAltimeterSettingsCommandStatusMT" : payload
+"RefuelCommandStatus" --> "RefuelCommandStatusMT" : payload
+"RefuelSettingsCommandStatus" --> "RefuelSettingsCommandStatusMT" : payload
+"RequirementOptionsCommandStatus" --> "RequirementOptionsCommandStatusMT" : payload
+"ResponseCancelCommandStatus" --> "ResponseCancelCommandStatusMT" : payload
+"ResponseCommandStatus" --> "ResponseCommandStatusMT" : payload
+"ResponsePlanCommandStatus" --> "ResponsePlanCommandStatusMT" : payload
+"ResponsePlanValidationCommandStatus" --> "ResponsePlanValidationCommandStatusMT" : payload
+"RouteActivityPlanCommandStatus" --> "RouteActivityPlanCommandStatusMT" : payload
+"RouteActivityPlanValidationCommandStatus" --> "RouteActivityPlanValidationCommandStatusMT" : payload
+"RoutePlanCommandStatus" --> "RoutePlanCommandStatusMT" : payload
+"RoutePlanValidationCommandStatus" --> "RoutePlanValidationCommandStatusMT" : payload
+"SAR_CommandStatus" --> "SAR_CommandStatusMT" : payload
+"SAR_SettingsCommandStatus" --> "SAR_SettingsCommandStatusMT" : payload
+"SMTI_CommandStatus" --> "SMTI_CommandStatusMT" : payload
+"SMTI_SettingsCommandStatus" --> "SMTI_SettingsCommandStatusMT" : payload
+"ServiceLifecycleCommandStatus" --> "ServiceLifecycleCommandStatusMT" : payload
+"ServiceSettingsCommandStatus" --> "ServiceSettingsCommandStatusMT" : payload
+"StoreManagementCommandStatus" --> "StoreManagementCommandStatusMT" : payload
+"StrikeCommandStatus" --> "StrikeCommandStatusMT" : payload
+"StrikeSettingsCommandStatus" --> "StrikeSettingsCommandStatusMT" : payload
+"SubsystemBIT_CommandStatus" --> "SubsystemBIT_CommandStatusMT" : payload
+"SubsystemCalibrationCommandStatus" --> "SubsystemCalibrationCommandStatusMT" : payload
+"SubsystemEraseCommandStatus" --> "SubsystemEraseCommandStatusMT" : payload
+"SubsystemMaintenanceCommandStatus" --> "SubsystemMaintenanceCommandStatusMT" : payload
+"SubsystemSettingsCommandStatus" --> "SubsystemSettingsCommandStatusMT" : payload
+"SubsystemStateCommandStatus" --> "SubsystemStateCommandStatusMT" : payload
+"TaskCancelCommandStatus" --> "TaskCancelCommandStatusMT" : payload
+"TaskCommandStatus" --> "TaskCommandStatusMT" : payload
+"TaskPlanCommandStatus" --> "TaskPlanCommandStatusMT" : payload
+"TaskPlanValidationCommandStatus" --> "TaskPlanValidationCommandStatusMT" : payload
+"TurretCommandStatus" --> "TurretCommandStatusMT" : payload
+"WeatherRadarCommandStatus" --> "WeatherRadarCommandStatusMT" : payload
+"WeatherRadarSettingsCommandStatus" --> "WeatherRadarSettingsCommandStatusMT" : payload
+"CapabilityCommandStatusBaseType" <|-- "AMTI_CommandStatusMDT"
+"MessageType" <|-- "AMTI_CommandStatusMT"
+"AMTI_CommandStatusMT" --> "AMTI_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "AMTI_SettingsCommandStatusMDT"
+"MessageType" <|-- "AMTI_SettingsCommandStatusMT"
+"AMTI_SettingsCommandStatusMT" --> "AMTI_SettingsCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "AO_CommandStatusMDT"
+"MessageType" <|-- "AO_CommandStatusMT"
+"AO_CommandStatusMT" --> "AO_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "AO_SettingsCommandStatusMDT"
+"MessageType" <|-- "AO_SettingsCommandStatusMT"
+"AO_SettingsCommandStatusMT" --> "AO_SettingsCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "ActionCancelCommandStatusMDT"
+"ActionCancelCommandStatusMDT" --> "SourceID_ChoiceType" : SourceIdentifier
+"MessageType" <|-- "ActionCancelCommandStatusMT"
+"ActionCancelCommandStatusMT" --> "ActionCancelCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "ActionCommandStatusMDT"
+"MessageType" <|-- "ActionCommandStatusMT"
+"ActionCommandStatusMT" --> "ActionCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "ActionID_Type"
+"ID_Type" <|-- "ActionPlanCommandID_Type"
+"ActionPlanCommandStatusMDT" --> "ActionPlanCommandID_Type" : CommandID
+"ActionPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"ActionPlanCommandStatusMDT" --> "ActionPlanningResultType" : AllocationResult
+"ActionPlanCommandStatusMDT" --> "ActionPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "ActionPlanCommandStatusMT"
+"ActionPlanCommandStatusMT" --> "ActionPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "ActionPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "ActionPlanValidationCommandStatusMDT"
+"ActionPlanValidationCommandStatusMDT" --> "ActionPlanValidationID_Type" : ActionPlanValidationID
+"MessageType" <|-- "ActionPlanValidationCommandStatusMT"
+"ActionPlanValidationCommandStatusMT" --> "ActionPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "ActionPlanValidationID_Type"
+"RequirementPlanningResultBaseType" <|-- "ActionPlanningResultType"
+"ActionPlanningResultType" --> "ActionID_Type" : ActionID
+"ID_Type" <|-- "ActivityID_Type"
+"ID_Type" <|-- "ActivityPlanCommandID_Type"
+"ActivityPlanCommandStatusMDT" --> "ActivityPlanCommandID_Type" : CommandID
+"ActivityPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"ActivityPlanCommandStatusMDT" --> "RequirementPlanningResultType" : ActivityPlanningResult
+"ActivityPlanCommandStatusMDT" --> "ActivityPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "ActivityPlanCommandStatusMT"
+"ActivityPlanCommandStatusMT" --> "ActivityPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "ActivityPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "ActivityPlanValidationCommandStatusMDT"
+"ActivityPlanValidationCommandStatusMDT" --> "ActivityPlanValidationID_Type" : ActivityPlanValidationID
+"MessageType" <|-- "ActivityPlanValidationCommandStatusMT"
+"ActivityPlanValidationCommandStatusMT" --> "ActivityPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "ActivityPlanValidationID_Type"
+"CapabilityCommandStatusBaseType" <|-- "AirSampleCommandStatusMDT"
+"MessageType" <|-- "AirSampleCommandStatusMT"
+"AirSampleCommandStatusMT" --> "AirSampleCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "AirSampleSettingsCommandStatusMDT"
+"MessageType" <|-- "AirSampleSettingsCommandStatusMT"
+"AirSampleSettingsCommandStatusMT" --> "AirSampleSettingsCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "ApprovalManagementCommandStatusMDT"
+"ApprovalManagementCommandStatusMDT" --> "CompletionStatusType" : CompletionStatus
+"ApprovalManagementCommandStatusMDT" --> "IncompleteProcessingType" : IncompleteItem
+"ApprovalManagementCommandStatusMDT" --> "RequestID_Type" : ApprovalRequestID
+"MessageType" <|-- "ApprovalManagementCommandStatusMT"
+"ApprovalManagementCommandStatusMT" --> "ApprovalManagementCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "COMINT_CommandStatusMDT"
+"MessageType" <|-- "COMINT_CommandStatusMT"
+"COMINT_CommandStatusMT" --> "COMINT_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "COMINT_SettingsCommandStatusMDT"
+"MessageType" <|-- "COMINT_SettingsCommandStatusMT"
+"COMINT_SettingsCommandStatusMT" --> "COMINT_SettingsCommandStatusMDT" : MessageData
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"CommandStatusBaseType" <|-- "CapabilityCommandStatusBaseType"
+"CapabilityCommandStatusBaseType" --> "ResultingActivityType" : Activity
+"ID_Type" <|-- "CapabilityID_Type"
+"CommandStatusBaseType" <|-- "CapabilitySettingsCommandStatusBaseType"
+"CommandStatusBaseType" <|-- "CommPointingCommandStatusMDT"
+"CommPointingCommandStatusMDT" --> "CommPointingID_Type" : CommPointingID
+"MessageType" <|-- "CommPointingCommandStatusMT"
+"CommPointingCommandStatusMT" --> "CommPointingCommandStatusMDT" : MessageData
+"ID_Type" <|-- "CommPointingID_Type"
+"CapabilityCommandStatusBaseType" <|-- "CommRelayCommandStatusMDT"
+"MessageType" <|-- "CommRelayCommandStatusMT"
+"CommRelayCommandStatusMT" --> "CommRelayCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "CommRelaySettingsCommandStatusMDT"
+"MessageType" <|-- "CommRelaySettingsCommandStatusMT"
+"CommRelaySettingsCommandStatusMT" --> "CommRelaySettingsCommandStatusMDT" : MessageData
+"ID_Type" <|-- "CommScheduleAllocationID_Type"
+"CapabilityCommandStatusBaseType" <|-- "CommTerminalCommandStatusMDT"
+"MessageType" <|-- "CommTerminalCommandStatusMT"
+"CommTerminalCommandStatusMT" --> "CommTerminalCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "CommTerminalPlanActivationCommandStatusMDT"
+"MessageType" <|-- "CommTerminalPlanActivationCommandStatusMT"
+"CommTerminalPlanActivationCommandStatusMT" --> "CommTerminalPlanActivationCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "CommTerminalSettingsCommandStatusMDT"
+"MessageType" <|-- "CommTerminalSettingsCommandStatusMT"
+"CommTerminalSettingsCommandStatusMT" --> "CommTerminalSettingsCommandStatusMDT" : MessageData
+"ID_Type" <|-- "CommandID_Type"
+"CommandStatusBaseType" --> "CommandID_Type" : CommandID
+"CommandStatusBaseType" --> "CannotComplyType" : CommandProcessingStateReason
+"CommandStatusBaseType" <|-- "ComponentSettingsCommandStatusMDT"
+"MessageType" <|-- "ComponentSettingsCommandStatusMT"
+"ComponentSettingsCommandStatusMT" --> "ComponentSettingsCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "ControlInterfacesCommandStatusMDT"
+"MessageType" <|-- "ControlInterfacesCommandStatusMT"
+"ControlInterfacesCommandStatusMT" --> "ControlInterfacesCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "ControlSourcesCommandStatusMDT"
+"MessageType" <|-- "ControlSourcesCommandStatusMT"
+"ControlSourcesCommandStatusMT" --> "ControlSourcesCommandStatusMDT" : MessageData
+"SupportCapabilityCommandStatusBaseType" <|-- "CryptoCommandStatusMDT"
+"MessageType" <|-- "CryptoCommandStatusMT"
+"CryptoCommandStatusMT" --> "CryptoCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "DMPI_CancelCommandStatusMDT"
+"DMPI_CancelCommandStatusMDT" --> "CannotComplyType" : StateReason
+"DMPI_CancelCommandStatusMDT" --> "SourceID_ChoiceType" : SourceID
+"MessageType" <|-- "DMPI_CancelCommandStatusMT"
+"DMPI_CancelCommandStatusMT" --> "DMPI_CancelCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "DataPlanActivationCommandStatusMDT"
+"MessageType" <|-- "DataPlanActivationCommandStatusMT"
+"DataPlanActivationCommandStatusMT" --> "DataPlanActivationCommandStatusMDT" : MessageData
+"SupportCapabilityCommandStatusBaseType" <|-- "DoorCommandStatusMDT"
+"MessageType" <|-- "DoorCommandStatusMT"
+"DoorCommandStatusMT" --> "DoorCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "EA_CommandStatusMDT"
+"MessageType" <|-- "EA_CommandStatusMT"
+"EA_CommandStatusMT" --> "EA_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "EA_SettingsCommandStatusMDT"
+"MessageType" <|-- "EA_SettingsCommandStatusMT"
+"EA_SettingsCommandStatusMT" --> "EA_SettingsCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "ESM_CommandStatusMDT"
+"MessageType" <|-- "ESM_CommandStatusMT"
+"ESM_CommandStatusMT" --> "ESM_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "ESM_SettingsCommandStatusMDT"
+"MessageType" <|-- "ESM_SettingsCommandStatusMT"
+"ESM_SettingsCommandStatusMT" --> "ESM_SettingsCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "EffectCancelCommandStatusMDT"
+"EffectCancelCommandStatusMDT" --> "SourceID_ChoiceType" : SourceIdentifier
+"MessageType" <|-- "EffectCancelCommandStatusMT"
+"EffectCancelCommandStatusMT" --> "EffectCancelCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "EffectCommandStatusMDT"
+"MessageType" <|-- "EffectCommandStatusMT"
+"EffectCommandStatusMT" --> "EffectCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "EffectID_Type"
+"ID_Type" <|-- "EffectPlanCommandID_Type"
+"EffectPlanCommandStatusMDT" --> "EffectPlanCommandID_Type" : CommandID
+"EffectPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"EffectPlanCommandStatusMDT" --> "EffectPlanningResultType" : AllocationResult
+"EffectPlanCommandStatusMDT" --> "EffectPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "EffectPlanCommandStatusMT"
+"EffectPlanCommandStatusMT" --> "EffectPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "EffectPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "EffectPlanValidationCommandStatusMDT"
+"EffectPlanValidationCommandStatusMDT" --> "EffectPlanValidationID_Type" : EffectPlanValidationID
+"MessageType" <|-- "EffectPlanValidationCommandStatusMT"
+"EffectPlanValidationCommandStatusMT" --> "EffectPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "EffectPlanValidationID_Type"
+"RequirementPlanningResultBaseType" <|-- "EffectPlanningResultType"
+"EffectPlanningResultType" --> "EffectID_Type" : EffectID
+"EnduranceFootprintType" --> "BoundaryType" : Boundary
+"EnduranceRemainingType" --> "EnduranceType" : EnduranceRemaining
+"EnduranceBaseType" <|-- "EnduranceType"
+"EnduranceType" --> "EnduranceFootprintType" : Footprint
+"ID_Type" <|-- "EntityID_Type"
+"CapabilityCommandStatusBaseType" <|-- "GatewayCommandStatusMDT"
+"MessageType" <|-- "GatewayCommandStatusMT"
+"GatewayCommandStatusMT" --> "GatewayCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "GatewaySettingsCommandStatusMDT"
+"MessageType" <|-- "GatewaySettingsCommandStatusMT"
+"GatewaySettingsCommandStatusMT" --> "GatewaySettingsCommandStatusMDT" : MessageData
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"CapabilityCommandStatusBaseType" <|-- "IFF_CommandStatusMDT"
+"MessageType" <|-- "IFF_CommandStatusMT"
+"IFF_CommandStatusMT" --> "IFF_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "IFF_SettingsCommandStatusMDT"
+"MessageType" <|-- "IFF_SettingsCommandStatusMT"
+"IFF_SettingsCommandStatusMT" --> "IFF_SettingsCommandStatusMDT" : MessageData
+"SupportCapabilityCommandStatusBaseType" <|-- "IO_PortCommandStatusMDT"
+"MessageType" <|-- "IO_PortCommandStatusMT"
+"IO_PortCommandStatusMT" --> "IO_PortCommandStatusMDT" : MessageData
+"IncompleteProcessingType" --> "ID_Type" : IncompleteItemID
+"LAR_DetailsType" --> "WeaponTargetPairingChoiceType" : WeaponTargetPairing
+"LAR_DetailsType" --> "PlannedReleaseConditionsType" : PlannedReleaseConditions
+"LAR_DetailsType" --> "RoutePlanReferenceType" : WeaponRoute
+"ID_Type" <|-- "LAR_ID_Type"
+"LAR_MDT" --> "LAR_ID_Type" : LAR_ID
+"LAR_MDT" --> "RequestID_Type" : RequestID
+"LAR_MDT" --> "CapabilityID_Type" : CapabilityID
+"LAR_MDT" --> "ZoneType" : Region
+"LAR_MDT" --> "LAR_DetailsType" : LAR_Details
+"CommandStatusBaseType" <|-- "MA_AcceptableLevelOfRiskCommandStatusMDT"
+"MA_AcceptableLevelOfRiskCommandStatusMDT" --> "MA_PackageSystemType" : AppliesToIDs
+"MessageType" <|-- "MA_AcceptableLevelOfRiskCommandStatusMT"
+"MA_AcceptableLevelOfRiskCommandStatusMT" --> "MA_AcceptableLevelOfRiskCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "MA_ActionCommandStatusMDT"
+"MessageType" <|-- "MA_ActionCommandStatusMT"
+"MA_ActionCommandStatusMT" --> "MA_ActionCommandStatusMDT" : MessageData
+"MA_ActionPlanCommandStatusMDT" --> "ActionPlanCommandID_Type" : CommandID
+"MA_ActionPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_ActionPlanCommandStatusMDT" --> "MA_ActionPlanningResultType" : AllocationResult
+"MA_ActionPlanCommandStatusMDT" --> "ActionPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "MA_ActionPlanCommandStatusMT"
+"MA_ActionPlanCommandStatusMT" --> "MA_ActionPlanCommandStatusMDT" : MessageData
+"MA_RequirementPlanningResultBaseType" <|-- "MA_ActionPlanningResultType"
+"MA_ActionPlanningResultType" --> "ActionID_Type" : ActionID
+"MA_ActivityPlanCommandStatusMDT" --> "ActivityPlanCommandID_Type" : CommandID
+"MA_ActivityPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_ActivityPlanCommandStatusMDT" --> "MA_RequirementPlanningResultType" : ActivityPlanningResult
+"MA_ActivityPlanCommandStatusMDT" --> "ActivityPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "MA_ActivityPlanCommandStatusMT"
+"MA_ActivityPlanCommandStatusMT" --> "MA_ActivityPlanCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "MA_ApprovalManagementCommandStatusMDT"
+"MA_ApprovalManagementCommandStatusMDT" --> "CompletionStatusType" : CompletionStatus
+"MA_ApprovalManagementCommandStatusMDT" --> "IncompleteProcessingType" : IncompleteItem
+"MA_ApprovalManagementCommandStatusMDT" --> "RequestID_Type" : ApprovalRequestID
+"MessageType" <|-- "MA_ApprovalManagementCommandStatusMT"
+"MA_ApprovalManagementCommandStatusMT" --> "MA_ApprovalManagementCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "MA_COP_ConfigurationSettingsCommandStatusMDT"
+"MessageType" <|-- "MA_COP_ConfigurationSettingsCommandStatusMT"
+"MA_COP_ConfigurationSettingsCommandStatusMT" --> "MA_COP_ConfigurationSettingsCommandStatusMDT" : MessageData
+"MA_CannotComplyDetailsType" --> "MA_ValidationResultReasonType" : ValidationResultReason
+"CommandStatusBaseType" <|-- "MA_ConstraintPriorityListCommandStatusMDT"
+"MA_ConstraintPriorityListCommandStatusMDT" --> "MA_PackageSystemType" : AppliesToIDs
+"MessageType" <|-- "MA_ConstraintPriorityListCommandStatusMT"
+"MA_ConstraintPriorityListCommandStatusMT" --> "MA_ConstraintPriorityListCommandStatusMDT" : MessageData
+"MA_EffectPlanCommandStatusMDT" --> "EffectPlanCommandID_Type" : CommandID
+"MA_EffectPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_EffectPlanCommandStatusMDT" --> "MA_EffectPlanningResultType" : AllocationResult
+"MA_EffectPlanCommandStatusMDT" --> "EffectPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "MA_EffectPlanCommandStatusMT"
+"MA_EffectPlanCommandStatusMT" --> "MA_EffectPlanCommandStatusMDT" : MessageData
+"MA_RequirementPlanningResultBaseType" <|-- "MA_EffectPlanningResultType"
+"MA_EffectPlanningResultType" --> "EffectID_Type" : EffectID
+"CapabilityCommandStatusBaseType" <|-- "MA_EscortCommandStatusMDT"
+"MessageType" <|-- "MA_EscortCommandStatusMT"
+"MA_EscortCommandStatusMT" --> "MA_EscortCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "MA_ExecutionPriorityListCommandStatusMDT"
+"MA_ExecutionPriorityListCommandStatusMDT" --> "MA_PackageSystemType" : AppliesToIDs
+"MessageType" <|-- "MA_ExecutionPriorityListCommandStatusMT"
+"MA_ExecutionPriorityListCommandStatusMT" --> "MA_ExecutionPriorityListCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "MA_FlightCommandStatusMDT"
+"MA_FlightCommandStatusMDT" --> "MA_CannotComplyDetailsType" : CannotComplyDetails
+"MessageType" <|-- "MA_FlightCommandStatusMT"
+"MA_FlightCommandStatusMT" --> "MA_FlightCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "MA_IgnoreConstraintCommandStatusMDT"
+"MA_IgnoreConstraintCommandStatusMDT" --> "MA_PackageSystemType" : AppliesToIDs
+"MessageType" <|-- "MA_IgnoreConstraintCommandStatusMT"
+"MA_IgnoreConstraintCommandStatusMT" --> "MA_IgnoreConstraintCommandStatusMDT" : MessageData
+"MA_InsufficientEnduranceType" --> "EnduranceRemainingType" : EnduranceRemaining
+"MA_InsufficientEnduranceType" --> "EnduranceType" : EnduranceRequired
+"CommandStatusBaseType" <|-- "MA_MessagingSubscriptionSettingCommandStatusMDT"
+"MessageType" <|-- "MA_MessagingSubscriptionSettingCommandStatusMT"
+"MA_MessagingSubscriptionSettingCommandStatusMT" --> "MA_MessagingSubscriptionSettingCommandStatusMDT" : MessageData
+"MA_MissionPlanActivationCommandStatusMDT" --> "MissionPlanActivationCommandID_Type" : CommandID
+"MA_MissionPlanActivationCommandStatusMDT" --> "PlanCommandStatusType" : ActivationStatus
+"MA_MissionPlanActivationCommandStatusMDT" --> "MA_PlanActivationStatusType" : ActivationCommandByState
+"MessageType" <|-- "MA_MissionPlanActivationCommandStatusMT"
+"MA_MissionPlanActivationCommandStatusMT" --> "MA_MissionPlanActivationCommandStatusMDT" : MessageData
+"MA_MissionPlanCommandStatusMDT" --> "MissionPlanCommandID_Type" : CommandID
+"MA_MissionPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_MissionPlanCommandStatusMDT" --> "MA_RequirementPlanningResultType" : AllocationResult
+"MA_MissionPlanCommandStatusMDT" --> "MA_PlansReferenceType" : ResultingPlanIdentifier
+"MessageType" <|-- "MA_MissionPlanCommandStatusMT"
+"MA_MissionPlanCommandStatusMT" --> "MA_MissionPlanCommandStatusMDT" : MessageData
+"ValidationCommandStatusBaseType" <|-- "MA_MissionPlanValidationCommandStatusMDT"
+"MA_MissionPlanValidationCommandStatusMDT" --> "MissionPlanValidationID_Type" : MissionPlanValidationID
+"MessageType" <|-- "MA_MissionPlanValidationCommandStatusMT"
+"MA_MissionPlanValidationCommandStatusMT" --> "MA_MissionPlanValidationCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "MA_OpCommandStatusMDT"
+"MessageType" <|-- "MA_OpCommandStatusMT"
+"MA_OpCommandStatusMT" --> "MA_OpCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "MA_OpPlanID_Type"
+"MA_OrbitActivityPlanCommandStatusMDT" --> "OrbitActivityPlanCommandID_Type" : CommandID
+"MA_OrbitActivityPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_OrbitActivityPlanCommandStatusMDT" --> "MA_RequirementPlanningResultType" : ActivityPlanningResult
+"MA_OrbitActivityPlanCommandStatusMDT" --> "OrbitActivityPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "MA_OrbitActivityPlanCommandStatusMT"
+"MA_OrbitActivityPlanCommandStatusMT" --> "MA_OrbitActivityPlanCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "MA_PackageManagementCommandStatusMDT"
+"MessageType" <|-- "MA_PackageManagementCommandStatusMT"
+"MA_PackageManagementCommandStatusMT" --> "MA_PackageManagementCommandStatusMDT" : MessageData
+"MA_PlanActivationStatusType" --> "MA_PlansReferenceType" : Plans
+"MA_PlanReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"MA_PlanReferenceType" --> "TaskPlanID_Type" : TaskPlanID
+"MA_PlanReferenceType" --> "OrbitPlanID_Type" : OrbitPlanID
+"MA_PlanReferenceType" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"MA_PlanReferenceType" --> "RoutePlanID_Type" : RoutePlanID
+"MA_PlanReferenceType" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"MA_PlanReferenceType" --> "CommScheduleAllocationID_Type" : CommScheduleAllocationID
+"MA_PlanReferenceType" --> "ActivityPlanID_Type" : ActivityPlanID
+"MA_PlanReferenceType" --> "EffectPlanID_Type" : EffectPlanID
+"MA_PlanReferenceType" --> "ActionPlanID_Type" : ActionPlanID
+"MA_PlanReferenceType" --> "ResponsePlanID_Type" : ResponsePlanID
+"MA_PlanReferenceType" --> "MA_OpPlanID_Type" : OpPlanID
+"CommandStatusBaseType" <|-- "MA_PlanningFunctionSettingsCommandStatusMDT"
+"MessageType" <|-- "MA_PlanningFunctionSettingsCommandStatusMT"
+"MA_PlanningFunctionSettingsCommandStatusMT" --> "MA_PlanningFunctionSettingsCommandStatusMDT" : MessageData
+"MA_PlansReferenceBaseType" --> "TaskPlanID_Type" : TaskPlanID
+"MA_PlansReferenceBaseType" --> "OrbitPlanID_Type" : OrbitPlanID
+"MA_PlansReferenceBaseType" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"MA_PlansReferenceBaseType" --> "RoutePlanID_Type" : RoutePlanID
+"MA_PlansReferenceBaseType" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"MA_PlansReferenceBaseType" --> "ActivityPlanID_Type" : ActivityPlanID
+"MA_PlansReferenceBaseType" --> "EffectPlanID_Type" : EffectPlanID
+"MA_PlansReferenceBaseType" --> "ActionPlanID_Type" : ActionPlanID
+"MA_PlansReferenceBaseType" --> "ResponsePlanID_Type" : ResponsePlanID
+"MA_PlansReferenceBaseType" --> "MA_OpPlanID_Type" : OpPlanID
+"MA_PlansReferenceBaseType" <|-- "MA_PlansReferenceType"
+"MA_PlansReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"MA_RequirementPlanningResultBaseType" --> "SystemID_Type" : SystemID
+"MA_RequirementPlanningResultBaseType" --> "MA_PlanReferenceType" : AssociatedPlans
+"MA_RequirementPlanningResultBaseType" --> "UnallocatedReasonType" : NotAllocatedReason
+"MA_RequirementPlanningResultBaseType" <|-- "MA_RequirementPlanningResultType"
+"MA_RequirementPlanningResultType" --> "RequirementInstanceID_ChoiceType" : RequirementID
+"MA_ResponsePlanCommandStatusMDT" --> "ResponsePlanCommandID_Type" : CommandID
+"MA_ResponsePlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_ResponsePlanCommandStatusMDT" --> "MA_ResponsePlanningResultType" : AllocationResult
+"MA_ResponsePlanCommandStatusMDT" --> "ResponsePlanID_Type" : ResultingPlanID
+"MessageType" <|-- "MA_ResponsePlanCommandStatusMT"
+"MA_ResponsePlanCommandStatusMT" --> "MA_ResponsePlanCommandStatusMDT" : MessageData
+"MA_RequirementPlanningResultBaseType" <|-- "MA_ResponsePlanningResultType"
+"MA_ResponsePlanningResultType" --> "ResponseID_Type" : ResponseID
+"MA_RouteActivityPlanCommandStatusMDT" --> "RouteActivityPlanCommandID_Type" : CommandID
+"MA_RouteActivityPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_RouteActivityPlanCommandStatusMDT" --> "MA_RequirementPlanningResultType" : ActivityPlanningResult
+"MA_RouteActivityPlanCommandStatusMDT" --> "RouteActivityPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "MA_RouteActivityPlanCommandStatusMT"
+"MA_RouteActivityPlanCommandStatusMT" --> "MA_RouteActivityPlanCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "MA_RulesOfEngagementCommandStatusMDT"
+"MA_RulesOfEngagementCommandStatusMDT" --> "MA_PackageSystemType" : AppliesToIDs
+"MessageType" <|-- "MA_RulesOfEngagementCommandStatusMT"
+"MA_RulesOfEngagementCommandStatusMT" --> "MA_RulesOfEngagementCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "MA_TaskCommandStatusMDT"
+"MessageType" <|-- "MA_TaskCommandStatusMT"
+"MA_TaskCommandStatusMT" --> "MA_TaskCommandStatusMDT" : MessageData
+"MA_TaskPlanCommandStatusMDT" --> "TaskPlanCommandID_Type" : CommandID
+"MA_TaskPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MA_TaskPlanCommandStatusMDT" --> "MA_TaskPlanningResultType" : AllocationResult
+"MA_TaskPlanCommandStatusMDT" --> "TaskPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "MA_TaskPlanCommandStatusMT"
+"MA_TaskPlanCommandStatusMT" --> "MA_TaskPlanCommandStatusMDT" : MessageData
+"MA_RequirementPlanningResultBaseType" <|-- "MA_TaskPlanningResultType"
+"MA_TaskPlanningResultType" --> "TaskID_Type" : TaskID
+"MA_TransmissionStatusType" --> "SystemID_Type" : SpecificDestinationID
+"CommandStatusBaseType" <|-- "MA_TxDataPayloadCommandStatusMDT"
+"MA_TxDataPayloadCommandStatusMDT" --> "MA_TransmissionStatusType" : DestinationTransmissionStatus
+"MessageType" <|-- "MA_TxDataPayloadCommandStatusMT"
+"MA_TxDataPayloadCommandStatusMT" --> "MA_TxDataPayloadCommandStatusMDT" : MessageData
+"MA_ValidationResultReasonType" --> "MA_InsufficientEnduranceType" : InsufficientEndurance
+"MA_ValidationResultReasonType" --> "RouteValidationInvalidPathType" : RouteValidationInvalidPath
+"MA_ValidationResultReasonType" --> "MA_CurveSectionType" : CurveValidationInvalidSection
+"MA_ValidationResultReasonType" --> "OpZoneID_Type" : GeofenceConstraintID
+"MA_ValidationResultReasonType" --> "EntityID_Type" : EntityConstraintID
+"MA_ValidationResultReasonType" --> "Point4D_Type" : TerrainConstraint
+"MA_ValidationResultReasonType" --> "CapabilityID_Type" : CapabilityID
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"VersionedID_Type" <|-- "MissionID_Type"
+"ID_Type" <|-- "MissionPlanActivationCommandID_Type"
+"MissionPlanActivationCommandStatusMDT" --> "MissionPlanActivationCommandID_Type" : CommandID
+"MissionPlanActivationCommandStatusMDT" --> "PlanCommandStatusType" : ActivationStatus
+"MissionPlanActivationCommandStatusMDT" --> "PlanActivationStatusType" : ActivationCommandByState
+"MessageType" <|-- "MissionPlanActivationCommandStatusMT"
+"MissionPlanActivationCommandStatusMT" --> "MissionPlanActivationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "MissionPlanCommandID_Type"
+"MissionPlanCommandStatusMDT" --> "MissionPlanCommandID_Type" : CommandID
+"MissionPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"MissionPlanCommandStatusMDT" --> "RequirementPlanningResultType" : AllocationResult
+"MissionPlanCommandStatusMDT" --> "PlansReferenceType" : ResultingPlanIdentifier
+"MessageType" <|-- "MissionPlanCommandStatusMT"
+"MissionPlanCommandStatusMT" --> "MissionPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "MissionPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "MissionPlanValidationCommandStatusMDT"
+"MissionPlanValidationCommandStatusMDT" --> "MissionPlanValidationID_Type" : MissionPlanValidationID
+"MessageType" <|-- "MissionPlanValidationCommandStatusMT"
+"MissionPlanValidationCommandStatusMT" --> "MissionPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "MissionPlanValidationID_Type"
+"ID_Type" <|-- "OpZoneID_Type"
+"CapabilitySettingsCommandStatusBaseType" <|-- "OpaqueSettingsCommandStatusMDT"
+"MessageType" <|-- "OpaqueSettingsCommandStatusMT"
+"OpaqueSettingsCommandStatusMT" --> "OpaqueSettingsCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "OperatorActionCommandStatusMDT"
+"MessageType" <|-- "OperatorActionCommandStatusMT"
+"OperatorActionCommandStatusMT" --> "OperatorActionCommandStatusMDT" : MessageData
+"ID_Type" <|-- "OrbitActivityPlanCommandID_Type"
+"OrbitActivityPlanCommandStatusMDT" --> "OrbitActivityPlanCommandID_Type" : CommandID
+"OrbitActivityPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"OrbitActivityPlanCommandStatusMDT" --> "RequirementPlanningResultType" : ActivityPlanningResult
+"OrbitActivityPlanCommandStatusMDT" --> "OrbitActivityPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "OrbitActivityPlanCommandStatusMT"
+"OrbitActivityPlanCommandStatusMT" --> "OrbitActivityPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "OrbitActivityPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "OrbitActivityPlanValidationCommandStatusMDT"
+"OrbitActivityPlanValidationCommandStatusMDT" --> "OrbitActivityPlanValidationID_Type" : OrbitActivityPlanValidationID
+"MessageType" <|-- "OrbitActivityPlanValidationCommandStatusMT"
+"OrbitActivityPlanValidationCommandStatusMT" --> "OrbitActivityPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "OrbitActivityPlanValidationID_Type"
+"ID_Type" <|-- "OrbitPlanCommandID_Type"
+"OrbitPlanCommandStatusMDT" --> "OrbitPlanCommandID_Type" : CommandID
+"OrbitPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"OrbitPlanCommandStatusMDT" --> "OrbitPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "OrbitPlanCommandStatusMT"
+"OrbitPlanCommandStatusMT" --> "OrbitPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "OrbitPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "OrbitPlanValidationCommandStatusMDT"
+"OrbitPlanValidationCommandStatusMDT" --> "OrbitPlanValidationID_Type" : OrbitPlanValidationID
+"MessageType" <|-- "OrbitPlanValidationCommandStatusMT"
+"OrbitPlanValidationCommandStatusMT" --> "OrbitPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "OrbitPlanValidationID_Type"
+"CapabilityCommandStatusBaseType" <|-- "PO_CommandStatusMDT"
+"MessageType" <|-- "PO_CommandStatusMT"
+"PO_CommandStatusMT" --> "PO_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "PO_SettingsCommandStatusMDT"
+"MessageType" <|-- "PO_SettingsCommandStatusMT"
+"PO_SettingsCommandStatusMT" --> "PO_SettingsCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "PathID_Type"
+"PlanActivationStatusType" --> "PlansReferenceType" : Plans
+"PlanCommandStatusType" --> "CannotComplyType" : CommandProcessingStateReason
+"PlanCommandStatusType" --> "CompletionStatusType" : CompletionStatus
+"PlanCommandStatusType" --> "IncompleteProcessingType" : IncompleteItem
+"PlanReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"PlanReferenceType" --> "TaskPlanID_Type" : TaskPlanID
+"PlanReferenceType" --> "OrbitPlanID_Type" : OrbitPlanID
+"PlanReferenceType" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"PlanReferenceType" --> "RoutePlanID_Type" : RoutePlanID
+"PlanReferenceType" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"PlanReferenceType" --> "CommScheduleAllocationID_Type" : CommScheduleAllocationID
+"PlanReferenceType" --> "ActivityPlanID_Type" : ActivityPlanID
+"PlanReferenceType" --> "EffectPlanID_Type" : EffectPlanID
+"PlanReferenceType" --> "ActionPlanID_Type" : ActionPlanID
+"PlanReferenceType" --> "ResponsePlanID_Type" : ResponsePlanID
+"PlannedReleaseConditionsType" --> "Point3D_Type" : Position
+"PlannedReleaseConditionsType" --> "Velocity2D_Type" : Velocity
+"PlannedReleaseConditionsType" --> "OrientationType" : Orientation
+"PlannedReleaseConditionsType" --> "Velocity2D_Type" : WindVelocity
+"PlannedReleaseConditionsType" --> "RoutePlanReferenceType" : AssociatedRoutePlan
+"CommandStatusBaseType" <|-- "PlanningFunctionSettingsCommandStatusMDT"
+"MessageType" <|-- "PlanningFunctionSettingsCommandStatusMT"
+"PlanningFunctionSettingsCommandStatusMT" --> "PlanningFunctionSettingsCommandStatusMDT" : MessageData
+"PlansReferenceBaseType" --> "TaskPlanID_Type" : TaskPlanID
+"PlansReferenceBaseType" --> "OrbitPlanID_Type" : OrbitPlanID
+"PlansReferenceBaseType" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"PlansReferenceBaseType" --> "RoutePlanID_Type" : RoutePlanID
+"PlansReferenceBaseType" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"PlansReferenceBaseType" --> "ActivityPlanID_Type" : ActivityPlanID
+"PlansReferenceBaseType" --> "EffectPlanID_Type" : EffectPlanID
+"PlansReferenceBaseType" --> "ActionPlanID_Type" : ActionPlanID
+"PlansReferenceBaseType" --> "ResponsePlanID_Type" : ResponsePlanID
+"PlansReferenceBaseType" <|-- "PlansReferenceType"
+"PlansReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"CommandStatusBaseType" <|-- "RF_ControlCommandStatusMDT"
+"MessageType" <|-- "RF_ControlCommandStatusMT"
+"RF_ControlCommandStatusMT" --> "RF_ControlCommandStatusMDT" : MessageData
+"SupportCapabilityCommandStatusBaseType" <|-- "RF_ThreadInstanceSetupCommandStatusMDT"
+"MessageType" <|-- "RF_ThreadInstanceSetupCommandStatusMT"
+"RF_ThreadInstanceSetupCommandStatusMT" --> "RF_ThreadInstanceSetupCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "RadarAltimeterCommandStatusMDT"
+"MessageType" <|-- "RadarAltimeterCommandStatusMT"
+"RadarAltimeterCommandStatusMT" --> "RadarAltimeterCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "RadarAltimeterSettingsCommandStatusMDT"
+"MessageType" <|-- "RadarAltimeterSettingsCommandStatusMT"
+"RadarAltimeterSettingsCommandStatusMT" --> "RadarAltimeterSettingsCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "RefuelCommandStatusMDT"
+"MessageType" <|-- "RefuelCommandStatusMT"
+"RefuelCommandStatusMT" --> "RefuelCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "RefuelSettingsCommandStatusMDT"
+"MessageType" <|-- "RefuelSettingsCommandStatusMT"
+"RefuelSettingsCommandStatusMT" --> "RefuelSettingsCommandStatusMDT" : MessageData
+"ID_Type" <|-- "RequestID_Type"
+"RequirementOptionsCommandStatusMDT" --> "CommandID_Type" : CommandID
+"RequirementOptionsCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"RequirementOptionsCommandStatusMDT" --> "RequirementOptionsID_Type" : ResultingOptionsID
+"MessageType" <|-- "RequirementOptionsCommandStatusMT"
+"RequirementOptionsCommandStatusMT" --> "RequirementOptionsCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "RequirementOptionsID_Type"
+"RequirementPlanningResultBaseType" --> "SystemID_Type" : SystemID
+"RequirementPlanningResultBaseType" --> "PlanReferenceType" : AssociatedPlans
+"RequirementPlanningResultBaseType" --> "UnallocatedReasonType" : NotAllocatedReason
+"RequirementPlanningResultBaseType" <|-- "RequirementPlanningResultType"
+"RequirementPlanningResultType" --> "RequirementInstanceID_ChoiceType" : RequirementID
+"CommandStatusBaseType" <|-- "ResponseCancelCommandStatusMDT"
+"ResponseCancelCommandStatusMDT" --> "SourceID_ChoiceType" : SourceIdentifier
+"MessageType" <|-- "ResponseCancelCommandStatusMT"
+"ResponseCancelCommandStatusMT" --> "ResponseCancelCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "ResponseCommandStatusMDT"
+"MessageType" <|-- "ResponseCommandStatusMT"
+"ResponseCommandStatusMT" --> "ResponseCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "ResponseID_Type"
+"ID_Type" <|-- "ResponsePlanCommandID_Type"
+"ResponsePlanCommandStatusMDT" --> "ResponsePlanCommandID_Type" : CommandID
+"ResponsePlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"ResponsePlanCommandStatusMDT" --> "ResponsePlanningResultType" : AllocationResult
+"ResponsePlanCommandStatusMDT" --> "ResponsePlanID_Type" : ResultingPlanID
+"MessageType" <|-- "ResponsePlanCommandStatusMT"
+"ResponsePlanCommandStatusMT" --> "ResponsePlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "ResponsePlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "ResponsePlanValidationCommandStatusMDT"
+"ResponsePlanValidationCommandStatusMDT" --> "ResponsePlanValidationID_Type" : ResponsePlanValidationID
+"MessageType" <|-- "ResponsePlanValidationCommandStatusMT"
+"ResponsePlanValidationCommandStatusMT" --> "ResponsePlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "ResponsePlanValidationID_Type"
+"RequirementPlanningResultBaseType" <|-- "ResponsePlanningResultType"
+"ResponsePlanningResultType" --> "ResponseID_Type" : ResponseID
+"ResultingActivityType" --> "ActivityID_Type" : ActivityID
+"ID_Type" <|-- "RouteActivityPlanCommandID_Type"
+"RouteActivityPlanCommandStatusMDT" --> "RouteActivityPlanCommandID_Type" : CommandID
+"RouteActivityPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"RouteActivityPlanCommandStatusMDT" --> "RequirementPlanningResultType" : ActivityPlanningResult
+"RouteActivityPlanCommandStatusMDT" --> "RouteActivityPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "RouteActivityPlanCommandStatusMT"
+"RouteActivityPlanCommandStatusMT" --> "RouteActivityPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "RouteActivityPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "RouteActivityPlanValidationCommandStatusMDT"
+"RouteActivityPlanValidationCommandStatusMDT" --> "RouteActivityPlanValidationID_Type" : RouteActivityPlanValidationID
+"MessageType" <|-- "RouteActivityPlanValidationCommandStatusMT"
+"RouteActivityPlanValidationCommandStatusMT" --> "RouteActivityPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "RouteActivityPlanValidationID_Type"
+"ID_Type" <|-- "RoutePlanCommandID_Type"
+"RoutePlanCommandStatusMDT" --> "RoutePlanCommandID_Type" : CommandID
+"RoutePlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"RoutePlanCommandStatusMDT" --> "RoutePlanID_Type" : ResultingPlanID
+"MessageType" <|-- "RoutePlanCommandStatusMT"
+"RoutePlanCommandStatusMT" --> "RoutePlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "RoutePlanID_Type"
+"RoutePlanReferenceType" --> "RoutePlanID_Type" : RoutePlanID
+"RoutePlanReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"RoutePlanReferenceType" --> "PathID_Type" : PathID
+"RoutePlanReferenceType" --> "SegmentID_Type" : SegmentID
+"ValidationCommandStatusBaseType" <|-- "RoutePlanValidationCommandStatusMDT"
+"RoutePlanValidationCommandStatusMDT" --> "RoutePlanValidationID_Type" : RoutePlanValidationID
+"MessageType" <|-- "RoutePlanValidationCommandStatusMT"
+"RoutePlanValidationCommandStatusMT" --> "RoutePlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "RoutePlanValidationID_Type"
+"RouteValidationInvalidPathType" --> "PathID_Type" : PathID
+"RouteValidationInvalidPathType" --> "RouteValidationErrorType" : KinematicInvalidReason
+"RouteValidationInvalidPathType" --> "RouteValidationInvalidSegmentType" : InvalidSegment
+"RouteValidationInvalidPathType" --> "LAR_MDT" : ValidLAR
+"RouteValidationInvalidPathType" --> "CannotComplyType" : OtherInvalidReason
+"RouteValidationInvalidSegmentType" --> "SegmentID_Type" : PathSegmentID
+"RouteValidationInvalidSegmentType" --> "RouteValidationErrorType" : InvalidReason
+"CapabilityCommandStatusBaseType" <|-- "SAR_CommandStatusMDT"
+"MessageType" <|-- "SAR_CommandStatusMT"
+"SAR_CommandStatusMT" --> "SAR_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "SAR_SettingsCommandStatusMDT"
+"MessageType" <|-- "SAR_SettingsCommandStatusMT"
+"SAR_SettingsCommandStatusMT" --> "SAR_SettingsCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "SMTI_CommandStatusMDT"
+"MessageType" <|-- "SMTI_CommandStatusMT"
+"SMTI_CommandStatusMT" --> "SMTI_CommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "SMTI_SettingsCommandStatusMDT"
+"MessageType" <|-- "SMTI_SettingsCommandStatusMT"
+"SMTI_SettingsCommandStatusMT" --> "SMTI_SettingsCommandStatusMDT" : MessageData
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"VersionedID_Type" <|-- "SegmentID_Type"
+"ID_Type" <|-- "ServiceID_Type"
+"CommandStatusBaseType" <|-- "ServiceLifecycleCommandStatusMDT"
+"ServiceLifecycleCommandStatusMDT" --> "ServiceID_Type" : ServiceID
+"MessageType" <|-- "ServiceLifecycleCommandStatusMT"
+"ServiceLifecycleCommandStatusMT" --> "ServiceLifecycleCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "ServiceSettingsCommandStatusMDT"
+"MessageType" <|-- "ServiceSettingsCommandStatusMT"
+"ServiceSettingsCommandStatusMT" --> "ServiceSettingsCommandStatusMDT" : MessageData
+"SupportCapabilityCommandStatusBaseType" <|-- "StoreManagementCommandStatusMDT"
+"MessageType" <|-- "StoreManagementCommandStatusMT"
+"StoreManagementCommandStatusMT" --> "StoreManagementCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "StrikeCommandStatusMDT"
+"MessageType" <|-- "StrikeCommandStatusMT"
+"StrikeCommandStatusMT" --> "StrikeCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "StrikeSettingsCommandStatusMDT"
+"MessageType" <|-- "StrikeSettingsCommandStatusMT"
+"StrikeSettingsCommandStatusMT" --> "StrikeSettingsCommandStatusMDT" : MessageData
+"SubsystemCommandStatusBaseType" <|-- "SubsystemBIT_CommandStatusMDT"
+"MessageType" <|-- "SubsystemBIT_CommandStatusMT"
+"SubsystemBIT_CommandStatusMT" --> "SubsystemBIT_CommandStatusMDT" : MessageData
+"SubsystemCommandStatusBaseType" <|-- "SubsystemCalibrationCommandStatusMDT"
+"MessageType" <|-- "SubsystemCalibrationCommandStatusMT"
+"SubsystemCalibrationCommandStatusMT" --> "SubsystemCalibrationCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "SubsystemCommandStatusBaseType"
+"SubsystemCommandStatusBaseType" <|-- "SubsystemEraseCommandStatusMDT"
+"MessageType" <|-- "SubsystemEraseCommandStatusMT"
+"SubsystemEraseCommandStatusMT" --> "SubsystemEraseCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "SubsystemMaintenanceCommandStatusMDT"
+"MessageType" <|-- "SubsystemMaintenanceCommandStatusMT"
+"SubsystemMaintenanceCommandStatusMT" --> "SubsystemMaintenanceCommandStatusMDT" : MessageData
+"SubsystemCommandStatusBaseType" <|-- "SubsystemSettingsCommandStatusMDT"
+"MessageType" <|-- "SubsystemSettingsCommandStatusMT"
+"SubsystemSettingsCommandStatusMT" --> "SubsystemSettingsCommandStatusMDT" : MessageData
+"SubsystemCommandStatusBaseType" <|-- "SubsystemStateCommandStatusMDT"
+"MessageType" <|-- "SubsystemStateCommandStatusMT"
+"SubsystemStateCommandStatusMT" --> "SubsystemStateCommandStatusMDT" : MessageData
+"CommandStatusBaseType" <|-- "SupportCapabilityCommandStatusBaseType"
+"ID_Type" <|-- "SystemID_Type"
+"CommandStatusBaseType" <|-- "TaskCancelCommandStatusMDT"
+"TaskCancelCommandStatusMDT" --> "SourceID_ChoiceType" : SourceIdentifier
+"MessageType" <|-- "TaskCancelCommandStatusMT"
+"TaskCancelCommandStatusMT" --> "TaskCancelCommandStatusMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "TaskCommandStatusMDT"
+"MessageType" <|-- "TaskCommandStatusMT"
+"TaskCommandStatusMT" --> "TaskCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "TaskID_Type"
+"ID_Type" <|-- "TaskPlanCommandID_Type"
+"TaskPlanCommandStatusMDT" --> "TaskPlanCommandID_Type" : CommandID
+"TaskPlanCommandStatusMDT" --> "PlanCommandStatusType" : PlanningStatus
+"TaskPlanCommandStatusMDT" --> "TaskPlanningResultType" : AllocationResult
+"TaskPlanCommandStatusMDT" --> "TaskPlanID_Type" : ResultingPlanID
+"MessageType" <|-- "TaskPlanCommandStatusMT"
+"TaskPlanCommandStatusMT" --> "TaskPlanCommandStatusMDT" : MessageData
+"VersionedID_Type" <|-- "TaskPlanID_Type"
+"ValidationCommandStatusBaseType" <|-- "TaskPlanValidationCommandStatusMDT"
+"TaskPlanValidationCommandStatusMDT" --> "TaskPlanValidationID_Type" : TaskPlanValidationID
+"MessageType" <|-- "TaskPlanValidationCommandStatusMT"
+"TaskPlanValidationCommandStatusMT" --> "TaskPlanValidationCommandStatusMDT" : MessageData
+"ID_Type" <|-- "TaskPlanValidationID_Type"
+"RequirementPlanningResultBaseType" <|-- "TaskPlanningResultType"
+"TaskPlanningResultType" --> "TaskID_Type" : TaskID
+"SupportCapabilityCommandStatusBaseType" <|-- "TurretCommandStatusMDT"
+"MessageType" <|-- "TurretCommandStatusMT"
+"TurretCommandStatusMT" --> "TurretCommandStatusMDT" : MessageData
+"CannotComplyType" <|-- "UnallocatedReasonType"
+"UnallocatedReasonType" --> "SystemID_Type" : SystemID
+"CommandStatusBaseType" <|-- "ValidationCommandStatusBaseType"
+"ValidationCommandStatusBaseType" --> "CompletionStatusType" : CompletionStatus
+"ValidationCommandStatusBaseType" --> "IncompleteProcessingType" : IncompleteItem
+"ID_Type" <|-- "VersionedID_Type"
+"CapabilityCommandStatusBaseType" <|-- "WeatherRadarCommandStatusMDT"
+"MessageType" <|-- "WeatherRadarCommandStatusMT"
+"WeatherRadarCommandStatusMT" --> "WeatherRadarCommandStatusMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "WeatherRadarSettingsCommandStatusMDT"
+"MessageType" <|-- "WeatherRadarSettingsCommandStatusMT"
+"WeatherRadarSettingsCommandStatusMT" --> "WeatherRadarSettingsCommandStatusMDT" : MessageData
+"ZoneType" --> "AreaChoiceType" : Shape
+@enduml

@@ -1,0 +1,4510 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Lifecycle: Request
+
+class "AO_ConsentRequest" <<element>> {
+  +type: AO_ConsentRequestMT
+}
+class "AccessAssessmentRequest" <<element>> {
+  +type: AccessAssessmentRequestMT
+}
+class "ActivityMetricsRequest" <<element>> {
+  +type: ActivityMetricsRequestMT
+}
+class "AnalysisRouteRequest" <<element>> {
+  +type: AnalysisRouteRequestMT
+}
+class "ApprovalAuthorityRequest" <<element>> {
+  +type: ApprovalAuthorityRequestMT
+}
+class "ApprovalRequest" <<element>> {
+  +type: ApprovalRequestMT
+}
+class "AssessmentRequest" <<element>> {
+  +type: AssessmentRequestMT
+}
+class "COMINT_ConsentRequest" <<element>> {
+  +type: COMINT_ConsentRequestMT
+}
+class "CapabilityCoverageAreaRequest" <<element>> {
+  +type: CapabilityCoverageAreaRequestMT
+}
+class "CommAssetEstimationRequest" <<element>> {
+  +type: CommAssetEstimationRequestMT
+}
+class "CommPointingRequest" <<element>> {
+  +type: CommPointingRequestMT
+}
+class "CommScheduleAllocationUpdateRequest" <<element>> {
+  +type: CommScheduleAllocationUpdateRequestMT
+}
+class "CommSchedulingRequest" <<element>> {
+  +type: CommSchedulingRequestMT
+}
+class "CommTerminalPlanOverrideRequest" <<element>> {
+  +type: CommTerminalPlanOverrideRequestMT
+}
+class "CommUtilizationRequest" <<element>> {
+  +type: CommUtilizationRequestMT
+}
+class "ComponentConfigurationDataRequest" <<element>> {
+  +type: ComponentConfigurationDataRequestMT
+}
+class "ComponentStatusDataRequest" <<element>> {
+  +type: ComponentStatusDataRequestMT
+}
+class "ControlRequest" <<element>> {
+  +type: ControlRequestMT
+}
+class "DLZ_Request" <<element>> {
+  +type: DLZ_RequestMT
+}
+class "DMPI_DesignationRequest" <<element>> {
+  +type: DMPI_DesignationRequestMT
+}
+class "DamageAssessmentRequest" <<element>> {
+  +type: DamageAssessmentRequestMT
+}
+class "DamageEstimateRequest" <<element>> {
+  +type: DamageEstimateRequestMT
+}
+class "DataDeleteRequest" <<element>> {
+  +type: DataDeleteRequestMT
+}
+class "DataManagementRequest" <<element>> {
+  +type: DataManagementRequestMT
+}
+class "DataPlanOverrideRequest" <<element>> {
+  +type: DataPlanOverrideRequestMT
+}
+class "DataRecordListManagementRequest" <<element>> {
+  +type: DataRecordListManagementRequestMT
+}
+class "DataRecordManagementRequest" <<element>> {
+  +type: DataRecordManagementRequestMT
+}
+class "DataStorageUtilizationRequest" <<element>> {
+  +type: DataStorageUtilizationRequestMT
+}
+class "DataUpdateRequest" <<element>> {
+  +type: DataUpdateRequestMT
+}
+class "DesignationRequest" <<element>> {
+  +type: DesignationRequestMT
+}
+class "EA_ConsentRequest" <<element>> {
+  +type: EA_ConsentRequestMT
+}
+class "ESM_ConsentRequest" <<element>> {
+  +type: ESM_ConsentRequestMT
+}
+class "ElevationRequest" <<element>> {
+  +type: ElevationRequestMT
+}
+class "ElevationVisibilityRequest" <<element>> {
+  +type: ElevationVisibilityRequestMT
+}
+class "EntityConfirmationRequest" <<element>> {
+  +type: EntityConfirmationRequestMT
+}
+class "EntityManagementRequest" <<element>> {
+  +type: EntityManagementRequestMT
+}
+class "EntityOrbitalElementSetRequest" <<element>> {
+  +type: EntityOrbitalElementSetRequestMT
+}
+class "EntityOrbitalEphemerisRequest" <<element>> {
+  +type: EntityOrbitalEphemerisRequestMT
+}
+class "EntityOrbitalVCM_Request" <<element>> {
+  +type: EntityOrbitalVCM_RequestMT
+}
+class "ExternalDataRequest" <<element>> {
+  +type: ExternalDataRequestMT
+}
+class "FusionSettingsRequest" <<element>> {
+  +type: FusionSettingsRequestMT
+}
+class "IFF_ConsentRequest" <<element>> {
+  +type: IFF_ConsentRequestMT
+}
+class "LAR_Request" <<element>> {
+  +type: LAR_RequestMT
+}
+class "MA_ApprovalRequest" <<element>> {
+  +type: MA_ApprovalRequestMT
+}
+class "MA_AssessmentRequest" <<element>> {
+  +type: MA_AssessmentRequestMT
+}
+class "MA_COP_ConfigurationSettingsRequest" <<element>> {
+  +type: MA_COP_ConfigurationSettingsRequestMT
+}
+class "MA_ControlRequest" <<element>> {
+  +type: MA_ControlRequestMT
+}
+class "MA_DeconflictionSolutionRequest" <<element>> {
+  +type: MA_DeconflictionSolutionRequestMT
+}
+class "MA_DesignationRequest" <<element>> {
+  +type: MA_DesignationRequestMT
+}
+class "MA_LeaderUpdateRequest" <<element>> {
+  +type: MA_LeaderUpdateRequestMT
+}
+class "MA_PlanModificationRequest" <<element>> {
+  +type: MA_PlanModificationRequestMT
+}
+class "MA_RaftAppendEntriesRequest" <<element>> {
+  +type: MA_RaftAppendEntriesRequestMT
+}
+class "MA_RaftVoteRequest" <<element>> {
+  +type: MA_RaftVoteRequestMT
+}
+class "MA_SystemManagementRequest" <<element>> {
+  +type: MA_SystemManagementRequestMT
+}
+class "MA_SystemsNeededRequest" <<element>> {
+  +type: MA_SystemsNeededRequestMT
+}
+class "MA_WEZ_Request" <<element>> {
+  +type: MA_WEZ_RequestMT
+}
+class "MissionActivationRequest" <<element>> {
+  +type: MissionActivationRequestMT
+}
+class "MissionPlanMetricsReportRequest" <<element>> {
+  +type: MissionPlanMetricsReportRequestMT
+}
+class "OrbitConjunctionAssessmentRequest" <<element>> {
+  +type: OrbitConjunctionAssessmentRequestMT
+}
+class "OrbitMetricsRequest" <<element>> {
+  +type: OrbitMetricsRequestMT
+}
+class "OrbitModificationRequest" <<element>> {
+  +type: OrbitModificationRequestMT
+}
+class "OrbitalDebrisEstimateRequest" <<element>> {
+  +type: OrbitalDebrisEstimateRequestMT
+}
+class "PlanModificationRequest" <<element>> {
+  +type: PlanModificationRequestMT
+}
+class "PlanScoresRequest" <<element>> {
+  +type: PlanScoresRequestMT
+}
+class "ProductClassificationRequest" <<element>> {
+  +type: ProductClassificationRequestMT
+}
+class "ProductDisseminationRequest" <<element>> {
+  +type: ProductDisseminationRequestMT
+}
+class "ProductDownloadRequest" <<element>> {
+  +type: ProductDownloadRequestMT
+}
+class "ProductProcessingRequest" <<element>> {
+  +type: ProductProcessingRequestMT
+}
+class "PropagatorSettingsDataRequest" <<element>> {
+  +type: PropagatorSettingsDataRequestMT
+}
+class "QueryDataRequest" <<element>> {
+  +type: QueryDataRequestMT
+}
+class "RF_ResourceAllocationRequest" <<element>> {
+  +type: RF_ResourceAllocationRequestMT
+}
+class "RequirementMetricsRequest" <<element>> {
+  +type: RequirementMetricsRequestMT
+}
+class "ResendDataRequest" <<element>> {
+  +type: ResendDataRequestMT
+}
+class "RouteMetricsRequest" <<element>> {
+  +type: RouteMetricsRequestMT
+}
+class "RouteModificationRequest" <<element>> {
+  +type: RouteModificationRequestMT
+}
+class "ServiceConfigurationChangeRequest" <<element>> {
+  +type: ServiceConfigurationChangeRequestMT
+}
+class "ServiceConfigurationParamsDataRequest" <<element>> {
+  +type: ServiceConfigurationParamsDataRequestMT
+}
+class "ServiceRegistrationRequest" <<element>> {
+  +type: ServiceRegistrationRequestMT
+}
+class "ServiceStatusDataRequest" <<element>> {
+  +type: ServiceStatusDataRequestMT
+}
+class "StrikeConsentRequest" <<element>> {
+  +type: StrikeConsentRequestMT
+}
+class "SubsystemConfigurationDataRequest" <<element>> {
+  +type: SubsystemConfigurationDataRequestMT
+}
+class "SubsystemStatusDataRequest" <<element>> {
+  +type: SubsystemStatusDataRequestMT
+}
+class "SubsystemStatusDetailedDataRequest" <<element>> {
+  +type: SubsystemStatusDetailedDataRequestMT
+}
+class "SystemEstimationRequest" <<element>> {
+  +type: SystemEstimationRequestMT
+}
+class "SystemManagementRequest" <<element>> {
+  +type: SystemManagementRequestMT
+}
+class "SystemOrbitalElementSetRequest" <<element>> {
+  +type: SystemOrbitalElementSetRequestMT
+}
+class "SystemOrbitalEphemerisRequest" <<element>> {
+  +type: SystemOrbitalEphemerisRequestMT
+}
+class "SystemOrbitalVCM_Request" <<element>> {
+  +type: SystemOrbitalVCM_RequestMT
+}
+class "SystemsNeededRequest" <<element>> {
+  +type: SystemsNeededRequestMT
+}
+class "WorkingEOB_Request" <<element>> {
+  +type: WorkingEOB_RequestMT
+}
+class "WorkingSOB_Request" <<element>> {
+  +type: WorkingSOB_RequestMT
+}
+
+class "ACTDF_CollectionPlanType" <<complexType>> {
+  +PlanKey: ForeignKeyType
+  +Version: double
+}
+class "ACTDF_TaskID_Type" <<complexType>> {
+  --
+}
+class "ACTDF_TraceabilityType" <<complexType>> {
+  +ACTDF_MissionIdentifier: AlphanumericString54Type
+  +ACTDF_CollectionPlanIdentifier: ACTDF_CollectionPlanType
+  +ACTDF_TaskID: ACTDF_TaskID_Type
+}
+class "AMTI_SpecificDataType" <<complexType>> {
+  +CapabilityType: AMTI_CapabilityEnum
+  +SubCapabilityType: AMTI_SubCapabilityEnum
+}
+class "AOCO_TraceabilityType" <<complexType>> {
+  +SCM_Identifier: unsignedInt
+}
+class "AO_CodeType" <<complexType>> {
+  +PRF_Code: AO_PRF_CodeType
+  +PIM_Code: AO_PIM_CodeType
+}
+class "AO_ConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: AO_ConsentRequestType
+}
+class "AO_ConsentRequestMT" <<complexType>> {
+  +MessageData: AO_ConsentRequestMDT
+}
+class "AO_ConsentRequestType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+}
+class "ATO_TraceabilityType" <<complexType>> {
+  +MissionCallSign: AlphanumericDashSpaceUnderscoreString56OnlyType
+  +MissionIdentifier: AlphanumericDashSpaceUnderscoreString10OnlyType
+}
+class "Acceleration3D_Type" <<complexType>> {
+  +NorthAcceleration: AccelerationType
+  +EastAcceleration: AccelerationType
+  +DownAcceleration: AccelerationType
+  +Timestamp: DateTimeType
+}
+class "AccessAssessmentFilterType" <<complexType>> {
+  +AssessmentName: VisibleString32Type
+  +AssessedCapabilities: CapabilityTaxonomyUniversalType
+  +Subject: AssetFilterType
+  +AssessedObject: AssetFilterType
+  +AccessEvent: AccessEventFilterType
+}
+class "AccessAssessmentRequestMDT" <<complexType>> {
+  +RequestFrequency: RepeatEnum
+  +AssessmentPeriod: DateTimeRangeType
+  +AssessmentInterval: DurationType
+  +SubjectObject: IdentityKindAssetType
+  +ObjectToAssess: IdentityKindAssetType
+  +EffortToAssess: AccessEffortEnum
+  +CapabilitiesToAssess: CapabilityTaxonomyUniversalType
+  +AssessmentName: VisibleString32Type
+  +ResultsInAccessAssessmentMessage: boolean
+}
+class "AccessAssessmentRequestMT" <<complexType>> {
+  +MessageData: AccessAssessmentRequestMDT
+}
+class "AccessEventFilterType" <<complexType>> {
+  +Effort: AccessEffortEnum
+  +TimeRange: DateTimeRangeType
+  +DurationRange: DurationRangeType
+  +ObjectSeparationRange: DistanceConstraintsType
+  +UnambiguousTimeRange: DateTimeRangeType
+}
+class "ActionAllocationType" <<complexType>> {
+  +ActionID: ActionID_Type
+}
+class "ActionID_Type" <<complexType>> {
+  --
+}
+class "ActionPlanConstraintType" <<complexType>> {
+  +ActionPlanID: ActionPlanID_Type
+  +ChangeableAllocations: PlanChangeableConstraintsEnum
+  +ActionType: ActionTypeEnum
+}
+class "ActionPlanID_Type" <<complexType>> {
+  --
+}
+class "ActivityID_Type" <<complexType>> {
+  --
+}
+class "ActivityMetricsRequestMDT" <<complexType>> {
+  +ActivityPlanID: ActivityPlanID_Type
+  +ActivityPlanParts: ActivityPlanPartsEnum
+}
+class "ActivityMetricsRequestMT" <<complexType>> {
+  +MessageData: ActivityMetricsRequestMDT
+}
+class "ActivityPlanConstraintType" <<complexType>> {
+  +ActivityPlanID: ActivityPlanID_Type
+  +ChangeableActivities: PlanChangeableConstraintsEnum
+  +Parts: ActivityPlanPartsEnum
+}
+class "ActivityPlanID_Type" <<complexType>> {
+  --
+}
+class "AirfieldID_Type" <<complexType>> {
+  --
+}
+class "AltitudeRangeType" <<complexType>> {
+  +Min: AltitudeType
+  +Max: AltitudeType
+}
+class "AnalysisRouteID_Type" <<complexType>> {
+  --
+}
+class "AnalysisRouteRequestMDT" <<complexType>> {
+  +RequestFrequency: RepeatEnum
+  +RequestFrequencyPeriod: DurationType
+  +AnalysisRouteInputs: RoutePlanAnalysisInputsType
+}
+class "AnalysisRouteRequestMT" <<complexType>> {
+  +MessageData: AnalysisRouteRequestMDT
+}
+class "AnalyticConstraintsType" <<complexType>> {
+  +OpConstraint: OpConstraintWeightingType
+  +RiskSetting: SurvivabilityRiskSettingType
+  +AccessAssessmentThreshold: AccessAssessmentFilterType
+  +RF_TaskPerformance: RF_TaskPerformanceType
+}
+class "AntennaAndResourceInstanceType" <<complexType>> {
+  +AntennaSupportCapabilityID: SupportCapabilityID_Type
+  +AntennaResourceInstanceID: AntennaResourceID_Type
+}
+class "AntennaID_Type" <<complexType>> {
+  --
+}
+class "AntennaResourceChoiceType" <<complexType>> {
+  --
+}
+class "AntennaResourceID_Type" <<complexType>> {
+  --
+}
+class "AperturePointingOptionsType" <<complexType>> {
+  --
+}
+class "AppliesToType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +SubsystemID: SubsystemID_Type
+  +ServiceID: ServiceID_Type
+}
+class "ApproachAngleType" <<complexType>> {
+  --
+}
+class "ApproachConditionsType" <<complexType>> {
+  +FlightMode: StoreFlightModeEnum
+  +RangeOnHeading: DistanceType
+  +ApproachAngle: ApproachAngleType
+  +TargetFinalApproach: TargetFinalApproachType
+}
+class "ApprovalAuthorityRequestMDT" <<complexType>> {
+  +ApproverSystemID: SystemID_Type
+  +ApproverServiceID: ServiceID_Type
+  +ApproveeSystemID: SystemID_Type
+  +ApprovalPolicyID: ApprovalPolicyID_Type
+}
+class "ApprovalAuthorityRequestMT" <<complexType>> {
+  +MessageData: ApprovalAuthorityRequestMDT
+}
+class "ApprovalPolicyID_Type" <<complexType>> {
+  --
+}
+class "ApprovalRequestItemReferenceType" <<complexType>> {
+  --
+}
+class "ApprovalRequestMDT" <<complexType>> {
+  +Approver: OperatorRoleType
+  +ApprovalReferences: ApprovalRequestPolicyReferenceType
+  +RespondBy: DateTimeType
+}
+class "ApprovalRequestMT" <<complexType>> {
+  +MessageData: ApprovalRequestMDT
+}
+class "ApprovalRequestPolicyReferenceType" <<complexType>> {
+  +ApprovalPolicyID: ApprovalPolicyID_Type
+  +ApprovalItem: ApprovalRequestItemReferenceType
+}
+class "ArchiveRequestType" <<complexType>> {
+  --
+}
+class "AreaChoiceType" <<complexType>> {
+  --
+}
+class "AssessmentRequestMDT" <<complexType>> {
+  +AnalysisRouteID: AnalysisRouteID_Type
+  +RequestFrequencyType: RepeatEnum
+  +RequestFrequencyPeriod: DurationType
+  +ResultsInAssessmentMessage: boolean
+  +Category: AssessmentRequestType
+}
+class "AssessmentRequestMT" <<complexType>> {
+  +MessageData: AssessmentRequestMDT
+}
+class "AssessmentRequestType" <<complexType>> {
+  --
+}
+class "AssetFilterType" <<complexType>> {
+  +System: SystemFilterType
+  +Entity: EntityFilterType
+}
+class "AtmosphericDragModelType" <<complexType>> {
+  +AtmosphericDensityModel: AtmosphereModelEnum
+  +SpaceWeatherData: SpaceWeatherDataChoiceType
+  +DragModelCoefficient: DragCoefficientChoiceType
+  +EnergyDissipationRate: EnergyDissipationRateType
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AutonomousPlanningActionID_Type" <<complexType>> {
+  --
+}
+class "AvailableWeaponsType" <<complexType>> {
+  +Quantity: unsignedInt
+  +Weapon: StoreType
+}
+class "AzElReferenceType" <<complexType>> {
+  +Reference: LOS_ReferenceEnum
+  +Azimuth: AngleType
+  +Elevation: AngleHalfType
+}
+class "BoundaryType" <<complexType>> {
+  --
+}
+class "COE_OrbitBaseType" <<complexType>> {
+  +Eccentricity: DoubleNonNegativeType
+  +Inclination: AngleHalfPositiveType
+  +Orientation: COE_OrientationType
+}
+class "COE_PositionType" <<complexType>> {
+  --
+}
+class "COMINT_ConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: COMINT_ConsentRequestType
+}
+class "COMINT_ConsentRequestMT" <<complexType>> {
+  +MessageData: COMINT_ConsentRequestMDT
+}
+class "COMINT_ConsentRequestType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+}
+class "COMINT_SpecificDataType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +SubCapabilityType: COMINT_SubCapabilityEnum
+}
+class "CS_STO_TraceabilityType" <<complexType>> {
+  +CycleNumber: CS_CycleNumberType
+  +Version: BytePositiveType
+}
+class "CallSignType" <<complexType>> {
+  --
+}
+class "CapabilityCommandRankingType" <<complexType>> {
+  +Rank: ComparableRankingType
+  +InterruptOtherActivities: boolean
+  +CapabilityPrecedenceOverride: unsignedInt
+}
+class "CapabilityCoverageAreaRequestDataType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityCoverageAreaFactor: CapabilityCoverageAreaFactorEnum
+  +SensorPosition: Point3D_Type
+  +SensorOrientation: OrientationType
+}
+class "CapabilityCoverageAreaRequestMDT" <<complexType>> {
+  +RequestFrequencyType: RepeatEnum
+  +ResultsInCapabilityCoverageAreaMessage: boolean
+  +CapabilityCoverageAreaRequestDetails: CapabilityCoverageAreaRequestDataType
+}
+class "CapabilityCoverageAreaRequestMT" <<complexType>> {
+  +MessageData: CapabilityCoverageAreaRequestMDT
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CapabilityTaxonomyType" <<complexType>> {
+  +Action: ActionTypeEnum
+  +AirSample: AirSampleCapabilityEnum
+  +AMTI: AMTI_SpecificDataType
+  +AO: AO_CapabilityEnum
+  +CargoDelivery: CargoDeliverySpecificDataType
+  +COMINT: COMINT_SpecificDataType
+  +CommRelay: CommCapabilityEnum
+  +CounterSpace: CS_CapabilityEnum
+  +EA: CapabilityInitiationEnum
+  +Effect: EffectTypeEnum
+  +ESM: ESM_SpecificDataType
+  +Flight: FlightCapabilityEnum
+  +OrbitChange: OrbitChangeCapabilityEnum
+  +OrbitalSurveillance: OrbitalSurveillanceSpecificDataType
+  +OrbitalSurveillanceSensor: OrbitalSurveillanceSensorCapabilityEnum
+  +PO: PO_CapabilityEnum
+  +Refuel: RefuelCapabilityEnum
+  +Response: ResponseTypeEnum
+  +SAR: SAR_SpecificDataType
+  +SMTI: SMTI_SpecificDataType
+  +Strike: StoreType
+  +SystemDeployment: SystemDeploymentEnum
+  +TacticalOrder: TacticalOrderCapabilityEnum
+  +WeatherRadar: WeatherRadarCapabilityEnum
+}
+class "CapabilityTaxonomyUniversalBaseType" <<complexType>> {
+  +Capability: CapabilityTypeEnum
+  +CapabilityDetails: CapabilityTaxonomyType
+  +ThreatCapability: ThreatCapabilityEnum
+  +CapabilityInstanceID: CapabilityID_Type
+}
+class "CapabilityTaxonomyUniversalType" <<complexType>> {
+  +Threat: ThreatEnum
+}
+class "CargoDeliverySpecificDataType" <<complexType>> {
+  +CapabilityType: CargoDeliveryCapabilityEnum
+  +SubCapabilityType: CargoDeliverySubCapabilityEnum
+}
+class "CelestialBodyType" <<complexType>> {
+  +EphemerisSource: CelestialBodyEphemerisSourceEnum
+  +GravitationalParameter: DoubleNonNegativeType
+  +Name: CelestialBodyNameEnum
+}
+class "CivilPathTerminatorType" <<complexType>> {
+  --
+}
+class "ClassificationRequirementsType" <<complexType>> {
+  +InputProduct: InputProductType
+  +Classification: SecurityInformationType
+}
+class "ClimbType" <<complexType>> {
+  +ClimbRate: SpeedType
+  +ClimbType: ClimbOptimizationEnum
+}
+class "CloudsType" <<complexType>> {
+  +CloudCover: WeatherCloudCoverEnum
+  +CloudCoverAmplification: OktaType
+  +CloudFloor: AltitudeType
+  +CloudCeiling: AltitudeType
+}
+class "CollectionDeckTraceabilityType" <<complexType>> {
+  +CollectionDeckMissionIdentifier: AlphanumericString7OnlyType
+  +CollectionDeckTaskIdentifier: AlphanumericDashSpaceUnderscoreString12OnlyType
+}
+class "CommActionExtendedType" <<complexType>> {
+  --
+}
+class "CommActionType" <<complexType>> {
+  +ConfigurationID: CommConfigurationID_Type
+  +ConfigurationState: CommConfigurationStateEnum
+  +SubsystemCommand: SubsystemCommandType
+  +CommCapability: CommCapabilityType
+}
+class "CommAllocationConstraintType" <<complexType>> {
+  +AllocationID: CommScheduleAllocationID_Type
+  +ChangeableAllocation: PlanChangeableConstraintsEnum
+  +Parts: CommCapabilityEnum
+}
+class "CommAntennaModeType" <<complexType>> {
+  --
+}
+class "CommAssetEstimationRequestMDT" <<complexType>> {
+  +CommAssetID: CommAssetID_Type
+  +RequestType: CommAssetEstimationMessageEnum
+  +RequestFrequencyType: RepeatEnum
+  +ResultsInNativeMessage: boolean
+  +TimeStep: DurationType
+  +EstimationStart: DateTimeType
+  +EstimationEnd: DateTimeType
+}
+class "CommAssetEstimationRequestMT" <<complexType>> {
+  +MessageData: CommAssetEstimationRequestMDT
+}
+class "CommAssetID_Type" <<complexType>> {
+  --
+}
+class "CommCapabilityType" <<complexType>> {
+  +Action: NetworkLinkActionTypeEnum
+  +CapabilityID: CapabilityID_Type
+  +SubsystemID: SubsystemID_Type
+  +Ranking: CapabilityCommandRankingType
+  +Classification: SecurityInformationType
+  +ConnectionRequest: CommConnectionCommandEnum
+  +ActivateProfileID: CommProfileID_Type
+  +NetworkLinkID: NetworkLinkID_Type
+  +CommonSettings: CommControlType
+  +CryptoKey: CryptoLocationType
+  +CryptoZeroize: CryptoLocationType
+  +CryptoRollover: CryptoRolloverCommandType
+  +LinkPortAssignments: CommLinkPortMapType
+  +VerboseStatus: VerboseStatusType
+  +WaveformSpecificSettings: CommWaveformCapabilityCommandPET
+  +LinkConnectionRequest: LinkConnectionRequestType
+}
+class "CommConfigurationID_Type" <<complexType>> {
+  --
+}
+class "CommConnectionType" <<complexType>> {
+  +TransmitChannel: ForeignKeyType
+  +TransmitFrequency: FrequencyType
+  +InstantaneousTransmitBandwidth: FrequencyType
+  +ReceiveChannel: ForeignKeyType
+  +ReceiveFrequency: FrequencyType
+  +InstantaneousReceiveBandwidth: FrequencyType
+  +Modulation: CommModulationTypeEnum
+  +NetworkKey: ForeignKeyType
+  +NetworkTimeRef: boolean
+  +ExternalTimeRef: boolean
+  +NetworkTime: DateTimeType
+  +NetworkTimeUncertaintyRange: float
+  +NetworkTimeOffset: DurationType
+}
+class "CommControlType" <<complexType>> {
+  +InhibitTransmit: boolean
+  +InhibitReceive: boolean
+  +InhibitRelay: boolean
+  +ConnectionSettings: CommConnectionType
+  +ReceiverState: CommReceiverStateEnum
+  +RxPowerLevel: MilliwattPowerRatioType
+  +SquelchLevel: unsignedByte
+  +TransmitterState: CommTransmitterStateEnum
+  +TxPowerLevel: MilliwattPowerRatioType
+  +VolumeLevel: unsignedByte
+  +RF_DataRate: DataRateType
+  +AntennaID: ComponentID_Type
+  +RemoteDestination: RemoteDestinationType
+}
+class "CommCoverageDataType" <<complexType>> {
+  +TimeCoverage: TimeCoverageType
+}
+class "CommCoverageUserDataType" <<complexType>> {
+  +CommUserIdentifier: VisibleString256Type
+}
+class "CommDataType" <<complexType>> {
+  +Resource: CommResourceType
+  +CommType: CommCapabilityEnum
+  +UplinkDataRate: DataRateType
+  +UplinkFrequency: FrequencyType
+  +DownlinkDataRate: DataRateType
+  +DownlinkFrequency: FrequencyType
+  +CommSpecificData: CommSpecificRequestDataEXT
+}
+class "CommEffectivityID_Type" <<complexType>> {
+  --
+}
+class "CommLinkPortMapType" <<complexType>> {
+  +UserIO_ID: CommUserIO_ID_Type
+  +RF_UserLinkID: CommUserLinkID_Type
+}
+class "CommPointingID_Type" <<complexType>> {
+  --
+}
+class "CommPointingRequestMDT" <<complexType>> {
+  +CommPointingID: CommPointingID_Type
+  +PointingRequestState: CommPointingRequestEnum
+  +PointingVector: CommPointingType
+}
+class "CommPointingRequestMT" <<complexType>> {
+  +MessageData: CommPointingRequestMDT
+}
+class "CommPointingType" <<complexType>> {
+  +CommSystem: CommResourceType
+  +CommSystemPosition: Point3D_Type
+  +PointingVectorCenterpoint: Point4D_Type
+  +PointingVectorParameters: PointingVectorParameterType
+}
+class "CommProfileID_Type" <<complexType>> {
+  --
+}
+class "CommResourceType" <<complexType>> {
+  +CommSystemID: CommSystemID_Type
+  +CommAssetID: CommAssetID_Type
+  +AntennaID: AntennaID_Type
+  +AntennaModeIdentifier: CommAntennaModeType
+}
+class "CommScheduleAllocationID_Type" <<complexType>> {
+  --
+}
+class "CommScheduleAllocationMDT" <<complexType>> {
+  +CommScheduleAllocation: CommScheduleAllocationType
+}
+class "CommScheduleAllocationType" <<complexType>> {
+  +CommScheduleAllocationID: CommScheduleAllocationID_Type
+  +ControllingSystemID: SystemID_Type
+  +SystemID: SystemID_Type
+  +DesignatedSystemID: SystemID_Type
+  +CommSchedulingRequirementID: CommSchedulingRequirementID_Type
+  +CommSchedulingRequestID: RequestID_Type
+  +AllocatedComm: CommCoverageUserDataType
+}
+class "CommScheduleAllocationUpdateRequestMDT" <<complexType>> {
+  +AllocationUpdate: CommScheduleAllocationMDT
+}
+class "CommScheduleAllocationUpdateRequestMT" <<complexType>> {
+  +MessageData: CommScheduleAllocationUpdateRequestMDT
+}
+class "CommSchedulingRequestMDT" <<complexType>> {
+  +ControllingSystemID: SystemID_Type
+  +CommRequestAction: CommRequestActionEnum
+  +CommSchedulingRequirementID: CommSchedulingRequirementID_Type
+  +CommRequestData: CommCoverageUserDataType
+}
+class "CommSchedulingRequestMT" <<complexType>> {
+  +MessageData: CommSchedulingRequestMDT
+}
+class "CommSchedulingRequirementID_Type" <<complexType>> {
+  --
+}
+class "CommSpecificRequestDataEXT" <<complexType>> {
+  --
+}
+class "CommSystemID_Type" <<complexType>> {
+  --
+}
+class "CommTerminalPlanConfigurationActivationType" <<complexType>> {
+  +ConfigurationID: CommConfigurationID_Type
+  +CommandedState: PlanConfigurationActivationCommandEnum
+}
+class "CommTerminalPlanEffectivityActivationType" <<complexType>> {
+  +EffectivityID: CommEffectivityID_Type
+  +CommandedState: PlanConfigurationActivationCommandEnum
+  +EffectivityConfiguration: CommTerminalPlanConfigurationActivationType
+}
+class "CommTerminalPlanID_Type" <<complexType>> {
+  --
+}
+class "CommTerminalPlanOverrideActivationType" <<complexType>> {
+  +CommPlanID: CommTerminalPlanID_Type
+  +EffectivityActivation: CommTerminalPlanEffectivityActivationType
+}
+class "CommTerminalPlanOverrideRequestMDT" <<complexType>> {
+  +AllocatedToSystemID: SystemID_Type
+  +AllocatedToServiceID: ServiceID_Type
+  +Request: CommTerminalPlanOverrideRequestType
+}
+class "CommTerminalPlanOverrideRequestMT" <<complexType>> {
+  +MessageData: CommTerminalPlanOverrideRequestMDT
+}
+class "CommTerminalPlanOverrideRequestType" <<complexType>> {
+  +PlanActivation: CommTerminalPlanOverrideActivationType
+  +OperatorModification: CommActionExtendedType
+}
+class "CommUserIO_ID_Type" <<complexType>> {
+  --
+}
+class "CommUserLinkID_Type" <<complexType>> {
+  --
+}
+class "CommUtilizationRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +CommUtilizationData: CommDataType
+  +TimeSpan: DateTimeRangeType
+  +Position: Point2D_Type
+  +RelativePriority: ComparableRankingType
+}
+class "CommUtilizationRequestMT" <<complexType>> {
+  +MessageData: CommUtilizationRequestMDT
+}
+class "CommWaveformCapabilityCommandPET" <<complexType>> {
+  --
+}
+class "ComparableRankingType" <<complexType>> {
+  +Priority: unsignedShort
+  +PrecedenceWithinPriority: unsignedShort
+}
+class "ComponentConfigurationDataRequestMDT" <<complexType>> {
+  +ServiceID: ServiceID_Type
+}
+class "ComponentConfigurationDataRequestMT" <<complexType>> {
+  +MessageData: ComponentConfigurationDataRequestMDT
+}
+class "ComponentID_Type" <<complexType>> {
+  --
+}
+class "ComponentResourceType" <<complexType>> {
+  --
+}
+class "ComponentStatusDataRequestMDT" <<complexType>> {
+  +StatusType: ComponentStatusRequestEnum
+  +ServiceID: ServiceID_Type
+  +ComponentID: ComponentID_Type
+}
+class "ComponentStatusDataRequestMT" <<complexType>> {
+  +MessageData: ComponentStatusDataRequestMDT
+}
+class "ConditionalPathSegmentType" <<complexType>> {
+  +PathID: PathID_Type
+  +PathSegmentID: SegmentID_Type
+  +Condition: PathSegmentConditionType
+}
+class "ConstrainingPlansType" <<complexType>> {
+  +ConstrainingPlanType: PlanTypeEnum
+  +MissionPlanID: MissionPlanID_Type
+  +TaskPlan: TaskPlanConstraintType
+  +RoutePlan: RoutePlanConstraintType
+  +RouteActivityPlan: RouteActivityPlanConstraintType
+  +OrbitPlan: OrbitPlanConstraintType
+  +OrbitActivityPlan: OrbitActivityPlanConstraintType
+  +ActivityPlan: ActivityPlanConstraintType
+  +CommAllocation: CommAllocationConstraintType
+  +EffectPlan: EffectPlanConstraintType
+  +ActionPlan: ActionPlanConstraintType
+  +ResponsePlan: ResponsePlanConstraintType
+}
+class "ControlRequestMDT" <<complexType>> {
+  +ControlType: ControlTypeEnum
+  +RequestType: ControlRequestEnum
+  +Controller: SystemServiceType
+  +Controllee: ControlleeType
+}
+class "ControlRequestMT" <<complexType>> {
+  +MessageData: ControlRequestMDT
+}
+class "ControlleeType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +CapabilityID: CapabilityID_Type
+}
+class "CountryCodeType" <<complexType>> {
+  --
+}
+class "CovarianceMatrixType" <<complexType>> {
+  +Category: CovarianceMatrixCategoryEnum
+  +Covariance: double
+}
+class "CryptoLocationType" <<complexType>> {
+  +CryptoSlotGroupID: CryptoSlotGroupID_Type
+  +CryptoSlotIdentifier: CryptoSlotIdentifierType
+}
+class "CryptoRolloverCommandType" <<complexType>> {
+  +CryptoRolloverTarget: CryptoLocationType
+  +CryptoRolloverAction: CryptoRolloverActionEnum
+  +RolloverScheduleTime: DateTimeType
+  +ZeroizePreviousSlot: boolean
+}
+class "CryptoSlotGroupID_Type" <<complexType>> {
+  --
+}
+class "DLZ_RequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ResultsInNativeMessage: boolean
+  +DLZ_Type: DLZ_RelationEnum
+  +WeaponTargetPairing: WeaponeeringTargetType
+}
+class "DLZ_RequestMT" <<complexType>> {
+  +MessageData: DLZ_RequestMDT
+}
+class "DMPI_AllocationType" <<complexType>> {
+  +DMPI_ID: DMPI_ID_Type
+  +DMPI_Ranking: ComparableRankingType
+  +CapabilityID: CapabilityID_Type
+}
+class "DMPI_BlastPairingType" <<complexType>> {
+  +DMPI_ID: DMPI_ID_Type
+  +EstimatedBlastRadius: DistanceType
+}
+class "DMPI_DamageEstimateType" <<complexType>> {
+  +DMPI_ID: DMPI_ID_Type
+  +DMPI_Location: DMPI_LocationType
+  +Weaponeering: WeaponeeringType
+  +EstimatedBlastRadius: DistanceType
+}
+class "DMPI_DesignationRequestMDT" <<complexType>> {
+  +TaskID: TaskID_Type
+  +ProductMetadataID: ProductMetadataID_Type
+  +RecommendedWeapons: RecommendedWeaponsType
+  +AvailableWeapons: AvailableWeaponsType
+  +RespondBy: DateTimeType
+  +ProposedDMPI_Coordinates: Point2D_Type
+  +ReferencePixelCoordinate: PixelReferenceCoordinateType
+}
+class "DMPI_DesignationRequestMT" <<complexType>> {
+  +MessageData: DMPI_DesignationRequestMDT
+}
+class "DMPI_ID_Type" <<complexType>> {
+  --
+}
+class "DMPI_LocationType" <<complexType>> {
+  +DMPI_Coordinates: Point3D_Type
+  +LinearErrorProbable: DistanceType
+  +CircularErrorProbable: DistanceType
+  +Confidence: PercentType
+}
+class "DamageAssessmentRequestMDT" <<complexType>> {
+  +AssessmentType: DamageCategoryEnum
+  +Subject: DamageSubjectType
+  +AssessmentZone: ZoneType
+  +ProductMetadataID: ProductMetadataID_Type
+  +DamageSummaryID: DamageSummaryID_Type
+  +RespondBy: DateTimeType
+}
+class "DamageAssessmentRequestMT" <<complexType>> {
+  +MessageData: DamageAssessmentRequestMDT
+}
+class "DamageEstimateRequestMDT" <<complexType>> {
+  +EstimateType: DamageCategoryEnum
+  +EstimateContents: DamageEstimateContentsEnum
+  +ReportingThreshold: PercentType
+  +TargetData: DamageEstimateTargetType
+  +TargetName: VisibleString64Type
+  +DMPI_Data: DMPI_DamageEstimateType
+  +TaskID: TaskID_Type
+  +ReleasePoint: Point3D_Type
+  +ProductMetadataID: ProductMetadataID_Type
+  +RespondBy: DateTimeType
+  +EstimateZone: ZoneType
+  +DMPI_BlastPairing: DMPI_BlastPairingType
+}
+class "DamageEstimateRequestMT" <<complexType>> {
+  +MessageData: DamageEstimateRequestMDT
+}
+class "DamageEstimateTargetType" <<complexType>> {
+  --
+}
+class "DamageSubjectType" <<complexType>> {
+  --
+}
+class "DamageSummaryID_Type" <<complexType>> {
+  --
+}
+class "DataDeleteChoiceType" <<complexType>> {
+  --
+}
+class "DataDeleteRequestMDT" <<complexType>> {
+  +AppliesTo: AppliesToType
+  +Data: DataDeleteChoiceType
+}
+class "DataDeleteRequestMT" <<complexType>> {
+  +MessageData: DataDeleteRequestMDT
+}
+class "DataDestinationID_Type" <<complexType>> {
+  --
+}
+class "DataLinkIdentifierPET" <<complexType>> {
+  --
+}
+class "DataLinkNativeFilterPET" <<complexType>> {
+  --
+}
+class "DataLinkNativeInfoPET" <<complexType>> {
+  --
+}
+class "DataManagementCategoryType" <<complexType>> {
+  --
+}
+class "DataManagementRequestMDT" <<complexType>> {
+  +AppliesTo: AppliesToType
+  +Category: DataManagementCategoryType
+}
+class "DataManagementRequestMT" <<complexType>> {
+  +MessageData: DataManagementRequestMDT
+}
+class "DataPlanConfigurationActivationType" <<complexType>> {
+  +ConfigurationID: CommConfigurationID_Type
+  +CommandedState: PlanConfigurationActivationCommandEnum
+}
+class "DataPlanEffectivityActivationType" <<complexType>> {
+  +EffectivityID: CommEffectivityID_Type
+  +CommandedState: PlanConfigurationActivationCommandEnum
+  +EffectivityConfiguration: DataPlanConfigurationActivationType
+}
+class "DataPlanID_Type" <<complexType>> {
+  +ForeignDataPlanKey: ForeignKeyType
+}
+class "DataPlanOverrideActivationType" <<complexType>> {
+  +DataPlanID: DataPlanID_Type
+  +EffectivityActivation: DataPlanEffectivityActivationType
+}
+class "DataPlanOverrideRequestMDT" <<complexType>> {
+  +AllocatedToSystemID: SystemID_Type
+  +AllocatedToServiceID: ServiceID_Type
+  +Request: DataPlanOverrideRequestType
+}
+class "DataPlanOverrideRequestMT" <<complexType>> {
+  +MessageData: DataPlanOverrideRequestMDT
+}
+class "DataPlanOverrideRequestType" <<complexType>> {
+  +PlanActivation: DataPlanOverrideActivationType
+  +OperatorModification: PlannedGatewayConfigurationType
+}
+class "DataProductClassificationLevelType" <<complexType>> {
+  +Min: SecurityInformationType
+  +Max: SecurityInformationType
+}
+class "DataRecordBaseType" <<complexType>> {
+  +DataRecordInstanceID: DataRecordInstanceID_Type
+}
+class "DataRecordDeleteDetailsType" <<complexType>> {
+  +DataRecordInstanceID: DataRecordInstanceID_Type
+  +MessageType: MessageTypeEnum
+}
+class "DataRecordInstanceID_Type" <<complexType>> {
+  --
+}
+class "DataRecordListID_Type" <<complexType>> {
+  --
+}
+class "DataRecordListManagementRequestMDT" <<complexType>> {
+  +DataRecordListID: DataRecordListID_Type
+  +DataRecordInstanceID: DataRecordInstanceID_Type
+  +AddRecord: ManagedListBaseType
+  +DeleteRecord: ManagedListBaseType
+}
+class "DataRecordListManagementRequestMT" <<complexType>> {
+  +MessageData: DataRecordListManagementRequestMDT
+}
+class "DataRecordManagementDetailsType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +DataRecord: DataRecordBaseType
+}
+class "DataRecordManagementRequestMDT" <<complexType>> {
+  +CreateDataRecord: DataRecordManagementDetailsType
+  +UpdateDataRecord: DataRecordManagementDetailsType
+  +DeleteDataRecord: DataRecordDeleteDetailsType
+}
+class "DataRecordManagementRequestMT" <<complexType>> {
+  +MessageData: DataRecordManagementRequestMDT
+}
+class "DataStorageUtilizationRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +SubsystemID: SubsystemID_Type
+  +ServiceID: ServiceID_Type
+}
+class "DataStorageUtilizationRequestMT" <<complexType>> {
+  +MessageData: DataStorageUtilizationRequestMDT
+}
+class "DataUpdateOriginatorType" <<complexType>> {
+  --
+}
+class "DataUpdateRequestMDT" <<complexType>> {
+  +ServiceID: ServiceID_Type
+  +Originator: DataUpdateOriginatorType
+  +RequestType: DataUpdateRequestType
+}
+class "DataUpdateRequestMT" <<complexType>> {
+  +MessageData: DataUpdateRequestMDT
+}
+class "DataUpdateRequestType" <<complexType>> {
+  --
+}
+class "DateTimeRangeType" <<complexType>> {
+  +Begin: DateTimeType
+  +End: DateTimeType
+}
+class "DependentActivityType" <<complexType>> {
+  +TypeOfDependency: TypeOfDependencyEnum
+  +DependentActivityID: ActivityID_Type
+}
+class "DesignationDataType" <<complexType>> {
+  +DesignationID: DesignationID_Type
+  +Target: TargetType
+  +TypeOfDesignation: DesignationEnum
+  +DesignationObjective: RequirementTaxonomyType
+  +ApplicableSystemID: SystemID_Type
+}
+class "DesignationID_Type" <<complexType>> {
+  --
+}
+class "DesignationRequestMDT" <<complexType>> {
+  +DesignationData: DesignationDataType
+}
+class "DesignationRequestMT" <<complexType>> {
+  +MessageData: DesignationRequestMDT
+}
+class "DisseminationRequirementsType" <<complexType>> {
+  +InputProduct: InputProductType
+  +DisseminationPlan: DisseminationSubplanType
+}
+class "DisseminationSubplanType" <<complexType>> {
+  +PushContents: PushContentsEnum
+  +DestinationID: ProductDisseminationDestinationID_Type
+  +ArchiveCommand: ArchiveRequestType
+  +ExtensionCommand: SourceCommandEXT
+}
+class "DistanceConstraintsType" <<complexType>> {
+  +Min: DistanceType
+  +Max: DistanceType
+}
+class "DragCoefficientChoiceType" <<complexType>> {
+  --
+}
+class "DurationRangeType" <<complexType>> {
+  +Min: DurationType
+  +Max: DurationType
+}
+class "EA_ConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: EA_ConsentRequestType
+}
+class "EA_ConsentRequestMT" <<complexType>> {
+  +MessageData: EA_ConsentRequestMDT
+}
+class "EA_ConsentRequestType" <<complexType>> {
+  +ProposedEA: EA_ProposedType
+}
+class "EA_ProposedType" <<complexType>> {
+  --
+}
+class "EEI_ID_Type" <<complexType>> {
+  --
+}
+class "EOB_IdentityType" <<complexType>> {
+  --
+}
+class "ESM_ConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: ESM_ConsentRequestType
+}
+class "ESM_ConsentRequestMT" <<complexType>> {
+  +MessageData: ESM_ConsentRequestMDT
+}
+class "ESM_ConsentRequestType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+}
+class "ESM_SpecificDataType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +SubCapabilityType: ESM_SubCapabilityEnum
+}
+class "EarthOrientationParametersDataChoiceType" <<complexType>> {
+  --
+}
+class "EffectAllocationType" <<complexType>> {
+  +EffectID: EffectID_Type
+}
+class "EffectID_Type" <<complexType>> {
+  --
+}
+class "EffectPlanConstraintType" <<complexType>> {
+  +EffectPlanID: EffectPlanID_Type
+  +ChangeableAllocations: PlanChangeableConstraintsEnum
+  +EffectType: EffectTypeEnum
+}
+class "EffectPlanID_Type" <<complexType>> {
+  --
+}
+class "ElevationRequestMDT" <<complexType>> {
+  +ElevationRequested: ElevationRequestPointsType
+}
+class "ElevationRequestMT" <<complexType>> {
+  +MessageData: ElevationRequestMDT
+}
+class "ElevationRequestPointsType" <<complexType>> {
+  +RequestPoint: Point2D_Type
+}
+class "ElevationVisibilityRequestMDT" <<complexType>> {
+  +VisibilityRequest: ElevationVisibilityRequestPointsType
+}
+class "ElevationVisibilityRequestMT" <<complexType>> {
+  +MessageData: ElevationVisibilityRequestMDT
+}
+class "ElevationVisibilityRequestPointsType" <<complexType>> {
+  +FromPoint: Point3D_Type
+  +RequestPoint: Point2D_Type
+}
+class "EllipseType" <<complexType>> {
+  +SemiMajorAxisLength: DistanceType
+  +SemiMinorAxisLength: DistanceType
+  +Orientation: AngleHalfType
+}
+class "EmitterIdentityCategoryType" <<complexType>> {
+  --
+}
+class "EmitterIdentityType" <<complexType>> {
+  +EmitterCategory: EmitterIdentityCategoryType
+  +NATO_SpotNumber: OctalValueType
+}
+class "EndPointType" <<complexType>> {
+  --
+}
+class "EnduranceBaseType" <<complexType>> {
+  +Fuel: MassType
+  +Duration: DurationType
+  +DurationEnd: DateTimeType
+  +Percent: PercentType
+}
+class "EnduranceFootprintType" <<complexType>> {
+  +Boundary: BoundaryType
+  +ReferenceAltitude: AltitudeType
+  +Duration: DurationType
+}
+class "EnduranceRemainingType" <<complexType>> {
+  +EnduranceRemaining: EnduranceType
+  +LogicalOperator: EqualityExpressionEnum
+}
+class "EnduranceType" <<complexType>> {
+  +Footprint: EnduranceFootprintType
+}
+class "EntityConfirmationRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +RequirementID: RequirementInstanceID_ChoiceType
+  +EntityID: EntityID_Type
+  +TimeStamp: DateTimeType
+  +EntityDimension_EstimateUncertainty: EntityDimensionEstimateUncertaintyType
+  +EntityDimension_Estimate: EntityDimensionEstimateType
+  +AttitudeEstimates: QuaternionAttitudeType
+  +FileMetadataID: FileMetadataID_Type
+  +ProductMetadataID: ProductMetadataID_Type
+  +MeasurementKinematics: MeasurementKinematicsChoiceType
+  +ReferenceKinematics: SensorKinematicsChoiceType
+  +SystemEphemerisID: SystemOrbitalEphemerisID_Type
+  +EntityEphemerisID: EntityOrbitalEphemerisID_Type
+}
+class "EntityConfirmationRequestMT" <<complexType>> {
+  +MessageData: EntityConfirmationRequestMDT
+}
+class "EntityDimensionEstimateType" <<complexType>> {
+  +EntityDimension_SA_Spread: DistanceType
+  +EntityDimension: SizeType
+}
+class "EntityDimensionEstimateUncertaintyType" <<complexType>> {
+  +EntityDimension_SA_SpreadUncertainty: DistanceType
+  +EntityDimensionUncertainty: SizeUncertaintyType
+}
+class "EntityEphemerisBasisChoiceType" <<complexType>> {
+  --
+}
+class "EntityEphemerisRequestParametersType" <<complexType>> {
+  +EphemerisBasis: EntityEphemerisBasisChoiceType
+}
+class "EntityFilterType" <<complexType>> {
+  +Designation: DesignationFilterType
+  +Characteristics: EntityComparativeType
+  +EntityID: EntityID_Type
+  +Source: EntitySourceEnum
+  +GeoFilter: GeoFiltersQueryType
+  +OrbitalFilter: OrbitalFiltersQueryType
+}
+class "EntityID_Type" <<complexType>> {
+  --
+}
+class "EntityManagementRequestMDT" <<complexType>> {
+  +AuthorityType: EntityManagementRequestAuthorityEnum
+  +RequestSource: RequestSourceEnum
+  +RequestType: EntityManagementRequestType
+  +UpdateFromControllingUnit: boolean
+  +Source: SystemMessageIdentifierType
+  +SystemID: SystemID_Type
+  +ServiceID: ServiceID_Type
+}
+class "EntityManagementRequestMT" <<complexType>> {
+  +MessageData: EntityManagementRequestMDT
+}
+class "EntityManagementRequestType" <<complexType>> {
+  --
+}
+class "EntityOrbitalElementSetRequestMDT" <<complexType>> {
+  +EntityID: EntityID_Type
+  +ResultsInNativeMessage: boolean
+  +Parameters: OrbitalElementSetRequestParametersType
+}
+class "EntityOrbitalElementSetRequestMT" <<complexType>> {
+  +MessageData: EntityOrbitalElementSetRequestMDT
+}
+class "EntityOrbitalEphemerisID_Type" <<complexType>> {
+  --
+}
+class "EntityOrbitalEphemerisRequestMDT" <<complexType>> {
+  +EntityID: EntityID_Type
+  +ResultsInNativeMessage: boolean
+  +Parameters: EntityEphemerisRequestParametersType
+}
+class "EntityOrbitalEphemerisRequestMT" <<complexType>> {
+  +MessageData: EntityOrbitalEphemerisRequestMDT
+}
+class "EntityOrbitalVCM_RequestMDT" <<complexType>> {
+  +EntityID: EntityID_Type
+  +ResultsInNativeMessage: boolean
+  +Parameters: OrbitalVCM_RequestParametersType
+}
+class "EntityOrbitalVCM_RequestMT" <<complexType>> {
+  +MessageData: EntityOrbitalVCM_RequestMDT
+}
+class "EnvironmentIdentityType" <<complexType>> {
+  +Environment: EnvironmentEnum
+  +OrbitRegime: OrbitRegimeType
+}
+class "EphemerisPropagatorChoiceType" <<complexType>> {
+  --
+}
+class "ExecutionSequenceReplaceOrModifyChoiceType" <<complexType>> {
+  --
+}
+class "ExternalDataRequestMDT" <<complexType>> {
+  +ExternalRequestedDataID: ExternalRequestedDataID_Type
+  +RequestedData: ExternalDataRequestEnum
+}
+class "ExternalDataRequestMT" <<complexType>> {
+  +MessageData: ExternalDataRequestMDT
+}
+class "ExternalRequestedDataID_Type" <<complexType>> {
+  --
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "FacilityIdentificationType" <<complexType>> {
+  --
+}
+class "FileLocationID_Type" <<complexType>> {
+  --
+}
+class "FileMetadataID_Type" <<complexType>> {
+  --
+}
+class "FilterID_Type" <<complexType>> {
+  --
+}
+class "FloatMinMaxType" <<complexType>> {
+  +Min: float
+  +Max: float
+}
+class "ForceModelType" <<complexType>> {
+  +GravityModel: GravityModelType
+  +AtmosphericDragModel: AtmosphericDragModelType
+  +SolarRadiationPressureModel: SolarRadiationPressureModelType
+  +ThirdBodyGravityModel: ThirdBodyGravityType
+  +EarthOrientationParametersDataChoice: EarthOrientationParametersDataChoiceType
+  +PhysicalModel: PhysicalModelType
+  +Maneuver: OrbitalManeuverDetailsType
+  +VCM_ForceModelOptions: VCM_ForceModelOptionsType
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "FrequencyRangeType" <<complexType>> {
+  +Min: FrequencyType
+  +Max: FrequencyType
+}
+class "FusionSettingsRequestMDT" <<complexType>> {
+  +RequestType: FusionSettingsRequestType
+  +SystemID: SystemID_Type
+  +ServiceID: ServiceID_Type
+}
+class "FusionSettingsRequestMT" <<complexType>> {
+  +MessageData: FusionSettingsRequestMDT
+}
+class "FusionSettingsRequestType" <<complexType>> {
+  --
+}
+class "FuzeTriggerType" <<complexType>> {
+  --
+}
+class "FuzeType" <<complexType>> {
+  +FuzeTrigger: FuzeTriggerType
+  +FuzeMode: WeaponFuzeModeEnum
+  +FuzePosition: WeaponFuzePositionEnum
+  +Mnemonic: VisibleString1024Type
+  +FuzeSeparationArmTime: DurationType
+}
+class "GatewayConfigurationPET" <<complexType>> {
+  --
+}
+class "GatewayLinkDestinationType" <<complexType>> {
+  +NetworkLinkID: NetworkLinkID_Type
+  +CommCapabilityID: CapabilityID_Type
+  +CommActivityID: ActivityID_Type
+  +DataDestination: MessageDestinationType
+  +LinkPortAssignments: CommLinkPortMapType
+  +ConfigurationState: CommConfigurationStateEnum
+}
+class "GeoFiltersQueryType" <<complexType>> {
+  +GeoFilterZone: ZoneType
+  +RelationToGeoFilterZone: ZoneRelationEnum
+}
+class "GeoLocatedObjectType" <<complexType>> {
+  --
+}
+class "GravityModelType" <<complexType>> {
+  +GravityModel: GravityModelEnum
+  +Degree: unsignedInt
+  +Order: unsignedInt
+  +UseSolidTides: boolean
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "HierarchyModificationType" <<complexType>> {
+  +ParentMissionPlanID: MissionPlanID_Type
+  +AdditionalSubordinateMissionPlanID: MissionPlanID_Type
+  +RetractedSubordinateMissionPlanID: MissionPlanID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "IFF_ConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: IFF_ConsentRequestType
+}
+class "IFF_ConsentRequestMT" <<complexType>> {
+  +MessageData: IFF_ConsentRequestMDT
+}
+class "IFF_ConsentRequestType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +RF_Override: boolean
+}
+class "IFF_Type" <<complexType>> {
+  +Mode1: IFF_Mode1Type
+  +Mode2: IFF_OctalModeType
+  +Mode3A: IFF_OctalModeType
+  +Mode3LC: IFF_OctalModeType
+  +Mode4: IFF_Mode4Type
+  +Mode5: IFF_Mode5Type
+  +ModeS: IFF_ModeS_Type
+  +ModeC: IFF_OctalModeType
+}
+class "IdentityKindAssetType" <<complexType>> {
+  --
+}
+class "IdentityType" <<complexType>> {
+  +Standard: StandardIdentityType
+  +Environment: EnvironmentIdentityType
+  +Platform: PlatformIdentityType
+  +Specific: SpecificIdentityType
+  +Emitter: EmitterIdentityType
+  +SpecificEmitter: SpecificEmitterIdentityType
+  +SpecificFacility: FacilityIdentificationType
+  +SpecificVehicle: VehicleIdentificationType
+  +EOB: EOB_IdentityType
+  +Weapon: StoreType
+}
+class "ImpactConditionsType" <<complexType>> {
+  +Fuze: FuzeType
+  +ImpactSpeed: SpeedType
+  +ImpactPoint: ImpactPointType
+  +ImpactAngle: AzElReferenceType
+  +SpinRate: unsignedInt
+}
+class "ImpactPointType" <<complexType>> {
+  --
+}
+class "InertialStateRelativeType" <<complexType>> {
+  +Position: PointChoice4D_Type
+  +PositionUncertainty: UncertaintyType
+  +DomainVelocity: Velocity3D_Type
+  +GroundVelocity: Velocity2D_Type
+  +RelativeVelocity: Velocity3D_Type
+  +DomainAcceleration: Acceleration3D_Type
+  +Orientation: OrientationType
+  +OrientationRate: OrientationRateType
+}
+class "InputProductType" <<complexType>> {
+  --
+}
+class "InternationalDesignatorType" <<complexType>> {
+  +Year: unsignedByte
+  +Number: unsignedShort
+  +Piece: LaunchPieceType
+}
+class "IntervalChoiceType" <<complexType>> {
+  --
+}
+class "LAR_DetailsType" <<complexType>> {
+  +Composite: boolean
+  +WeaponTargetPairing: WeaponTargetPairingChoiceType
+  +PlannedReleaseConditions: PlannedReleaseConditionsType
+  +WeaponRoute: RoutePlanReferenceType
+}
+class "LAR_RequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ResultsInNativeMessage: boolean
+  +LAR_Type: LAR_RelationEnum
+  +LAR_Details: LAR_DetailsType
+}
+class "LAR_RequestMT" <<complexType>> {
+  +MessageData: LAR_RequestMDT
+}
+class "LinkConnectionRequestType" <<complexType>> {
+  +ConnectCommand: CommConnectionCommandEnum
+  +CommonSettingsChange: CommControlType
+  +LinkPortAssignments: CommLinkPortMapType
+  +NetworkLinkID: NetworkLinkID_Type
+}
+class "MA_ApprovalRequestItemReferenceType" <<complexType>> {
+  --
+}
+class "MA_ApprovalRequestMDT" <<complexType>> {
+  +Approver: OperatorRoleType
+  +ApprovalReferences: MA_ApprovalRequestPolicyReferenceType
+  +RespondBy: DateTimeType
+}
+class "MA_ApprovalRequestMT" <<complexType>> {
+  +MessageData: MA_ApprovalRequestMDT
+}
+class "MA_ApprovalRequestPolicyReferenceType" <<complexType>> {
+  +ApprovalPolicyID: ApprovalPolicyID_Type
+  +ApprovalItem: MA_ApprovalRequestItemReferenceType
+}
+class "MA_AssessmentRequestMDT" <<complexType>> {
+  +AnalysisRouteID: AnalysisRouteID_Type
+  +RequestFrequencyType: RepeatEnum
+  +RequestFrequencyPeriod: DurationType
+  +ResultsInAssessmentMessage: boolean
+  +Category: MA_AssessmentRequestType
+}
+class "MA_AssessmentRequestMT" <<complexType>> {
+  +MessageData: MA_AssessmentRequestMDT
+}
+class "MA_AssessmentRequestType" <<complexType>> {
+  --
+}
+class "MA_COP_ConfigurationSettingsRequestMDT" <<complexType>> {
+  +ApplicableToIDs: MA_PackageSystemType
+}
+class "MA_COP_ConfigurationSettingsRequestMT" <<complexType>> {
+  +MessageData: MA_COP_ConfigurationSettingsRequestMDT
+}
+class "MA_CommandValueType" <<complexType>> {
+  --
+}
+class "MA_ConflictID_Type" <<complexType>> {
+  --
+}
+class "MA_ControlAssignmentType" <<complexType>> {
+  --
+}
+class "MA_ControlChoiceType" <<complexType>> {
+  --
+}
+class "MA_ControlDefinitionBaseType" <<complexType>> {
+  +ControlChoiceType: MA_ControlChoiceType
+  +Controller: SystemServiceType
+  +Controllee: ControlleeType
+}
+class "MA_ControlRequestMDT" <<complexType>> {
+  +ControlAssignment: MA_ControlAssignmentType
+  +RequestType: MA_ControlRequestEnum
+}
+class "MA_ControlRequestMT" <<complexType>> {
+  +MessageData: MA_ControlRequestMDT
+}
+class "MA_DeconflictionSolutionRequestMDT" <<complexType>> {
+  +ConflictID: MA_ConflictID_Type
+  +ConflictStatus: MA_ConflictStatusEnum
+  +Plan: MA_RoutePlanMDT
+}
+class "MA_DeconflictionSolutionRequestMT" <<complexType>> {
+  +MessageData: MA_DeconflictionSolutionRequestMDT
+}
+class "MA_DesignationDataType" <<complexType>> {
+  +DesignationID: DesignationID_Type
+  +Target: TargetType
+  +TypeOfDesignation: DesignationEnum
+  +DesignationObjective: RequirementTaxonomyType
+  +AppliesToIDs: MA_PackageSystemType
+}
+class "MA_DesignationRequestMDT" <<complexType>> {
+  +DesignationData: MA_DesignationDataType
+}
+class "MA_DesignationRequestMT" <<complexType>> {
+  +MessageData: MA_DesignationRequestMDT
+}
+class "MA_EndPointType" <<complexType>> {
+  --
+}
+class "MA_LeaderUpdateRequestMDT" <<complexType>> {
+  +Status: MA_NominationEnum
+  +Request: MA_LeaderUpdateRequestSetType
+  +StaticLeadershipFitnessScore: MA_PartnerLeadershipFitnessScoreType
+  +DynamicLeadershipFitnessScore: MA_PartnerLeadershipFitnessScoreType
+}
+class "MA_LeaderUpdateRequestMT" <<complexType>> {
+  +MessageData: MA_LeaderUpdateRequestMDT
+}
+class "MA_LeaderUpdateRequestSetType" <<complexType>> {
+  +RequestingSystemID: SystemID_Type
+  +ProposedLeaderID: SystemID_Type
+  +Applicability: MA_NominationChoiceType
+}
+class "MA_LeadershipFitnessScoreDeterminationMethodChoiceType" <<complexType>> {
+  --
+}
+class "MA_NameCommandValuePairType" <<complexType>> {
+  +Name: VisibleString256Type
+  +CommandValue: MA_CommandValueType
+}
+class "MA_NominationChoiceType" <<complexType>> {
+  --
+}
+class "MA_OpPlanID_Type" <<complexType>> {
+  --
+}
+class "MA_PackageSystemType" <<complexType>> {
+  --
+}
+class "MA_PartnerLeadershipFitnessScoreType" <<complexType>> {
+  +AssociatedSystemID: SystemID_Type
+  +LeadershipFitnessScore: FloatMinMaxType
+  +PartnerLeadershipFitnessScoreDeterminationMethod: MA_LeadershipFitnessScoreDeterminationMethodChoiceType
+}
+class "MA_PathSegmentType" <<complexType>> {
+  +PathSegmentID: SegmentID_Type
+  +Source: PathSegmentSourceEnum
+  +EndPoint: MA_EndPointType
+  +Locked: boolean
+  +Modified: boolean
+  +Speed: PathSegmentSpeedType
+  +CivilPathTerminator: CivilPathTerminatorType
+  +Climb: ClimbType
+  +MaximumRoll: AngleType
+  +Acceleration: AccelerationType
+  +NextPathSegment: NextPathSegmentType
+  +ConditionalPathSegment: ConditionalPathSegmentType
+  +InertialState: InertialStateRelativeType
+  +RequiredTimeOfArrival: TimeWindowType
+  +Remarks: RemarksType
+  +RequiredNavigationPerformanceInMeters: DistanceType
+  +Fix_Identifier: ForeignKeyType
+}
+class "MA_PlanApplicabilityType" <<complexType>> {
+  +PlannedForID: SystemID_Type
+  +ApplicableToIDs: MA_PackageSystemType
+}
+class "MA_PlanModificationDetailsType" <<complexType>> {
+  +ForPlanningUseOnly: boolean
+  +WindowModification: PlanWindowModificationTypeChoiceType
+  +ApplicabilityModification: PlanApplicabilityModificationType
+  +SubPlansModification: MA_SubPlansModificationType
+  +HierarchyModification: HierarchyModificationType
+  +ExecutionSequenceModification: ExecutionSequenceReplaceOrModifyChoiceType
+  +RequirementAllocationLock: RequirementAllocationLockDetailsType
+}
+class "MA_PlanModificationRequestMDT" <<complexType>> {
+  +Source: PlanInitiationSourceEnum
+  +Plans: MA_PlansReferenceType
+  +PlanModificationDetails: MA_PlanModificationDetailsType
+}
+class "MA_PlanModificationRequestMT" <<complexType>> {
+  +MessageData: MA_PlanModificationRequestMDT
+}
+class "MA_PlansReferenceBaseType" <<complexType>> {
+  +TaskPlanID: TaskPlanID_Type
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +RoutePlanID: RoutePlanID_Type
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +ActivityPlanID: ActivityPlanID_Type
+  +EffectPlanID: EffectPlanID_Type
+  +ActionPlanID: ActionPlanID_Type
+  +ResponsePlanID: ResponsePlanID_Type
+  +OpPlanID: MA_OpPlanID_Type
+}
+class "MA_PlansReferenceType" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+}
+class "MA_RaftAppendEntriesRequestMDT" <<complexType>> {
+  +PackageID: PackageID_Type
+  +LeaderID: SystemID_Type
+  +Term: unsignedInt
+  +PrevLogIndex: unsignedInt
+  +PrevLogTerm: unsignedInt
+  +LogEntry: MA_RaftLogEntryType
+  +LeaderCommit: unsignedInt
+}
+class "MA_RaftAppendEntriesRequestMT" <<complexType>> {
+  +MessageData: MA_RaftAppendEntriesRequestMDT
+}
+class "MA_RaftLogEntryType" <<complexType>> {
+  +Term: unsignedInt
+  +Index: unsignedInt
+  +Command: MA_NameCommandValuePairType
+}
+class "MA_RaftVoteRequestMDT" <<complexType>> {
+  +PackageID: PackageID_Type
+  +CandidateID: SystemID_Type
+  +Term: unsignedInt
+  +LastLogIndex: unsignedInt
+  +LastLogTerm: unsignedInt
+}
+class "MA_RaftVoteRequestMT" <<complexType>> {
+  +MessageData: MA_RaftVoteRequestMDT
+}
+class "MA_RoutePathType" <<complexType>> {
+  +PathID: PathID_Type
+  +PathType: MA_PathTypeEnum
+  +FirstInPathSegmentID: SegmentID_Type
+  +PathSegment: MA_PathSegmentType
+  +InitialConditions: PlanningLocationType
+  +AirfieldID: AirfieldID_Type
+  +RunwayID: RunwayID_Type
+  +Remarks: RemarksType
+}
+class "MA_RoutePlanMDT" <<complexType>> {
+  +RoutePlanID: RoutePlanID_Type
+  +PlanCommandID: RoutePlanCommandID_ChoiceType
+  +Plan: MA_RoutePlanType
+  +ForPlanningUseOnly: boolean
+  +PlanInputs: RoutePlanInputsType
+}
+class "MA_RoutePlanType" <<complexType>> {
+  +Applicability: MA_PlanApplicabilityType
+  +Window: DateTimeRangeType
+  +Parts: RoutePlanPartsType
+  +Route: MA_RouteType
+}
+class "MA_RouteType" <<complexType>> {
+  +Detailed: boolean
+  +FirstInRoutePathID: PathID_Type
+  +RouteProjection: LineProjectionEnum
+  +Path: MA_RoutePathType
+  +Remarks: RemarksType
+}
+class "MA_SubPlansModificationType" <<complexType>> {
+  +SubPlansAdditions: MA_PlansReferenceBaseType
+  +SubPlansRetractions: MA_PlansReferenceBaseType
+}
+class "MA_SystemCandidateChoiceType" <<complexType>> {
+  --
+}
+class "MA_SystemManagementRequestMDT" <<complexType>> {
+  +AuthorityType: EntityManagementRequestAuthorityEnum
+  +RequestSource: RequestSourceEnum
+  +ReferenceSystemID: SystemID_Type
+  +RequestType: MA_SystemManagementRequestType
+  +UpdateFromControllingUnit: boolean
+  +Source: SystemMessageIdentifierType
+}
+class "MA_SystemManagementRequestMT" <<complexType>> {
+  +MessageData: MA_SystemManagementRequestMDT
+}
+class "MA_SystemManagementRequestType" <<complexType>> {
+  --
+}
+class "MA_SystemsNeededRequestMDT" <<complexType>> {
+  +Candidate: MA_SystemCandidateChoiceType
+  +ProposedRequirements: RequirementAllocationCommandType
+  +AssociationConstraint: RequirementAssociationConstraintType
+}
+class "MA_SystemsNeededRequestMT" <<complexType>> {
+  +MessageData: MA_SystemsNeededRequestMDT
+}
+class "MA_WEZ_ChoiceType" <<complexType>> {
+  --
+}
+class "MA_WEZ_RequestDataType" <<complexType>> {
+  +StoreInformation: WeaponeeringStoreType
+  +WEZ_ChoiceType: MA_WEZ_ChoiceType
+}
+class "MA_WEZ_RequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ResultsInNativeMessage: boolean
+  +WEZ_RequestData: MA_WEZ_RequestDataType
+}
+class "MA_WEZ_RequestMT" <<complexType>> {
+  +MessageData: MA_WEZ_RequestMDT
+}
+class "MDF_CommandSubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +FileID: MDF_SubCategoryFileID_Type
+}
+class "MDF_CommandType" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +SubCategory: MDF_CommandSubCategoryType
+}
+class "MDF_ID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryFileID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryID_Type" <<complexType>> {
+  --
+}
+class "MFA_AddressType" <<complexType>> {
+  +MFA_SupportCapabilityID: SupportCapabilityID_Type
+  +AntennaResourceChoice: AntennaResourceChoiceType
+  +OnAntennaProcessingIndex: unsignedInt
+  +DeltaInputPowerConsumption: PowerType
+}
+class "ManagedListBaseType" <<complexType>> {
+  --
+}
+class "MeasurementKinematicsChoiceType" <<complexType>> {
+  --
+}
+class "MessageConfigurationID_Type" <<complexType>> {
+  --
+}
+class "MessageConfigurationType" <<complexType>> {
+  +MessageConfigurationID: MessageConfigurationID_Type
+  +FilterID: FilterID_Type
+  +Filter: QueryMessageType
+  +FilterStatus: boolean
+  +FilterDirection: CommDataDirectionFiltrationEnum
+  +FilterInclusionType: InclusionEnum
+  +ConnectionKey: ForeignKeyType
+  +RemoteSystemID: SystemID_Type
+  +TransmitPeriodicity: DurationType
+  +DataLinkNativeFilter: DataLinkNativeFilterPET
+  +Rank: ComparableRankingType
+  +ConfigurationState: CommConfigurationStateEnum
+}
+class "MessageDestinationType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ValidSystemStatus: boolean
+  +DataDestinationID: DataDestinationID_Type
+  +DataLinkNativeInfo: DataLinkNativeInfoPET
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MetricValueType" <<complexType>> {
+  +MetricIdentifier: ForeignKeyType
+  +DescriptionOfMetric: VisibleString256Type
+  +NegotiableOptions: NegotiableOptionsEnum
+  +Weight: UnitIntervalFloatType
+  +Value: float
+}
+class "MissionActivationRequestMDT" <<complexType>> {
+  +MissionID: MissionID_Type
+  +MissionState: MissionStateEnum
+}
+class "MissionActivationRequestMT" <<complexType>> {
+  +MessageData: MissionActivationRequestMDT
+}
+class "MissionContingencyAlertID_Type" <<complexType>> {
+  --
+}
+class "MissionEnvironmentConstraintType" <<complexType>> {
+  --
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "MissionInformationType" <<complexType>> {
+  +MissionName: VisibleString32Type
+  +MissionDescription: VisibleString128Type
+}
+class "MissionPlanID_Type" <<complexType>> {
+  --
+}
+class "MissionPlanMetricsReportRequestMDT" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+}
+class "MissionPlanMetricsReportRequestMT" <<complexType>> {
+  +MessageData: MissionPlanMetricsReportRequestMDT
+}
+class "NetworkLinkID_Type" <<complexType>> {
+  --
+}
+class "NextPathSegmentType" <<complexType>> {
+  +PathID: PathID_Type
+  +PathSegmentID: SegmentID_Type
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "NormalizationTableType" <<complexType>> {
+  +ActualMetricValue: float
+  +NormalizedMetricValue: UnitIntervalFloatType
+}
+class "OpConstraintWeightingType" <<complexType>> {
+  +Constraint: OpConstraintEnum
+  +ConstraintType: OpConstraintTypeEnum
+  +Weighting: OpConstraintWeightingValueType
+  +AmplificationID: FileLocationID_Type
+}
+class "OpConstraintWeightingValueType" <<complexType>> {
+  --
+}
+class "OpVolumeType" <<complexType>> {
+  --
+}
+class "OperatorRoleType" <<complexType>> {
+  --
+}
+class "OrbitActivityPlanConstraintType" <<complexType>> {
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +ChangeableActivities: PlanChangeableConstraintsEnum
+  +Parts: ActivityPlanPartsEnum
+}
+class "OrbitActivityPlanID_Type" <<complexType>> {
+  --
+}
+class "OrbitBreakupEventDetailsType" <<complexType>> {
+  --
+}
+class "OrbitConjunctionAssessmentRequestMDT" <<complexType>> {
+  +AssessmentType: OrbitConjunctionAssessmentEnum
+  +RangeThreshold: DistanceType
+  +AssessmentObject: OrbitalAnalysisObjectType
+  +AnalysisPeriod: DateTimeRangeType
+  +RespondBy: DateTimeType
+}
+class "OrbitConjunctionAssessmentRequestMT" <<complexType>> {
+  +MessageData: OrbitConjunctionAssessmentRequestMDT
+}
+class "OrbitKinematicsSequenceReplaceOrModifyChoiceType" <<complexType>> {
+  --
+}
+class "OrbitKinematicsSetParametersType" <<complexType>> {
+  +ElementSetParameters: OrbitalElementSetParametersType
+  +EphemerisParameters: OrbitalEphemerisParametersType
+  +VCM_Parameters: OrbitalVCM_ParametersType
+}
+class "OrbitMetricsRequestMDT" <<complexType>> {
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitParts: OrbitPlanPartsEnum
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +ActivityPlanParts: ActivityPlanPartsEnum
+}
+class "OrbitMetricsRequestMT" <<complexType>> {
+  +MessageData: OrbitMetricsRequestMDT
+}
+class "OrbitModificationDetailsType" <<complexType>> {
+  +Orbit: OrbitRegimeType
+  +Parameters: OrbitKinematicsSetParametersType
+  +OrbitKinematicsSequenceModification: OrbitKinematicsSequenceReplaceOrModifyChoiceType
+}
+class "OrbitModificationRequestMDT" <<complexType>> {
+  +Source: PlanInitiationSourceEnum
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitModificationDetails: OrbitModificationDetailsType
+}
+class "OrbitModificationRequestMT" <<complexType>> {
+  +MessageData: OrbitModificationRequestMDT
+}
+class "OrbitPlanConstraintType" <<complexType>> {
+  +OrbitPlanID: OrbitPlanID_Type
+  +ChangeableKinematics: PlanChangeableConstraintsEnum
+  +Parts: OrbitPlanPartsEnum
+}
+class "OrbitPlanID_Type" <<complexType>> {
+  --
+}
+class "OrbitRegimeType" <<complexType>> {
+  +OrbitRegime: OrbitRegimeEnum
+  +OrbitClass: OrbitClassEnum
+}
+class "OrbitalAnalysisObjectType" <<complexType>> {
+  --
+}
+class "OrbitalDebrisEstimateRequestMDT" <<complexType>> {
+  +EstimateType: OrbitalBreakupEnum
+  +EstimateResults: OrbitalDebrisEstimateEnum
+  +CausalEvent: OrbitBreakupEventDetailsType
+  +RespondBy: DateTimeType
+  +AnalysisWindow: TimeWindowType
+}
+class "OrbitalDebrisEstimateRequestMT" <<complexType>> {
+  +MessageData: OrbitalDebrisEstimateRequestMDT
+}
+class "OrbitalDeltaVelocity_B_Type" <<complexType>> {
+  +X: SpeedType
+  +Y: SpeedType
+  +Z: SpeedType
+}
+class "OrbitalElementSetParametersType" <<complexType>> {
+  +CreationTime: DateTimeType
+  +OrbitalModel: OrbitalModelType
+}
+class "OrbitalElementSetRequestParametersType" <<complexType>> {
+  +RequestWindow: DateTimeRangeType
+}
+class "OrbitalEphemerisParametersType" <<complexType>> {
+  +CreationTime: DateTimeType
+  +StepSize: duration
+  +PropagatorType: EphemerisPropagatorChoiceType
+}
+class "OrbitalEphemerisRequestParametersType" <<complexType>> {
+  +RequestWindow: DateTimeRangeType
+  +PropagatorType: EphemerisPropagatorChoiceType
+}
+class "OrbitalFiltersQueryType" <<complexType>> {
+  +OrbitalFilterZone: OpVolumeType
+  +RelationToOrbitalFilterZone: ZoneRelationEnum
+}
+class "OrbitalManeuverDetailsBaseType" <<complexType>> {
+  +DeltaVelocity: OrbitalDeltaVelocity_B_Type
+  +DeltaVelocityMagnitude: SpeedType
+  +DeltaVelocityCovariance: CovarianceMatrixType
+  +Duration: DurationType
+  +DeltaMass: MassType
+}
+class "OrbitalManeuverDetailsType" <<complexType>> {
+  +StartEpoch: DateTimeType
+  +ManeuverType: OrbitalManeuverTypeEnum
+}
+class "OrbitalModelType" <<complexType>> {
+  +Name: OrbitalModelNameEnum
+  +Version: VisibleString32Type
+}
+class "OrbitalSurveillanceSpecificDataType" <<complexType>> {
+  +CapabilityType: OrbitalSurveillanceCapabilityEnum
+  +SubCapabilityType: OrbitalSurveillanceSubCapabilityEnum
+}
+class "OrbitalVCM_ParametersType" <<complexType>> {
+  +CreationTime: DateTimeType
+  +VCM_Propagator: VCM_PropagatorType
+}
+class "OrbitalVCM_RequestParametersType" <<complexType>> {
+  +RequestWindow: DateTimeRangeType
+  +StepSize: duration
+}
+class "OrientationRateType" <<complexType>> {
+  +YawRate: AngleRateType
+  +PitchRate: AngleRateType
+  +RollRate: AngleRateType
+  +Timestamp: DateTimeType
+}
+class "OrientationType" <<complexType>> {
+  +Yaw: AngleType
+  +Pitch: AngleHalfType
+  +Roll: AngleType
+  +Timestamp: DateTimeType
+}
+class "OtherSystemConstrainingPlansType" <<complexType>> {
+  +ConstrainingSystemID: SystemID_Type
+  +ConstraintUsage: PlanConstraintUsageEnum
+  +ContrainingPlans: ConstrainingPlansType
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PackageID_Type" <<complexType>> {
+  --
+}
+class "PathConstraintsType" <<complexType>> {
+  --
+}
+class "PathID_Type" <<complexType>> {
+  --
+}
+class "PathSegmentConditionType" <<complexType>> {
+  +AltitudeRange: AltitudeRangeType
+  +TimeWindow: DateTimeRangeType
+  +SegmentCapture: SegmentCaptureType
+  +OperatorInput: boolean
+  +Endurance: EnduranceRemainingType
+  +ContingencyLevel: SystemContingencyLevelEnum
+}
+class "PathSegmentModificationType" <<complexType>> {
+  +PathID: PathID_Type
+  +Add: PathSegmentType
+  +RemoveID: SegmentID_Type
+  +Update: PathSegmentType
+}
+class "PathSegmentSpeedChoiceType" <<complexType>> {
+  --
+}
+class "PathSegmentSpeedType" <<complexType>> {
+  +SpeedChoice: PathSegmentSpeedChoiceType
+  +SpeedOptimization: SpeedOptimizationEnum
+}
+class "PathSegmentType" <<complexType>> {
+  +PathSegmentID: SegmentID_Type
+  +Source: PathSegmentSourceEnum
+  +EndPoint: EndPointType
+  +Locked: boolean
+  +Modified: boolean
+  +Speed: PathSegmentSpeedType
+  +CivilPathTerminator: CivilPathTerminatorType
+  +Climb: ClimbType
+  +MaximumRoll: AngleType
+  +Acceleration: AccelerationType
+  +NextPathSegment: NextPathSegmentType
+  +ConditionalPathSegment: ConditionalPathSegmentType
+  +InertialState: InertialStateRelativeType
+  +RequiredTimeOfArrival: TimeWindowType
+  +Remarks: RemarksType
+  +RequiredNavigationPerformanceInMeters: DistanceType
+  +Fix_Identifier: ForeignKeyType
+}
+class "PercentRangeType" <<complexType>> {
+  +Minimum: PercentType
+  +Maximum: PercentType
+}
+class "PerformanceMetricSetType" <<complexType>> {
+  +PerformanceConstraintIndex: unsignedInt
+  +Merit: int
+  +NegotiableOptions: NegotiableOptionsEnum
+  +PerformanceMetricSet: MetricValueType
+}
+class "PhysicalModelType" <<complexType>> {
+  +Mass: MassType
+  +DragArea: AreaType
+  +SolarRadiationPressureArea: AreaType
+}
+class "PixelDataType" <<complexType>> {
+  +PixelColumn: unsignedInt
+  +PixelRow: unsignedInt
+}
+class "PixelReferenceCoordinateType" <<complexType>> {
+  +PixelCoordinate: PixelDataType
+  +File: FileNameType
+  +ProductID: ProductMetadataID_Type
+  +Reference: ForeignKeyType
+}
+class "PlanApplicabilityModificationType" <<complexType>> {
+  +ApplicabilityAdditions: PlanApplicabilityType
+  +ApplicabilityRetractions: PlanApplicabilityType
+}
+class "PlanApplicabilityType" <<complexType>> {
+  +PlannedForID: SystemID_Type
+  +ApplicableToID: SystemID_Type
+}
+class "PlanInputsCoreType" <<complexType>> {
+  +PlanningProcessID: PlanningProcessID_Type
+  +PlanInitiation: PlanInitiationSourceEnum
+  +PlanningDataSource: PlanningDataSourceEnum
+  +ReplanReason: ReplanReasonType
+  +EnvironmentOverride: MissionEnvironmentConstraintType
+  +OpConstraint: OpConstraintWeightingType
+  +SpecialInstructionsID: FileLocationID_Type
+}
+class "PlanModificationDetailsType" <<complexType>> {
+  +ForPlanningUseOnly: boolean
+  +WindowModification: PlanWindowModificationTypeChoiceType
+  +ApplicabilityModification: PlanApplicabilityModificationType
+  +SubPlansModification: SubPlansModificationType
+  +HierarchyModification: HierarchyModificationType
+  +ExecutionSequenceModification: ExecutionSequenceReplaceOrModifyChoiceType
+  +RequirementAllocationLock: RequirementAllocationLockDetailsType
+}
+class "PlanModificationRequestMDT" <<complexType>> {
+  +Source: PlanInitiationSourceEnum
+  +Plans: PlansReferenceType
+  +PlanModificationDetails: PlanModificationDetailsType
+}
+class "PlanModificationRequestMT" <<complexType>> {
+  +MessageData: PlanModificationRequestMDT
+}
+class "PlanScoresRequestMDT" <<complexType>> {
+  +ScoringProcessID: ScoringProcessID_Type
+  +Plans: PlansReferenceType
+  +OpConstraint: OpConstraintEnum
+}
+class "PlanScoresRequestMT" <<complexType>> {
+  +MessageData: PlanScoresRequestMDT
+}
+class "PlanWindowModificationTypeChoiceType" <<complexType>> {
+  --
+}
+class "PlannedGatewayConfigurationType" <<complexType>> {
+  +GatewayServiceID: ServiceID_Type
+  +ConfigurationID: CommConfigurationID_Type
+  +ConfigurationState: CommConfigurationStateEnum
+  +ActivateMDF: MDF_CommandType
+  +ActivateProfileID: CommProfileID_Type
+  +GatewayCapabilityID: CapabilityID_Type
+  +GatewayActivityID: ActivityID_Type
+  +GatewayLinkDestination: GatewayLinkDestinationType
+  +MessageConfiguration: MessageConfigurationType
+  +ProductDisseminationIngressSystemID: SystemID_Type
+  +ProductDisseminationEgressDestinationID: ProductDisseminationDestinationID_Type
+  +GatewaySpecificSettings: GatewayConfigurationPET
+}
+class "PlannedReleaseConditionsType" <<complexType>> {
+  +Position: Point3D_Type
+  +Velocity: Velocity2D_Type
+  +Orientation: OrientationType
+  +WindVelocity: Velocity2D_Type
+  +AssociatedRoutePlan: RoutePlanReferenceType
+}
+class "PlanningByCaseTriggerType" <<complexType>> {
+  --
+}
+class "PlanningByResultTriggerType" <<complexType>> {
+  --
+}
+class "PlanningCandidateBaseType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ConstrainingPlans: ConstrainingPlansType
+  +OtherSystemConstrainingPlans: OtherSystemConstrainingPlansType
+}
+class "PlanningGuidelineType" <<complexType>> {
+  +Origin: PlanningPointType
+  +Destination: PlanningPointPriorityType
+  +SpeedOptimization: SpeedOptimizationEnum
+  +ClimbOptimization: ClimbOptimizationEnum
+}
+class "PlanningLocationType" <<complexType>> {
+  +TransitionRoute: RoutePlanReferenceType
+}
+class "PlanningPointPriorityType" <<complexType>> {
+  +Point: PlanningPointType
+  +Priority: unsignedInt
+}
+class "PlanningPointType" <<complexType>> {
+  --
+}
+class "PlanningProcessID_Type" <<complexType>> {
+  --
+}
+class "PlanningTriggerType" <<complexType>> {
+  +Source: PlanningTriggerSourceEnum
+  +ByCaseTrigger: PlanningByCaseTriggerType
+  +ByResultTrigger: PlanningByResultTriggerType
+}
+class "PlansReferenceBaseType" <<complexType>> {
+  +TaskPlanID: TaskPlanID_Type
+  +OrbitPlanID: OrbitPlanID_Type
+  +OrbitActivityPlanID: OrbitActivityPlanID_Type
+  +RoutePlanID: RoutePlanID_Type
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +ActivityPlanID: ActivityPlanID_Type
+  +EffectPlanID: EffectPlanID_Type
+  +ActionPlanID: ActionPlanID_Type
+  +ResponsePlanID: ResponsePlanID_Type
+}
+class "PlansReferenceType" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+}
+class "PlansRequirementsReferenceType" <<complexType>> {
+  +MissionPlanID: MissionPlanID_Type
+  +TaskPlanID: TaskPlanID_Type
+  +EffectPlanID: EffectPlanID_Type
+  +ActionPlanID: ActionPlanID_Type
+  +ResponsePlanID: ResponsePlanID_Type
+}
+class "PlatformIdentityType" <<complexType>> {
+  +PlatformType: unsignedInt
+  +PlatformTypeCategory: EnvironmentEnum
+  +ThreatType: ThreatEnum
+  +UnitType: UnitTypeEnum
+  +LaunchCapability: LaunchCapabilityEnum
+  +SubmarineConfidenceLevel: SubmarineConfidenceLevelEnum
+}
+class "Point2D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeRange: AltitudeRangeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+}
+class "Point3D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+}
+class "Point4D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+  +DepthCategory: Link16DepthEnum
+  +HAE_Adjustment: DistanceOffsetType
+}
+class "PointChoice4D_Type" <<complexType>> {
+  --
+}
+class "PointingVectorParameterType" <<complexType>> {
+  +DataRate: DataRateType
+  +LossParameter: DoubleNonNegativeType
+  +Ellipse: EllipseType
+}
+class "ProcessingParametersPET" <<complexType>> {
+  --
+}
+class "ProcessingRequirementsType" <<complexType>> {
+  +InputProduct: InputProductType
+  +ProductProcessing: ProductProcessingClassificationType
+}
+class "ProductClassificationRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +RequestType: ProductClassificationRequestEnum
+  +Rank: ComparableRankingType
+  +PreemptLowerRank: DownloadPriorityEnum
+  +ClassificationRequirements: ClassificationRequirementsType
+}
+class "ProductClassificationRequestMT" <<complexType>> {
+  +MessageData: ProductClassificationRequestMDT
+}
+class "ProductDisseminationDestinationID_Type" <<complexType>> {
+  --
+}
+class "ProductDisseminationRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Rank: ComparableRankingType
+  +PreemptLowerRank: DownloadPriorityEnum
+  +DisseminationRequirements: DisseminationRequirementsType
+}
+class "ProductDisseminationRequestMT" <<complexType>> {
+  +MessageData: ProductDisseminationRequestMDT
+}
+class "ProductDownloadRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +CapabilityID: CapabilityID_Type
+  +Rank: ComparableRankingType
+  +PreemptLowerRank: DownloadPriorityEnum
+  +DownloadRequirements: ProductReferenceType
+}
+class "ProductDownloadRequestMT" <<complexType>> {
+  +MessageData: ProductDownloadRequestMDT
+}
+class "ProductMetadataID_Type" <<complexType>> {
+  --
+}
+class "ProductProcessingClassificationType" <<complexType>> {
+  +ProductClassification: SecurityInformationType
+  +ProcessingIndex: unsignedInt
+}
+class "ProductProcessingRequestMDT" <<complexType>> {
+  +FunctionID: ID_Type
+  +SystemID: SystemID_Type
+  +CapabilityID: CapabilityID_Type
+  +Traceability: TraceabilityType
+  +Rank: ComparableRankingType
+  +PreemptLowerRank: DownloadPriorityEnum
+  +ProcessingRequirements: ProcessingRequirementsType
+}
+class "ProductProcessingRequestMT" <<complexType>> {
+  +MessageData: ProductProcessingRequestMDT
+}
+class "ProductProcessingType" <<complexType>> {
+  +ProcessingType: ProcessingTypeEnum
+  +ProcessingParameters: ProcessingParametersPET
+}
+class "ProductReferenceType" <<complexType>> {
+  --
+}
+class "PropagatorSettingsDataRequestMDT" <<complexType>> {
+  +PropagatorSettingsID: PropagatorSettingsID_Type
+}
+class "PropagatorSettingsDataRequestMT" <<complexType>> {
+  +MessageData: PropagatorSettingsDataRequestMDT
+}
+class "PropagatorSettingsID_Type" <<complexType>> {
+  --
+}
+class "QuaternionAttitudeType" <<complexType>> {
+  +Attitude: QuaternionType
+  +AttitudeError: QuaternionType
+}
+class "QuaternionType" <<complexType>> {
+  +Qs: UnitBallDoubleType
+  +Qx: UnitBallDoubleType
+  +Qy: UnitBallDoubleType
+  +Qz: UnitBallDoubleType
+}
+class "QueryDataRequestMDT" <<complexType>> {
+  +ResultsInNative: QueryTopicPairType
+  +QueryResultLimit: IntPositiveType
+  +ResultsPerPage: ShortPositiveType
+  +MostRecentMessagesOnly: EmptyType
+  +QueryIdentifiersOnly: EmptyType
+  +QueryMessage: QueryMessageType
+  +SystemID: SystemID_Type
+}
+class "QueryDataRequestMT" <<complexType>> {
+  +MessageData: QueryDataRequestMDT
+}
+class "QueryMessageType" <<complexType>> {
+  +MessageType: MessageTypeEnum
+  +Query: QueryPET
+}
+class "QueryPET" <<complexType>> {
+  --
+}
+class "QueryTopicPairType" <<complexType>> {
+  +MessageType: MessageTypeEnum
+  +ReceiverAddress: VisibleString1024Type
+}
+class "RF_ResourceAllocationRequestDigitalRemovalType" <<complexType>> {
+  +StreamIndex: unsignedInt
+  +MFA_Address: MFA_AddressType
+}
+class "RF_ResourceAllocationRequestMDT" <<complexType>> {
+  +ResourceAllocator_SupportCapabilityID: SupportCapabilityID_Type
+  +TerminatedResources: RF_ResourceAllocationRequestRemovalType
+  +RequestingFunction: RequestingFunctionID_ChoiceType
+  +Ranking: ComparableRankingType
+  +PointingVectorParameters: AperturePointingOptionsType
+  +ResourceRequestOptions: ResourceRequestOptionType
+}
+class "RF_ResourceAllocationRequestMT" <<complexType>> {
+  +MessageData: RF_ResourceAllocationRequestMDT
+}
+class "RF_ResourceAllocationRequestRF_RemovalType" <<complexType>> {
+  +RF_ThreadInstanceIndex: unsignedInt
+  +AntennaAndResourceInstance: AntennaAndResourceInstanceType
+}
+class "RF_ResourceAllocationRequestRemovalType" <<complexType>> {
+  +RemoveRF_Resources: RF_ResourceAllocationRequestRF_RemovalType
+  +RemoveDigitalResources: RF_ResourceAllocationRequestDigitalRemovalType
+}
+class "RF_TaskNormalizedMetricsType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +MetricIdentifier: ForeignKeyType
+  +InterpolationEnum: NormalizationInterpolationEnum
+  +NormalizationElements: NormalizationTableType
+}
+class "RF_TaskPerformanceConstraintType" <<complexType>> {
+  +PerformanceConstraint: PerformanceMetricSetType
+  +CapabilityID: CapabilityID_Type
+}
+class "RF_TaskPerformanceType" <<complexType>> {
+  +PerformanceConstraints: RF_TaskPerformanceConstraintType
+  +NormalizedMetrics: RF_TaskNormalizedMetricsType
+}
+class "RecommendedWeaponsType" <<complexType>> {
+  +Quantity: unsignedInt
+  +Weapon: StoreType
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RemarksType" <<complexType>> {
+  +DisplayName: VisibleString32Type
+  +Detail: VisibleString1024Type
+}
+class "RemoteDestinationType" <<complexType>> {
+  +RemoteSystemID: SystemID_Type
+  +RemoteEntityID: EntityID_Type
+  +RemotePosition: Point4D_Type
+  +RemoteTLE: TLE_Type
+}
+class "ReplanReasonType" <<complexType>> {
+  +Trigger: PlanningTriggerType
+  +AutonomousPlanningActionID: AutonomousPlanningActionID_Type
+  +MissionContingencyAlertID: MissionContingencyAlertID_Type
+}
+class "RequestBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestState: RequestStateEnum
+}
+class "RequestID_Type" <<complexType>> {
+  --
+}
+class "RequestingFunctionID_ChoiceType" <<complexType>> {
+  --
+}
+class "RequirementAllocationBaseType" <<complexType>> {
+  +Locked: boolean
+  +ConstraintOverride: RequirementConstraintsType
+  +OtherOverride: RequirementAllocationDetailsType
+}
+class "RequirementAllocationCommandType" <<complexType>> {
+  +ProposedEffect: EffectAllocationType
+  +ProposedAction: ActionAllocationType
+  +ProposedTask: TaskAllocationType
+  +ProposedResponse: ResponseAllocationType
+}
+class "RequirementAllocationConstraintType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Identity: IdentityType
+  +CapabilityID: CapabilityID_Type
+}
+class "RequirementAllocationDetailsType" <<complexType>> {
+  +RequiredDMPI: DMPI_AllocationType
+  +RequiredAO_Code: AO_CodeType
+}
+class "RequirementAllocationLockDetailsType" <<complexType>> {
+  +Lock: RequirementsReferenceLockableType
+  +Unlock: RequirementsReferenceLockableType
+}
+class "RequirementAllocationParametersType" <<complexType>> {
+  +RequiredAllocation: RequirementAllocationConstraintType
+  +PreferredAllocation: RequirementAllocationConstraintType
+}
+class "RequirementAssociationConstraintType" <<complexType>> {
+  --
+}
+class "RequirementConstraintsType" <<complexType>> {
+  +Rank: ComparableRankingType
+  +InterruptLowerRank: boolean
+  +Allocation: RequirementAllocationParametersType
+  +Timing: RequirementTimingType
+  +Kinematic: RequirementKinematicConstraintsType
+  +Dependency: RequirementDependencyType
+  +MaxProductDisseminationClassificationLevel: DataProductClassificationLevelType
+  +Analytic: AnalyticConstraintsType
+  +AcceptableClassificationLevel: SecurityInformationType
+  +CommsRequired: boolean
+  +AllowedRequirementTypes: RequirementTaxonomyType
+  +ExcludedRequirementTypes: RequirementTaxonomyType
+  +ConstraintsNarrative: VisibleString1024Type
+  +AllowedDomainPairing: EnvironmentPairingEnum
+  +ExcludedDomainPairing: EnvironmentPairingEnum
+}
+class "RequirementDependencyBaseType" <<complexType>> {
+  +DependencyType: RequirementDependencyEnum
+  +DependencyExtent: OpConstraintTypeEnum
+  +EarliestTime: DurationType
+  +LatestTime: DurationType
+}
+class "RequirementDependencyType" <<complexType>> {
+  +ReferenceRequirement: RequirementInstanceID_ChoiceType
+}
+class "RequirementInstanceID_ChoiceType" <<complexType>> {
+  --
+}
+class "RequirementKinematicConstraintsType" <<complexType>> {
+  +ApplicableObject: RequirementObjectEnum
+  +Geo: GeoFiltersQueryType
+  +Orbital: OrbitalFiltersQueryType
+}
+class "RequirementMetricsRequestMDT" <<complexType>> {
+  +RequirementPlans: PlansRequirementsReferenceType
+  +RequirementType: RequirementTaxonomyType
+}
+class "RequirementMetricsRequestMT" <<complexType>> {
+  +MessageData: RequirementMetricsRequestMDT
+}
+class "RequirementTaxonomyType" <<complexType>> {
+  +Effect: EffectTypeEnum
+  +Action: ActionTypeEnum
+  +Task: TaskTypeEnum
+  +CapabilityCommand: CapabilityTypeEnum
+  +Response: ResponseTypeEnum
+}
+class "RequirementTimingType" <<complexType>> {
+  +TimingType: RequirementTimingEnum
+  +Timing: TimingConstraintsType
+}
+class "RequirementsReferenceLockableType" <<complexType>> {
+  +EffectID: EffectID_Type
+  +ActionID: ActionID_Type
+  +TaskID: TaskID_Type
+  +ResponseID: ResponseID_Type
+}
+class "ResendDataRequestMDT" <<complexType>> {
+  +RequestingServiceID: ServiceID_Type
+  +MessageType: MessageTypeEnum
+}
+class "ResendDataRequestMT" <<complexType>> {
+  +MessageData: ResendDataRequestMDT
+}
+class "ResourceRequestOptionType" <<complexType>> {
+  +ResourceRequestOptionIndex: unsignedInt
+  +ResourceRequest: ResourceRequestType
+  +DurationRange: DateTimeRangeType
+  +RequestedFrequencyRange: FrequencyRangeType
+  +Merit: unsignedInt
+  +PerformanceMetric: PerformanceMetricSetType
+}
+class "ResourceRequestPeriodType" <<complexType>> {
+  +AccessPeriodIndex: unsignedInt
+  +AccessPeriodRF_Mode: RF_TypeEnum
+  +PeriodRanking: ComparableRankingType
+  +TypicalAccessPeriodDuration: DurationType
+  +MaxAccessWidthRequested: DurationType
+  +TypicalAccessRequestToReleaseDuration: DurationType
+  +TypicalAccessReleaseToRequestDuration: DurationType
+  +PercentAccessDuringThePeriod: PercentRangeType
+}
+class "ResourceRequestType" <<complexType>> {
+  +DependentActivity: DependentActivityType
+  +MaxPercentInterruption: PercentType
+  +RF_Mode: RF_TypeEnum
+  +AccessPeriod: ResourceRequestPeriodType
+  +SelectResources: ComponentResourceType
+}
+class "ResponseAllocationType" <<complexType>> {
+  +ResponseID: ResponseID_Type
+}
+class "ResponseID_Type" <<complexType>> {
+  +OptionIndex: unsignedInt
+}
+class "ResponsePlanConstraintType" <<complexType>> {
+  +ResponsePlanID: ResponsePlanID_Type
+  +ChangeableAllocations: PlanChangeableConstraintsEnum
+  +ResponseType: ResponseTypeEnum
+}
+class "ResponsePlanID_Type" <<complexType>> {
+  --
+}
+class "RiskSettingType" <<complexType>> {
+  +AllowedRisk: VulnerabilityTypeEnum
+  +MaximumContinuousExposure: VulnerabilityLevelsType
+}
+class "RouteActivityPlanConstraintType" <<complexType>> {
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +ChangeableActivities: PlanChangeableConstraintsEnum
+  +Parts: ActivityPlanPartsEnum
+}
+class "RouteActivityPlanID_Type" <<complexType>> {
+  --
+}
+class "RouteMetricsRequestMDT" <<complexType>> {
+  +RoutePlanID: RoutePlanID_Type
+  +RouteParts: PathTypeEnum
+  +RouteActivityPlanID: RouteActivityPlanID_Type
+  +ActivityPlanParts: ActivityPlanPartsEnum
+}
+class "RouteMetricsRequestMT" <<complexType>> {
+  +MessageData: RouteMetricsRequestMDT
+}
+class "RouteModificationRequestMDT" <<complexType>> {
+  +Source: PlanInitiationSourceEnum
+  +RoutePlanID: RoutePlanID_Type
+  +Detailed: boolean
+  +RouteProjection: LineProjectionEnum
+  +FirstInRoutePathID: PathID_Type
+  +Path: RoutePathModificationType
+  +PathSegment: PathSegmentModificationType
+}
+class "RouteModificationRequestMT" <<complexType>> {
+  +MessageData: RouteModificationRequestMDT
+}
+class "RoutePathModificationType" <<complexType>> {
+  +Add: RoutePathType
+  +RemoveID: PathID_Type
+  +Update: RoutePathType
+}
+class "RoutePathType" <<complexType>> {
+  +PathID: PathID_Type
+  +PathType: PathTypeEnum
+  +FirstInPathSegmentID: SegmentID_Type
+  +PathSegment: PathSegmentType
+  +InitialConditions: PlanningLocationType
+  +AirfieldID: AirfieldID_Type
+  +RunwayID: RunwayID_Type
+  +Remarks: RemarksType
+}
+class "RoutePlanAnalysisInputsType" <<complexType>> {
+  +PlanPart: PathTypeEnum
+  +RoutePlanDetails: RoutePlanReferencesType
+  +Origin: PlanningPointType
+  +Interval: IntervalChoiceType
+  +WeatherAreaData: WeatherAreaDataType
+}
+class "RoutePlanCommandID_ChoiceType" <<complexType>> {
+  --
+}
+class "RoutePlanConstraintType" <<complexType>> {
+  +RoutePlanID: RoutePlanID_Type
+  +ChangeableKinematics: PlanChangeableConstraintsEnum
+  +Parts: PathTypeEnum
+}
+class "RoutePlanID_Type" <<complexType>> {
+  --
+}
+class "RoutePlanInputsType" <<complexType>> {
+  +PlanningCandidate: RoutePlanningCandidateType
+  +OutputPlanParts: RoutePlanPartsType
+}
+class "RoutePlanPartsType" <<complexType>> {
+  +RouteType: PathTypeEnum
+}
+class "RoutePlanReferenceType" <<complexType>> {
+  +RoutePlanID: RoutePlanID_Type
+  +MissionPlanID: MissionPlanID_Type
+  +PathID: PathID_Type
+  +SegmentID: SegmentID_Type
+}
+class "RoutePlanReferencesType" <<complexType>> {
+  +RoutePlanID: RoutePlanID_Type
+  +MissionPlanID: MissionPlanID_Type
+  +PathID: PathID_Type
+  +SegmentID: SegmentID_Type
+  +Constraints: PathConstraintsType
+}
+class "RoutePlanningCandidateType" <<complexType>> {
+  +RouteGuideline: PlanningGuidelineType
+}
+class "RunwayID_Type" <<complexType>> {
+  --
+}
+class "SAR_SpecificDataType" <<complexType>> {
+  +CapabilityType: SAR_CapabilityEnum
+  +SubCapabilityType: SAR_SubCapabilityEnum
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "SMTI_SpecificDataType" <<complexType>> {
+  +CapabilityType: SMTI_CapabilityEnum
+  +SubCapabilityType: SMTI_SubCapabilityEnum
+}
+class "SatelliteIdentifierType" <<complexType>> {
+  +SatelliteNumber: IntPositiveType
+  +SatelliteName: VisibleString128Type
+  +InternationalDesignator: InternationalDesignatorType
+  +MissionInformation: MissionInformationType
+}
+class "ScoringProcessID_Type" <<complexType>> {
+  --
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "SegmentCaptureType" <<complexType>> {
+  +CaptureCount: unsignedInt
+  +LogicalOperator: EqualityExpressionEnum
+}
+class "SegmentID_Type" <<complexType>> {
+  --
+}
+class "SensorKinematicsChoiceType" <<complexType>> {
+  --
+}
+class "ServiceConfigurationChangeRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ServiceID: ServiceID_Type
+  +RequestType: ServiceConfigurationChangeType
+}
+class "ServiceConfigurationChangeRequestMT" <<complexType>> {
+  +MessageData: ServiceConfigurationChangeRequestMDT
+}
+class "ServiceConfigurationChangeType" <<complexType>> {
+  --
+}
+class "ServiceConfigurationParamsDataRequestMDT" <<complexType>> {
+  +ResultsInNativeMessage: boolean
+  +SystemID: SystemID_Type
+  +ServiceID: ServiceID_Type
+  +Category: VisibleString32Type
+}
+class "ServiceConfigurationParamsDataRequestMT" <<complexType>> {
+  +MessageData: ServiceConfigurationParamsDataRequestMDT
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "ServiceRegistrationPurposeType" <<complexType>> {
+  +Purpose: ServiceRegistrationPurposeEnum
+  +DependentPurpose: ServiceRegistrationPurposeEnum
+}
+class "ServiceRegistrationRequestMDT" <<complexType>> {
+  +ServiceID: ServiceID_Type
+  +UnregisterFlag: boolean
+  +Purpose: ServiceRegistrationPurposeType
+}
+class "ServiceRegistrationRequestMT" <<complexType>> {
+  +MessageData: ServiceRegistrationRequestMDT
+}
+class "ServiceStatusDataRequestMDT" <<complexType>> {
+  +ServiceID: ServiceID_Type
+  +SystemID: SystemID_Type
+}
+class "ServiceStatusDataRequestMT" <<complexType>> {
+  +MessageData: ServiceStatusDataRequestMDT
+}
+class "SizeType" <<complexType>> {
+  +Height: DistanceType
+  +Width: DistanceType
+  +Depth: DistanceType
+}
+class "SizeUncertaintyType" <<complexType>> {
+  +HeightUncertainty: DistanceType
+  +WidthUncertainty: DistanceType
+  +DepthUncertainty: DistanceType
+}
+class "SolarRadiationPressureCoefficientChoiceType" <<complexType>> {
+  --
+}
+class "SolarRadiationPressureModelType" <<complexType>> {
+  +SolarRadiationPressureModel: SolarRadiationPressureModelEnum
+  +SolarRadiationPressureCoefficientChoice: SolarRadiationPressureCoefficientChoiceType
+}
+class "SourceCommandEXT" <<complexType>> {
+  --
+}
+class "SpaceWeatherDataChoiceType" <<complexType>> {
+  --
+}
+class "SpecificEmitterIdentityType" <<complexType>> {
+  +SpecificEmitterKey: ForeignKeyType
+}
+class "SpecificIdentityType" <<complexType>> {
+  +SpecificType: unsignedInt
+  +SpecificTypeCategory: EnvironmentEnum
+  +SiteType: SiteTypeEnum
+  +SpecificTypeModel: SpecificTypeModelType
+}
+class "StandardIdentityType" <<complexType>> {
+  +StandardIdentity: StandardIdentityEnum
+  +Allegiance: CountryCodeType
+}
+class "StoreType" <<complexType>> {
+  +StoreType: unsignedInt
+  +StoreCategory: StoreCategoryEnum
+  +StoreTypeVariant: ForeignKeyType
+}
+class "StrikeConsentRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ConsentRequest: StrikeConsentRequestType
+}
+class "StrikeConsentRequestMT" <<complexType>> {
+  +MessageData: StrikeConsentRequestMDT
+}
+class "StrikeConsentRequestType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+}
+class "SubPlansModificationType" <<complexType>> {
+  +SubPlansAdditions: PlansReferenceBaseType
+  +SubPlansRetractions: PlansReferenceBaseType
+}
+class "SubsystemCommandType" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ActivateMDF: MDF_CommandType
+}
+class "SubsystemConfigurationDataRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +SystemID: SystemID_Type
+}
+class "SubsystemConfigurationDataRequestMT" <<complexType>> {
+  +MessageData: SubsystemConfigurationDataRequestMDT
+}
+class "SubsystemID_Type" <<complexType>> {
+  --
+}
+class "SubsystemStatusDataRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +SystemID: SystemID_Type
+}
+class "SubsystemStatusDataRequestMT" <<complexType>> {
+  +MessageData: SubsystemStatusDataRequestMDT
+}
+class "SubsystemStatusDetailedDataRequestMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +SystemID: SystemID_Type
+}
+class "SubsystemStatusDetailedDataRequestMT" <<complexType>> {
+  +MessageData: SubsystemStatusDetailedDataRequestMDT
+}
+class "SupportCapabilityID_Type" <<complexType>> {
+  --
+}
+class "SurvivabilityRiskSettingType" <<complexType>> {
+  +RiskPrioritization: RiskPrioritizationEnum
+  +RiskLevel: RiskSettingType
+}
+class "SystemCandidateType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Minimum: unsignedInt
+  +Maximum: unsignedInt
+}
+class "SystemEphemerisBasisChoiceType" <<complexType>> {
+  --
+}
+class "SystemEphemerisRequestParametersType" <<complexType>> {
+  +EphemerisBasis: SystemEphemerisBasisChoiceType
+}
+class "SystemEstimationRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +RequestType: EstimationMessageEnum
+  +RequestFrequencyType: RepeatEnum
+  +ResultsInNativeMessage: boolean
+  +TimeStep: DurationType
+  +EstimationStart: SystemEstimationStartType
+  +EstimationEnd: SystemEstimationStopType
+}
+class "SystemEstimationRequestMT" <<complexType>> {
+  +MessageData: SystemEstimationRequestMDT
+}
+class "SystemEstimationStartType" <<complexType>> {
+  --
+}
+class "SystemEstimationStopType" <<complexType>> {
+  --
+}
+class "SystemFilterType" <<complexType>> {
+  +Characteristics: SystemComparativeType
+  +SystemID: SystemID_Type
+  +GeoFilter: GeoFiltersQueryType
+  +OrbitalFilter: OrbitalFiltersQueryType
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "SystemManagementRequestMDT" <<complexType>> {
+  +AuthorityType: EntityManagementRequestAuthorityEnum
+  +RequestSource: RequestSourceEnum
+  +ReferenceSystemID: SystemID_Type
+  +RequestType: SystemManagementRequestType
+  +UpdateFromControllingUnit: boolean
+  +Source: SystemMessageIdentifierType
+}
+class "SystemManagementRequestMT" <<complexType>> {
+  +MessageData: SystemManagementRequestMDT
+}
+class "SystemManagementRequestType" <<complexType>> {
+  --
+}
+class "SystemMessageIdentifierType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ServiceID: ServiceID_Type
+  +ActivityID: ActivityID_Type
+  +NetworkLinkID: NetworkLinkID_Type
+}
+class "SystemOrbitalElementSetRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ResultsInNativeMessage: boolean
+  +Parameters: OrbitalElementSetRequestParametersType
+}
+class "SystemOrbitalElementSetRequestMT" <<complexType>> {
+  +MessageData: SystemOrbitalElementSetRequestMDT
+}
+class "SystemOrbitalEphemerisID_Type" <<complexType>> {
+  --
+}
+class "SystemOrbitalEphemerisRequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ResultsInNativeMessage: boolean
+  +Parameters: SystemEphemerisRequestParametersType
+}
+class "SystemOrbitalEphemerisRequestMT" <<complexType>> {
+  +MessageData: SystemOrbitalEphemerisRequestMDT
+}
+class "SystemOrbitalVCM_RequestMDT" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ResultsInNativeMessage: boolean
+  +Parameters: OrbitalVCM_RequestParametersType
+}
+class "SystemOrbitalVCM_RequestMT" <<complexType>> {
+  +MessageData: SystemOrbitalVCM_RequestMDT
+}
+class "SystemServiceType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +ServiceID: ServiceID_Type
+}
+class "SystemsNeededRequestMDT" <<complexType>> {
+  +Candidate: SystemCandidateType
+  +ProposedRequirements: RequirementAllocationCommandType
+  +AssociationConstraint: RequirementAssociationConstraintType
+}
+class "SystemsNeededRequestMT" <<complexType>> {
+  +MessageData: SystemsNeededRequestMDT
+}
+class "TLE_BaseType" <<complexType>> {
+  +Epoch: DateTimeType
+  +ElementSetNumber: unsignedShort
+  +FirstTimeDerivativeOfMeanMotion: double
+  +SecondTimeDerivativeOfMeanMotion: double
+  +BSTAR_Drag: double
+  +Position: COE_PositionType
+  +MeanMotion: double
+  +RevolutionNumber: unsignedInt
+}
+class "TLE_Type" <<complexType>> {
+  +SatelliteIdentity: SatelliteIdentifierType
+  +Classification: ClassificationEnum
+  +EphemerisType: unsignedByte
+}
+class "TargetFinalApproachType" <<complexType>> {
+  +Altitude: AltitudeType
+  +Range: DistanceType
+}
+class "TargetType" <<complexType>> {
+  --
+}
+class "TaskAllocationType" <<complexType>> {
+  +TaskID: TaskID_Type
+}
+class "TaskID_Type" <<complexType>> {
+  --
+}
+class "TaskPlanConstraintType" <<complexType>> {
+  +AllocationPlanID: TaskPlanID_Type
+  +ChangeableAllocations: PlanChangeableConstraintsEnum
+  +TaskType: TaskTypeEnum
+}
+class "TaskPlanID_Type" <<complexType>> {
+  --
+}
+class "ThirdBodyGravityType" <<complexType>> {
+  +ThirdBody: CelestialBodyType
+}
+class "TimeCoverageType" <<complexType>> {
+  +TimeSpan: DateTimeRangeType
+  +CoverageArea: ZoneType
+}
+class "TimeWindowType" <<complexType>> {
+  +Range: DateTimeRangeType
+  +Duration: DurationType
+}
+class "TimingConstraintsType" <<complexType>> {
+  --
+}
+class "TraceabilityType" <<complexType>> {
+  +Requirement: RequirementInstanceID_ChoiceType
+  +CollectionDeckTraceability: CollectionDeckTraceabilityType
+  +ACTDF_Traceability: ACTDF_TraceabilityType
+  +EEI_ID: EEI_ID_Type
+  +ATO_Traceability: ATO_TraceabilityType
+  +AOCO_Traceability: AOCO_TraceabilityType
+  +STO_Traceability: CS_STO_TraceabilityType
+}
+class "UncertaintyType" <<complexType>> {
+  +UncertaintyEllipse: EllipseType
+  +UncertaintyVertical: DistanceType
+  +UncertaintyTilt: AngleHalfType
+}
+class "VCM_ForceModelOptionsType" <<complexType>> {
+  +IsLunarSolarOn: boolean
+  +IsSolarRadiationPressureOn: boolean
+  +IsInTrackThrustOn: boolean
+  +InTrackThrustAcceleration: AccelerationType
+  +CenterOfMassOffset: DistanceOffsetType
+}
+class "VCM_IntegratorSettingsType" <<complexType>> {
+  +IntegratorMode: AS_IntegratorModeEnum
+  +TypeOfPartialDerivatives: AS_PartialDerivativesEnum
+  +StepMode: AS_IntegratorStepModeEnum
+  +IsFixedStepSize: boolean
+  +InitialStepSizeSelectionControl: InitialStepSizeEnum
+  +InitialStepSize: DoublePositiveType
+  +ErrorControl: double
+}
+class "VCM_PropagatorType" <<complexType>> {
+  +ForceModel: ForceModelType
+  +VCM_IntegratorSettings: VCM_IntegratorSettingsType
+}
+class "VehicleConfigurationType" <<complexType>> {
+  +InertialState: InertialStateRelativeType
+  +Endurance: EnduranceType
+  +GrossWeight: MassType
+}
+class "VehicleIdentificationType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +VehicleUniqueIdentifier: VehicleUniqueIdentifierType
+  +IFF: IFF_Type
+  +CallSign: CallSignType
+  +RadarCrossSection: ForeignKeyType
+  +DataLinkIdentifier: DataLinkIdentifierPET
+}
+class "VehicleUniqueIdentifierType" <<complexType>> {
+  --
+}
+class "Velocity2D_Type" <<complexType>> {
+  +NorthSpeed: SpeedType
+  +EastSpeed: SpeedType
+  +DownSpeed: SpeedType
+  +Timestamp: DateTimeType
+}
+class "Velocity3D_Type" <<complexType>> {
+  +NorthSpeed: SpeedType
+  +EastSpeed: SpeedType
+  +DownSpeed: SpeedType
+  +Timestamp: DateTimeType
+}
+class "VerboseStatusType" <<complexType>> {
+  +Verbose: boolean
+  +VerboseRate: float
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+class "VulnerabilityLevelsType" <<complexType>> {
+  +CompositeExposureTime: DurationType
+  +CumulativeExposureTime: DurationType
+}
+class "WeaponTargetPairingChoiceType" <<complexType>> {
+  --
+}
+class "WeaponeeringStoreType" <<complexType>> {
+  +StoreQuantity: unsignedInt
+}
+class "WeaponeeringTargetInfoType" <<complexType>> {
+  +TargetHardness: TargetHardnessEnum
+  +TargetClass: unsignedByte
+}
+class "WeaponeeringTargetType" <<complexType>> {
+  +Target: GeoLocatedObjectType
+}
+class "WeaponeeringType" <<complexType>> {
+  +StoreInformation: WeaponeeringStoreType
+  +TargetInformation: WeaponeeringTargetInfoType
+  +ApproachConditions: ApproachConditionsType
+  +ImpactConditions: ImpactConditionsType
+}
+class "WeatherAreaDataType" <<complexType>> {
+  +Source: WeatherSourceEnum
+  +StationCode: VisibleString32Type
+  +Temperature: TemperatureType
+  +PrecipitationPotential: PercentType
+  +PrecipitationAmount: PrecipitationAmountType
+  +TypeOfPrecipitation: WeatherPrecipitationEnum
+  +PrecipitationAmplification: WeatherPrecipitationAmplificationEnum
+  +Visibility: DistanceType
+  +VisibilityStatus: WeatherVisibilityEnum
+  +DewPoint: TemperatureType
+  +Clouds: CloudsType
+  +WeatherEffects: WeatherEffectsType
+  +BarometricPressure: float
+  +KollsmanSetting: float
+  +Icing: WeatherSeverityEnum
+  +Turbulence: WeatherSeverityEnum
+  +ThunderstormPotential: PercentType
+  +Remarks: VisibleString1024Type
+  +Kind: WeatherKindEnum
+  +Description: WeatherDescriptionEnum
+  +Qualifier: WeatherSeverityEnum
+  +WindData: WindDataType
+  +RelativeHumidity: PercentType
+}
+class "WeatherEffectsType" <<complexType>> {
+  +RoadState: WeatherRoadStateEnum
+  +TerrainState: WeatherTerrainStateEnum
+  +SeaState: WeatherSeaStateEnum
+  +SeaStateAmplification: WeatherSeaStateAmplificationEnum
+  +SystemIcingState: boolean
+}
+class "WindDataChoiceType" <<complexType>> {
+  --
+}
+class "WindDataType" <<complexType>> {
+  +WindChoice: WindDataChoiceType
+  +WindGust: SpeedType
+  +WindShear: EmptyType
+  +VariableWinds: EmptyType
+}
+class "WorkingEOB_RequestMDT" <<complexType>> {
+  +Source: WorkingEOB_SourceID_ChoiceType
+  +SiteFilter: QueryMessageType
+  +Temporary: boolean
+}
+class "WorkingEOB_RequestMT" <<complexType>> {
+  +MessageData: WorkingEOB_RequestMDT
+}
+class "WorkingEOB_SourceID_ChoiceType" <<complexType>> {
+  --
+}
+class "WorkingSOB_RequestMDT" <<complexType>> {
+  +Source: WorkingSOB_SourceID_ChoiceType
+  +RecordTypes: SOB_RecordEnum
+  +SatelliteFilter: QueryMessageType
+  +C2_Filter: QueryMessageType
+  +Temporary: boolean
+}
+class "WorkingSOB_RequestMT" <<complexType>> {
+  +MessageData: WorkingSOB_RequestMDT
+}
+class "WorkingSOB_SourceID_ChoiceType" <<complexType>> {
+  --
+}
+class "ZoneType" <<complexType>> {
+  +Shape: AreaChoiceType
+  +MinAltitude: AltitudeType
+  +MaxAltitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+}
+
+"AO_ConsentRequest" --> "AO_ConsentRequestMT" : payload
+"AccessAssessmentRequest" --> "AccessAssessmentRequestMT" : payload
+"ActivityMetricsRequest" --> "ActivityMetricsRequestMT" : payload
+"AnalysisRouteRequest" --> "AnalysisRouteRequestMT" : payload
+"ApprovalAuthorityRequest" --> "ApprovalAuthorityRequestMT" : payload
+"ApprovalRequest" --> "ApprovalRequestMT" : payload
+"AssessmentRequest" --> "AssessmentRequestMT" : payload
+"COMINT_ConsentRequest" --> "COMINT_ConsentRequestMT" : payload
+"CapabilityCoverageAreaRequest" --> "CapabilityCoverageAreaRequestMT" : payload
+"CommAssetEstimationRequest" --> "CommAssetEstimationRequestMT" : payload
+"CommPointingRequest" --> "CommPointingRequestMT" : payload
+"CommScheduleAllocationUpdateRequest" --> "CommScheduleAllocationUpdateRequestMT" : payload
+"CommSchedulingRequest" --> "CommSchedulingRequestMT" : payload
+"CommTerminalPlanOverrideRequest" --> "CommTerminalPlanOverrideRequestMT" : payload
+"CommUtilizationRequest" --> "CommUtilizationRequestMT" : payload
+"ComponentConfigurationDataRequest" --> "ComponentConfigurationDataRequestMT" : payload
+"ComponentStatusDataRequest" --> "ComponentStatusDataRequestMT" : payload
+"ControlRequest" --> "ControlRequestMT" : payload
+"DLZ_Request" --> "DLZ_RequestMT" : payload
+"DMPI_DesignationRequest" --> "DMPI_DesignationRequestMT" : payload
+"DamageAssessmentRequest" --> "DamageAssessmentRequestMT" : payload
+"DamageEstimateRequest" --> "DamageEstimateRequestMT" : payload
+"DataDeleteRequest" --> "DataDeleteRequestMT" : payload
+"DataManagementRequest" --> "DataManagementRequestMT" : payload
+"DataPlanOverrideRequest" --> "DataPlanOverrideRequestMT" : payload
+"DataRecordListManagementRequest" --> "DataRecordListManagementRequestMT" : payload
+"DataRecordManagementRequest" --> "DataRecordManagementRequestMT" : payload
+"DataStorageUtilizationRequest" --> "DataStorageUtilizationRequestMT" : payload
+"DataUpdateRequest" --> "DataUpdateRequestMT" : payload
+"DesignationRequest" --> "DesignationRequestMT" : payload
+"EA_ConsentRequest" --> "EA_ConsentRequestMT" : payload
+"ESM_ConsentRequest" --> "ESM_ConsentRequestMT" : payload
+"ElevationRequest" --> "ElevationRequestMT" : payload
+"ElevationVisibilityRequest" --> "ElevationVisibilityRequestMT" : payload
+"EntityConfirmationRequest" --> "EntityConfirmationRequestMT" : payload
+"EntityManagementRequest" --> "EntityManagementRequestMT" : payload
+"EntityOrbitalElementSetRequest" --> "EntityOrbitalElementSetRequestMT" : payload
+"EntityOrbitalEphemerisRequest" --> "EntityOrbitalEphemerisRequestMT" : payload
+"EntityOrbitalVCM_Request" --> "EntityOrbitalVCM_RequestMT" : payload
+"ExternalDataRequest" --> "ExternalDataRequestMT" : payload
+"FusionSettingsRequest" --> "FusionSettingsRequestMT" : payload
+"IFF_ConsentRequest" --> "IFF_ConsentRequestMT" : payload
+"LAR_Request" --> "LAR_RequestMT" : payload
+"MA_ApprovalRequest" --> "MA_ApprovalRequestMT" : payload
+"MA_AssessmentRequest" --> "MA_AssessmentRequestMT" : payload
+"MA_COP_ConfigurationSettingsRequest" --> "MA_COP_ConfigurationSettingsRequestMT" : payload
+"MA_ControlRequest" --> "MA_ControlRequestMT" : payload
+"MA_DeconflictionSolutionRequest" --> "MA_DeconflictionSolutionRequestMT" : payload
+"MA_DesignationRequest" --> "MA_DesignationRequestMT" : payload
+"MA_LeaderUpdateRequest" --> "MA_LeaderUpdateRequestMT" : payload
+"MA_PlanModificationRequest" --> "MA_PlanModificationRequestMT" : payload
+"MA_RaftAppendEntriesRequest" --> "MA_RaftAppendEntriesRequestMT" : payload
+"MA_RaftVoteRequest" --> "MA_RaftVoteRequestMT" : payload
+"MA_SystemManagementRequest" --> "MA_SystemManagementRequestMT" : payload
+"MA_SystemsNeededRequest" --> "MA_SystemsNeededRequestMT" : payload
+"MA_WEZ_Request" --> "MA_WEZ_RequestMT" : payload
+"MissionActivationRequest" --> "MissionActivationRequestMT" : payload
+"MissionPlanMetricsReportRequest" --> "MissionPlanMetricsReportRequestMT" : payload
+"OrbitConjunctionAssessmentRequest" --> "OrbitConjunctionAssessmentRequestMT" : payload
+"OrbitMetricsRequest" --> "OrbitMetricsRequestMT" : payload
+"OrbitModificationRequest" --> "OrbitModificationRequestMT" : payload
+"OrbitalDebrisEstimateRequest" --> "OrbitalDebrisEstimateRequestMT" : payload
+"PlanModificationRequest" --> "PlanModificationRequestMT" : payload
+"PlanScoresRequest" --> "PlanScoresRequestMT" : payload
+"ProductClassificationRequest" --> "ProductClassificationRequestMT" : payload
+"ProductDisseminationRequest" --> "ProductDisseminationRequestMT" : payload
+"ProductDownloadRequest" --> "ProductDownloadRequestMT" : payload
+"ProductProcessingRequest" --> "ProductProcessingRequestMT" : payload
+"PropagatorSettingsDataRequest" --> "PropagatorSettingsDataRequestMT" : payload
+"QueryDataRequest" --> "QueryDataRequestMT" : payload
+"RF_ResourceAllocationRequest" --> "RF_ResourceAllocationRequestMT" : payload
+"RequirementMetricsRequest" --> "RequirementMetricsRequestMT" : payload
+"ResendDataRequest" --> "ResendDataRequestMT" : payload
+"RouteMetricsRequest" --> "RouteMetricsRequestMT" : payload
+"RouteModificationRequest" --> "RouteModificationRequestMT" : payload
+"ServiceConfigurationChangeRequest" --> "ServiceConfigurationChangeRequestMT" : payload
+"ServiceConfigurationParamsDataRequest" --> "ServiceConfigurationParamsDataRequestMT" : payload
+"ServiceRegistrationRequest" --> "ServiceRegistrationRequestMT" : payload
+"ServiceStatusDataRequest" --> "ServiceStatusDataRequestMT" : payload
+"StrikeConsentRequest" --> "StrikeConsentRequestMT" : payload
+"SubsystemConfigurationDataRequest" --> "SubsystemConfigurationDataRequestMT" : payload
+"SubsystemStatusDataRequest" --> "SubsystemStatusDataRequestMT" : payload
+"SubsystemStatusDetailedDataRequest" --> "SubsystemStatusDetailedDataRequestMT" : payload
+"SystemEstimationRequest" --> "SystemEstimationRequestMT" : payload
+"SystemManagementRequest" --> "SystemManagementRequestMT" : payload
+"SystemOrbitalElementSetRequest" --> "SystemOrbitalElementSetRequestMT" : payload
+"SystemOrbitalEphemerisRequest" --> "SystemOrbitalEphemerisRequestMT" : payload
+"SystemOrbitalVCM_Request" --> "SystemOrbitalVCM_RequestMT" : payload
+"SystemsNeededRequest" --> "SystemsNeededRequestMT" : payload
+"WorkingEOB_Request" --> "WorkingEOB_RequestMT" : payload
+"WorkingSOB_Request" --> "WorkingSOB_RequestMT" : payload
+"ACTDF_CollectionPlanType" --> "ForeignKeyType" : PlanKey
+"ID_Type" <|-- "ACTDF_TaskID_Type"
+"ACTDF_TraceabilityType" --> "ACTDF_CollectionPlanType" : ACTDF_CollectionPlanIdentifier
+"ACTDF_TraceabilityType" --> "ACTDF_TaskID_Type" : ACTDF_TaskID
+"AO_ConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"AO_ConsentRequestMDT" --> "AO_ConsentRequestType" : ConsentRequest
+"MessageType" <|-- "AO_ConsentRequestMT"
+"AO_ConsentRequestMT" --> "AO_ConsentRequestMDT" : MessageData
+"RequestBaseType" <|-- "AO_ConsentRequestType"
+"AO_ConsentRequestType" --> "ActivityID_Type" : ActivityID
+"AccessAssessmentFilterType" --> "CapabilityTaxonomyUniversalType" : AssessedCapabilities
+"AccessAssessmentFilterType" --> "AssetFilterType" : Subject
+"AccessAssessmentFilterType" --> "AssetFilterType" : AssessedObject
+"AccessAssessmentFilterType" --> "AccessEventFilterType" : AccessEvent
+"RequestBaseType" <|-- "AccessAssessmentRequestMDT"
+"AccessAssessmentRequestMDT" --> "DateTimeRangeType" : AssessmentPeriod
+"AccessAssessmentRequestMDT" --> "IdentityKindAssetType" : SubjectObject
+"AccessAssessmentRequestMDT" --> "IdentityKindAssetType" : ObjectToAssess
+"AccessAssessmentRequestMDT" --> "CapabilityTaxonomyUniversalType" : CapabilitiesToAssess
+"MessageType" <|-- "AccessAssessmentRequestMT"
+"AccessAssessmentRequestMT" --> "AccessAssessmentRequestMDT" : MessageData
+"AccessEventFilterType" --> "DateTimeRangeType" : TimeRange
+"AccessEventFilterType" --> "DurationRangeType" : DurationRange
+"AccessEventFilterType" --> "DistanceConstraintsType" : ObjectSeparationRange
+"AccessEventFilterType" --> "DateTimeRangeType" : UnambiguousTimeRange
+"RequirementAllocationBaseType" <|-- "ActionAllocationType"
+"ActionAllocationType" --> "ActionID_Type" : ActionID
+"VersionedID_Type" <|-- "ActionID_Type"
+"ActionPlanConstraintType" --> "ActionPlanID_Type" : ActionPlanID
+"VersionedID_Type" <|-- "ActionPlanID_Type"
+"ID_Type" <|-- "ActivityID_Type"
+"RequestBaseType" <|-- "ActivityMetricsRequestMDT"
+"ActivityMetricsRequestMDT" --> "ActivityPlanID_Type" : ActivityPlanID
+"MessageType" <|-- "ActivityMetricsRequestMT"
+"ActivityMetricsRequestMT" --> "ActivityMetricsRequestMDT" : MessageData
+"ActivityPlanConstraintType" --> "ActivityPlanID_Type" : ActivityPlanID
+"VersionedID_Type" <|-- "ActivityPlanID_Type"
+"ID_Type" <|-- "AirfieldID_Type"
+"VersionedID_Type" <|-- "AnalysisRouteID_Type"
+"RequestBaseType" <|-- "AnalysisRouteRequestMDT"
+"AnalysisRouteRequestMDT" --> "RoutePlanAnalysisInputsType" : AnalysisRouteInputs
+"MessageType" <|-- "AnalysisRouteRequestMT"
+"AnalysisRouteRequestMT" --> "AnalysisRouteRequestMDT" : MessageData
+"AnalyticConstraintsType" --> "OpConstraintWeightingType" : OpConstraint
+"AnalyticConstraintsType" --> "SurvivabilityRiskSettingType" : RiskSetting
+"AnalyticConstraintsType" --> "AccessAssessmentFilterType" : AccessAssessmentThreshold
+"AnalyticConstraintsType" --> "RF_TaskPerformanceType" : RF_TaskPerformance
+"AntennaAndResourceInstanceType" --> "SupportCapabilityID_Type" : AntennaSupportCapabilityID
+"AntennaAndResourceInstanceType" --> "AntennaResourceID_Type" : AntennaResourceInstanceID
+"ID_Type" <|-- "AntennaID_Type"
+"ID_Type" <|-- "AntennaResourceID_Type"
+"AppliesToType" --> "SystemID_Type" : SystemID
+"AppliesToType" --> "SubsystemID_Type" : SubsystemID
+"AppliesToType" --> "ServiceID_Type" : ServiceID
+"ApproachConditionsType" --> "ApproachAngleType" : ApproachAngle
+"ApproachConditionsType" --> "TargetFinalApproachType" : TargetFinalApproach
+"RequestBaseType" <|-- "ApprovalAuthorityRequestMDT"
+"ApprovalAuthorityRequestMDT" --> "SystemID_Type" : ApproverSystemID
+"ApprovalAuthorityRequestMDT" --> "ServiceID_Type" : ApproverServiceID
+"ApprovalAuthorityRequestMDT" --> "SystemID_Type" : ApproveeSystemID
+"ApprovalAuthorityRequestMDT" --> "ApprovalPolicyID_Type" : ApprovalPolicyID
+"MessageType" <|-- "ApprovalAuthorityRequestMT"
+"ApprovalAuthorityRequestMT" --> "ApprovalAuthorityRequestMDT" : MessageData
+"ID_Type" <|-- "ApprovalPolicyID_Type"
+"RequestBaseType" <|-- "ApprovalRequestMDT"
+"ApprovalRequestMDT" --> "OperatorRoleType" : Approver
+"ApprovalRequestMDT" --> "ApprovalRequestPolicyReferenceType" : ApprovalReferences
+"MessageType" <|-- "ApprovalRequestMT"
+"ApprovalRequestMT" --> "ApprovalRequestMDT" : MessageData
+"ApprovalRequestPolicyReferenceType" --> "ApprovalPolicyID_Type" : ApprovalPolicyID
+"ApprovalRequestPolicyReferenceType" --> "ApprovalRequestItemReferenceType" : ApprovalItem
+"RequestBaseType" <|-- "AssessmentRequestMDT"
+"AssessmentRequestMDT" --> "AnalysisRouteID_Type" : AnalysisRouteID
+"AssessmentRequestMDT" --> "AssessmentRequestType" : Category
+"MessageType" <|-- "AssessmentRequestMT"
+"AssessmentRequestMT" --> "AssessmentRequestMDT" : MessageData
+"AssetFilterType" --> "SystemFilterType" : System
+"AssetFilterType" --> "EntityFilterType" : Entity
+"AtmosphericDragModelType" --> "SpaceWeatherDataChoiceType" : SpaceWeatherData
+"AtmosphericDragModelType" --> "DragCoefficientChoiceType" : DragModelCoefficient
+"ID_Type" <|-- "AutonomousPlanningActionID_Type"
+"AvailableWeaponsType" --> "StoreType" : Weapon
+"COMINT_ConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"COMINT_ConsentRequestMDT" --> "COMINT_ConsentRequestType" : ConsentRequest
+"MessageType" <|-- "COMINT_ConsentRequestMT"
+"COMINT_ConsentRequestMT" --> "COMINT_ConsentRequestMDT" : MessageData
+"RequestBaseType" <|-- "COMINT_ConsentRequestType"
+"COMINT_ConsentRequestType" --> "ActivityID_Type" : ActivityID
+"ForeignKeyType" <|-- "CallSignType"
+"CapabilityCommandRankingType" --> "ComparableRankingType" : Rank
+"CapabilityCoverageAreaRequestDataType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityCoverageAreaRequestDataType" --> "Point3D_Type" : SensorPosition
+"CapabilityCoverageAreaRequestDataType" --> "OrientationType" : SensorOrientation
+"RequestBaseType" <|-- "CapabilityCoverageAreaRequestMDT"
+"CapabilityCoverageAreaRequestMDT" --> "CapabilityCoverageAreaRequestDataType" : CapabilityCoverageAreaRequestDetails
+"MessageType" <|-- "CapabilityCoverageAreaRequestMT"
+"CapabilityCoverageAreaRequestMT" --> "CapabilityCoverageAreaRequestMDT" : MessageData
+"ID_Type" <|-- "CapabilityID_Type"
+"CapabilityTaxonomyType" --> "AMTI_SpecificDataType" : AMTI
+"CapabilityTaxonomyType" --> "CargoDeliverySpecificDataType" : CargoDelivery
+"CapabilityTaxonomyType" --> "COMINT_SpecificDataType" : COMINT
+"CapabilityTaxonomyType" --> "ESM_SpecificDataType" : ESM
+"CapabilityTaxonomyType" --> "OrbitalSurveillanceSpecificDataType" : OrbitalSurveillance
+"CapabilityTaxonomyType" --> "SAR_SpecificDataType" : SAR
+"CapabilityTaxonomyType" --> "SMTI_SpecificDataType" : SMTI
+"CapabilityTaxonomyType" --> "StoreType" : Strike
+"CapabilityTaxonomyUniversalBaseType" --> "CapabilityTaxonomyType" : CapabilityDetails
+"CapabilityTaxonomyUniversalBaseType" --> "CapabilityID_Type" : CapabilityInstanceID
+"CapabilityTaxonomyUniversalBaseType" <|-- "CapabilityTaxonomyUniversalType"
+"ClassificationRequirementsType" --> "InputProductType" : InputProduct
+"ClassificationRequirementsType" --> "SecurityInformationType" : Classification
+"CommActionType" <|-- "CommActionExtendedType"
+"CommActionType" --> "CommConfigurationID_Type" : ConfigurationID
+"CommActionType" --> "SubsystemCommandType" : SubsystemCommand
+"CommActionType" --> "CommCapabilityType" : CommCapability
+"CommAllocationConstraintType" --> "CommScheduleAllocationID_Type" : AllocationID
+"ForeignKeyType" <|-- "CommAntennaModeType"
+"RequestBaseType" <|-- "CommAssetEstimationRequestMDT"
+"CommAssetEstimationRequestMDT" --> "CommAssetID_Type" : CommAssetID
+"MessageType" <|-- "CommAssetEstimationRequestMT"
+"CommAssetEstimationRequestMT" --> "CommAssetEstimationRequestMDT" : MessageData
+"ID_Type" <|-- "CommAssetID_Type"
+"CommCapabilityType" --> "CapabilityID_Type" : CapabilityID
+"CommCapabilityType" --> "SubsystemID_Type" : SubsystemID
+"CommCapabilityType" --> "CapabilityCommandRankingType" : Ranking
+"CommCapabilityType" --> "SecurityInformationType" : Classification
+"CommCapabilityType" --> "CommProfileID_Type" : ActivateProfileID
+"CommCapabilityType" --> "NetworkLinkID_Type" : NetworkLinkID
+"CommCapabilityType" --> "CommControlType" : CommonSettings
+"CommCapabilityType" --> "CryptoLocationType" : CryptoKey
+"CommCapabilityType" --> "CryptoLocationType" : CryptoZeroize
+"CommCapabilityType" --> "CryptoRolloverCommandType" : CryptoRollover
+"CommCapabilityType" --> "CommLinkPortMapType" : LinkPortAssignments
+"CommCapabilityType" --> "VerboseStatusType" : VerboseStatus
+"CommCapabilityType" --> "CommWaveformCapabilityCommandPET" : WaveformSpecificSettings
+"CommCapabilityType" --> "LinkConnectionRequestType" : LinkConnectionRequest
+"ID_Type" <|-- "CommConfigurationID_Type"
+"CommConnectionType" --> "ForeignKeyType" : TransmitChannel
+"CommConnectionType" --> "ForeignKeyType" : ReceiveChannel
+"CommConnectionType" --> "ForeignKeyType" : NetworkKey
+"CommControlType" --> "CommConnectionType" : ConnectionSettings
+"CommControlType" --> "ComponentID_Type" : AntennaID
+"CommControlType" --> "RemoteDestinationType" : RemoteDestination
+"CommDataType" <|-- "CommCoverageDataType"
+"CommCoverageDataType" --> "TimeCoverageType" : TimeCoverage
+"CommCoverageDataType" <|-- "CommCoverageUserDataType"
+"CommDataType" --> "CommResourceType" : Resource
+"CommDataType" --> "CommSpecificRequestDataEXT" : CommSpecificData
+"ID_Type" <|-- "CommEffectivityID_Type"
+"CommLinkPortMapType" --> "CommUserIO_ID_Type" : UserIO_ID
+"CommLinkPortMapType" --> "CommUserLinkID_Type" : RF_UserLinkID
+"ID_Type" <|-- "CommPointingID_Type"
+"RequestBaseType" <|-- "CommPointingRequestMDT"
+"CommPointingRequestMDT" --> "CommPointingID_Type" : CommPointingID
+"CommPointingRequestMDT" --> "CommPointingType" : PointingVector
+"MessageType" <|-- "CommPointingRequestMT"
+"CommPointingRequestMT" --> "CommPointingRequestMDT" : MessageData
+"CommPointingType" --> "CommResourceType" : CommSystem
+"CommPointingType" --> "Point3D_Type" : CommSystemPosition
+"CommPointingType" --> "Point4D_Type" : PointingVectorCenterpoint
+"CommPointingType" --> "PointingVectorParameterType" : PointingVectorParameters
+"ID_Type" <|-- "CommProfileID_Type"
+"CommResourceType" --> "CommSystemID_Type" : CommSystemID
+"CommResourceType" --> "CommAssetID_Type" : CommAssetID
+"CommResourceType" --> "AntennaID_Type" : AntennaID
+"CommResourceType" --> "CommAntennaModeType" : AntennaModeIdentifier
+"ID_Type" <|-- "CommScheduleAllocationID_Type"
+"CommScheduleAllocationMDT" --> "CommScheduleAllocationType" : CommScheduleAllocation
+"CommScheduleAllocationType" --> "CommScheduleAllocationID_Type" : CommScheduleAllocationID
+"CommScheduleAllocationType" --> "SystemID_Type" : ControllingSystemID
+"CommScheduleAllocationType" --> "SystemID_Type" : SystemID
+"CommScheduleAllocationType" --> "SystemID_Type" : DesignatedSystemID
+"CommScheduleAllocationType" --> "CommSchedulingRequirementID_Type" : CommSchedulingRequirementID
+"CommScheduleAllocationType" --> "RequestID_Type" : CommSchedulingRequestID
+"CommScheduleAllocationType" --> "CommCoverageUserDataType" : AllocatedComm
+"RequestBaseType" <|-- "CommScheduleAllocationUpdateRequestMDT"
+"CommScheduleAllocationUpdateRequestMDT" --> "CommScheduleAllocationMDT" : AllocationUpdate
+"MessageType" <|-- "CommScheduleAllocationUpdateRequestMT"
+"CommScheduleAllocationUpdateRequestMT" --> "CommScheduleAllocationUpdateRequestMDT" : MessageData
+"RequestBaseType" <|-- "CommSchedulingRequestMDT"
+"CommSchedulingRequestMDT" --> "SystemID_Type" : ControllingSystemID
+"CommSchedulingRequestMDT" --> "CommSchedulingRequirementID_Type" : CommSchedulingRequirementID
+"CommSchedulingRequestMDT" --> "CommCoverageUserDataType" : CommRequestData
+"MessageType" <|-- "CommSchedulingRequestMT"
+"CommSchedulingRequestMT" --> "CommSchedulingRequestMDT" : MessageData
+"ID_Type" <|-- "CommSchedulingRequirementID_Type"
+"ID_Type" <|-- "CommSystemID_Type"
+"CommTerminalPlanConfigurationActivationType" --> "CommConfigurationID_Type" : ConfigurationID
+"CommTerminalPlanEffectivityActivationType" --> "CommEffectivityID_Type" : EffectivityID
+"CommTerminalPlanEffectivityActivationType" --> "CommTerminalPlanConfigurationActivationType" : EffectivityConfiguration
+"VersionedID_Type" <|-- "CommTerminalPlanID_Type"
+"CommTerminalPlanOverrideActivationType" --> "CommTerminalPlanID_Type" : CommPlanID
+"CommTerminalPlanOverrideActivationType" --> "CommTerminalPlanEffectivityActivationType" : EffectivityActivation
+"CommTerminalPlanOverrideRequestMDT" --> "SystemID_Type" : AllocatedToSystemID
+"CommTerminalPlanOverrideRequestMDT" --> "ServiceID_Type" : AllocatedToServiceID
+"CommTerminalPlanOverrideRequestMDT" --> "CommTerminalPlanOverrideRequestType" : Request
+"MessageType" <|-- "CommTerminalPlanOverrideRequestMT"
+"CommTerminalPlanOverrideRequestMT" --> "CommTerminalPlanOverrideRequestMDT" : MessageData
+"RequestBaseType" <|-- "CommTerminalPlanOverrideRequestType"
+"CommTerminalPlanOverrideRequestType" --> "CommTerminalPlanOverrideActivationType" : PlanActivation
+"CommTerminalPlanOverrideRequestType" --> "CommActionExtendedType" : OperatorModification
+"ID_Type" <|-- "CommUserIO_ID_Type"
+"ID_Type" <|-- "CommUserLinkID_Type"
+"RequestBaseType" <|-- "CommUtilizationRequestMDT"
+"CommUtilizationRequestMDT" --> "SystemID_Type" : SystemID
+"CommUtilizationRequestMDT" --> "CommDataType" : CommUtilizationData
+"CommUtilizationRequestMDT" --> "DateTimeRangeType" : TimeSpan
+"CommUtilizationRequestMDT" --> "Point2D_Type" : Position
+"CommUtilizationRequestMDT" --> "ComparableRankingType" : RelativePriority
+"MessageType" <|-- "CommUtilizationRequestMT"
+"CommUtilizationRequestMT" --> "CommUtilizationRequestMDT" : MessageData
+"RequestBaseType" <|-- "ComponentConfigurationDataRequestMDT"
+"ComponentConfigurationDataRequestMDT" --> "ServiceID_Type" : ServiceID
+"MessageType" <|-- "ComponentConfigurationDataRequestMT"
+"ComponentConfigurationDataRequestMT" --> "ComponentConfigurationDataRequestMDT" : MessageData
+"ID_Type" <|-- "ComponentID_Type"
+"RequestBaseType" <|-- "ComponentStatusDataRequestMDT"
+"ComponentStatusDataRequestMDT" --> "ServiceID_Type" : ServiceID
+"ComponentStatusDataRequestMDT" --> "ComponentID_Type" : ComponentID
+"MessageType" <|-- "ComponentStatusDataRequestMT"
+"ComponentStatusDataRequestMT" --> "ComponentStatusDataRequestMDT" : MessageData
+"ConditionalPathSegmentType" --> "PathID_Type" : PathID
+"ConditionalPathSegmentType" --> "SegmentID_Type" : PathSegmentID
+"ConditionalPathSegmentType" --> "PathSegmentConditionType" : Condition
+"ConstrainingPlansType" --> "MissionPlanID_Type" : MissionPlanID
+"ConstrainingPlansType" --> "TaskPlanConstraintType" : TaskPlan
+"ConstrainingPlansType" --> "RoutePlanConstraintType" : RoutePlan
+"ConstrainingPlansType" --> "RouteActivityPlanConstraintType" : RouteActivityPlan
+"ConstrainingPlansType" --> "OrbitPlanConstraintType" : OrbitPlan
+"ConstrainingPlansType" --> "OrbitActivityPlanConstraintType" : OrbitActivityPlan
+"ConstrainingPlansType" --> "ActivityPlanConstraintType" : ActivityPlan
+"ConstrainingPlansType" --> "CommAllocationConstraintType" : CommAllocation
+"ConstrainingPlansType" --> "EffectPlanConstraintType" : EffectPlan
+"ConstrainingPlansType" --> "ActionPlanConstraintType" : ActionPlan
+"ConstrainingPlansType" --> "ResponsePlanConstraintType" : ResponsePlan
+"RequestBaseType" <|-- "ControlRequestMDT"
+"ControlRequestMDT" --> "SystemServiceType" : Controller
+"ControlRequestMDT" --> "ControlleeType" : Controllee
+"MessageType" <|-- "ControlRequestMT"
+"ControlRequestMT" --> "ControlRequestMDT" : MessageData
+"ControlleeType" --> "SystemID_Type" : SystemID
+"ControlleeType" --> "CapabilityID_Type" : CapabilityID
+"CryptoLocationType" --> "CryptoSlotGroupID_Type" : CryptoSlotGroupID
+"CryptoRolloverCommandType" --> "CryptoLocationType" : CryptoRolloverTarget
+"ID_Type" <|-- "CryptoSlotGroupID_Type"
+"RequestBaseType" <|-- "DLZ_RequestMDT"
+"DLZ_RequestMDT" --> "SystemID_Type" : SystemID
+"DLZ_RequestMDT" --> "WeaponeeringTargetType" : WeaponTargetPairing
+"MessageType" <|-- "DLZ_RequestMT"
+"DLZ_RequestMT" --> "DLZ_RequestMDT" : MessageData
+"DMPI_AllocationType" --> "DMPI_ID_Type" : DMPI_ID
+"DMPI_AllocationType" --> "ComparableRankingType" : DMPI_Ranking
+"DMPI_AllocationType" --> "CapabilityID_Type" : CapabilityID
+"DMPI_BlastPairingType" --> "DMPI_ID_Type" : DMPI_ID
+"DMPI_DamageEstimateType" --> "DMPI_ID_Type" : DMPI_ID
+"DMPI_DamageEstimateType" --> "DMPI_LocationType" : DMPI_Location
+"DMPI_DamageEstimateType" --> "WeaponeeringType" : Weaponeering
+"RequestBaseType" <|-- "DMPI_DesignationRequestMDT"
+"DMPI_DesignationRequestMDT" --> "TaskID_Type" : TaskID
+"DMPI_DesignationRequestMDT" --> "ProductMetadataID_Type" : ProductMetadataID
+"DMPI_DesignationRequestMDT" --> "RecommendedWeaponsType" : RecommendedWeapons
+"DMPI_DesignationRequestMDT" --> "AvailableWeaponsType" : AvailableWeapons
+"DMPI_DesignationRequestMDT" --> "Point2D_Type" : ProposedDMPI_Coordinates
+"DMPI_DesignationRequestMDT" --> "PixelReferenceCoordinateType" : ReferencePixelCoordinate
+"MessageType" <|-- "DMPI_DesignationRequestMT"
+"DMPI_DesignationRequestMT" --> "DMPI_DesignationRequestMDT" : MessageData
+"VersionedID_Type" <|-- "DMPI_ID_Type"
+"DMPI_LocationType" --> "Point3D_Type" : DMPI_Coordinates
+"RequestBaseType" <|-- "DamageAssessmentRequestMDT"
+"DamageAssessmentRequestMDT" --> "DamageSubjectType" : Subject
+"DamageAssessmentRequestMDT" --> "ZoneType" : AssessmentZone
+"DamageAssessmentRequestMDT" --> "ProductMetadataID_Type" : ProductMetadataID
+"DamageAssessmentRequestMDT" --> "DamageSummaryID_Type" : DamageSummaryID
+"MessageType" <|-- "DamageAssessmentRequestMT"
+"DamageAssessmentRequestMT" --> "DamageAssessmentRequestMDT" : MessageData
+"RequestBaseType" <|-- "DamageEstimateRequestMDT"
+"DamageEstimateRequestMDT" --> "DamageEstimateTargetType" : TargetData
+"DamageEstimateRequestMDT" --> "DMPI_DamageEstimateType" : DMPI_Data
+"DamageEstimateRequestMDT" --> "TaskID_Type" : TaskID
+"DamageEstimateRequestMDT" --> "Point3D_Type" : ReleasePoint
+"DamageEstimateRequestMDT" --> "ProductMetadataID_Type" : ProductMetadataID
+"DamageEstimateRequestMDT" --> "ZoneType" : EstimateZone
+"DamageEstimateRequestMDT" --> "DMPI_BlastPairingType" : DMPI_BlastPairing
+"MessageType" <|-- "DamageEstimateRequestMT"
+"DamageEstimateRequestMT" --> "DamageEstimateRequestMDT" : MessageData
+"ID_Type" <|-- "DamageSummaryID_Type"
+"RequestBaseType" <|-- "DataDeleteRequestMDT"
+"DataDeleteRequestMDT" --> "AppliesToType" : AppliesTo
+"DataDeleteRequestMDT" --> "DataDeleteChoiceType" : Data
+"MessageType" <|-- "DataDeleteRequestMT"
+"DataDeleteRequestMT" --> "DataDeleteRequestMDT" : MessageData
+"ID_Type" <|-- "DataDestinationID_Type"
+"RequestBaseType" <|-- "DataManagementRequestMDT"
+"DataManagementRequestMDT" --> "AppliesToType" : AppliesTo
+"DataManagementRequestMDT" --> "DataManagementCategoryType" : Category
+"MessageType" <|-- "DataManagementRequestMT"
+"DataManagementRequestMT" --> "DataManagementRequestMDT" : MessageData
+"DataPlanConfigurationActivationType" --> "CommConfigurationID_Type" : ConfigurationID
+"DataPlanEffectivityActivationType" --> "CommEffectivityID_Type" : EffectivityID
+"DataPlanEffectivityActivationType" --> "DataPlanConfigurationActivationType" : EffectivityConfiguration
+"VersionedID_Type" <|-- "DataPlanID_Type"
+"DataPlanID_Type" --> "ForeignKeyType" : ForeignDataPlanKey
+"DataPlanOverrideActivationType" --> "DataPlanID_Type" : DataPlanID
+"DataPlanOverrideActivationType" --> "DataPlanEffectivityActivationType" : EffectivityActivation
+"DataPlanOverrideRequestMDT" --> "SystemID_Type" : AllocatedToSystemID
+"DataPlanOverrideRequestMDT" --> "ServiceID_Type" : AllocatedToServiceID
+"DataPlanOverrideRequestMDT" --> "DataPlanOverrideRequestType" : Request
+"MessageType" <|-- "DataPlanOverrideRequestMT"
+"DataPlanOverrideRequestMT" --> "DataPlanOverrideRequestMDT" : MessageData
+"RequestBaseType" <|-- "DataPlanOverrideRequestType"
+"DataPlanOverrideRequestType" --> "DataPlanOverrideActivationType" : PlanActivation
+"DataPlanOverrideRequestType" --> "PlannedGatewayConfigurationType" : OperatorModification
+"DataProductClassificationLevelType" --> "SecurityInformationType" : Min
+"DataProductClassificationLevelType" --> "SecurityInformationType" : Max
+"DataRecordBaseType" --> "DataRecordInstanceID_Type" : DataRecordInstanceID
+"DataRecordDeleteDetailsType" --> "DataRecordInstanceID_Type" : DataRecordInstanceID
+"ID_Type" <|-- "DataRecordInstanceID_Type"
+"ID_Type" <|-- "DataRecordListID_Type"
+"RequestBaseType" <|-- "DataRecordListManagementRequestMDT"
+"DataRecordListManagementRequestMDT" --> "DataRecordListID_Type" : DataRecordListID
+"DataRecordListManagementRequestMDT" --> "DataRecordInstanceID_Type" : DataRecordInstanceID
+"DataRecordListManagementRequestMDT" --> "ManagedListBaseType" : AddRecord
+"DataRecordListManagementRequestMDT" --> "ManagedListBaseType" : DeleteRecord
+"MessageType" <|-- "DataRecordListManagementRequestMT"
+"DataRecordListManagementRequestMT" --> "DataRecordListManagementRequestMDT" : MessageData
+"DataRecordManagementDetailsType" --> "SecurityInformationType" : SecurityInformation
+"DataRecordManagementDetailsType" --> "DataRecordBaseType" : DataRecord
+"RequestBaseType" <|-- "DataRecordManagementRequestMDT"
+"DataRecordManagementRequestMDT" --> "DataRecordManagementDetailsType" : CreateDataRecord
+"DataRecordManagementRequestMDT" --> "DataRecordManagementDetailsType" : UpdateDataRecord
+"DataRecordManagementRequestMDT" --> "DataRecordDeleteDetailsType" : DeleteDataRecord
+"MessageType" <|-- "DataRecordManagementRequestMT"
+"DataRecordManagementRequestMT" --> "DataRecordManagementRequestMDT" : MessageData
+"RequestBaseType" <|-- "DataStorageUtilizationRequestMDT"
+"DataStorageUtilizationRequestMDT" --> "SystemID_Type" : SystemID
+"DataStorageUtilizationRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"DataStorageUtilizationRequestMDT" --> "ServiceID_Type" : ServiceID
+"MessageType" <|-- "DataStorageUtilizationRequestMT"
+"DataStorageUtilizationRequestMT" --> "DataStorageUtilizationRequestMDT" : MessageData
+"RequestBaseType" <|-- "DataUpdateRequestMDT"
+"DataUpdateRequestMDT" --> "ServiceID_Type" : ServiceID
+"DataUpdateRequestMDT" --> "DataUpdateOriginatorType" : Originator
+"DataUpdateRequestMDT" --> "DataUpdateRequestType" : RequestType
+"MessageType" <|-- "DataUpdateRequestMT"
+"DataUpdateRequestMT" --> "DataUpdateRequestMDT" : MessageData
+"DependentActivityType" --> "ActivityID_Type" : DependentActivityID
+"DesignationDataType" --> "DesignationID_Type" : DesignationID
+"DesignationDataType" --> "TargetType" : Target
+"DesignationDataType" --> "RequirementTaxonomyType" : DesignationObjective
+"DesignationDataType" --> "SystemID_Type" : ApplicableSystemID
+"ID_Type" <|-- "DesignationID_Type"
+"RequestBaseType" <|-- "DesignationRequestMDT"
+"DesignationRequestMDT" --> "DesignationDataType" : DesignationData
+"MessageType" <|-- "DesignationRequestMT"
+"DesignationRequestMT" --> "DesignationRequestMDT" : MessageData
+"DisseminationRequirementsType" --> "InputProductType" : InputProduct
+"DisseminationRequirementsType" --> "DisseminationSubplanType" : DisseminationPlan
+"DisseminationSubplanType" --> "ProductDisseminationDestinationID_Type" : DestinationID
+"DisseminationSubplanType" --> "ArchiveRequestType" : ArchiveCommand
+"DisseminationSubplanType" --> "SourceCommandEXT" : ExtensionCommand
+"EA_ConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"EA_ConsentRequestMDT" --> "EA_ConsentRequestType" : ConsentRequest
+"MessageType" <|-- "EA_ConsentRequestMT"
+"EA_ConsentRequestMT" --> "EA_ConsentRequestMDT" : MessageData
+"RequestBaseType" <|-- "EA_ConsentRequestType"
+"EA_ConsentRequestType" --> "EA_ProposedType" : ProposedEA
+"ID_Type" <|-- "EEI_ID_Type"
+"ESM_ConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"ESM_ConsentRequestMDT" --> "ESM_ConsentRequestType" : ConsentRequest
+"MessageType" <|-- "ESM_ConsentRequestMT"
+"ESM_ConsentRequestMT" --> "ESM_ConsentRequestMDT" : MessageData
+"RequestBaseType" <|-- "ESM_ConsentRequestType"
+"ESM_ConsentRequestType" --> "ActivityID_Type" : ActivityID
+"RequirementAllocationBaseType" <|-- "EffectAllocationType"
+"EffectAllocationType" --> "EffectID_Type" : EffectID
+"VersionedID_Type" <|-- "EffectID_Type"
+"EffectPlanConstraintType" --> "EffectPlanID_Type" : EffectPlanID
+"VersionedID_Type" <|-- "EffectPlanID_Type"
+"RequestBaseType" <|-- "ElevationRequestMDT"
+"ElevationRequestMDT" --> "ElevationRequestPointsType" : ElevationRequested
+"MessageType" <|-- "ElevationRequestMT"
+"ElevationRequestMT" --> "ElevationRequestMDT" : MessageData
+"ElevationRequestPointsType" --> "Point2D_Type" : RequestPoint
+"RequestBaseType" <|-- "ElevationVisibilityRequestMDT"
+"ElevationVisibilityRequestMDT" --> "ElevationVisibilityRequestPointsType" : VisibilityRequest
+"MessageType" <|-- "ElevationVisibilityRequestMT"
+"ElevationVisibilityRequestMT" --> "ElevationVisibilityRequestMDT" : MessageData
+"ElevationVisibilityRequestPointsType" --> "Point3D_Type" : FromPoint
+"ElevationVisibilityRequestPointsType" --> "Point2D_Type" : RequestPoint
+"EmitterIdentityType" --> "EmitterIdentityCategoryType" : EmitterCategory
+"EnduranceFootprintType" --> "BoundaryType" : Boundary
+"EnduranceRemainingType" --> "EnduranceType" : EnduranceRemaining
+"EnduranceBaseType" <|-- "EnduranceType"
+"EnduranceType" --> "EnduranceFootprintType" : Footprint
+"RequestBaseType" <|-- "EntityConfirmationRequestMDT"
+"EntityConfirmationRequestMDT" --> "SystemID_Type" : SystemID
+"EntityConfirmationRequestMDT" --> "RequirementInstanceID_ChoiceType" : RequirementID
+"EntityConfirmationRequestMDT" --> "EntityID_Type" : EntityID
+"EntityConfirmationRequestMDT" --> "EntityDimensionEstimateUncertaintyType" : EntityDimension_EstimateUncertainty
+"EntityConfirmationRequestMDT" --> "EntityDimensionEstimateType" : EntityDimension_Estimate
+"EntityConfirmationRequestMDT" --> "QuaternionAttitudeType" : AttitudeEstimates
+"EntityConfirmationRequestMDT" --> "FileMetadataID_Type" : FileMetadataID
+"EntityConfirmationRequestMDT" --> "ProductMetadataID_Type" : ProductMetadataID
+"EntityConfirmationRequestMDT" --> "MeasurementKinematicsChoiceType" : MeasurementKinematics
+"EntityConfirmationRequestMDT" --> "SensorKinematicsChoiceType" : ReferenceKinematics
+"EntityConfirmationRequestMDT" --> "SystemOrbitalEphemerisID_Type" : SystemEphemerisID
+"EntityConfirmationRequestMDT" --> "EntityOrbitalEphemerisID_Type" : EntityEphemerisID
+"MessageType" <|-- "EntityConfirmationRequestMT"
+"EntityConfirmationRequestMT" --> "EntityConfirmationRequestMDT" : MessageData
+"EntityDimensionEstimateType" --> "SizeType" : EntityDimension
+"EntityDimensionEstimateUncertaintyType" --> "SizeUncertaintyType" : EntityDimensionUncertainty
+"OrbitalEphemerisRequestParametersType" <|-- "EntityEphemerisRequestParametersType"
+"EntityEphemerisRequestParametersType" --> "EntityEphemerisBasisChoiceType" : EphemerisBasis
+"EntityFilterType" --> "EntityID_Type" : EntityID
+"EntityFilterType" --> "GeoFiltersQueryType" : GeoFilter
+"EntityFilterType" --> "OrbitalFiltersQueryType" : OrbitalFilter
+"ID_Type" <|-- "EntityID_Type"
+"RequestBaseType" <|-- "EntityManagementRequestMDT"
+"EntityManagementRequestMDT" --> "EntityManagementRequestType" : RequestType
+"EntityManagementRequestMDT" --> "SystemMessageIdentifierType" : Source
+"EntityManagementRequestMDT" --> "SystemID_Type" : SystemID
+"EntityManagementRequestMDT" --> "ServiceID_Type" : ServiceID
+"MessageType" <|-- "EntityManagementRequestMT"
+"EntityManagementRequestMT" --> "EntityManagementRequestMDT" : MessageData
+"RequestBaseType" <|-- "EntityOrbitalElementSetRequestMDT"
+"EntityOrbitalElementSetRequestMDT" --> "EntityID_Type" : EntityID
+"EntityOrbitalElementSetRequestMDT" --> "OrbitalElementSetRequestParametersType" : Parameters
+"MessageType" <|-- "EntityOrbitalElementSetRequestMT"
+"EntityOrbitalElementSetRequestMT" --> "EntityOrbitalElementSetRequestMDT" : MessageData
+"ID_Type" <|-- "EntityOrbitalEphemerisID_Type"
+"RequestBaseType" <|-- "EntityOrbitalEphemerisRequestMDT"
+"EntityOrbitalEphemerisRequestMDT" --> "EntityID_Type" : EntityID
+"EntityOrbitalEphemerisRequestMDT" --> "EntityEphemerisRequestParametersType" : Parameters
+"MessageType" <|-- "EntityOrbitalEphemerisRequestMT"
+"EntityOrbitalEphemerisRequestMT" --> "EntityOrbitalEphemerisRequestMDT" : MessageData
+"RequestBaseType" <|-- "EntityOrbitalVCM_RequestMDT"
+"EntityOrbitalVCM_RequestMDT" --> "EntityID_Type" : EntityID
+"EntityOrbitalVCM_RequestMDT" --> "OrbitalVCM_RequestParametersType" : Parameters
+"MessageType" <|-- "EntityOrbitalVCM_RequestMT"
+"EntityOrbitalVCM_RequestMT" --> "EntityOrbitalVCM_RequestMDT" : MessageData
+"EnvironmentIdentityType" --> "OrbitRegimeType" : OrbitRegime
+"RequestBaseType" <|-- "ExternalDataRequestMDT"
+"ExternalDataRequestMDT" --> "ExternalRequestedDataID_Type" : ExternalRequestedDataID
+"MessageType" <|-- "ExternalDataRequestMT"
+"ExternalDataRequestMT" --> "ExternalDataRequestMDT" : MessageData
+"ID_Type" <|-- "ExternalRequestedDataID_Type"
+"ID_Type" <|-- "FileLocationID_Type"
+"ID_Type" <|-- "FileMetadataID_Type"
+"ID_Type" <|-- "FilterID_Type"
+"ForceModelType" --> "GravityModelType" : GravityModel
+"ForceModelType" --> "AtmosphericDragModelType" : AtmosphericDragModel
+"ForceModelType" --> "SolarRadiationPressureModelType" : SolarRadiationPressureModel
+"ForceModelType" --> "ThirdBodyGravityType" : ThirdBodyGravityModel
+"ForceModelType" --> "EarthOrientationParametersDataChoiceType" : EarthOrientationParametersDataChoice
+"ForceModelType" --> "PhysicalModelType" : PhysicalModel
+"ForceModelType" --> "OrbitalManeuverDetailsType" : Maneuver
+"ForceModelType" --> "VCM_ForceModelOptionsType" : VCM_ForceModelOptions
+"RequestBaseType" <|-- "FusionSettingsRequestMDT"
+"FusionSettingsRequestMDT" --> "FusionSettingsRequestType" : RequestType
+"FusionSettingsRequestMDT" --> "SystemID_Type" : SystemID
+"FusionSettingsRequestMDT" --> "ServiceID_Type" : ServiceID
+"MessageType" <|-- "FusionSettingsRequestMT"
+"FusionSettingsRequestMT" --> "FusionSettingsRequestMDT" : MessageData
+"FuzeType" --> "FuzeTriggerType" : FuzeTrigger
+"GatewayLinkDestinationType" --> "NetworkLinkID_Type" : NetworkLinkID
+"GatewayLinkDestinationType" --> "CapabilityID_Type" : CommCapabilityID
+"GatewayLinkDestinationType" --> "ActivityID_Type" : CommActivityID
+"GatewayLinkDestinationType" --> "MessageDestinationType" : DataDestination
+"GatewayLinkDestinationType" --> "CommLinkPortMapType" : LinkPortAssignments
+"QueryPET" <|-- "GeoFiltersQueryType"
+"GeoFiltersQueryType" --> "ZoneType" : GeoFilterZone
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"HierarchyModificationType" --> "MissionPlanID_Type" : ParentMissionPlanID
+"HierarchyModificationType" --> "MissionPlanID_Type" : AdditionalSubordinateMissionPlanID
+"HierarchyModificationType" --> "MissionPlanID_Type" : RetractedSubordinateMissionPlanID
+"IFF_ConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"IFF_ConsentRequestMDT" --> "IFF_ConsentRequestType" : ConsentRequest
+"MessageType" <|-- "IFF_ConsentRequestMT"
+"IFF_ConsentRequestMT" --> "IFF_ConsentRequestMDT" : MessageData
+"RequestBaseType" <|-- "IFF_ConsentRequestType"
+"IFF_ConsentRequestType" --> "ActivityID_Type" : ActivityID
+"IdentityType" --> "StandardIdentityType" : Standard
+"IdentityType" --> "EnvironmentIdentityType" : Environment
+"IdentityType" --> "PlatformIdentityType" : Platform
+"IdentityType" --> "SpecificIdentityType" : Specific
+"IdentityType" --> "EmitterIdentityType" : Emitter
+"IdentityType" --> "SpecificEmitterIdentityType" : SpecificEmitter
+"IdentityType" --> "FacilityIdentificationType" : SpecificFacility
+"IdentityType" --> "VehicleIdentificationType" : SpecificVehicle
+"IdentityType" --> "EOB_IdentityType" : EOB
+"IdentityType" --> "StoreType" : Weapon
+"ImpactConditionsType" --> "FuzeType" : Fuze
+"ImpactConditionsType" --> "ImpactPointType" : ImpactPoint
+"ImpactConditionsType" --> "AzElReferenceType" : ImpactAngle
+"InertialStateRelativeType" --> "PointChoice4D_Type" : Position
+"InertialStateRelativeType" --> "UncertaintyType" : PositionUncertainty
+"InertialStateRelativeType" --> "Velocity3D_Type" : DomainVelocity
+"InertialStateRelativeType" --> "Velocity2D_Type" : GroundVelocity
+"InertialStateRelativeType" --> "Velocity3D_Type" : RelativeVelocity
+"InertialStateRelativeType" --> "Acceleration3D_Type" : DomainAcceleration
+"InertialStateRelativeType" --> "OrientationType" : Orientation
+"InertialStateRelativeType" --> "OrientationRateType" : OrientationRate
+"LAR_DetailsType" --> "WeaponTargetPairingChoiceType" : WeaponTargetPairing
+"LAR_DetailsType" --> "PlannedReleaseConditionsType" : PlannedReleaseConditions
+"LAR_DetailsType" --> "RoutePlanReferenceType" : WeaponRoute
+"RequestBaseType" <|-- "LAR_RequestMDT"
+"LAR_RequestMDT" --> "SystemID_Type" : SystemID
+"LAR_RequestMDT" --> "LAR_DetailsType" : LAR_Details
+"MessageType" <|-- "LAR_RequestMT"
+"LAR_RequestMT" --> "LAR_RequestMDT" : MessageData
+"LinkConnectionRequestType" --> "CommControlType" : CommonSettingsChange
+"LinkConnectionRequestType" --> "CommLinkPortMapType" : LinkPortAssignments
+"LinkConnectionRequestType" --> "NetworkLinkID_Type" : NetworkLinkID
+"RequestBaseType" <|-- "MA_ApprovalRequestMDT"
+"MA_ApprovalRequestMDT" --> "OperatorRoleType" : Approver
+"MA_ApprovalRequestMDT" --> "MA_ApprovalRequestPolicyReferenceType" : ApprovalReferences
+"MessageType" <|-- "MA_ApprovalRequestMT"
+"MA_ApprovalRequestMT" --> "MA_ApprovalRequestMDT" : MessageData
+"MA_ApprovalRequestPolicyReferenceType" --> "ApprovalPolicyID_Type" : ApprovalPolicyID
+"MA_ApprovalRequestPolicyReferenceType" --> "MA_ApprovalRequestItemReferenceType" : ApprovalItem
+"RequestBaseType" <|-- "MA_AssessmentRequestMDT"
+"MA_AssessmentRequestMDT" --> "AnalysisRouteID_Type" : AnalysisRouteID
+"MA_AssessmentRequestMDT" --> "MA_AssessmentRequestType" : Category
+"MessageType" <|-- "MA_AssessmentRequestMT"
+"MA_AssessmentRequestMT" --> "MA_AssessmentRequestMDT" : MessageData
+"RequestBaseType" <|-- "MA_COP_ConfigurationSettingsRequestMDT"
+"MA_COP_ConfigurationSettingsRequestMDT" --> "MA_PackageSystemType" : ApplicableToIDs
+"MessageType" <|-- "MA_COP_ConfigurationSettingsRequestMT"
+"MA_COP_ConfigurationSettingsRequestMT" --> "MA_COP_ConfigurationSettingsRequestMDT" : MessageData
+"ID_Type" <|-- "MA_ConflictID_Type"
+"MA_ControlDefinitionBaseType" <|-- "MA_ControlAssignmentType"
+"MA_ControlDefinitionBaseType" --> "MA_ControlChoiceType" : ControlChoiceType
+"MA_ControlDefinitionBaseType" --> "SystemServiceType" : Controller
+"MA_ControlDefinitionBaseType" --> "ControlleeType" : Controllee
+"RequestBaseType" <|-- "MA_ControlRequestMDT"
+"MA_ControlRequestMDT" --> "MA_ControlAssignmentType" : ControlAssignment
+"MessageType" <|-- "MA_ControlRequestMT"
+"MA_ControlRequestMT" --> "MA_ControlRequestMDT" : MessageData
+"RequestBaseType" <|-- "MA_DeconflictionSolutionRequestMDT"
+"MA_DeconflictionSolutionRequestMDT" --> "MA_ConflictID_Type" : ConflictID
+"MA_DeconflictionSolutionRequestMDT" --> "MA_RoutePlanMDT" : Plan
+"MessageType" <|-- "MA_DeconflictionSolutionRequestMT"
+"MA_DeconflictionSolutionRequestMT" --> "MA_DeconflictionSolutionRequestMDT" : MessageData
+"MA_DesignationDataType" --> "DesignationID_Type" : DesignationID
+"MA_DesignationDataType" --> "TargetType" : Target
+"MA_DesignationDataType" --> "RequirementTaxonomyType" : DesignationObjective
+"MA_DesignationDataType" --> "MA_PackageSystemType" : AppliesToIDs
+"RequestBaseType" <|-- "MA_DesignationRequestMDT"
+"MA_DesignationRequestMDT" --> "MA_DesignationDataType" : DesignationData
+"MessageType" <|-- "MA_DesignationRequestMT"
+"MA_DesignationRequestMT" --> "MA_DesignationRequestMDT" : MessageData
+"RequestBaseType" <|-- "MA_LeaderUpdateRequestMDT"
+"MA_LeaderUpdateRequestMDT" --> "MA_LeaderUpdateRequestSetType" : Request
+"MA_LeaderUpdateRequestMDT" --> "MA_PartnerLeadershipFitnessScoreType" : StaticLeadershipFitnessScore
+"MA_LeaderUpdateRequestMDT" --> "MA_PartnerLeadershipFitnessScoreType" : DynamicLeadershipFitnessScore
+"MessageType" <|-- "MA_LeaderUpdateRequestMT"
+"MA_LeaderUpdateRequestMT" --> "MA_LeaderUpdateRequestMDT" : MessageData
+"MA_LeaderUpdateRequestSetType" --> "SystemID_Type" : RequestingSystemID
+"MA_LeaderUpdateRequestSetType" --> "SystemID_Type" : ProposedLeaderID
+"MA_LeaderUpdateRequestSetType" --> "MA_NominationChoiceType" : Applicability
+"MA_NameCommandValuePairType" --> "MA_CommandValueType" : CommandValue
+"VersionedID_Type" <|-- "MA_OpPlanID_Type"
+"MA_PartnerLeadershipFitnessScoreType" --> "SystemID_Type" : AssociatedSystemID
+"MA_PartnerLeadershipFitnessScoreType" --> "FloatMinMaxType" : LeadershipFitnessScore
+"MA_PartnerLeadershipFitnessScoreType" --> "MA_LeadershipFitnessScoreDeterminationMethodChoiceType" : PartnerLeadershipFitnessScoreDeterminationMethod
+"MA_PathSegmentType" --> "SegmentID_Type" : PathSegmentID
+"MA_PathSegmentType" --> "MA_EndPointType" : EndPoint
+"MA_PathSegmentType" --> "PathSegmentSpeedType" : Speed
+"MA_PathSegmentType" --> "CivilPathTerminatorType" : CivilPathTerminator
+"MA_PathSegmentType" --> "ClimbType" : Climb
+"MA_PathSegmentType" --> "NextPathSegmentType" : NextPathSegment
+"MA_PathSegmentType" --> "ConditionalPathSegmentType" : ConditionalPathSegment
+"MA_PathSegmentType" --> "InertialStateRelativeType" : InertialState
+"MA_PathSegmentType" --> "TimeWindowType" : RequiredTimeOfArrival
+"MA_PathSegmentType" --> "RemarksType" : Remarks
+"MA_PathSegmentType" --> "ForeignKeyType" : Fix_Identifier
+"MA_PlanApplicabilityType" --> "SystemID_Type" : PlannedForID
+"MA_PlanApplicabilityType" --> "MA_PackageSystemType" : ApplicableToIDs
+"MA_PlanModificationDetailsType" --> "PlanWindowModificationTypeChoiceType" : WindowModification
+"MA_PlanModificationDetailsType" --> "PlanApplicabilityModificationType" : ApplicabilityModification
+"MA_PlanModificationDetailsType" --> "MA_SubPlansModificationType" : SubPlansModification
+"MA_PlanModificationDetailsType" --> "HierarchyModificationType" : HierarchyModification
+"MA_PlanModificationDetailsType" --> "ExecutionSequenceReplaceOrModifyChoiceType" : ExecutionSequenceModification
+"MA_PlanModificationDetailsType" --> "RequirementAllocationLockDetailsType" : RequirementAllocationLock
+"RequestBaseType" <|-- "MA_PlanModificationRequestMDT"
+"MA_PlanModificationRequestMDT" --> "MA_PlansReferenceType" : Plans
+"MA_PlanModificationRequestMDT" --> "MA_PlanModificationDetailsType" : PlanModificationDetails
+"MessageType" <|-- "MA_PlanModificationRequestMT"
+"MA_PlanModificationRequestMT" --> "MA_PlanModificationRequestMDT" : MessageData
+"MA_PlansReferenceBaseType" --> "TaskPlanID_Type" : TaskPlanID
+"MA_PlansReferenceBaseType" --> "OrbitPlanID_Type" : OrbitPlanID
+"MA_PlansReferenceBaseType" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"MA_PlansReferenceBaseType" --> "RoutePlanID_Type" : RoutePlanID
+"MA_PlansReferenceBaseType" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"MA_PlansReferenceBaseType" --> "ActivityPlanID_Type" : ActivityPlanID
+"MA_PlansReferenceBaseType" --> "EffectPlanID_Type" : EffectPlanID
+"MA_PlansReferenceBaseType" --> "ActionPlanID_Type" : ActionPlanID
+"MA_PlansReferenceBaseType" --> "ResponsePlanID_Type" : ResponsePlanID
+"MA_PlansReferenceBaseType" --> "MA_OpPlanID_Type" : OpPlanID
+"MA_PlansReferenceBaseType" <|-- "MA_PlansReferenceType"
+"MA_PlansReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"RequestBaseType" <|-- "MA_RaftAppendEntriesRequestMDT"
+"MA_RaftAppendEntriesRequestMDT" --> "PackageID_Type" : PackageID
+"MA_RaftAppendEntriesRequestMDT" --> "SystemID_Type" : LeaderID
+"MA_RaftAppendEntriesRequestMDT" --> "MA_RaftLogEntryType" : LogEntry
+"MessageType" <|-- "MA_RaftAppendEntriesRequestMT"
+"MA_RaftAppendEntriesRequestMT" --> "MA_RaftAppendEntriesRequestMDT" : MessageData
+"MA_RaftLogEntryType" --> "MA_NameCommandValuePairType" : Command
+"RequestBaseType" <|-- "MA_RaftVoteRequestMDT"
+"MA_RaftVoteRequestMDT" --> "PackageID_Type" : PackageID
+"MA_RaftVoteRequestMDT" --> "SystemID_Type" : CandidateID
+"MessageType" <|-- "MA_RaftVoteRequestMT"
+"MA_RaftVoteRequestMT" --> "MA_RaftVoteRequestMDT" : MessageData
+"MA_RoutePathType" --> "PathID_Type" : PathID
+"MA_RoutePathType" --> "SegmentID_Type" : FirstInPathSegmentID
+"MA_RoutePathType" --> "MA_PathSegmentType" : PathSegment
+"MA_RoutePathType" --> "PlanningLocationType" : InitialConditions
+"MA_RoutePathType" --> "AirfieldID_Type" : AirfieldID
+"MA_RoutePathType" --> "RunwayID_Type" : RunwayID
+"MA_RoutePathType" --> "RemarksType" : Remarks
+"MA_RoutePlanMDT" --> "RoutePlanID_Type" : RoutePlanID
+"MA_RoutePlanMDT" --> "RoutePlanCommandID_ChoiceType" : PlanCommandID
+"MA_RoutePlanMDT" --> "MA_RoutePlanType" : Plan
+"MA_RoutePlanMDT" --> "RoutePlanInputsType" : PlanInputs
+"MA_RoutePlanType" --> "MA_PlanApplicabilityType" : Applicability
+"MA_RoutePlanType" --> "DateTimeRangeType" : Window
+"MA_RoutePlanType" --> "RoutePlanPartsType" : Parts
+"MA_RoutePlanType" --> "MA_RouteType" : Route
+"MA_RouteType" --> "PathID_Type" : FirstInRoutePathID
+"MA_RouteType" --> "MA_RoutePathType" : Path
+"MA_RouteType" --> "RemarksType" : Remarks
+"MA_SubPlansModificationType" --> "MA_PlansReferenceBaseType" : SubPlansAdditions
+"MA_SubPlansModificationType" --> "MA_PlansReferenceBaseType" : SubPlansRetractions
+"RequestBaseType" <|-- "MA_SystemManagementRequestMDT"
+"MA_SystemManagementRequestMDT" --> "SystemID_Type" : ReferenceSystemID
+"MA_SystemManagementRequestMDT" --> "MA_SystemManagementRequestType" : RequestType
+"MA_SystemManagementRequestMDT" --> "SystemMessageIdentifierType" : Source
+"MessageType" <|-- "MA_SystemManagementRequestMT"
+"MA_SystemManagementRequestMT" --> "MA_SystemManagementRequestMDT" : MessageData
+"RequestBaseType" <|-- "MA_SystemsNeededRequestMDT"
+"MA_SystemsNeededRequestMDT" --> "MA_SystemCandidateChoiceType" : Candidate
+"MA_SystemsNeededRequestMDT" --> "RequirementAllocationCommandType" : ProposedRequirements
+"MA_SystemsNeededRequestMDT" --> "RequirementAssociationConstraintType" : AssociationConstraint
+"MessageType" <|-- "MA_SystemsNeededRequestMT"
+"MA_SystemsNeededRequestMT" --> "MA_SystemsNeededRequestMDT" : MessageData
+"MA_WEZ_RequestDataType" --> "WeaponeeringStoreType" : StoreInformation
+"MA_WEZ_RequestDataType" --> "MA_WEZ_ChoiceType" : WEZ_ChoiceType
+"RequestBaseType" <|-- "MA_WEZ_RequestMDT"
+"MA_WEZ_RequestMDT" --> "SystemID_Type" : SystemID
+"MA_WEZ_RequestMDT" --> "MA_WEZ_RequestDataType" : WEZ_RequestData
+"MessageType" <|-- "MA_WEZ_RequestMT"
+"MA_WEZ_RequestMT" --> "MA_WEZ_RequestMDT" : MessageData
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryFileID_Type" : FileID
+"MDF_CommandType" --> "MDF_ID_Type" : MDF_ID
+"MDF_CommandType" --> "MDF_CommandSubCategoryType" : SubCategory
+"ID_Type" <|-- "MDF_ID_Type"
+"ID_Type" <|-- "MDF_SubCategoryFileID_Type"
+"ID_Type" <|-- "MDF_SubCategoryID_Type"
+"MFA_AddressType" --> "SupportCapabilityID_Type" : MFA_SupportCapabilityID
+"MFA_AddressType" --> "AntennaResourceChoiceType" : AntennaResourceChoice
+"ID_Type" <|-- "MessageConfigurationID_Type"
+"MessageConfigurationType" --> "MessageConfigurationID_Type" : MessageConfigurationID
+"MessageConfigurationType" --> "FilterID_Type" : FilterID
+"MessageConfigurationType" --> "QueryMessageType" : Filter
+"MessageConfigurationType" --> "ForeignKeyType" : ConnectionKey
+"MessageConfigurationType" --> "SystemID_Type" : RemoteSystemID
+"MessageConfigurationType" --> "DataLinkNativeFilterPET" : DataLinkNativeFilter
+"MessageConfigurationType" --> "ComparableRankingType" : Rank
+"MessageDestinationType" --> "SystemID_Type" : SystemID
+"MessageDestinationType" --> "DataDestinationID_Type" : DataDestinationID
+"MessageDestinationType" --> "DataLinkNativeInfoPET" : DataLinkNativeInfo
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"MetricValueType" --> "ForeignKeyType" : MetricIdentifier
+"RequestBaseType" <|-- "MissionActivationRequestMDT"
+"MissionActivationRequestMDT" --> "MissionID_Type" : MissionID
+"MessageType" <|-- "MissionActivationRequestMT"
+"MissionActivationRequestMT" --> "MissionActivationRequestMDT" : MessageData
+"ID_Type" <|-- "MissionContingencyAlertID_Type"
+"VersionedID_Type" <|-- "MissionID_Type"
+"VersionedID_Type" <|-- "MissionPlanID_Type"
+"RequestBaseType" <|-- "MissionPlanMetricsReportRequestMDT"
+"MissionPlanMetricsReportRequestMDT" --> "MissionPlanID_Type" : MissionPlanID
+"MessageType" <|-- "MissionPlanMetricsReportRequestMT"
+"MissionPlanMetricsReportRequestMT" --> "MissionPlanMetricsReportRequestMDT" : MessageData
+"ID_Type" <|-- "NetworkLinkID_Type"
+"NextPathSegmentType" --> "PathID_Type" : PathID
+"NextPathSegmentType" --> "SegmentID_Type" : PathSegmentID
+"OpConstraintWeightingType" --> "OpConstraintWeightingValueType" : Weighting
+"OpConstraintWeightingType" --> "FileLocationID_Type" : AmplificationID
+"OrbitActivityPlanConstraintType" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"VersionedID_Type" <|-- "OrbitActivityPlanID_Type"
+"RequestBaseType" <|-- "OrbitConjunctionAssessmentRequestMDT"
+"OrbitConjunctionAssessmentRequestMDT" --> "OrbitalAnalysisObjectType" : AssessmentObject
+"OrbitConjunctionAssessmentRequestMDT" --> "DateTimeRangeType" : AnalysisPeriod
+"MessageType" <|-- "OrbitConjunctionAssessmentRequestMT"
+"OrbitConjunctionAssessmentRequestMT" --> "OrbitConjunctionAssessmentRequestMDT" : MessageData
+"OrbitKinematicsSetParametersType" --> "OrbitalElementSetParametersType" : ElementSetParameters
+"OrbitKinematicsSetParametersType" --> "OrbitalEphemerisParametersType" : EphemerisParameters
+"OrbitKinematicsSetParametersType" --> "OrbitalVCM_ParametersType" : VCM_Parameters
+"RequestBaseType" <|-- "OrbitMetricsRequestMDT"
+"OrbitMetricsRequestMDT" --> "OrbitPlanID_Type" : OrbitPlanID
+"OrbitMetricsRequestMDT" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"MessageType" <|-- "OrbitMetricsRequestMT"
+"OrbitMetricsRequestMT" --> "OrbitMetricsRequestMDT" : MessageData
+"OrbitModificationDetailsType" --> "OrbitRegimeType" : Orbit
+"OrbitModificationDetailsType" --> "OrbitKinematicsSetParametersType" : Parameters
+"OrbitModificationDetailsType" --> "OrbitKinematicsSequenceReplaceOrModifyChoiceType" : OrbitKinematicsSequenceModification
+"RequestBaseType" <|-- "OrbitModificationRequestMDT"
+"OrbitModificationRequestMDT" --> "OrbitPlanID_Type" : OrbitPlanID
+"OrbitModificationRequestMDT" --> "OrbitModificationDetailsType" : OrbitModificationDetails
+"MessageType" <|-- "OrbitModificationRequestMT"
+"OrbitModificationRequestMT" --> "OrbitModificationRequestMDT" : MessageData
+"OrbitPlanConstraintType" --> "OrbitPlanID_Type" : OrbitPlanID
+"VersionedID_Type" <|-- "OrbitPlanID_Type"
+"RequestBaseType" <|-- "OrbitalDebrisEstimateRequestMDT"
+"OrbitalDebrisEstimateRequestMDT" --> "OrbitBreakupEventDetailsType" : CausalEvent
+"OrbitalDebrisEstimateRequestMDT" --> "TimeWindowType" : AnalysisWindow
+"MessageType" <|-- "OrbitalDebrisEstimateRequestMT"
+"OrbitalDebrisEstimateRequestMT" --> "OrbitalDebrisEstimateRequestMDT" : MessageData
+"OrbitalElementSetParametersType" --> "OrbitalModelType" : OrbitalModel
+"OrbitalElementSetRequestParametersType" --> "DateTimeRangeType" : RequestWindow
+"OrbitalEphemerisParametersType" --> "EphemerisPropagatorChoiceType" : PropagatorType
+"OrbitalEphemerisRequestParametersType" --> "DateTimeRangeType" : RequestWindow
+"OrbitalEphemerisRequestParametersType" --> "EphemerisPropagatorChoiceType" : PropagatorType
+"QueryPET" <|-- "OrbitalFiltersQueryType"
+"OrbitalFiltersQueryType" --> "OpVolumeType" : OrbitalFilterZone
+"OrbitalManeuverDetailsBaseType" --> "OrbitalDeltaVelocity_B_Type" : DeltaVelocity
+"OrbitalManeuverDetailsBaseType" --> "CovarianceMatrixType" : DeltaVelocityCovariance
+"OrbitalManeuverDetailsBaseType" <|-- "OrbitalManeuverDetailsType"
+"OrbitalVCM_ParametersType" --> "VCM_PropagatorType" : VCM_Propagator
+"OrbitalVCM_RequestParametersType" --> "DateTimeRangeType" : RequestWindow
+"OtherSystemConstrainingPlansType" --> "SystemID_Type" : ConstrainingSystemID
+"OtherSystemConstrainingPlansType" --> "ConstrainingPlansType" : ContrainingPlans
+"ID_Type" <|-- "PackageID_Type"
+"VersionedID_Type" <|-- "PathID_Type"
+"PathSegmentConditionType" --> "AltitudeRangeType" : AltitudeRange
+"PathSegmentConditionType" --> "DateTimeRangeType" : TimeWindow
+"PathSegmentConditionType" --> "SegmentCaptureType" : SegmentCapture
+"PathSegmentConditionType" --> "EnduranceRemainingType" : Endurance
+"PathSegmentModificationType" --> "PathID_Type" : PathID
+"PathSegmentModificationType" --> "PathSegmentType" : Add
+"PathSegmentModificationType" --> "SegmentID_Type" : RemoveID
+"PathSegmentModificationType" --> "PathSegmentType" : Update
+"PathSegmentSpeedType" --> "PathSegmentSpeedChoiceType" : SpeedChoice
+"PathSegmentType" --> "SegmentID_Type" : PathSegmentID
+"PathSegmentType" --> "EndPointType" : EndPoint
+"PathSegmentType" --> "PathSegmentSpeedType" : Speed
+"PathSegmentType" --> "CivilPathTerminatorType" : CivilPathTerminator
+"PathSegmentType" --> "ClimbType" : Climb
+"PathSegmentType" --> "NextPathSegmentType" : NextPathSegment
+"PathSegmentType" --> "ConditionalPathSegmentType" : ConditionalPathSegment
+"PathSegmentType" --> "InertialStateRelativeType" : InertialState
+"PathSegmentType" --> "TimeWindowType" : RequiredTimeOfArrival
+"PathSegmentType" --> "RemarksType" : Remarks
+"PathSegmentType" --> "ForeignKeyType" : Fix_Identifier
+"PerformanceMetricSetType" --> "MetricValueType" : PerformanceMetricSet
+"PixelReferenceCoordinateType" --> "PixelDataType" : PixelCoordinate
+"PixelReferenceCoordinateType" --> "ProductMetadataID_Type" : ProductID
+"PixelReferenceCoordinateType" --> "ForeignKeyType" : Reference
+"PlanApplicabilityModificationType" --> "PlanApplicabilityType" : ApplicabilityAdditions
+"PlanApplicabilityModificationType" --> "PlanApplicabilityType" : ApplicabilityRetractions
+"PlanApplicabilityType" --> "SystemID_Type" : PlannedForID
+"PlanApplicabilityType" --> "SystemID_Type" : ApplicableToID
+"PlanInputsCoreType" --> "PlanningProcessID_Type" : PlanningProcessID
+"PlanInputsCoreType" --> "ReplanReasonType" : ReplanReason
+"PlanInputsCoreType" --> "MissionEnvironmentConstraintType" : EnvironmentOverride
+"PlanInputsCoreType" --> "OpConstraintWeightingType" : OpConstraint
+"PlanInputsCoreType" --> "FileLocationID_Type" : SpecialInstructionsID
+"PlanModificationDetailsType" --> "PlanWindowModificationTypeChoiceType" : WindowModification
+"PlanModificationDetailsType" --> "PlanApplicabilityModificationType" : ApplicabilityModification
+"PlanModificationDetailsType" --> "SubPlansModificationType" : SubPlansModification
+"PlanModificationDetailsType" --> "HierarchyModificationType" : HierarchyModification
+"PlanModificationDetailsType" --> "ExecutionSequenceReplaceOrModifyChoiceType" : ExecutionSequenceModification
+"PlanModificationDetailsType" --> "RequirementAllocationLockDetailsType" : RequirementAllocationLock
+"RequestBaseType" <|-- "PlanModificationRequestMDT"
+"PlanModificationRequestMDT" --> "PlansReferenceType" : Plans
+"PlanModificationRequestMDT" --> "PlanModificationDetailsType" : PlanModificationDetails
+"MessageType" <|-- "PlanModificationRequestMT"
+"PlanModificationRequestMT" --> "PlanModificationRequestMDT" : MessageData
+"RequestBaseType" <|-- "PlanScoresRequestMDT"
+"PlanScoresRequestMDT" --> "ScoringProcessID_Type" : ScoringProcessID
+"PlanScoresRequestMDT" --> "PlansReferenceType" : Plans
+"MessageType" <|-- "PlanScoresRequestMT"
+"PlanScoresRequestMT" --> "PlanScoresRequestMDT" : MessageData
+"PlannedGatewayConfigurationType" --> "ServiceID_Type" : GatewayServiceID
+"PlannedGatewayConfigurationType" --> "CommConfigurationID_Type" : ConfigurationID
+"PlannedGatewayConfigurationType" --> "MDF_CommandType" : ActivateMDF
+"PlannedGatewayConfigurationType" --> "CommProfileID_Type" : ActivateProfileID
+"PlannedGatewayConfigurationType" --> "CapabilityID_Type" : GatewayCapabilityID
+"PlannedGatewayConfigurationType" --> "ActivityID_Type" : GatewayActivityID
+"PlannedGatewayConfigurationType" --> "GatewayLinkDestinationType" : GatewayLinkDestination
+"PlannedGatewayConfigurationType" --> "MessageConfigurationType" : MessageConfiguration
+"PlannedGatewayConfigurationType" --> "SystemID_Type" : ProductDisseminationIngressSystemID
+"PlannedGatewayConfigurationType" --> "ProductDisseminationDestinationID_Type" : ProductDisseminationEgressDestinationID
+"PlannedGatewayConfigurationType" --> "GatewayConfigurationPET" : GatewaySpecificSettings
+"PlannedReleaseConditionsType" --> "Point3D_Type" : Position
+"PlannedReleaseConditionsType" --> "Velocity2D_Type" : Velocity
+"PlannedReleaseConditionsType" --> "OrientationType" : Orientation
+"PlannedReleaseConditionsType" --> "Velocity2D_Type" : WindVelocity
+"PlannedReleaseConditionsType" --> "RoutePlanReferenceType" : AssociatedRoutePlan
+"PlanningCandidateBaseType" --> "SystemID_Type" : SystemID
+"PlanningCandidateBaseType" --> "ConstrainingPlansType" : ConstrainingPlans
+"PlanningCandidateBaseType" --> "OtherSystemConstrainingPlansType" : OtherSystemConstrainingPlans
+"PlanningGuidelineType" --> "PlanningPointType" : Origin
+"PlanningGuidelineType" --> "PlanningPointPriorityType" : Destination
+"VehicleConfigurationType" <|-- "PlanningLocationType"
+"PlanningLocationType" --> "RoutePlanReferenceType" : TransitionRoute
+"PlanningPointPriorityType" --> "PlanningPointType" : Point
+"ID_Type" <|-- "PlanningProcessID_Type"
+"PlanningTriggerType" --> "PlanningByCaseTriggerType" : ByCaseTrigger
+"PlanningTriggerType" --> "PlanningByResultTriggerType" : ByResultTrigger
+"PlansReferenceBaseType" --> "TaskPlanID_Type" : TaskPlanID
+"PlansReferenceBaseType" --> "OrbitPlanID_Type" : OrbitPlanID
+"PlansReferenceBaseType" --> "OrbitActivityPlanID_Type" : OrbitActivityPlanID
+"PlansReferenceBaseType" --> "RoutePlanID_Type" : RoutePlanID
+"PlansReferenceBaseType" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"PlansReferenceBaseType" --> "ActivityPlanID_Type" : ActivityPlanID
+"PlansReferenceBaseType" --> "EffectPlanID_Type" : EffectPlanID
+"PlansReferenceBaseType" --> "ActionPlanID_Type" : ActionPlanID
+"PlansReferenceBaseType" --> "ResponsePlanID_Type" : ResponsePlanID
+"PlansReferenceBaseType" <|-- "PlansReferenceType"
+"PlansReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"PlansRequirementsReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"PlansRequirementsReferenceType" --> "TaskPlanID_Type" : TaskPlanID
+"PlansRequirementsReferenceType" --> "EffectPlanID_Type" : EffectPlanID
+"PlansRequirementsReferenceType" --> "ActionPlanID_Type" : ActionPlanID
+"PlansRequirementsReferenceType" --> "ResponsePlanID_Type" : ResponsePlanID
+"Point2D_Type" --> "AltitudeRangeType" : AltitudeRange
+"PointingVectorParameterType" --> "EllipseType" : Ellipse
+"ProcessingRequirementsType" --> "InputProductType" : InputProduct
+"ProcessingRequirementsType" --> "ProductProcessingClassificationType" : ProductProcessing
+"RequestBaseType" <|-- "ProductClassificationRequestMDT"
+"ProductClassificationRequestMDT" --> "SystemID_Type" : SystemID
+"ProductClassificationRequestMDT" --> "ComparableRankingType" : Rank
+"ProductClassificationRequestMDT" --> "ClassificationRequirementsType" : ClassificationRequirements
+"MessageType" <|-- "ProductClassificationRequestMT"
+"ProductClassificationRequestMT" --> "ProductClassificationRequestMDT" : MessageData
+"ID_Type" <|-- "ProductDisseminationDestinationID_Type"
+"RequestBaseType" <|-- "ProductDisseminationRequestMDT"
+"ProductDisseminationRequestMDT" --> "SystemID_Type" : SystemID
+"ProductDisseminationRequestMDT" --> "ComparableRankingType" : Rank
+"ProductDisseminationRequestMDT" --> "DisseminationRequirementsType" : DisseminationRequirements
+"MessageType" <|-- "ProductDisseminationRequestMT"
+"ProductDisseminationRequestMT" --> "ProductDisseminationRequestMDT" : MessageData
+"RequestBaseType" <|-- "ProductDownloadRequestMDT"
+"ProductDownloadRequestMDT" --> "SystemID_Type" : SystemID
+"ProductDownloadRequestMDT" --> "CapabilityID_Type" : CapabilityID
+"ProductDownloadRequestMDT" --> "ComparableRankingType" : Rank
+"ProductDownloadRequestMDT" --> "ProductReferenceType" : DownloadRequirements
+"MessageType" <|-- "ProductDownloadRequestMT"
+"ProductDownloadRequestMT" --> "ProductDownloadRequestMDT" : MessageData
+"ID_Type" <|-- "ProductMetadataID_Type"
+"ProductProcessingType" <|-- "ProductProcessingClassificationType"
+"ProductProcessingClassificationType" --> "SecurityInformationType" : ProductClassification
+"RequestBaseType" <|-- "ProductProcessingRequestMDT"
+"ProductProcessingRequestMDT" --> "ID_Type" : FunctionID
+"ProductProcessingRequestMDT" --> "SystemID_Type" : SystemID
+"ProductProcessingRequestMDT" --> "CapabilityID_Type" : CapabilityID
+"ProductProcessingRequestMDT" --> "TraceabilityType" : Traceability
+"ProductProcessingRequestMDT" --> "ComparableRankingType" : Rank
+"ProductProcessingRequestMDT" --> "ProcessingRequirementsType" : ProcessingRequirements
+"MessageType" <|-- "ProductProcessingRequestMT"
+"ProductProcessingRequestMT" --> "ProductProcessingRequestMDT" : MessageData
+"ProductProcessingType" --> "ProcessingParametersPET" : ProcessingParameters
+"RequestBaseType" <|-- "PropagatorSettingsDataRequestMDT"
+"PropagatorSettingsDataRequestMDT" --> "PropagatorSettingsID_Type" : PropagatorSettingsID
+"MessageType" <|-- "PropagatorSettingsDataRequestMT"
+"PropagatorSettingsDataRequestMT" --> "PropagatorSettingsDataRequestMDT" : MessageData
+"ID_Type" <|-- "PropagatorSettingsID_Type"
+"QuaternionAttitudeType" --> "QuaternionType" : Attitude
+"QuaternionAttitudeType" --> "QuaternionType" : AttitudeError
+"RequestBaseType" <|-- "QueryDataRequestMDT"
+"QueryDataRequestMDT" --> "QueryTopicPairType" : ResultsInNative
+"QueryDataRequestMDT" --> "QueryMessageType" : QueryMessage
+"QueryDataRequestMDT" --> "SystemID_Type" : SystemID
+"MessageType" <|-- "QueryDataRequestMT"
+"QueryDataRequestMT" --> "QueryDataRequestMDT" : MessageData
+"QueryMessageType" --> "QueryPET" : Query
+"RF_ResourceAllocationRequestDigitalRemovalType" --> "MFA_AddressType" : MFA_Address
+"RequestBaseType" <|-- "RF_ResourceAllocationRequestMDT"
+"RF_ResourceAllocationRequestMDT" --> "SupportCapabilityID_Type" : ResourceAllocator_SupportCapabilityID
+"RF_ResourceAllocationRequestMDT" --> "RF_ResourceAllocationRequestRemovalType" : TerminatedResources
+"RF_ResourceAllocationRequestMDT" --> "RequestingFunctionID_ChoiceType" : RequestingFunction
+"RF_ResourceAllocationRequestMDT" --> "ComparableRankingType" : Ranking
+"RF_ResourceAllocationRequestMDT" --> "AperturePointingOptionsType" : PointingVectorParameters
+"RF_ResourceAllocationRequestMDT" --> "ResourceRequestOptionType" : ResourceRequestOptions
+"MessageType" <|-- "RF_ResourceAllocationRequestMT"
+"RF_ResourceAllocationRequestMT" --> "RF_ResourceAllocationRequestMDT" : MessageData
+"RF_ResourceAllocationRequestRF_RemovalType" --> "AntennaAndResourceInstanceType" : AntennaAndResourceInstance
+"RF_ResourceAllocationRequestRemovalType" --> "RF_ResourceAllocationRequestRF_RemovalType" : RemoveRF_Resources
+"RF_ResourceAllocationRequestRemovalType" --> "RF_ResourceAllocationRequestDigitalRemovalType" : RemoveDigitalResources
+"RF_TaskNormalizedMetricsType" --> "CapabilityID_Type" : CapabilityID
+"RF_TaskNormalizedMetricsType" --> "ForeignKeyType" : MetricIdentifier
+"RF_TaskNormalizedMetricsType" --> "NormalizationTableType" : NormalizationElements
+"RF_TaskPerformanceConstraintType" --> "PerformanceMetricSetType" : PerformanceConstraint
+"RF_TaskPerformanceConstraintType" --> "CapabilityID_Type" : CapabilityID
+"RF_TaskPerformanceType" --> "RF_TaskPerformanceConstraintType" : PerformanceConstraints
+"RF_TaskPerformanceType" --> "RF_TaskNormalizedMetricsType" : NormalizedMetrics
+"RecommendedWeaponsType" --> "StoreType" : Weapon
+"RemoteDestinationType" --> "SystemID_Type" : RemoteSystemID
+"RemoteDestinationType" --> "EntityID_Type" : RemoteEntityID
+"RemoteDestinationType" --> "Point4D_Type" : RemotePosition
+"RemoteDestinationType" --> "TLE_Type" : RemoteTLE
+"ReplanReasonType" --> "PlanningTriggerType" : Trigger
+"ReplanReasonType" --> "AutonomousPlanningActionID_Type" : AutonomousPlanningActionID
+"ReplanReasonType" --> "MissionContingencyAlertID_Type" : MissionContingencyAlertID
+"RequestBaseType" --> "RequestID_Type" : RequestID
+"ID_Type" <|-- "RequestID_Type"
+"RequirementAllocationBaseType" --> "RequirementConstraintsType" : ConstraintOverride
+"RequirementAllocationBaseType" --> "RequirementAllocationDetailsType" : OtherOverride
+"RequirementAllocationCommandType" --> "EffectAllocationType" : ProposedEffect
+"RequirementAllocationCommandType" --> "ActionAllocationType" : ProposedAction
+"RequirementAllocationCommandType" --> "TaskAllocationType" : ProposedTask
+"RequirementAllocationCommandType" --> "ResponseAllocationType" : ProposedResponse
+"RequirementAllocationConstraintType" --> "SystemID_Type" : SystemID
+"RequirementAllocationConstraintType" --> "IdentityType" : Identity
+"RequirementAllocationConstraintType" --> "CapabilityID_Type" : CapabilityID
+"RequirementAllocationDetailsType" --> "DMPI_AllocationType" : RequiredDMPI
+"RequirementAllocationDetailsType" --> "AO_CodeType" : RequiredAO_Code
+"RequirementAllocationLockDetailsType" --> "RequirementsReferenceLockableType" : Lock
+"RequirementAllocationLockDetailsType" --> "RequirementsReferenceLockableType" : Unlock
+"RequirementAllocationParametersType" --> "RequirementAllocationConstraintType" : RequiredAllocation
+"RequirementAllocationParametersType" --> "RequirementAllocationConstraintType" : PreferredAllocation
+"RequirementConstraintsType" --> "ComparableRankingType" : Rank
+"RequirementConstraintsType" --> "RequirementAllocationParametersType" : Allocation
+"RequirementConstraintsType" --> "RequirementTimingType" : Timing
+"RequirementConstraintsType" --> "RequirementKinematicConstraintsType" : Kinematic
+"RequirementConstraintsType" --> "RequirementDependencyType" : Dependency
+"RequirementConstraintsType" --> "DataProductClassificationLevelType" : MaxProductDisseminationClassificationLevel
+"RequirementConstraintsType" --> "AnalyticConstraintsType" : Analytic
+"RequirementConstraintsType" --> "SecurityInformationType" : AcceptableClassificationLevel
+"RequirementConstraintsType" --> "RequirementTaxonomyType" : AllowedRequirementTypes
+"RequirementConstraintsType" --> "RequirementTaxonomyType" : ExcludedRequirementTypes
+"RequirementDependencyBaseType" <|-- "RequirementDependencyType"
+"RequirementDependencyType" --> "RequirementInstanceID_ChoiceType" : ReferenceRequirement
+"RequirementKinematicConstraintsType" --> "GeoFiltersQueryType" : Geo
+"RequirementKinematicConstraintsType" --> "OrbitalFiltersQueryType" : Orbital
+"RequestBaseType" <|-- "RequirementMetricsRequestMDT"
+"RequirementMetricsRequestMDT" --> "PlansRequirementsReferenceType" : RequirementPlans
+"RequirementMetricsRequestMDT" --> "RequirementTaxonomyType" : RequirementType
+"MessageType" <|-- "RequirementMetricsRequestMT"
+"RequirementMetricsRequestMT" --> "RequirementMetricsRequestMDT" : MessageData
+"RequirementTimingType" --> "TimingConstraintsType" : Timing
+"RequirementsReferenceLockableType" --> "EffectID_Type" : EffectID
+"RequirementsReferenceLockableType" --> "ActionID_Type" : ActionID
+"RequirementsReferenceLockableType" --> "TaskID_Type" : TaskID
+"RequirementsReferenceLockableType" --> "ResponseID_Type" : ResponseID
+"RequestBaseType" <|-- "ResendDataRequestMDT"
+"ResendDataRequestMDT" --> "ServiceID_Type" : RequestingServiceID
+"MessageType" <|-- "ResendDataRequestMT"
+"ResendDataRequestMT" --> "ResendDataRequestMDT" : MessageData
+"ResourceRequestOptionType" --> "ResourceRequestType" : ResourceRequest
+"ResourceRequestOptionType" --> "DateTimeRangeType" : DurationRange
+"ResourceRequestOptionType" --> "FrequencyRangeType" : RequestedFrequencyRange
+"ResourceRequestOptionType" --> "PerformanceMetricSetType" : PerformanceMetric
+"ResourceRequestPeriodType" --> "ComparableRankingType" : PeriodRanking
+"ResourceRequestPeriodType" --> "PercentRangeType" : PercentAccessDuringThePeriod
+"ResourceRequestType" --> "DependentActivityType" : DependentActivity
+"ResourceRequestType" --> "ResourceRequestPeriodType" : AccessPeriod
+"ResourceRequestType" --> "ComponentResourceType" : SelectResources
+"RequirementAllocationBaseType" <|-- "ResponseAllocationType"
+"ResponseAllocationType" --> "ResponseID_Type" : ResponseID
+"VersionedID_Type" <|-- "ResponseID_Type"
+"ResponsePlanConstraintType" --> "ResponsePlanID_Type" : ResponsePlanID
+"VersionedID_Type" <|-- "ResponsePlanID_Type"
+"RiskSettingType" --> "VulnerabilityLevelsType" : MaximumContinuousExposure
+"RouteActivityPlanConstraintType" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"VersionedID_Type" <|-- "RouteActivityPlanID_Type"
+"RequestBaseType" <|-- "RouteMetricsRequestMDT"
+"RouteMetricsRequestMDT" --> "RoutePlanID_Type" : RoutePlanID
+"RouteMetricsRequestMDT" --> "RouteActivityPlanID_Type" : RouteActivityPlanID
+"MessageType" <|-- "RouteMetricsRequestMT"
+"RouteMetricsRequestMT" --> "RouteMetricsRequestMDT" : MessageData
+"RequestBaseType" <|-- "RouteModificationRequestMDT"
+"RouteModificationRequestMDT" --> "RoutePlanID_Type" : RoutePlanID
+"RouteModificationRequestMDT" --> "PathID_Type" : FirstInRoutePathID
+"RouteModificationRequestMDT" --> "RoutePathModificationType" : Path
+"RouteModificationRequestMDT" --> "PathSegmentModificationType" : PathSegment
+"MessageType" <|-- "RouteModificationRequestMT"
+"RouteModificationRequestMT" --> "RouteModificationRequestMDT" : MessageData
+"RoutePathModificationType" --> "RoutePathType" : Add
+"RoutePathModificationType" --> "PathID_Type" : RemoveID
+"RoutePathModificationType" --> "RoutePathType" : Update
+"RoutePathType" --> "PathID_Type" : PathID
+"RoutePathType" --> "SegmentID_Type" : FirstInPathSegmentID
+"RoutePathType" --> "PathSegmentType" : PathSegment
+"RoutePathType" --> "PlanningLocationType" : InitialConditions
+"RoutePathType" --> "AirfieldID_Type" : AirfieldID
+"RoutePathType" --> "RunwayID_Type" : RunwayID
+"RoutePathType" --> "RemarksType" : Remarks
+"RoutePlanAnalysisInputsType" --> "RoutePlanReferencesType" : RoutePlanDetails
+"RoutePlanAnalysisInputsType" --> "PlanningPointType" : Origin
+"RoutePlanAnalysisInputsType" --> "IntervalChoiceType" : Interval
+"RoutePlanAnalysisInputsType" --> "WeatherAreaDataType" : WeatherAreaData
+"RoutePlanConstraintType" --> "RoutePlanID_Type" : RoutePlanID
+"VersionedID_Type" <|-- "RoutePlanID_Type"
+"PlanInputsCoreType" <|-- "RoutePlanInputsType"
+"RoutePlanInputsType" --> "RoutePlanningCandidateType" : PlanningCandidate
+"RoutePlanInputsType" --> "RoutePlanPartsType" : OutputPlanParts
+"RoutePlanReferenceType" --> "RoutePlanID_Type" : RoutePlanID
+"RoutePlanReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"RoutePlanReferenceType" --> "PathID_Type" : PathID
+"RoutePlanReferenceType" --> "SegmentID_Type" : SegmentID
+"RoutePlanReferencesType" --> "RoutePlanID_Type" : RoutePlanID
+"RoutePlanReferencesType" --> "MissionPlanID_Type" : MissionPlanID
+"RoutePlanReferencesType" --> "PathID_Type" : PathID
+"RoutePlanReferencesType" --> "SegmentID_Type" : SegmentID
+"RoutePlanReferencesType" --> "PathConstraintsType" : Constraints
+"PlanningCandidateBaseType" <|-- "RoutePlanningCandidateType"
+"RoutePlanningCandidateType" --> "PlanningGuidelineType" : RouteGuideline
+"ID_Type" <|-- "RunwayID_Type"
+"SatelliteIdentifierType" --> "InternationalDesignatorType" : InternationalDesignator
+"SatelliteIdentifierType" --> "MissionInformationType" : MissionInformation
+"ID_Type" <|-- "ScoringProcessID_Type"
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"VersionedID_Type" <|-- "SegmentID_Type"
+"RequestBaseType" <|-- "ServiceConfigurationChangeRequestMDT"
+"ServiceConfigurationChangeRequestMDT" --> "SystemID_Type" : SystemID
+"ServiceConfigurationChangeRequestMDT" --> "ServiceID_Type" : ServiceID
+"ServiceConfigurationChangeRequestMDT" --> "ServiceConfigurationChangeType" : RequestType
+"MessageType" <|-- "ServiceConfigurationChangeRequestMT"
+"ServiceConfigurationChangeRequestMT" --> "ServiceConfigurationChangeRequestMDT" : MessageData
+"RequestBaseType" <|-- "ServiceConfigurationParamsDataRequestMDT"
+"ServiceConfigurationParamsDataRequestMDT" --> "SystemID_Type" : SystemID
+"ServiceConfigurationParamsDataRequestMDT" --> "ServiceID_Type" : ServiceID
+"MessageType" <|-- "ServiceConfigurationParamsDataRequestMT"
+"ServiceConfigurationParamsDataRequestMT" --> "ServiceConfigurationParamsDataRequestMDT" : MessageData
+"ID_Type" <|-- "ServiceID_Type"
+"RequestBaseType" <|-- "ServiceRegistrationRequestMDT"
+"ServiceRegistrationRequestMDT" --> "ServiceID_Type" : ServiceID
+"ServiceRegistrationRequestMDT" --> "ServiceRegistrationPurposeType" : Purpose
+"MessageType" <|-- "ServiceRegistrationRequestMT"
+"ServiceRegistrationRequestMT" --> "ServiceRegistrationRequestMDT" : MessageData
+"RequestBaseType" <|-- "ServiceStatusDataRequestMDT"
+"ServiceStatusDataRequestMDT" --> "ServiceID_Type" : ServiceID
+"ServiceStatusDataRequestMDT" --> "SystemID_Type" : SystemID
+"MessageType" <|-- "ServiceStatusDataRequestMT"
+"ServiceStatusDataRequestMT" --> "ServiceStatusDataRequestMDT" : MessageData
+"SolarRadiationPressureModelType" --> "SolarRadiationPressureCoefficientChoiceType" : SolarRadiationPressureCoefficientChoice
+"SpecificEmitterIdentityType" --> "ForeignKeyType" : SpecificEmitterKey
+"StandardIdentityType" --> "CountryCodeType" : Allegiance
+"StoreType" --> "ForeignKeyType" : StoreTypeVariant
+"StrikeConsentRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"StrikeConsentRequestMDT" --> "StrikeConsentRequestType" : ConsentRequest
+"MessageType" <|-- "StrikeConsentRequestMT"
+"StrikeConsentRequestMT" --> "StrikeConsentRequestMDT" : MessageData
+"RequestBaseType" <|-- "StrikeConsentRequestType"
+"StrikeConsentRequestType" --> "ActivityID_Type" : ActivityID
+"SubPlansModificationType" --> "PlansReferenceBaseType" : SubPlansAdditions
+"SubPlansModificationType" --> "PlansReferenceBaseType" : SubPlansRetractions
+"SubsystemCommandType" --> "SubsystemID_Type" : SubsystemID
+"SubsystemCommandType" --> "MDF_CommandType" : ActivateMDF
+"RequestBaseType" <|-- "SubsystemConfigurationDataRequestMDT"
+"SubsystemConfigurationDataRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"SubsystemConfigurationDataRequestMDT" --> "SystemID_Type" : SystemID
+"MessageType" <|-- "SubsystemConfigurationDataRequestMT"
+"SubsystemConfigurationDataRequestMT" --> "SubsystemConfigurationDataRequestMDT" : MessageData
+"ID_Type" <|-- "SubsystemID_Type"
+"RequestBaseType" <|-- "SubsystemStatusDataRequestMDT"
+"SubsystemStatusDataRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"SubsystemStatusDataRequestMDT" --> "SystemID_Type" : SystemID
+"MessageType" <|-- "SubsystemStatusDataRequestMT"
+"SubsystemStatusDataRequestMT" --> "SubsystemStatusDataRequestMDT" : MessageData
+"RequestBaseType" <|-- "SubsystemStatusDetailedDataRequestMDT"
+"SubsystemStatusDetailedDataRequestMDT" --> "SubsystemID_Type" : SubsystemID
+"SubsystemStatusDetailedDataRequestMDT" --> "SystemID_Type" : SystemID
+"MessageType" <|-- "SubsystemStatusDetailedDataRequestMT"
+"SubsystemStatusDetailedDataRequestMT" --> "SubsystemStatusDetailedDataRequestMDT" : MessageData
+"ID_Type" <|-- "SupportCapabilityID_Type"
+"SurvivabilityRiskSettingType" --> "RiskSettingType" : RiskLevel
+"SystemCandidateType" --> "SystemID_Type" : SystemID
+"OrbitalEphemerisRequestParametersType" <|-- "SystemEphemerisRequestParametersType"
+"SystemEphemerisRequestParametersType" --> "SystemEphemerisBasisChoiceType" : EphemerisBasis
+"RequestBaseType" <|-- "SystemEstimationRequestMDT"
+"SystemEstimationRequestMDT" --> "SystemID_Type" : SystemID
+"SystemEstimationRequestMDT" --> "SystemEstimationStartType" : EstimationStart
+"SystemEstimationRequestMDT" --> "SystemEstimationStopType" : EstimationEnd
+"MessageType" <|-- "SystemEstimationRequestMT"
+"SystemEstimationRequestMT" --> "SystemEstimationRequestMDT" : MessageData
+"SystemFilterType" --> "SystemID_Type" : SystemID
+"SystemFilterType" --> "GeoFiltersQueryType" : GeoFilter
+"SystemFilterType" --> "OrbitalFiltersQueryType" : OrbitalFilter
+"ID_Type" <|-- "SystemID_Type"
+"RequestBaseType" <|-- "SystemManagementRequestMDT"
+"SystemManagementRequestMDT" --> "SystemID_Type" : ReferenceSystemID
+"SystemManagementRequestMDT" --> "SystemManagementRequestType" : RequestType
+"SystemManagementRequestMDT" --> "SystemMessageIdentifierType" : Source
+"MessageType" <|-- "SystemManagementRequestMT"
+"SystemManagementRequestMT" --> "SystemManagementRequestMDT" : MessageData
+"SystemMessageIdentifierType" --> "SystemID_Type" : SystemID
+"SystemMessageIdentifierType" --> "ServiceID_Type" : ServiceID
+"SystemMessageIdentifierType" --> "ActivityID_Type" : ActivityID
+"SystemMessageIdentifierType" --> "NetworkLinkID_Type" : NetworkLinkID
+"RequestBaseType" <|-- "SystemOrbitalElementSetRequestMDT"
+"SystemOrbitalElementSetRequestMDT" --> "SystemID_Type" : SystemID
+"SystemOrbitalElementSetRequestMDT" --> "OrbitalElementSetRequestParametersType" : Parameters
+"MessageType" <|-- "SystemOrbitalElementSetRequestMT"
+"SystemOrbitalElementSetRequestMT" --> "SystemOrbitalElementSetRequestMDT" : MessageData
+"ID_Type" <|-- "SystemOrbitalEphemerisID_Type"
+"RequestBaseType" <|-- "SystemOrbitalEphemerisRequestMDT"
+"SystemOrbitalEphemerisRequestMDT" --> "SystemID_Type" : SystemID
+"SystemOrbitalEphemerisRequestMDT" --> "SystemEphemerisRequestParametersType" : Parameters
+"MessageType" <|-- "SystemOrbitalEphemerisRequestMT"
+"SystemOrbitalEphemerisRequestMT" --> "SystemOrbitalEphemerisRequestMDT" : MessageData
+"RequestBaseType" <|-- "SystemOrbitalVCM_RequestMDT"
+"SystemOrbitalVCM_RequestMDT" --> "SystemID_Type" : SystemID
+"SystemOrbitalVCM_RequestMDT" --> "OrbitalVCM_RequestParametersType" : Parameters
+"MessageType" <|-- "SystemOrbitalVCM_RequestMT"
+"SystemOrbitalVCM_RequestMT" --> "SystemOrbitalVCM_RequestMDT" : MessageData
+"SystemServiceType" --> "SystemID_Type" : SystemID
+"SystemServiceType" --> "ServiceID_Type" : ServiceID
+"RequestBaseType" <|-- "SystemsNeededRequestMDT"
+"SystemsNeededRequestMDT" --> "SystemCandidateType" : Candidate
+"SystemsNeededRequestMDT" --> "RequirementAllocationCommandType" : ProposedRequirements
+"SystemsNeededRequestMDT" --> "RequirementAssociationConstraintType" : AssociationConstraint
+"MessageType" <|-- "SystemsNeededRequestMT"
+"SystemsNeededRequestMT" --> "SystemsNeededRequestMDT" : MessageData
+"COE_OrbitBaseType" <|-- "TLE_BaseType"
+"TLE_BaseType" --> "COE_PositionType" : Position
+"TLE_BaseType" <|-- "TLE_Type"
+"TLE_Type" --> "SatelliteIdentifierType" : SatelliteIdentity
+"RequirementAllocationBaseType" <|-- "TaskAllocationType"
+"TaskAllocationType" --> "TaskID_Type" : TaskID
+"VersionedID_Type" <|-- "TaskID_Type"
+"TaskPlanConstraintType" --> "TaskPlanID_Type" : AllocationPlanID
+"VersionedID_Type" <|-- "TaskPlanID_Type"
+"ThirdBodyGravityType" --> "CelestialBodyType" : ThirdBody
+"TimeCoverageType" --> "DateTimeRangeType" : TimeSpan
+"TimeCoverageType" --> "ZoneType" : CoverageArea
+"TimeWindowType" --> "DateTimeRangeType" : Range
+"TraceabilityType" --> "RequirementInstanceID_ChoiceType" : Requirement
+"TraceabilityType" --> "CollectionDeckTraceabilityType" : CollectionDeckTraceability
+"TraceabilityType" --> "ACTDF_TraceabilityType" : ACTDF_Traceability
+"TraceabilityType" --> "EEI_ID_Type" : EEI_ID
+"TraceabilityType" --> "ATO_TraceabilityType" : ATO_Traceability
+"TraceabilityType" --> "AOCO_TraceabilityType" : AOCO_Traceability
+"TraceabilityType" --> "CS_STO_TraceabilityType" : STO_Traceability
+"UncertaintyType" --> "EllipseType" : UncertaintyEllipse
+"VCM_PropagatorType" --> "ForceModelType" : ForceModel
+"VCM_PropagatorType" --> "VCM_IntegratorSettingsType" : VCM_IntegratorSettings
+"VehicleConfigurationType" --> "InertialStateRelativeType" : InertialState
+"VehicleConfigurationType" --> "EnduranceType" : Endurance
+"VehicleIdentificationType" --> "SystemID_Type" : SystemID
+"VehicleIdentificationType" --> "VehicleUniqueIdentifierType" : VehicleUniqueIdentifier
+"VehicleIdentificationType" --> "IFF_Type" : IFF
+"VehicleIdentificationType" --> "CallSignType" : CallSign
+"VehicleIdentificationType" --> "ForeignKeyType" : RadarCrossSection
+"VehicleIdentificationType" --> "DataLinkIdentifierPET" : DataLinkIdentifier
+"ID_Type" <|-- "VersionedID_Type"
+"StoreType" <|-- "WeaponeeringStoreType"
+"WeaponeeringType" <|-- "WeaponeeringTargetType"
+"WeaponeeringTargetType" --> "GeoLocatedObjectType" : Target
+"WeaponeeringType" --> "WeaponeeringStoreType" : StoreInformation
+"WeaponeeringType" --> "WeaponeeringTargetInfoType" : TargetInformation
+"WeaponeeringType" --> "ApproachConditionsType" : ApproachConditions
+"WeaponeeringType" --> "ImpactConditionsType" : ImpactConditions
+"WeatherAreaDataType" --> "CloudsType" : Clouds
+"WeatherAreaDataType" --> "WeatherEffectsType" : WeatherEffects
+"WeatherAreaDataType" --> "WindDataType" : WindData
+"WindDataType" --> "WindDataChoiceType" : WindChoice
+"RequestBaseType" <|-- "WorkingEOB_RequestMDT"
+"WorkingEOB_RequestMDT" --> "WorkingEOB_SourceID_ChoiceType" : Source
+"WorkingEOB_RequestMDT" --> "QueryMessageType" : SiteFilter
+"MessageType" <|-- "WorkingEOB_RequestMT"
+"WorkingEOB_RequestMT" --> "WorkingEOB_RequestMDT" : MessageData
+"RequestBaseType" <|-- "WorkingSOB_RequestMDT"
+"WorkingSOB_RequestMDT" --> "WorkingSOB_SourceID_ChoiceType" : Source
+"WorkingSOB_RequestMDT" --> "QueryMessageType" : SatelliteFilter
+"WorkingSOB_RequestMDT" --> "QueryMessageType" : C2_Filter
+"MessageType" <|-- "WorkingSOB_RequestMT"
+"WorkingSOB_RequestMT" --> "WorkingSOB_RequestMDT" : MessageData
+"ZoneType" --> "AreaChoiceType" : Shape
+@enduml

@@ -1,0 +1,3592 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Lifecycle: Capability
+
+class "AMTI_Capability" <<element>> {
+  +type: AMTI_CapabilityMT
+}
+class "AMTI_CapabilityStatus" <<element>> {
+  +type: AMTI_CapabilityStatusMT
+}
+class "AO_Capability" <<element>> {
+  +type: AO_CapabilityMT
+}
+class "AO_CapabilityStatus" <<element>> {
+  +type: AO_CapabilityStatusMT
+}
+class "ActionCapability" <<element>> {
+  +type: ActionCapabilityMT
+}
+class "ActionCapabilityStatus" <<element>> {
+  +type: ActionCapabilityStatusMT
+}
+class "AirSampleCapability" <<element>> {
+  +type: AirSampleCapabilityMT
+}
+class "AirSampleCapabilityStatus" <<element>> {
+  +type: AirSampleCapabilityStatusMT
+}
+class "COMINT_Capability" <<element>> {
+  +type: COMINT_CapabilityMT
+}
+class "COMINT_CapabilityStatus" <<element>> {
+  +type: COMINT_CapabilityStatusMT
+}
+class "CapabilityCoverageArea" <<element>> {
+  +type: CapabilityCoverageAreaMT
+}
+class "CapabilityCoverageAreaRequest" <<element>> {
+  +type: CapabilityCoverageAreaRequestMT
+}
+class "CapabilityCoverageAreaRequestStatus" <<element>> {
+  +type: CapabilityCoverageAreaRequestStatusMT
+}
+class "CargoDeliveryCapability" <<element>> {
+  +type: CargoDeliveryCapabilityMT
+}
+class "CargoDeliveryCapabilityStatus" <<element>> {
+  +type: CargoDeliveryCapabilityStatusMT
+}
+class "CommRelayCapability" <<element>> {
+  +type: CommRelayCapabilityMT
+}
+class "CommRelayCapabilityStatus" <<element>> {
+  +type: CommRelayCapabilityStatusMT
+}
+class "CommTerminalCapability" <<element>> {
+  +type: CommTerminalCapabilityMT
+}
+class "CommTerminalCapabilityStatus" <<element>> {
+  +type: CommTerminalCapabilityStatusMT
+}
+class "CounterSpaceCapability" <<element>> {
+  +type: CounterSpaceCapabilityMT
+}
+class "CounterSpaceCapabilityStatus" <<element>> {
+  +type: CounterSpaceCapabilityStatusMT
+}
+class "EA_Capability" <<element>> {
+  +type: EA_CapabilityMT
+}
+class "EA_CapabilityStatus" <<element>> {
+  +type: EA_CapabilityStatusMT
+}
+class "ESM_Capability" <<element>> {
+  +type: ESM_CapabilityMT
+}
+class "ESM_CapabilityStatus" <<element>> {
+  +type: ESM_CapabilityStatusMT
+}
+class "EffectCapability" <<element>> {
+  +type: EffectCapabilityMT
+}
+class "EffectCapabilityStatus" <<element>> {
+  +type: EffectCapabilityStatusMT
+}
+class "FlightCapability" <<element>> {
+  +type: FlightCapabilityMT
+}
+class "FlightCapabilityStatus" <<element>> {
+  +type: FlightCapabilityStatusMT
+}
+class "GatewayCapability" <<element>> {
+  +type: GatewayCapabilityMT
+}
+class "GatewayCapabilityStatus" <<element>> {
+  +type: GatewayCapabilityStatusMT
+}
+class "IFF_Capability" <<element>> {
+  +type: IFF_CapabilityMT
+}
+class "IFF_CapabilityStatus" <<element>> {
+  +type: IFF_CapabilityStatusMT
+}
+class "MA_AMTI_Capability" <<element>> {
+  +type: MA_AMTI_CapabilityMT
+}
+class "MA_ActionCapability" <<element>> {
+  +type: MA_ActionCapabilityMT
+}
+class "MA_CapabilitySet" <<element>> {
+  +type: MA_CapabilitySetMT
+}
+class "MA_EffectCapability" <<element>> {
+  +type: MA_EffectCapabilityMT
+}
+class "MA_EscortCapability" <<element>> {
+  +type: MA_EscortCapabilityMT
+}
+class "MA_EscortCapabilityStatus" <<element>> {
+  +type: MA_EscortCapabilityStatusMT
+}
+class "MA_FlightCapability" <<element>> {
+  +type: MA_FlightCapabilityMT
+}
+class "MA_FlightCapabilityStatus" <<element>> {
+  +type: MA_FlightCapabilityStatusMT
+}
+class "MA_StrikeCapability" <<element>> {
+  +type: MA_StrikeCapabilityMT
+}
+class "OpaqueCapability" <<element>> {
+  +type: OpaqueCapabilityMT
+}
+class "OpaqueCapabilityStatus" <<element>> {
+  +type: OpaqueCapabilityStatusMT
+}
+class "OrbitChangeCapability" <<element>> {
+  +type: OrbitChangeCapabilityMT
+}
+class "OrbitChangeCapabilityStatus" <<element>> {
+  +type: OrbitChangeCapabilityStatusMT
+}
+class "OrbitalSurveillanceCapability" <<element>> {
+  +type: OrbitalSurveillanceCapabilityMT
+}
+class "OrbitalSurveillanceCapabilityStatus" <<element>> {
+  +type: OrbitalSurveillanceCapabilityStatusMT
+}
+class "OrbitalSurveillanceSensorCapability" <<element>> {
+  +type: OrbitalSurveillanceSensorCapabilityMT
+}
+class "OrbitalSurveillanceSensorCapabilityStatus" <<element>> {
+  +type: OrbitalSurveillanceSensorCapabilityStatusMT
+}
+class "PO_Capability" <<element>> {
+  +type: PO_CapabilityMT
+}
+class "PO_CapabilityStatus" <<element>> {
+  +type: PO_CapabilityStatusMT
+}
+class "RadarAltimeterCapability" <<element>> {
+  +type: RadarAltimeterCapabilityMT
+}
+class "RadarAltimeterCapabilityStatus" <<element>> {
+  +type: RadarAltimeterCapabilityStatusMT
+}
+class "ReferenceCapability" <<element>> {
+  +type: ReferenceCapabilityMT
+}
+class "ReferenceCapabilityStatus" <<element>> {
+  +type: ReferenceCapabilityStatusMT
+}
+class "RefuelCapability" <<element>> {
+  +type: RefuelCapabilityMT
+}
+class "RefuelCapabilityStatus" <<element>> {
+  +type: RefuelCapabilityStatusMT
+}
+class "ResponseCapability" <<element>> {
+  +type: ResponseCapabilityMT
+}
+class "ResponseCapabilityStatus" <<element>> {
+  +type: ResponseCapabilityStatusMT
+}
+class "SAR_Capability" <<element>> {
+  +type: SAR_CapabilityMT
+}
+class "SAR_CapabilityStatus" <<element>> {
+  +type: SAR_CapabilityStatusMT
+}
+class "SMTI_Capability" <<element>> {
+  +type: SMTI_CapabilityMT
+}
+class "SMTI_CapabilityStatus" <<element>> {
+  +type: SMTI_CapabilityStatusMT
+}
+class "SharedApertureSupportCapabilityStatus" <<element>> {
+  +type: SharedApertureSupportCapabilityStatusMT
+}
+class "StoreCarriageCapabilityStatus" <<element>> {
+  +type: StoreCarriageCapabilityStatusMT
+}
+class "StrikeCapability" <<element>> {
+  +type: StrikeCapabilityMT
+}
+class "StrikeCapabilityStatus" <<element>> {
+  +type: StrikeCapabilityStatusMT
+}
+class "SystemDeploymentCapability" <<element>> {
+  +type: SystemDeploymentCapabilityMT
+}
+class "SystemDeploymentCapabilityStatus" <<element>> {
+  +type: SystemDeploymentCapabilityStatusMT
+}
+class "TacticalOrderCapability" <<element>> {
+  +type: TacticalOrderCapabilityMT
+}
+class "TacticalOrderCapabilityStatus" <<element>> {
+  +type: TacticalOrderCapabilityStatusMT
+}
+class "WeatherRadarCapability" <<element>> {
+  +type: WeatherRadarCapabilityMT
+}
+class "WeatherRadarCapabilityStatus" <<element>> {
+  +type: WeatherRadarCapabilityStatusMT
+}
+
+class "AMTI_CapabilityMDT" <<complexType>> {
+  +Capability: AMTI_CapabilityType
+}
+class "AMTI_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: AMTI_CapabilityMDT
+}
+class "AMTI_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+  +ConcurrentOperationSupported: boolean
+  +MultistaticOptionsSupported: MultistaticOptionsSupportedType
+  +FalseAlarmLevelUpperLimit: unsignedByte
+  +ElectronicProtectionOptionsSupported: ElectronicProtectionOptionsSupportedType
+}
+class "AMTI_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +DefaultEmcon: EmconSettingType
+  +EmissionBalanceState: EmissionBalanceEnum
+  +CurrentMessageOutput: AMTI_MessageOutputsEnum
+  +ElectronicProtectionOptionsEnabled: ElectronicProtectionOptionsEnabledType
+}
+class "AMTI_CapabilityStatusMT" <<complexType>> {
+  +MessageData: AMTI_CapabilityStatusMDT
+}
+class "AMTI_CapabilityType" <<complexType>> {
+  +CapabilityType: AMTI_CapabilityEnum
+  +SubCapabilityType: AMTI_SubCapabilityEnum
+  +CapabilityOptions: AMTI_CapabilityOptionsType
+  +SupportedFrequencies: FrequencyRangeType
+  +MessageOutput: AMTI_MessageOutputsEnum
+}
+class "AO_CapabilityMDT" <<complexType>> {
+  +Capability: AO_CapabilityType
+  +AO_Component: AO_ComponentType
+}
+class "AO_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: AO_CapabilityMDT
+}
+class "AO_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+}
+class "AO_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +ComponentSetting: AO_ComponentSettingsType
+  +CurrentMessageOutput: AO_MessageOutputsEnum
+  +DefaultPackingPlan: NITF_PackingPlanPET
+  +DefaultJPEG_Settings: JPEG_SettingsType
+}
+class "AO_CapabilityStatusMT" <<complexType>> {
+  +MessageData: AO_CapabilityStatusMDT
+}
+class "AO_CapabilityType" <<complexType>> {
+  +CapabilityType: AO_CapabilityEnum
+  +CapabilityOptions: AO_CapabilityOptionsType
+  +EyeSafe: boolean
+  +AssociatedComponentID: ComponentID_Type
+  +MessageOutput: AO_MessageOutputsEnum
+}
+class "AO_CodeType" <<complexType>> {
+  +PRF_Code: AO_PRF_CodeType
+  +PIM_Code: AO_PIM_CodeType
+}
+class "AO_ComponentSettingsType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +Power: PowerType
+  +AO_Code: AO_CodeType
+}
+class "AO_ComponentType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +MinimumPower: PowerType
+  +MaximumPower: PowerType
+  +MinimumWavelength: DistanceType
+  +MaximumWavelength: DistanceType
+  +SupportedCode: AO_CodeType
+}
+class "ActionCapabilityMDT" <<complexType>> {
+  +Capability: ActionCapabilityType
+}
+class "ActionCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: ActionCapabilityMDT
+}
+class "ActionCapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +ConcurrentOperationSupported: boolean
+}
+class "ActionCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "ActionCapabilityStatusMT" <<complexType>> {
+  +MessageData: ActionCapabilityStatusMDT
+}
+class "ActionCapabilityType" <<complexType>> {
+  +CapabilityType: ActionTypeEnum
+  +AssociatedTaskType: TaskTypeEnum
+  +AssociatedCapabilityType: CapabilityTypeEnum
+  +CapabilityOptions: ActionCapabilityOptionsType
+  +MessageOutput: ActionMessageOutputsEnum
+}
+class "AirSampleCapabilityMDT" <<complexType>> {
+  +Capability: AirSampleCapabilityType
+}
+class "AirSampleCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: AirSampleCapabilityMDT
+}
+class "AirSampleCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+}
+class "AirSampleCapabilityStatusMT" <<complexType>> {
+  +MessageData: AirSampleCapabilityStatusMDT
+}
+class "AirSampleCapabilityType" <<complexType>> {
+  +CapabilityType: AirSampleCapabilityEnum
+  +CapabilityOptions: AirSampleOptionsType
+  +MessageOutput: AirSampleMessageOutputsEnum
+}
+class "AirSampleOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+}
+class "AltitudeReferenceType" <<complexType>> {
+  +AltitudeReference: AltitudeReferenceEnum
+  +Altitude: AltitudeType
+}
+class "AngleHalfPairType" <<complexType>> {
+  +Min: AngleHalfType
+  +Max: AngleHalfType
+}
+class "AnglePairType" <<complexType>> {
+  +Min: AngleType
+  +Max: AngleType
+}
+class "AngleQuarterPairType" <<complexType>> {
+  +Min: AngleQuarterType
+  +Max: AngleQuarterType
+}
+class "AreaChoiceType" <<complexType>> {
+  --
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AvailabilityInfoType" <<complexType>> {
+  +Availability: CapabilityAvailabilityEnum
+  +AvailabilityReason: CannotComplyType
+  +NextAvailableWindow: DateTimeType
+}
+class "AvailableConnectionType" <<complexType>> {
+  +MaxConnections: unsignedInt
+  +RemainingConnections: unsignedInt
+}
+class "AvailableFuelType" <<complexType>> {
+  --
+}
+class "COMINT_CapabilityMDT" <<complexType>> {
+  +Capability: COMINT_CapabilityType
+}
+class "COMINT_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: COMINT_CapabilityMDT
+}
+class "COMINT_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +NumberOfChannels: int
+  +AGC_Supported: boolean
+  +ArchiveAvailable: boolean
+  +CapabilityDependencyID: CapabilityID_Type
+  +ScanSupport: boolean
+  +SupportedModes: ForeignKeyType
+  +AudioFormats: MIME_Type
+  +CompressionType: ForeignKeyType
+}
+class "COMINT_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: CapabilityRF_ProfileStatusType
+  +AmbiguityOrdering: AmbiguityOrderingEnum
+  +SpectralDensityReporting: boolean
+  +CurrentMessageOutput: ESM_MessageOutputsEnum
+}
+class "COMINT_CapabilityStatusMT" <<complexType>> {
+  +MessageData: COMINT_CapabilityStatusMDT
+}
+class "COMINT_CapabilityType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +SubCapabilityType: COMINT_SubCapabilityEnum
+  +GeolocationType: SignalGeolocationMethodEnum
+  +CapabilityOptions: COMINT_CapabilityOptionsType
+  +DwellCoverage: ESM_DwellCoverageType
+  +MessageOutput: ESM_MessageOutputsEnum
+  +ApplicationKey: ForeignKeyType
+}
+class "CS_CapabilitiesType" <<complexType>> {
+  +SubCapabilityName: ForeignKeyType
+  +Dependency: int
+  +TxFrequency: FrequencyRangeType
+  +TxBandwidth: FrequencyType
+  +Power: PowerType
+  +RxFrequency: FrequencyRangeType
+  +RxBandwidth: FrequencyType
+  +AzSlewRate: AngleRateType
+  +ElSlewRate: AngleRateType
+  +MinElevation: AngleHalfType
+  +MaxElevation: AngleHalfType
+  +Capacity: unsignedInt
+  +Location: Point3D_Type
+  +Modulation: ModulationEnum
+  +Polarization: PolarizationEnum
+  +ObscuraData: CS_ObscuraDataType
+  +SensorData: CS_SensorDataType
+}
+class "CS_CapabilityType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +Force: CS_ForceType
+  +SubCapabilityType: CS_KindEnum
+}
+class "CS_ForceType" <<complexType>> {
+  +ForceName: ForeignKeyType
+  +LocationName: VisibleString32Type
+  +Tactics: ForeignKeyType
+  +Locked: boolean
+  +Posture: CS_PostureType
+  +Portable: boolean
+  +PortableRadius: DistanceType
+  +UseForceObscura: boolean
+  +FreeFormat: CS_FreeFormatType
+  +ObscuraData: CS_ObscuraDataType
+  +ForceCapability: CS_CapabilitiesType
+}
+class "CS_FreeFormatType" <<complexType>> {
+  +ThreatsID: FileLocationID_Type
+  +DescriptionID: FileLocationID_Type
+  +PerformanceID: FileLocationID_Type
+  +CommentsID: FileLocationID_Type
+}
+class "CS_ObscuraDataType" <<complexType>> {
+  +Obscura: CS_ObscuraType
+}
+class "CS_ObscuraType" <<complexType>> {
+  +Azimuth: AnglePositiveType
+  +Elevation: AngleQuarterType
+}
+class "CS_PostureType" <<complexType>> {
+  +Posture: CS_PostureEnum
+  +Time: DurationType
+}
+class "CS_SensorDataType" <<complexType>> {
+  +SensorType: CS_SensorTypeEnum
+  +SensorPointing: CS_SensorPointingEnum
+  +InnerConeAngle: AnglePositiveType
+  +OuterConeAngle: AnglePositiveType
+  +MinClockAngle: AnglePositiveType
+  +MaxClockAngle: AnglePositiveType
+  +SensorTargeting: CS_SensorTargetingEnum
+  +BoreSightAzimuth: AnglePositiveType
+  +BoreSightElevation: AngleQuarterType
+  +MinAltitude: AltitudeType
+  +MaxAltitude: AltitudeType
+  +AntennaDiameter: double
+  +AntennaFreq: FrequencyType
+  +NumSteps: int
+}
+class "CallSignType" <<complexType>> {
+  --
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityBaseType" <<complexType>> {
+  +AvailableMDF: MDF_Type
+}
+class "CapabilityCoverageAreaDataType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +Basis: CapabilityCoverageAreaBasisEnum
+  +CapabilityCoverageAreaFactor: CapabilityCoverageAreaFactorEnum
+  +ValidTime: TimeType
+  +SensorPosition: Point3D_Type
+  +SensorOrientation: OrientationType
+  +Region: ZoneType
+}
+class "CapabilityCoverageAreaID_Type" <<complexType>> {
+  --
+}
+class "CapabilityCoverageAreaMDT" <<complexType>> {
+  +CapabilityCoverageAreaID: CapabilityCoverageAreaID_Type
+  +CapabilityCoverageAreaRequestID: RequestID_Type
+  +CapabilityCoverageAreaDetails: CapabilityCoverageAreaDataType
+}
+class "CapabilityCoverageAreaMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: CapabilityCoverageAreaMDT
+}
+class "CapabilityCoverageAreaRequestDataType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityCoverageAreaFactor: CapabilityCoverageAreaFactorEnum
+  +SensorPosition: Point3D_Type
+  +SensorOrientation: OrientationType
+}
+class "CapabilityCoverageAreaRequestMDT" <<complexType>> {
+  +RequestFrequencyType: RepeatEnum
+  +ResultsInCapabilityCoverageAreaMessage: boolean
+  +CapabilityCoverageAreaRequestDetails: CapabilityCoverageAreaRequestDataType
+}
+class "CapabilityCoverageAreaRequestMT" <<complexType>> {
+  +MessageData: CapabilityCoverageAreaRequestMDT
+}
+class "CapabilityCoverageAreaRequestStatusMDT" <<complexType>> {
+  +CapabilityCoverageAreaDetails: CapabilityCoverageAreaDataType
+}
+class "CapabilityCoverageAreaRequestStatusMT" <<complexType>> {
+  +MessageData: CapabilityCoverageAreaRequestStatusMDT
+}
+class "CapabilityDeclarationBaseType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +DomainPairing: EnvironmentPairingEnum
+  +ProductOutput: ProductOutputType
+  +PackageOperation: PackageOperationEnum
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CapabilityRF_ProfileStatusType" <<complexType>> {
+  +RF_ProfileID: RF_ProfileID_Type
+  +TimedZone: TimedZoneType
+  +Expires: DateTimeType
+}
+class "CapabilityStatusBaseType" <<complexType>> {
+  +MDF_Status: MDF_StatusType
+}
+class "CapabilityStatusType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +AvailabilityInfo: AvailabilityInfoType
+  +CapabilityPrecedence: unsignedInt
+  +RepresentationKey: ForeignKeyType
+}
+class "CargoDeliveryCapabilityMDT" <<complexType>> {
+  +Capability: CargoDeliveryCapabilityType
+}
+class "CargoDeliveryCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: CargoDeliveryCapabilityMDT
+}
+class "CargoDeliveryCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +LoadedCargoID: CargoID_Type
+  +AvailableCargoType: CargoType
+}
+class "CargoDeliveryCapabilityStatusMT" <<complexType>> {
+  +MessageData: CargoDeliveryCapabilityStatusMDT
+}
+class "CargoDeliveryCapabilityType" <<complexType>> {
+  +CapabilityType: CargoDeliveryCapabilityEnum
+  +SubCapabilityType: CargoDeliverySubCapabilityEnum
+  +CargoItem: CargoType
+}
+class "CargoID_Type" <<complexType>> {
+  --
+}
+class "CargoSizeType" <<complexType>> {
+  +Height: DistanceType
+  +Width: DistanceType
+  +Depth: DistanceType
+}
+class "CargoType" <<complexType>> {
+  +CargoPackaging: CargoPackagingEnum
+  +CargoSize: CargoSizeType
+  +CargoWeight: MassType
+}
+class "CollectionConstraintsType" <<complexType>> {
+  +MapAngleConstraints: AngleHalfPairType
+  +GrazingAngleConstraints: AngleQuarterPairType
+  +LookAngleConstraints: AnglePairType
+  +ElevationAngleConstraints: AngleHalfPairType
+  +SlantRangeConstraints: SlantRangeConstraintsType
+  +CollectionPattern: CollectionPatternEnum
+}
+class "ColorDepthSettingsType" <<complexType>> {
+  --
+}
+class "CommCapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+}
+class "CommLinkDetailsType" <<complexType>> {
+  --
+}
+class "CommProfileID_Type" <<complexType>> {
+  --
+}
+class "CommRelayCapabilityMDT" <<complexType>> {
+  +Capability: CommRelayCapabilityType
+}
+class "CommRelayCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: CommRelayCapabilityMDT
+}
+class "CommRelayCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RelayState: CommRelayStateEnum
+  +RF_Profile: RF_ProfileType
+}
+class "CommRelayCapabilityStatusMT" <<complexType>> {
+  +MessageData: CommRelayCapabilityStatusMDT
+}
+class "CommRelayCapabilityType" <<complexType>> {
+  +CapabilityType: CommCapabilityEnum
+  +CapabilityOptions: CommRelayOptionsType
+  +MessageOutput: CommRelayMessageOutputsEnum
+}
+class "CommRelayOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+}
+class "CommTerminalCapabilityMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +Capability: CommTerminalCapabilityType
+}
+class "CommTerminalCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: CommTerminalCapabilityMDT
+}
+class "CommTerminalCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CommTerminalCapabilityStatusType
+}
+class "CommTerminalCapabilityStatusMT" <<complexType>> {
+  +MessageData: CommTerminalCapabilityStatusMDT
+}
+class "CommTerminalCapabilityStatusType" <<complexType>> {
+  +MDF_Status: MDF_StatusType
+  +AvailableConnections: AvailableConnectionType
+}
+class "CommTerminalCapabilityType" <<complexType>> {
+  +CapabilityType: CommCapabilityEnum
+  +SubCapabilityType: ForeignKeyType
+  +CapabilityOptions: CommCapabilityOptionsType
+  +AvailableProfileID: CommProfileID_Type
+  +DataFormat: CommDataFormatEnum
+  +TerminalUniqueKey: ForeignKeyType
+  +TxPowerRange: MilliwattPowerRatioRangeType
+  +TransmitFrequencyRange: FrequencyRangeType
+  +ReceiveFrequencyRange: FrequencyRangeType
+  +CryptoType: CryptoTypeEnum
+  +AssociatedUserIO_ID: CommUserIO_ID_Type
+  +AssociatedUserLink: CommUserLinkType
+  +AssociatedAntennaID: ComponentID_Type
+}
+class "CommUserIO_ID_Type" <<complexType>> {
+  --
+}
+class "CommUserLinkID_Type" <<complexType>> {
+  --
+}
+class "CommUserLinkType" <<complexType>> {
+  +UserLinkID: CommUserLinkID_Type
+  +Details: CommLinkDetailsType
+}
+class "CommandableCapabilityDeclarationType" <<complexType>> {
+  +AcceptedInterface: CapabilityControlInterfacesEnum
+  +CommsRequired: boolean
+}
+class "ComponentControllabilityA_Type" <<complexType>> {
+  +EnableDisable: ComponentControlInterfacesEnum
+  +Configurable: ComponentControlInterfacesEnum
+  +Reset: ComponentControlInterfacesEnum
+}
+class "ComponentControllabilityB_Type" <<complexType>> {
+  +EnableDisable: ComponentControlInterfacesEnum
+  +Reset: ComponentControlInterfacesEnum
+}
+class "ComponentControlsStatusType" <<complexType>> {
+  +EnableDisable: boolean
+  +AutoEnableDisable: boolean
+}
+class "ComponentFieldOfRegardType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FieldOfRegard: FieldOfRegardType
+}
+class "ComponentID_Type" <<complexType>> {
+  --
+}
+class "CompressionRatioSettingsType" <<complexType>> {
+  --
+}
+class "CounterSpaceCapabilityMDT" <<complexType>> {
+  +Capability: CS_CapabilityType
+}
+class "CounterSpaceCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: CounterSpaceCapabilityMDT
+}
+class "CounterSpaceCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "CounterSpaceCapabilityStatusMT" <<complexType>> {
+  +MessageData: CounterSpaceCapabilityStatusMDT
+}
+class "CountryCodeType" <<complexType>> {
+  --
+}
+class "CropSettingsType" <<complexType>> {
+  +Origin: FrameOriginEnum
+  +X_Position: unsignedInt
+  +Y_Position: unsignedInt
+  +Width: unsignedInt
+  +Height: unsignedInt
+}
+class "CropType" <<complexType>> {
+  +Enable: boolean
+  +Settings: CropSettingsType
+}
+class "DataLinkIdentifierPET" <<complexType>> {
+  --
+}
+class "DataRecordBaseType" <<complexType>> {
+  +DataRecordInstanceID: DataRecordInstanceID_Type
+}
+class "DataRecordInstanceID_Type" <<complexType>> {
+  --
+}
+class "DeployableSystemIdentityType" <<complexType>> {
+  +Platform: PlatformIdentityType
+  +Specific: SpecificIdentityType
+  +SpecificVehicle: VehicleIdentificationType
+  +Weapon: StoreType
+}
+class "DoubleMinMaxType" <<complexType>> {
+  +Min: double
+  +Max: double
+}
+class "DurationRangeType" <<complexType>> {
+  +Min: DurationType
+  +Max: DurationType
+}
+class "EA_CapabilityMDT" <<complexType>> {
+  +Capability: EA_CapabilityType
+  +EA_Component: EA_ComponentType
+  +JammedTrackLimit: unsignedInt
+}
+class "EA_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: EA_CapabilityMDT
+}
+class "EA_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+}
+class "EA_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+}
+class "EA_CapabilityStatusMT" <<complexType>> {
+  +MessageData: EA_CapabilityStatusMDT
+}
+class "EA_CapabilityType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +CapabilityOptions: EA_CapabilityOptionsType
+  +EA_Indicator: EA_IndicatorEnum
+  +Technique: EA_TechniqueType
+  +AssociatedComponentID: ComponentID_Type
+  +MessageOutput: EA_MessageOutputsEnum
+  +TechniqueGroupIdentifier: EA_TechniqueGroupIdentifierType
+}
+class "EA_ComponentType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FieldOfRegard: FieldOfRegardType
+  +FrequencyChangeTime: DurationType
+  +DutyFactorLimit: PercentType
+  +BeamLimit: unsignedInt
+  +CommutationsLimit: unsignedInt
+  +Band: FrequencyRangeType
+  +InstantaneousBand: FrequencyType
+}
+class "EA_TechniqueGroupIdentifierType" <<complexType>> {
+  +Nickname: VisibleString2_4Type
+  +MDF_Name: VisibleString256Type
+}
+class "EA_TechniqueIdentifierType" <<complexType>> {
+  --
+}
+class "EA_TechniqueType" <<complexType>> {
+  +TechniqueIdentifier: EA_TechniqueIdentifierType
+  +Activation: EA_ActivationEnum
+  +Pointing: EA_PointingEnum
+  +Band: FrequencyRangeType
+  +ComponentID: ComponentID_Type
+  +Emitter: EmitterIdentityType
+  +SpecificEmitter: SpecificEmitterIdentityType
+}
+class "ESM_CapabilityMDT" <<complexType>> {
+  +Capability: ESM_CapabilityType
+}
+class "ESM_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: ESM_CapabilityMDT
+}
+class "ESM_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+}
+class "ESM_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +AmbiguityOrdering: AmbiguityOrderingEnum
+  +RWR_AudioEnable: boolean
+  +SpectralDensityReporting: boolean
+  +CurrentMessageOutput: ESM_MessageOutputsEnum
+}
+class "ESM_CapabilityStatusMT" <<complexType>> {
+  +MessageData: ESM_CapabilityStatusMDT
+}
+class "ESM_CapabilityType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +SubCapabilityType: ESM_SubCapabilityEnum
+  +GeolocationType: SignalGeolocationMethodEnum
+  +CapabilityOptions: ESM_CapabilityOptionsType
+  +DwellCoverage: ESM_DwellCoverageType
+  +ESM_PerformanceProfile: ESM_PerformanceProfileType
+  +MessageOutput: ESM_MessageOutputsEnum
+}
+class "ESM_DwellCoverageType" <<complexType>> {
+  +Band: FrequencyRangeType
+  +ComponentID: ComponentID_Type
+  +Emitter: EmitterIdentityType
+  +SpecificEmitter: SpecificEmitterIdentityType
+}
+class "ESM_PerformanceProfileType" <<complexType>> {
+  +FieldOfRegard: FieldOfRegardType
+  +Band: FrequencyRangeType
+  +BeamLimit: unsignedInt
+  +FrequencyChangeTime: DurationType
+}
+class "EffectCapabilityMDT" <<complexType>> {
+  +Capability: EffectCapabilityType
+}
+class "EffectCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: EffectCapabilityMDT
+}
+class "EffectCapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +ConcurrentOperationSupported: boolean
+}
+class "EffectCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "EffectCapabilityStatusMT" <<complexType>> {
+  +MessageData: EffectCapabilityStatusMDT
+}
+class "EffectCapabilityType" <<complexType>> {
+  +CapabilityType: EffectTypeEnum
+  +AssociatedAction: ActionTypeEnum
+  +AssociatedTaskType: TaskTypeEnum
+  +AssociatedCapabilityType: CapabilityTypeEnum
+  +CapabilityOptions: EffectCapabilityOptionsType
+  +MessageOutput: EffectMessageOutputsEnum
+}
+class "ElectronicProtectionOptionsEnabledType" <<complexType>> {
+  +ElectronicProtectionOptionsKey: ForeignKeyType
+  +ElectronicProtectionOptionStatus: EP_StatusEnum
+}
+class "ElectronicProtectionOptionsSupportedType" <<complexType>> {
+  +ElectronicProtectionOptionState: EP_StateEnum
+  +Reference: ForeignKeyType
+}
+class "EmconSettingType" <<complexType>> {
+  --
+}
+class "EmitterIdentityCategoryType" <<complexType>> {
+  --
+}
+class "EmitterIdentityType" <<complexType>> {
+  +EmitterCategory: EmitterIdentityCategoryType
+  +NATO_SpotNumber: OctalValueType
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "FOR_Type" <<complexType>> {
+  +FOR_Type: FOR_Enum
+  +LOS: LOS_VariableA_Type
+  +WarningThreshold: AnglePositiveType
+}
+class "FieldOfRegardType" <<complexType>> {
+  +Field: SensorFieldOfRegardType
+  +NearRange: SlantRangeConstraintsType
+  +FarRange: SlantRangeConstraintsType
+  +Mnemonic: VisibleString256Type
+  +TypeOfFOR: FieldOfRegardTypeEnum
+}
+class "FileFormatType" <<complexType>> {
+  --
+}
+class "FileLocationID_Type" <<complexType>> {
+  --
+}
+class "FlightCapabilityMDT" <<complexType>> {
+  +Capability: FlightCapabilityType
+}
+class "FlightCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: FlightCapabilityMDT
+}
+class "FlightCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "FlightCapabilityStatusMT" <<complexType>> {
+  +MessageData: FlightCapabilityStatusMDT
+}
+class "FlightCapabilityType" <<complexType>> {
+  +CapabilityType: FlightCapabilityEnum
+}
+class "FloatMinMaxType" <<complexType>> {
+  +Min: float
+  +Max: float
+}
+class "FocalPlaneArrayNonUniformityCorrectionReferenceType" <<complexType>> {
+  +NUC_Reference: FocalPlaneArrayNonUniformityCorrectionReferenceEnum
+  +NUC_Offset: FocalPlaneArrayNonUniformityCorrectionOffsetEnum
+}
+class "FocalPlaneArrayOperationNonUniformityCorrectionType" <<complexType>> {
+  +NUC_TablesSettings: UnsignedIntegerMinMaxType
+  +NUC_ReferenceOffsetSettings: FocalPlaneArrayNonUniformityCorrectionReferenceType
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "FrequencyRangeType" <<complexType>> {
+  +Min: FrequencyType
+  +Max: FrequencyType
+}
+class "FuzeTriggerType" <<complexType>> {
+  --
+}
+class "FuzeType" <<complexType>> {
+  +FuzeTrigger: FuzeTriggerType
+  +FuzeMode: WeaponFuzeModeEnum
+  +FuzePosition: WeaponFuzePositionEnum
+  +Mnemonic: VisibleString1024Type
+  +FuzeSeparationArmTime: DurationType
+}
+class "GatewayCapabilityMDT" <<complexType>> {
+  +GatewayServiceID: ServiceID_Type
+  +Capability: GatewayCapabilityType
+}
+class "GatewayCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: GatewayCapabilityMDT
+}
+class "GatewayCapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+}
+class "GatewayCapabilityStatusMDT" <<complexType>> {
+  +GatewayServiceID: ServiceID_Type
+  +CapabilityStatus: GatewayCapabilityStatusType
+  +AvailConnections: AvailableConnectionType
+}
+class "GatewayCapabilityStatusMT" <<complexType>> {
+  +MessageData: GatewayCapabilityStatusMDT
+}
+class "GatewayCapabilityStatusType" <<complexType>> {
+  +MDF_Status: MDF_StatusType
+  +AvailConnections: AvailableConnectionType
+}
+class "GatewayCapabilityType" <<complexType>> {
+  +CapabilityType: CommDataFormatEnum
+  +SubCapabilityType: ForeignKeyType
+  +CapabilityOptions: GatewayCapabilityOptionsType
+  +AvailableProfileID: CommProfileID_Type
+  +SupportedProduct: ProductTypeEnum
+}
+class "GimbalAxisControlStatusType" <<complexType>> {
+  +AxisID: GimbalAxisID_Type
+  +Axis: PO_AngleConstraintControlsStatusType
+}
+class "GimbalAxisID_Type" <<complexType>> {
+  --
+}
+class "GimbalAxisPairType" <<complexType>> {
+  +AxisID: GimbalAxisID_Type
+  +Axis: AnglePairType
+}
+class "GimbalOrientationPairType" <<complexType>> {
+  +ReferenceFrame: PO_GimbalOrientationReferenceFrameEnum
+  +ComponentID: ComponentID_Type
+  +Pitch: AnglePairType
+  +Roll: AnglePairType
+  +Yaw: AnglePairType
+  +Axis: GimbalAxisPairType
+}
+class "HSB_ColorControlType" <<complexType>> {
+  +Hue: PercentType
+  +Saturation: PercentType
+  +Brightness: PercentType
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "IFF_CapabilityMDT" <<complexType>> {
+  +Capability: IFF_CapabilityType
+}
+class "IFF_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: IFF_CapabilityMDT
+}
+class "IFF_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+  +ConcurrentOperationSupported: boolean
+  +ElectronicProtectionOptionsSupported: ElectronicProtectionOptionsSupportedType
+}
+class "IFF_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +DefaultEmcon: EmconSettingType
+  +CurrentMessageOutput: IFF_MessageOutputsEnum
+}
+class "IFF_CapabilityStatusMT" <<complexType>> {
+  +MessageData: IFF_CapabilityStatusMDT
+}
+class "IFF_CapabilityType" <<complexType>> {
+  +CapabilityType: CapabilityInitiationEnum
+  +SubCapabilityType: IFF_SubCapabilityEnum
+  +IFF_ModesAvailable: IFF_ModesAvailableType
+  +CapabilityOptions: IFF_CapabilityOptionsType
+  +MessageOutput: IFF_MessageOutputsEnum
+}
+class "IFF_Mode1Type" <<complexType>> {
+  +Code: Mode1CodeType
+  +Enabled: boolean
+}
+class "IFF_Mode4Type" <<complexType>> {
+  +Mode4Indicator: InterrogationStatusEnum
+  +Mode4Code: Mode4CodeEnum
+}
+class "IFF_Mode5Type" <<complexType>> {
+  +NationalOrigin: int
+  +PIN: int
+  +Mode5Indicator: InterrogationStatusEnum
+  +Mode1Code: Mode1FourCharacterCodeType
+}
+class "IFF_ModeS_Type" <<complexType>> {
+  +ICAO: ICAO_AircraftAddressType
+  +AircraftIdentifier: AircraftIdentifierType
+  +Enabled: boolean
+}
+class "IFF_ModesAvailableType" <<complexType>> {
+  +IFF_Modes: IFF_ModesEnum
+  +Mode5_Format: IFF_Mode5_FormatType
+  +ModeS_RegistersSupported: IFF_ModeS_SupportEnum
+  +ADS_B_Type: IFF_ADS_B_Type
+  +ADS_B_SubType: IFF_ADS_B_SubtypeType
+}
+class "IFF_OctalModeType" <<complexType>> {
+  +Code: OctalValueType
+  +Enabled: boolean
+}
+class "IFF_Type" <<complexType>> {
+  +Mode1: IFF_Mode1Type
+  +Mode2: IFF_OctalModeType
+  +Mode3A: IFF_OctalModeType
+  +Mode3LC: IFF_OctalModeType
+  +Mode4: IFF_Mode4Type
+  +Mode5: IFF_Mode5Type
+  +ModeS: IFF_ModeS_Type
+  +ModeC: IFF_OctalModeType
+}
+class "IdentityBasicType" <<complexType>> {
+  +Standard: StandardIdentityType
+  +Platform: PlatformIdentityType
+  +Specific: SpecificIdentityType
+}
+class "IntegerMinMaxType" <<complexType>> {
+  +Min: int
+  +Max: int
+}
+class "JPEG_SettingsType" <<complexType>> {
+  +CompressionRatio: float
+  +PeakSNR: float
+  +RateDistortionSlope: float
+  +WaveletTransform: JPEG_WaveletTransformType
+}
+class "JPEG_WaveletTransformType" <<complexType>> {
+  +Type: JPEG_WaveletTypeEnum
+  +Level: unsignedInt
+}
+class "LOS_RatesType" <<complexType>> {
+  +AzimuthRate: AngleRateType
+  +ElevationRate: AngleRateType
+  +RollRate: AngleRateType
+}
+class "LOS_VariableA_Type" <<complexType>> {
+  +Reference: LOS_ReferenceEnum
+  +Azimuth: AnglePositiveType
+  +Elevation: AngleType
+}
+class "LOS_VariableB_Type" <<complexType>> {
+  +Roll: AngleType
+  +Rates: LOS_RatesType
+}
+class "MA_AMTI_CapabilityMDT" <<complexType>> {
+  +Capability: MA_AMTI_CapabilityType
+}
+class "MA_AMTI_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: MA_AMTI_CapabilityMDT
+}
+class "MA_AMTI_CapabilityType" <<complexType>> {
+  +MT_IIRS_Level: NIIRS_Type
+  +ComponentFieldOfRegard: ComponentFieldOfRegardType
+}
+class "MA_AccelerationLimitPairType" <<complexType>> {
+  --
+}
+class "MA_AccelerationLimitsType" <<complexType>> {
+  +AccelerationLimit: MA_BodyReferenceAccelerationType
+  +AccelerationLimitPair: MA_AccelerationLimitPairType
+}
+class "MA_ActionCapabilityMDT" <<complexType>> {
+  +Capability: MA_ActionCapabilityType
+}
+class "MA_ActionCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: MA_ActionCapabilityMDT
+}
+class "MA_ActionCapabilityType" <<complexType>> {
+  +CapabilityType: ActionTypeEnum
+  +AssociatedTaskType: MA_TaskTypeEnum
+  +AssociatedCapabilityType: CapabilityTypeEnum
+  +CapabilityOptions: ActionCapabilityOptionsType
+  +MessageOutput: ActionMessageOutputsEnum
+}
+class "MA_AirspeedLimitType" <<complexType>> {
+  +AirspeedLimit: PathSegmentSpeedValueType
+  +AltitudePair: AltitudeReferenceType
+  +WeightPair: MassType
+}
+class "MA_AvailabilityInfoType" <<complexType>> {
+  +Availability: CapabilityAvailabilityEnum
+  +AvailabilityReason: MA_CannotComplyType
+  +NextAvailableWindow: DateTimeType
+}
+class "MA_BodyReferenceAccelerationType" <<complexType>> {
+  +X_Accel: AccelerationType
+  +Y_Accel: AccelerationType
+  +Z_Accel: AccelerationType
+  +Timestamp: DateTimeType
+}
+class "MA_BodyReferenceOrientationRateType" <<complexType>> {
+  +RollRate: AngleRateType
+  +PitchRate: AngleRateType
+  +YawRate: AngleRateType
+  +Timestamp: DateTimeType
+}
+class "MA_CannotComplyType" <<complexType>> {
+  +Reason: MA_CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "MA_CapabilitySetID_Type" <<complexType>> {
+  --
+}
+class "MA_CapabilitySetMDT" <<complexType>> {
+  +CapabilitySetID: MA_CapabilitySetID_Type
+  +CapabilityID: CapabilityID_Type
+  +ApplicableSystemID: SystemID_Type
+  +MissionPlanID: MissionPlanID_Type
+  +MissionID: MissionID_Type
+}
+class "MA_CapabilitySetMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: MA_CapabilitySetMDT
+}
+class "MA_CapabilityStatusType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +AvailabilityInfo: MA_AvailabilityInfoType
+  +CapabilityPrecedence: unsignedInt
+  +RepresentationKey: ForeignKeyType
+}
+class "MA_EffectCapabilityMDT" <<complexType>> {
+  +Capability: MA_EffectCapabilityType
+}
+class "MA_EffectCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: MA_EffectCapabilityMDT
+}
+class "MA_EffectCapabilityType" <<complexType>> {
+  +CapabilityType: EffectTypeEnum
+  +AssociatedAction: ActionTypeEnum
+  +AssociatedTaskType: MA_TaskTypeEnum
+  +AssociatedCapabilityType: CapabilityTypeEnum
+  +CapabilityOptions: EffectCapabilityOptionsType
+  +MessageOutput: EffectMessageOutputsEnum
+}
+class "MA_EscortCapabilityMDT" <<complexType>> {
+  +Capability: MA_EscortCapabilityType
+}
+class "MA_EscortCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: MA_EscortCapabilityMDT
+}
+class "MA_EscortCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "MA_EscortCapabilityStatusMT" <<complexType>> {
+  +MessageData: MA_EscortCapabilityStatusMDT
+}
+class "MA_EscortCapabilityType" <<complexType>> {
+  +SpeedRange: SpeedRangeType
+  +MaxBankAngle: AngleHalfType
+}
+class "MA_FlightCapabilityMDT" <<complexType>> {
+  +Capability: MA_FlightCapabilityType
+}
+class "MA_FlightCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: MA_FlightCapabilityMDT
+}
+class "MA_FlightCapabilityPerformanceProfileType" <<complexType>> {
+  +HSA_CSA_PerformanceProfile: MA_FlightControlModesPerformanceProfileType
+  +WaypointFollowingPerformanceProfile: MA_FlightControlModesPerformanceProfileType
+  +CurveFollowingPerformanceProfile: MA_FlightControlModesPerformanceProfileType
+}
+class "MA_FlightCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: MA_CapabilityStatusType
+}
+class "MA_FlightCapabilityStatusMT" <<complexType>> {
+  +MessageData: MA_FlightCapabilityStatusMDT
+}
+class "MA_FlightCapabilityType" <<complexType>> {
+  +CapabilityType: MA_FlightCapabilityEnum
+  +FlightCapabilityPerformanceProfile: MA_FlightCapabilityPerformanceProfileType
+}
+class "MA_FlightControlModesPerformanceProfileType" <<complexType>> {
+  +MinAirspeed: MA_AirspeedLimitType
+  +MaxAirspeed: MA_AirspeedLimitType
+  +BestEnduranceAirspeed: MA_AirspeedLimitType
+  +BestRangeAirspeed: MA_AirspeedLimitType
+  +MinAltitude: AltitudeReferenceType
+  +MaxAltitude: AltitudeReferenceType
+  +MinAccelerationLimits: MA_AccelerationLimitsType
+  +MaxAccelerationLimits: MA_AccelerationLimitsType
+  +MaxOrientationLimits: OrientationType
+  +MaxOrientationRateLimits: MA_OrientationRateLimitsType
+  +MaxTurnRate: AngleRateType
+  +MaxClimbRate: SpeedType
+  +MaxDescentRate: SpeedType
+}
+class "MA_OrientationRateLimitsType" <<complexType>> {
+  +OrientationRateLimits: MA_BodyReferenceOrientationRateType
+  +AirspeedPair: PathSegmentSpeedValueType
+}
+class "MA_StoreInformationType" <<complexType>> {
+  +Ammo: int
+  +Fuzes: FuzeType
+  +StoreReportedConfiguration: StoreReportedConfigurationType
+}
+class "MA_StrikeCapabilityMDT" <<complexType>> {
+  +Capability: MA_StrikeCapabilityType
+  +Carriage: StoreCarriageCapabilityType
+  +Verification: StoreVerificationStatusType
+  +LoadoutMnemonic: VisibleString256Type
+}
+class "MA_StrikeCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: MA_StrikeCapabilityMDT
+}
+class "MA_StrikeCapabilityType" <<complexType>> {
+  +CapabilityType: StoreType
+  +CapabilityOptions: StrikeCapabilityOptionsType
+  +SupportedCode: AO_CodeType
+  +MessageOutput: StrikeMessageOutputsEnum
+  +StoreInformation: MA_StoreInformationType
+  +Verification: StoreVerificationStatusType
+}
+class "MDF_CommandSubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +FileID: MDF_SubCategoryFileID_Type
+}
+class "MDF_CommandType" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +SubCategory: MDF_CommandSubCategoryType
+}
+class "MDF_FileType" <<complexType>> {
+  +FileID: MDF_SubCategoryFileID_Type
+  +FileStatus: MDF_StatusEnum
+}
+class "MDF_ID_Type" <<complexType>> {
+  --
+}
+class "MDF_StatusType" <<complexType>> {
+  +CurrentMDF: MDF_CommandType
+  +CommandedMDF: MDF_CommandType
+  +FailedMDF: MDF_CommandType
+}
+class "MDF_SubCategoryFileID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +SubCategoryStatus: MDF_StatusEnum
+  +File: MDF_FileType
+}
+class "MDF_Type" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +MDF_Status: MDF_StatusEnum
+  +SubCategory: MDF_SubCategoryType
+}
+class "MISP_PackingPlanType" <<complexType>> {
+  +MissionID: MissionID_Type
+  +PlatformDesignation: AlphanumericDashSpaceUnderscoreString20Type
+  +ImageSourceSensor: VisibleString20Type
+  +PlatformTailNumber: TailNumberType
+  +AirfieldBarometricPressure: double
+  +AirFieldElevation: double
+  +PlatformCallSign: VisibleString10Type
+  +OperationalMode: MISP_OperationalModeEnum
+  +ClassificationOrMarkingSystem: AlphanumericDashSpaceUnderscoreString40Type
+  +ClassificationComment: VisibleString480Type
+  +UMID_VideoID: UMID_VideoID_Type
+  +UMID_AudioID: UMID_AudioID_Type
+  +UMID_DataID: UMID_DataID_Type
+  +UMID_SystemID: UMID_SystemID_Type
+  +ItemDesignator: AlphanumericDashSpaceUnderscoreString16Type
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MilliwattPowerRatioRangeType" <<complexType>> {
+  +Min: MilliwattPowerRatioType
+  +Max: MilliwattPowerRatioType
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "MissionPlanID_Type" <<complexType>> {
+  --
+}
+class "MultistaticOptionsSupportedType" <<complexType>> {
+  +MultistaticEmitterDataRequired: boolean
+  +MultistaticOnly: EmptyType
+}
+class "NITF_PackingPlanPET" <<complexType>> {
+  --
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OpaqueCapabilityMDT" <<complexType>> {
+  +Capability: OpaqueCapabilityType
+}
+class "OpaqueCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: OpaqueCapabilityMDT
+}
+class "OpaqueCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "OpaqueCapabilityStatusMT" <<complexType>> {
+  +MessageData: OpaqueCapabilityStatusMDT
+}
+class "OpaqueCapabilityType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityType: CapabilityInitiationEnum
+  +PackageOperation: PackageOperationEnum
+}
+class "OpticalCollectionConstraintsType" <<complexType>> {
+  +SunElevAngles: AngleHalfPairType
+  +SunAzimuthAngles: AnglePairType
+  +SweepSpeed: SpeedType
+  +GimbalOrientation: GimbalOrientationPairType
+}
+class "OrbitChangeCapabilityMDT" <<complexType>> {
+  +Capability: OrbitChangeCapabilityType
+}
+class "OrbitChangeCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: OrbitChangeCapabilityMDT
+}
+class "OrbitChangeCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "OrbitChangeCapabilityStatusMT" <<complexType>> {
+  +MessageData: OrbitChangeCapabilityStatusMDT
+}
+class "OrbitChangeCapabilityType" <<complexType>> {
+  +CapabilityType: OrbitChangeCapabilityEnum
+  +SupportedChange: OrbitChangeMagnitudeType
+}
+class "OrbitChangeMagnitudeType" <<complexType>> {
+  +SemimajorAxisChange: DistanceType
+  +InclinationChange: AngleHalfPositiveType
+  +LongitudeChange: AngleType
+  +DestinationOrbit: OrbitRegimeType
+  +EccentricityChange: DoubleNonNegativeType
+}
+class "OrbitRegimeType" <<complexType>> {
+  +OrbitRegime: OrbitRegimeEnum
+  +OrbitClass: OrbitClassEnum
+}
+class "OrbitalSurveillanceCapabilityMDT" <<complexType>> {
+  +Capability: OrbitalSurveillanceCapabilityType
+}
+class "OrbitalSurveillanceCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: OrbitalSurveillanceCapabilityMDT
+}
+class "OrbitalSurveillanceCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "OrbitalSurveillanceCapabilityStatusMT" <<complexType>> {
+  +MessageData: OrbitalSurveillanceCapabilityStatusMDT
+}
+class "OrbitalSurveillanceCapabilityType" <<complexType>> {
+  +CapabilityType: OrbitalSurveillanceCapabilityEnum
+  +SubCapabilityType: OrbitalSurveillanceSubCapabilityEnum
+  +CharacterizationOptions: CharacterizationTypeEnum
+  +SensorConstraints: SensorConstraintsBaseType
+  +MessageOutput: OrbitalSurveillanceMessageOutputsEnum
+}
+class "OrbitalSurveillanceSensorCapabilityMDT" <<complexType>> {
+  +Capability: OrbitalSurveillanceSensorCapabilityType
+}
+class "OrbitalSurveillanceSensorCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: OrbitalSurveillanceSensorCapabilityMDT
+}
+class "OrbitalSurveillanceSensorCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "OrbitalSurveillanceSensorCapabilityStatusMT" <<complexType>> {
+  +MessageData: OrbitalSurveillanceSensorCapabilityStatusMDT
+}
+class "OrbitalSurveillanceSensorCapabilityType" <<complexType>> {
+  +CapabilityType: OrbitalSurveillanceSensorCapabilityEnum
+  +SubCapabilityType: OrbitalSurveillanceSensorSubCapabilityType
+  +CharacterizationOptions: CharacterizationTypeEnum
+  +SensorConstraints: SensorConstraintsBaseType
+  +MessageOutput: OrbitalSurveillanceSensorMessageOutputsEnum
+}
+class "OrbitalSurveillanceSensorSubCapabilityType" <<complexType>> {
+  +TrackingAltitude: SensorTrackingAltitudesEnum
+  +FunctionalCapability: SensorFunctionalityType
+}
+class "OrientationType" <<complexType>> {
+  +Yaw: AngleType
+  +Pitch: AngleHalfType
+  +Roll: AngleType
+  +Timestamp: DateTimeType
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PO_AirTargetVolumeType" <<complexType>> {
+  --
+}
+class "PO_AngleConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Settings: AnglePairType
+}
+class "PO_ApertureID_Type" <<complexType>> {
+  --
+}
+class "PO_CapabilityMDT" <<complexType>> {
+  +Capability: PO_CapabilityType
+  +PointingCapability: PointingTypeEnum
+  +SubCapability: PO_SubCapabilityType
+  +PO_Component: PO_ComponentType
+  +TrackOption: PO_TrackCapabilityType
+  +CollectionConstraints: PO_CollectionConstraintsType
+  +CapabilityFOR: FOR_Type
+  +CapabilityThermalBlankingFOR: FOR_Type
+}
+class "PO_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: PO_CapabilityMDT
+}
+class "PO_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CalibrateOnActivity: boolean
+}
+class "PO_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: PO_CapabilityStatusType
+  +SubCapabilityStatus: PO_SubCapabilitySettingsType
+  +TrackStatus: PO_TrackStatusType
+  +ComponentStatus: PO_ComponentStatusType
+  +CollectionConstraintsStatus: PO_CollectionConstraintsStatusType
+  +CurrentMessageOutput: PO_MessageOutputsEnum
+  +CurrentFOR: FOR_Type
+  +CurrentThermalBlankingFOR: FOR_Type
+}
+class "PO_CapabilityStatusMT" <<complexType>> {
+  +MessageData: PO_CapabilityStatusMDT
+}
+class "PO_CapabilityStatusType" <<complexType>> {
+  +ProductOutputStatus: ProductOutputStatusType
+}
+class "PO_CapabilityType" <<complexType>> {
+  +CapabilityType: PO_CapabilityEnum
+  +AssociatedSubCapabilityID: SubCapabilityID_Type
+  +CapabilityOptions: PO_CapabilityOptionsType
+  +AssociatedComponentID: ComponentID_Type
+  +AssociatedTrackOptionID: TrackOptionsID_Type
+  +MessageOutput: PO_MessageOutputsEnum
+}
+class "PO_CoastSettingOptionsType" <<complexType>> {
+  +CoastTimeSettings: DurationRangeType
+  +Environment: EnvironmentEnum
+}
+class "PO_CoastSettingValueType" <<complexType>> {
+  +CoastTime: DurationType
+  +Environment: EnvironmentEnum
+}
+class "PO_CollectionConstraintsStatusType" <<complexType>> {
+  +MapAngleConstraints: PO_AngleConstraintControlsStatusType
+  +GrazingAngleConstraints: PO_AngleConstraintControlsStatusType
+  +LookAngleConstraints: PO_AngleConstraintControlsStatusType
+  +ElevationAngleConstraints: PO_AngleConstraintControlsStatusType
+  +SlantRangeConstraints: PO_SlantRangeConstraintControlsStatusType
+  +CollectionPattern: PO_ColorPatternConstraintControlsStatusType
+  +SunElevAngles: PO_AngleConstraintControlsStatusType
+  +SunAzimuthAngles: PO_AngleConstraintControlsStatusType
+  +SweepSpeed: PO_SweepSpeedConstraintControlsStatusType
+  +GimbalOrientation: PO_GimbalOrientationConstraintControlsStatusType
+}
+class "PO_CollectionConstraintsType" <<complexType>> {
+  +ConstraintType: PO_CollectionConstraintsEnum
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_ColorPatternConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Setting: CollectionPatternEnum
+}
+class "PO_ComponentApertureType" <<complexType>> {
+  +ApertureID: PO_ApertureID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +F_Stop: PO_ComponentF_StopType
+}
+class "PO_ComponentF_StopType" <<complexType>> {
+  --
+}
+class "PO_ComponentFilterType" <<complexType>> {
+  +FilterID: PO_FilterID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +FilterType: PO_FilterEnum
+  +BandpassFrequency: FrequencyRangeType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_ComponentFocalPlaneArrayChannelType" <<complexType>> {
+  +ChannelID: PO_FPA_ChannelID_Type
+  +Controllability: ComponentControllabilityB_Type
+  +OpticalBand: PO_ComponentFocalPlaneArrayOpticalBandType
+  +Operation: PO_ComponentFocalPlaneArrayOperationType
+}
+class "PO_ComponentFocalPlaneArrayOperationType" <<complexType>> {
+  +OperationType: PO_FPA_ChannelOperationEnum
+  +PixelAggregationSettings: UnsignedIntegerMinMaxType
+  +TimeDelayIntegrationSettings: DoubleMinMaxType
+  +PixelScalingSettings: PixelScalingSettingsType
+  +CollectionTimeSettings: DurationRangeType
+  +NonUniformityCorrectionSettings: FocalPlaneArrayOperationNonUniformityCorrectionType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_ComponentFocalPlaneArrayOpticalBandType" <<complexType>> {
+  +Band: FrequencyRangeType
+  +Configurable: ComponentControlInterfacesEnum
+  +Reset: ComponentControlInterfacesEnum
+}
+class "PO_ComponentFocalPlaneArrayType" <<complexType>> {
+  +FocalPlaneArrayID: PO_FPA_ID_Type
+  +Channel: PO_ComponentFocalPlaneArrayChannelType
+  +Window: PO_ComponentWindowType
+  +Controllability: ComponentControllabilityB_Type
+}
+class "PO_ComponentLensAssemblyFieldOfViewType" <<complexType>> {
+  --
+}
+class "PO_ComponentLensAssemblyFocusType" <<complexType>> {
+  +PercentageFocusControl: ComponentControlInterfacesEnum
+  +AutoFocusZoomControl: ComponentControlInterfacesEnum
+  +IncrementalFocusControl: ComponentControlInterfacesEnum
+}
+class "PO_ComponentLensAssemblyType" <<complexType>> {
+  +LensID: PO_LensID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +FOV: PO_ComponentLensAssemblyFieldOfViewType
+  +Focus: PO_ComponentLensAssemblyFocusType
+  +FocusSweepSettings: PO_ComponentSettingsFocusSweepSettingsType
+  +Controllability: ComponentControllabilityB_Type
+}
+class "PO_ComponentProcessingStageType" <<complexType>> {
+  +StageID: PO_ProcessingStageID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +StageType: PO_ProcessingStageTypeEnum
+  +PixelScalingSettings: PixelScalingSettingsType
+  +GammaValueSettings: DoubleMinMaxType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "PO_ComponentProductGeneratorType" <<complexType>> {
+  +GeneratorID: PO_ProductGeneratorID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +Controllability: ComponentControllabilityA_Type
+  +ProductGeneratorSettings: PO_ComponentSettingsProductGeneratorSettingsType
+  +ComponentProductOutput: ProductOutputCapabilityImageryType
+  +OutputProductSettings: PO_ComponentSettingsOutputProductSettingsType
+}
+class "PO_ComponentSettingsFocusSweepSettingsStartingPositionType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocusSweepSettingsStepIncrementType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocusSweepSettingsStepTimeType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsFocusSweepSettingsType" <<complexType>> {
+  +NumberOfStages: unsignedInt
+  +StepTime: PO_ComponentSettingsFocusSweepSettingsStepTimeType
+  +StartingPosition: PO_ComponentSettingsFocusSweepSettingsStartingPositionType
+  +StepIncrement: PO_ComponentSettingsFocusSweepSettingsStepIncrementType
+}
+class "PO_ComponentSettingsOutputProductSettingsType" <<complexType>> {
+  --
+}
+class "PO_ComponentSettingsProductGeneratorSettingsType" <<complexType>> {
+  --
+}
+class "PO_ComponentStatusApertureSettingsType" <<complexType>> {
+  +ApertureID: PO_ApertureID_Type
+  +ApertureControlsStatus: ComponentControlsStatusType
+  +F_StopSetting: float
+  +Reset: EmptyType
+}
+class "PO_ComponentStatusBandpassFrequencyType" <<complexType>> {
+  +Band: FrequencyRangeType
+  +AutoFrequency: boolean
+}
+class "PO_ComponentStatusFilterType" <<complexType>> {
+  +FilterID: PO_FilterID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +FilterControlsStatus: ComponentControlsStatusType
+  +BandpassFrequency: PO_ComponentStatusBandpassFrequencyType
+}
+class "PO_ComponentStatusFocalPlaneArrayChannelType" <<complexType>> {
+  +ChannelID: PO_FPA_ChannelID_Type
+  +ChannelControlsStatus: ComponentControlsStatusType
+  +OpticalBand: PO_ComponentStatusFocalPlaneArrayOpticalBandType
+  +PixelAggregation: PO_ComponentStatusFocalPlaneArrayPixelAggregationType
+  +TimeDelayIntegration: PO_ComponentStatusFocalPlaneArrayTimeDelayIntegrationType
+  +PixelScaling: PO_ComponentStatusFocalPlaneArrayPixelScalingType
+  +PixelPolarity: PO_ComponentStatusFocalPlaneArrayPixelPolarityType
+  +CollectionTime: PO_ComponentStatusFocalPlaneArrayCollectionTimeType
+  +NonUniformityCorrection: PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType
+  +ScanDirection: PO_ComponentStatusFocalPlaneArrayScanDirectionType
+}
+class "PO_ComponentStatusFocalPlaneArrayCollectionTimeType" <<complexType>> {
+  +CollectionTimeSetting: DurationType
+  +AutoCollectionTime: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionDataType" <<complexType>> {
+  --
+}
+class "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType" <<complexType>> {
+  +NUC_Setting: PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionDataType
+  +AutoNUC: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayOpticalBandType" <<complexType>> {
+  +BandSetting: FrequencyRangeType
+  +AutoBand: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayPixelAggregationType" <<complexType>> {
+  +AggregationSetting: unsignedInt
+  +AutoAggregation: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayPixelPolarityType" <<complexType>> {
+  +PolaritySetting: boolean
+  +AutoPolarity: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayPixelScalingType" <<complexType>> {
+  +Gain: double
+  +Offset: double
+  +AutoScaling: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayScanDirectionType" <<complexType>> {
+  +DirectionSetting: RelativeDirectionEnum
+  +AutoDirection: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayTimeDelayIntegrationType" <<complexType>> {
+  +TDI_Setting: double
+  +AutoTDI: boolean
+}
+class "PO_ComponentStatusFocalPlaneArrayType" <<complexType>> {
+  +FocalPlaneArrayID: PO_FPA_ID_Type
+  +FPA_ControlsStatus: ComponentControlsStatusType
+  +Channel: PO_ComponentStatusFocalPlaneArrayChannelType
+  +Window: PO_ComponentWindowType
+}
+class "PO_ComponentStatusFocusSweepSettingsType" <<complexType>> {
+  +NumberOfStages: unsignedInt
+  +StepTime: PO_ComponentSettingsFocusSweepSettingsStepTimeType
+  +StartingPosition: PO_ComponentSettingsFocusSweepSettingsStartingPositionType
+  +StepIncrement: PO_ComponentSettingsFocusSweepSettingsStepIncrementType
+}
+class "PO_ComponentStatusGeneratorSettingsType" <<complexType>> {
+  +VisibleImageSetting: DoubleMinMaxType
+  +InfraredImageSetting: DoubleMinMaxType
+  +HyperspectralImageSetting: DoubleMinMaxType
+  +ImageSetting: DoubleMinMaxType
+  +VideoClipVisibleSetting: DoubleMinMaxType
+  +VideoClipInfraredSetting: DoubleMinMaxType
+  +VideoClipHyperspectralSetting: DoubleMinMaxType
+  +VideoClipSetting: DoubleMinMaxType
+  +VideoStreamVisibleSetting: DoubleMinMaxType
+  +VideoStreamInfraredSetting: DoubleMinMaxType
+  +VideoStreamHyperspectralSetting: DoubleMinMaxType
+  +VideoStreamSetting: DoubleMinMaxType
+}
+class "PO_ComponentStatusLensAssemblyFieldOfViewType" <<complexType>> {
+  +FOV_Setting: AngleQuarterType
+  +AutoZoom: boolean
+  +ChangeType: IncrementalChangeEnum
+}
+class "PO_ComponentStatusLensAssemblyFocusType" <<complexType>> {
+  --
+}
+class "PO_ComponentStatusLensAssemblyType" <<complexType>> {
+  +LensID: PO_LensID_Type
+  +LensControlsStatus: ComponentControlsStatusType
+  +FOV: PO_ComponentStatusLensAssemblyFieldOfViewType
+  +Focus: PO_ComponentStatusLensAssemblyFocusType
+  +FocusSweepSettings: PO_ComponentStatusFocusSweepSettingsType
+}
+class "PO_ComponentStatusOutputProductSettingsType" <<complexType>> {
+  +ProductSettings: PO_ComponentStatusProductSettingsType
+  +AutoOutputProductSettings: boolean
+}
+class "PO_ComponentStatusProcessingStagePixelScalingType" <<complexType>> {
+  +Offset: int
+  +Gain: double
+}
+class "PO_ComponentStatusProcessingStageProcessingSettingsType" <<complexType>> {
+  +PixelScaling: PO_ComponentStatusProcessingStagePixelScalingType
+  +HSB_ColorControlStatus: HSB_ColorControlType
+  +RGB_ColorControlStatus: RGB_ColorControlType
+  +GammaValue: double
+  +SharpnessValue: PercentType
+  +EdgeEnhancement: PercentType
+  +Zoom: PercentType
+}
+class "PO_ComponentStatusProcessingStageSettingsType" <<complexType>> {
+  +ProcessingSettings: PO_ComponentStatusProcessingStageProcessingSettingsType
+  +AutoProcessingSettings: boolean
+}
+class "PO_ComponentStatusProcessingStageType" <<complexType>> {
+  +ProcessingStageID: PO_ProcessingStageID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +ProcessingStageControlsStatus: ComponentControlsStatusType
+  +Settings: PO_ComponentStatusProcessingStageSettingsType
+}
+class "PO_ComponentStatusProductGeneratorSettingsType" <<complexType>> {
+  +GeneratorSettings: PO_ComponentStatusGeneratorSettingsType
+  +AutoGeneratorSettings: boolean
+}
+class "PO_ComponentStatusProductGeneratorType" <<complexType>> {
+  +GeneratorID: PO_ProductGeneratorID_Type
+  +FPA_ID: PO_FPA_ID_Type
+  +ProductGeneratorStatus: ComponentControlsStatusType
+  +ProductGeneratorSettings: PO_ComponentStatusProductGeneratorSettingsType
+  +OutputProductSettings: PO_ComponentStatusOutputProductSettingsType
+}
+class "PO_ComponentStatusProductSettingsType" <<complexType>> {
+  +GeneratorOutputID: PO_ProductGeneratorOutputID_Type
+  +ProductClassification: SecurityInformationType
+  +JPEG_Settings: JPEG_SettingsType
+  +NITF_PackingPlan: NITF_PackingPlanPET
+  +MISP_Settings: MISP_PackingPlanType
+  +CompressionRatio: float
+  +ProductRate: unsignedInt
+  +Interlaced: boolean
+  +ProductSize: unsignedInt
+  +ProductResolution: ProductResolutionType
+  +VideoOutput: VideoOutputSettingsType
+  +ProductOutputStatus: ComponentControlsStatusType
+}
+class "PO_ComponentStatusType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FocalPlane: PO_ComponentStatusFocalPlaneArrayType
+  +Lens: PO_ComponentStatusLensAssemblyType
+  +Aperture: PO_ComponentStatusApertureSettingsType
+  +Filter: PO_ComponentStatusFilterType
+  +ProcessingStage: PO_ComponentStatusProcessingStageType
+  +ProductGenerator: PO_ComponentStatusProductGeneratorType
+}
+class "PO_ComponentType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FocalPlaneArray: PO_ComponentFocalPlaneArrayType
+  +Lens: PO_ComponentLensAssemblyType
+  +Aperture: PO_ComponentApertureType
+  +Filter: PO_ComponentFilterType
+  +ProcessingStage: PO_ComponentProcessingStageType
+  +ProductGenerator: PO_ComponentProductGeneratorType
+}
+class "PO_ComponentWindowType" <<complexType>> {
+  +PO_WindowID: PO_WindowID_Type
+  +WindowSizeX: unsignedInt
+  +WindowSizeY: unsignedInt
+  +LowerLeftX: unsignedInt
+  +LowerLeftY: unsignedInt
+  +ColorDepth: unsignedInt
+}
+class "PO_FPA_ChannelID_Type" <<complexType>> {
+  --
+}
+class "PO_FPA_ID_Type" <<complexType>> {
+  --
+}
+class "PO_FilterID_Type" <<complexType>> {
+  --
+}
+class "PO_GimbalOrientationConstraintControlsStatusType" <<complexType>> {
+  +ReferenceFrame: PO_GimbalOrientationReferenceFrameEnum
+  +ComponentID: ComponentID_Type
+  +PitchAngle: PO_AngleConstraintControlsStatusType
+  +RollAngle: PO_AngleConstraintControlsStatusType
+  +YawAngle: PO_AngleConstraintControlsStatusType
+  +Axis: GimbalAxisControlStatusType
+}
+class "PO_LensID_Type" <<complexType>> {
+  --
+}
+class "PO_OffsetTrackSettingsType" <<complexType>> {
+  +AzimuthSettings: DoubleMinMaxType
+  +ElevationSettings: DoubleMinMaxType
+  +RollSettings: DoubleMinMaxType
+  +RatesSettings: RatesSettingsType
+}
+class "PO_ProcessingStageID_Type" <<complexType>> {
+  --
+}
+class "PO_ProductGeneratorID_Type" <<complexType>> {
+  --
+}
+class "PO_ProductGeneratorOutputID_Type" <<complexType>> {
+  --
+}
+class "PO_SlantRangeConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Minimum: DistanceType
+  +Maximum: DistanceType
+}
+class "PO_SubCapabilitySettingsType" <<complexType>> {
+  +SubCapabilityID: SubCapabilityID_Type
+  +TechniqueSettings: PO_TechniqueSettingType
+}
+class "PO_SubCapabilityType" <<complexType>> {
+  +SubCapabilityID: SubCapabilityID_Type
+  +Spectrum: SensorSpectrumEnum
+  +TechniqueSettings: PO_TechniqueCapabilityType
+  +Environment: PO_EnvironmentEnum
+}
+class "PO_SweepSpeedConstraintControlsStatusType" <<complexType>> {
+  +Status: ComponentControlsStatusType
+  +Speed: SpeedType
+}
+class "PO_TechniqueCapabilityType" <<complexType>> {
+  +Technique: PO_TechniqueEnum
+  +Intensity: FloatMinMaxType
+  +Constellation: FloatMinMaxType
+  +Stride: FloatMinMaxType
+  +PointIntensity: FloatMinMaxType
+  +EdgeIntensity: FloatMinMaxType
+  +FalseAlarmLevelUpperLimit: unsignedByte
+}
+class "PO_TechniqueSettingType" <<complexType>> {
+  +Technique: PO_TechniqueEnum
+  +IntensityValue: float
+  +ConstellationValue: float
+  +StrideValue: float
+  +PointIntensityValue: float
+  +EdgeIntensityValue: float
+  +FalseAlarmLevel: unsignedByte
+}
+class "PO_TrackCapabilityType" <<complexType>> {
+  +TrackOptionID: TrackOptionsID_Type
+  +TrackControlOptions: PO_TrackCapabilityTypeEnum
+  +ATR_Filter: IdentityBasicType
+  +OffsetTrackSettings: PO_OffsetTrackSettingsType
+  +ObservedEntityThresholdSettings: DurationRangeType
+  +TrackingRange: DoubleMinMaxType
+  +CoastSettingOptions: PO_CoastSettingOptionsType
+  +BlankingVolumeSupported: boolean
+}
+class "PO_TrackStatusType" <<complexType>> {
+  +TrackOptionID: TrackOptionsID_Type
+  +Mode: PO_TrackCommandEnum
+  +TrackArea: IncreaseDecreaseEnum
+  +LockPersistence: PO_LockPersistenceEnum
+  +ATR_FilterStatus: IdentityBasicType
+  +OffsetTrackSetting: LOS_VariableB_Type
+  +ObservedEntityThreshold: DurationType
+  +TrackingRange: DistanceType
+  +CoastSetting: PO_CoastSettingValueType
+  +BlankingVolumeStatus: PO_AirTargetVolumeType
+}
+class "PO_WindowID_Type" <<complexType>> {
+  --
+}
+class "PathSegmentSpeedValueType" <<complexType>> {
+  +Value: SpeedType
+  +Reference: SpeedReferenceEnum
+}
+class "PixelCountSettingsType" <<complexType>> {
+  --
+}
+class "PixelScalingSettingsType" <<complexType>> {
+  +GainSettings: DoubleMinMaxType
+  +OffsetSettings: IntegerMinMaxType
+}
+class "PlatformIdentityType" <<complexType>> {
+  +PlatformType: unsignedInt
+  +PlatformTypeCategory: EnvironmentEnum
+  +ThreatType: ThreatEnum
+  +UnitType: UnitTypeEnum
+  +LaunchCapability: LaunchCapabilityEnum
+  +SubmarineConfidenceLevel: SubmarineConfidenceLevelEnum
+}
+class "Point3D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+}
+class "ProductOutputCapabilityImageryType" <<complexType>> {
+  +GeneratorOutputID: PO_ProductGeneratorOutputID_Type
+  +CompressionRatioSettings: CompressionRatioSettingsType
+  +ProductRateSettings: ProductRateSettingsType
+  +Interlaceability: boolean
+  +ProductSizeSettings: ProductSizeSettingsType
+  +ProductResolutionSettings: ProductResolutionSettingsType
+  +Controllability: ComponentControllabilityA_Type
+}
+class "ProductOutputCapabilityStatusImageryType" <<complexType>> {
+  +ProductOutputGeneratorID: PO_ProductGeneratorOutputID_Type
+  +CompressionRatio: float
+  +ProductRate: unsignedInt
+  +Interlaced: boolean
+  +ProductSize: unsignedInt
+  +ProductResolution: ProductResolutionType
+  +VideoOutput: VideoOutputSettingsType
+}
+class "ProductOutputStatusType" <<complexType>> {
+  --
+}
+class "ProductOutputType" <<complexType>> {
+  +ProductType: ProductTypeEnum
+  +ProcessingType: ProcessingTypeEnum
+  +ProductFormat: FileFormatType
+}
+class "ProductRateSettingsType" <<complexType>> {
+  --
+}
+class "ProductResolutionSettingsType" <<complexType>> {
+  +PixelHorizontalSettings: PixelCountSettingsType
+  +PixelVerticalSettings: PixelCountSettingsType
+  +ColorDepthSettings: ColorDepthSettingsType
+}
+class "ProductResolutionType" <<complexType>> {
+  +HorizontalPixelCount: unsignedInt
+  +VerticalPixelCount: unsignedInt
+  +ColorDepth: unsignedInt
+}
+class "ProductSizeSettingsType" <<complexType>> {
+  --
+}
+class "RF_ProfileID_Type" <<complexType>> {
+  --
+}
+class "RF_ProfileType" <<complexType>> {
+  +RF_ProfileID: RF_ProfileID_Type
+  +TimedZone: TimedZoneType
+  +Expires: DateTimeType
+}
+class "RGB_ColorControlType" <<complexType>> {
+  +Red: PercentType
+  +Green: PercentType
+  +Blue: PercentType
+}
+class "RadarAltimeterCapabilityMDT" <<complexType>> {
+  +Capability: RadarAltimeterCapabilityType
+}
+class "RadarAltimeterCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: RadarAltimeterCapabilityMDT
+}
+class "RadarAltimeterCapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+  +ConcurrentOperationSupported: boolean
+  +FilteredUnfiltered: FilteredUnfilteredEnum
+  +ElectronicProtectionOptionsSupported: ElectronicProtectionOptionsSupportedType
+  +FalseAlarmLevelUpperLimit: unsignedByte
+}
+class "RadarAltimeterCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +EmissionBalanceState: EmissionBalanceEnum
+  +MessageOutput: RadarAltimeterMessageOutputsEnum
+  +ElectronicProtectionOptionsEnabled: ElectronicProtectionOptionsEnabledType
+}
+class "RadarAltimeterCapabilityStatusMT" <<complexType>> {
+  +MessageData: RadarAltimeterCapabilityStatusMDT
+}
+class "RadarAltimeterCapabilityType" <<complexType>> {
+  +CapabilityType: RadarAltimeterCapabilityEnum
+  +SubCapabilityType: RadarAltimeterSubCapabilityEnum
+  +CapabilityOptions: RadarAltimeterCapabilityOptionsType
+  +FrequencyRange: FrequencyRangeType
+  +MessageOutput: RadarAltimeterMessageOutputsEnum
+}
+class "RatesSettingsType" <<complexType>> {
+  +AzimuthRateSettings: DoubleMinMaxType
+  +ElevationRateSettings: DoubleMinMaxType
+  +RollRateSettings: DoubleMinMaxType
+}
+class "ReferenceCapabilityMDT" <<complexType>> {
+  +Capability: ReferenceCapabilityType
+}
+class "ReferenceCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: ReferenceCapabilityMDT
+}
+class "ReferenceCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "ReferenceCapabilityStatusMT" <<complexType>> {
+  +MessageData: ReferenceCapabilityStatusMDT
+}
+class "ReferenceCapabilityTaxonomyType" <<complexType>> {
+  +DomainPairing: EnvironmentPairingEnum
+  +Effect: EffectTypeEnum
+  +Action: ActionTypeEnum
+  +Sensing: SensingTypeEnum
+  +Weapon: WeaponTypeEnum
+  +Communications: CommCapabilityEnum
+  +Identification: IdentificationTypeEnum
+  +Cyber: CyberTypeEnum
+}
+class "ReferenceCapabilityType" <<complexType>> {
+  +CapabilityType: ReferenceCapabilityTaxonomyType
+  +MessageOutput: ReferenceCapabilityOutputsEnum
+}
+class "RefuelCapabilityMDT" <<complexType>> {
+  +Capability: RefuelCapabilityType
+}
+class "RefuelCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: RefuelCapabilityMDT
+}
+class "RefuelCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +FuelRemaining: AvailableFuelType
+  +RefuelCapabilityStatus: RefuelCapabilityStatusType
+}
+class "RefuelCapabilityStatusMT" <<complexType>> {
+  +MessageData: RefuelCapabilityStatusMDT
+}
+class "RefuelCapabilityStatusType" <<complexType>> {
+  --
+}
+class "RefuelCapabilityType" <<complexType>> {
+  +CapabilityType: RefuelCapabilityEnum
+  +RefuelLocation: RefuelLocationEnum
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RequestBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestState: RequestStateEnum
+}
+class "RequestID_Type" <<complexType>> {
+  --
+}
+class "RequestStatusBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestProcessingState: RequestProcessingStateEnum
+  +RequestProcessingStateReason: CannotComplyType
+}
+class "RequirementTaxonomyType" <<complexType>> {
+  +Effect: EffectTypeEnum
+  +Action: ActionTypeEnum
+  +Task: TaskTypeEnum
+  +CapabilityCommand: CapabilityTypeEnum
+  +Response: ResponseTypeEnum
+}
+class "ResponseCapabilityMDT" <<complexType>> {
+  +Capability: ResponseCapabilityType
+}
+class "ResponseCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: ResponseCapabilityMDT
+}
+class "ResponseCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "ResponseCapabilityStatusMT" <<complexType>> {
+  +MessageData: ResponseCapabilityStatusMDT
+}
+class "ResponseCapabilityType" <<complexType>> {
+  +CapabilityType: ResponseTypeEnum
+  +AssociatedRequirements: RequirementTaxonomyType
+}
+class "SAR_CapabilityMDT" <<complexType>> {
+  +Capability: SAR_CapabilityType
+}
+class "SAR_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: SAR_CapabilityMDT
+}
+class "SAR_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+  +ATR: boolean
+  +FTI_Supported: boolean
+  +ForceTxRxTaper: boolean
+  +ConcurrentOperationSupported: boolean
+  +MultistaticOptionsSupported: MultistaticOptionsSupportedType
+  +ElectronicProtectionOptionsSupported: ElectronicProtectionOptionsSupportedType
+  +SupportedResolution: SupportedResolutionType
+  +COARPS_SAR_CollectionOption: COARPS_SAR_CollectionOptionsEnum
+}
+class "SAR_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: SAR_CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +EmissionBalanceState: EmissionBalanceEnum
+  +CurrentMessageOutput: SAR_MessageOutputsEnum
+  +DefaultPackingPlan: NITF_PackingPlanPET
+  +DefaultJPEG_Settings: JPEG_SettingsType
+  +ElectronicProtectionOptionsEnabled: ElectronicProtectionOptionsEnabledType
+}
+class "SAR_CapabilityStatusMT" <<complexType>> {
+  +MessageData: SAR_CapabilityStatusMDT
+}
+class "SAR_CapabilityStatusType" <<complexType>> {
+  +SupportedResolutionAvailability: SupportedResolutionAvailabilityType
+}
+class "SAR_CapabilityType" <<complexType>> {
+  +CapabilityType: SAR_CapabilityEnum
+  +SubCapabilityType: SAR_SubCapabilityEnum
+  +CapabilityOptions: SAR_CapabilityOptionsType
+  +Band: FrequencyRangeType
+  +NIIRS_Level: NIIRS_Type
+  +MessageOutput: SAR_MessageOutputsEnum
+  +ComponentFieldOfRegard: ComponentFieldOfRegardType
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "SMTI_CapabilityMDT" <<complexType>> {
+  +Capability: SMTI_CapabilityType
+}
+class "SMTI_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: SMTI_CapabilityMDT
+}
+class "SMTI_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+  +HRR_Supported: boolean
+  +FTI_Supported: boolean
+  +TrackingSupported: boolean
+  +PackingPlan: boolean
+  +ConcurrentOperationSupported: boolean
+  +MultistaticOptionsSupported: MultistaticOptionsSupportedType
+  +COARPS_SMTI_CollectionOption: COARPS_SMTI_CollectionOptionsEnum
+  +FalseAlarmLevelUpperLimit: unsignedByte
+  +ElectronicProtectionOptionsSupported: ElectronicProtectionOptionsSupportedType
+}
+class "SMTI_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +EmissionBalanceState: EmissionBalanceEnum
+  +MessageOutput: SMTI_MessageOutputsEnum
+  +DefaultPackingPlan: STANAG_4607_PackingPlanPET
+  +ElectronicProtectionOptionsEnabled: ElectronicProtectionOptionsEnabledType
+}
+class "SMTI_CapabilityStatusMT" <<complexType>> {
+  +MessageData: SMTI_CapabilityStatusMDT
+}
+class "SMTI_CapabilityType" <<complexType>> {
+  +CapabilityType: SMTI_CapabilityEnum
+  +SubCapabilityType: SMTI_SubCapabilityEnum
+  +CapabilityOptions: SMTI_CapabilityOptionsType
+  +Band: FrequencyRangeType
+  +MT_IIRS_Level: NIIRS_Type
+  +MessageOutput: SMTI_MessageOutputsEnum
+  +ComponentFieldOfRegard: ComponentFieldOfRegardType
+}
+class "STANAG_4607_PackingPlanPET" <<complexType>> {
+  --
+}
+class "ScheduleType" <<complexType>> {
+  --
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "SensorConstraintsBaseType" <<complexType>> {
+  +SensorType: SensorTypeEnum
+  +EOIR_Spectrum: SensorSpectrumEnum
+  +RF_Spectrum: IEEE_FrequencyBandEnum
+  +SensorCategory: SensorCategoryEnum
+  +SensorSystemIdentity: unsignedShort
+  +SensorBasing: EntityBasingEnum
+  +OwnerOperatorCountry: CountryCodeType
+}
+class "SensorFieldOfRegardType" <<complexType>> {
+  --
+}
+class "SensorFunctionalityType" <<complexType>> {
+  +Collections: SensorFunctionalCollectionsEnum
+  +Processing: SensorFunctionalProcessingEnum
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "SharedApertureSupportCapabilityStatusItemType" <<complexType>> {
+  --
+}
+class "SharedApertureSupportCapabilityStatusMDT" <<complexType>> {
+  +SupportCapabilityStatusItem: SharedApertureSupportCapabilityStatusItemType
+}
+class "SharedApertureSupportCapabilityStatusMT" <<complexType>> {
+  +MessageData: SharedApertureSupportCapabilityStatusMDT
+}
+class "SlantRangeConstraintsType" <<complexType>> {
+  +Min: DistanceType
+  +Max: DistanceType
+  +Absolute: boolean
+}
+class "SpecificEmitterIdentityType" <<complexType>> {
+  +SpecificEmitterKey: ForeignKeyType
+}
+class "SpecificIdentityType" <<complexType>> {
+  +SpecificType: unsignedInt
+  +SpecificTypeCategory: EnvironmentEnum
+  +SiteType: SiteTypeEnum
+  +SpecificTypeModel: SpecificTypeModelType
+}
+class "SpeedRangeType" <<complexType>> {
+  +Min: SpeedType
+  +Max: SpeedType
+}
+class "StandardIdentityType" <<complexType>> {
+  +StandardIdentity: StandardIdentityEnum
+  +Allegiance: CountryCodeType
+}
+class "StoreCarriageCapabilityStatusBaseType" <<complexType>> {
+  +CarriageStatus: StoreCarriageStatusType
+}
+class "StoreCarriageCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: StoreCarriageCapabilityStatusType
+}
+class "StoreCarriageCapabilityStatusMT" <<complexType>> {
+  +MessageData: StoreCarriageCapabilityStatusMDT
+}
+class "StoreCarriageCapabilityStatusType" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+}
+class "StoreCarriageCapabilityType" <<complexType>> {
+  +SupportCapabilityID: SupportCapabilityID_Type
+  +CarriageInformation: StoreInformationBaseType
+  +Verification: StoreVerificationStatusType
+}
+class "StoreCarriageStatusType" <<complexType>> {
+  +Configuration: double
+  +InMotion: boolean
+}
+class "StoreInformationBaseType" <<complexType>> {
+  +Mnemonic: VisibleString256Type
+  +Simulated: boolean
+  +StoreLocation: int
+  +JettisonableOption: StoreJettisonOptionsEnum
+  +Powerable: boolean
+}
+class "StoreInformationType" <<complexType>> {
+  +Ammo: int
+  +Fuzes: FuzeType
+}
+class "StoreReportedConfigurationType" <<complexType>> {
+  +FTS_Onboard: boolean
+  +TelemetryOnboard: boolean
+  +FuzingFunctionalityAvailable: boolean
+  +JammerOnboard: boolean
+  +ProgrammableRetardDeviceOnboard: boolean
+  +WDL_Onboard: boolean
+  +DataRecorderOnboard: boolean
+  +AntiJamCapable: boolean
+  +GPS_Capable: boolean
+  +SeekerOnboard: boolean
+}
+class "StoreStatusBaseType" <<complexType>> {
+  +StoreState: StoreStateEnum
+  +StoreStateDetail: StoreStatusDetailsType
+  +StoreStateReason: CannotComplyType
+}
+class "StoreStatusDetailsType" <<complexType>> {
+  +INS_ENABLE: boolean
+  +GPS_ENABLE: boolean
+  +TARGETED: boolean
+  +SELECTED_JETTISON: boolean
+}
+class "StoreStatusType" <<complexType>> {
+  --
+}
+class "StoreType" <<complexType>> {
+  +StoreType: unsignedInt
+  +StoreCategory: StoreCategoryEnum
+  +StoreTypeVariant: ForeignKeyType
+}
+class "StoreVerificationStatusType" <<complexType>> {
+  +VerificationState: MessageDataVerificationEnum
+  +VerificationStateReason: CannotComplyType
+  +Mnemonic: VisibleString256Type
+}
+class "StrikeCapabilityMDT" <<complexType>> {
+  +Capability: StrikeCapabilityType
+  +Carriage: StoreCarriageCapabilityType
+  +Verification: StoreVerificationStatusType
+  +LoadoutMnemonic: VisibleString256Type
+}
+class "StrikeCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: StrikeCapabilityMDT
+}
+class "StrikeCapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+}
+class "StrikeCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: StrikeCapabilityStatusType
+}
+class "StrikeCapabilityStatusMT" <<complexType>> {
+  +MessageData: StrikeCapabilityStatusMDT
+}
+class "StrikeCapabilityStatusType" <<complexType>> {
+  +StoreStatus: StoreStatusType
+}
+class "StrikeCapabilityType" <<complexType>> {
+  +CapabilityType: StoreType
+  +CapabilityOptions: StrikeCapabilityOptionsType
+  +SupportedCode: AO_CodeType
+  +MessageOutput: StrikeMessageOutputsEnum
+  +StoreInformation: StoreInformationType
+  +Verification: StoreVerificationStatusType
+}
+class "SubCapabilityID_Type" <<complexType>> {
+  --
+}
+class "SubsystemID_Type" <<complexType>> {
+  --
+}
+class "SupportCapabilityID_Type" <<complexType>> {
+  --
+}
+class "SupportCapabilityStatusBaseType" <<complexType>> {
+  +SupportCapabilityID: SupportCapabilityID_Type
+  +AvailabilityInfo: AvailabilityInfoType
+}
+class "SupportedResolutionAvailabilityType" <<complexType>> {
+  +SupportedResolutionID: SupportedResolutionID_Type
+  +AvailabilityInfo: AvailabilityInfoType
+}
+class "SupportedResolutionID_Type" <<complexType>> {
+  --
+}
+class "SupportedResolutionType" <<complexType>> {
+  +SupportedResolutionID: SupportedResolutionID_Type
+  +Resolution: double
+  +Band: IEEE_FrequencyBandEnum
+}
+class "SystemDeploymentCapabilityMDT" <<complexType>> {
+  +Capability: SystemDeploymentCapabilityType
+}
+class "SystemDeploymentCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: SystemDeploymentCapabilityMDT
+}
+class "SystemDeploymentCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: SystemDeploymentCapabilityStatusType
+}
+class "SystemDeploymentCapabilityStatusMT" <<complexType>> {
+  +MessageData: SystemDeploymentCapabilityStatusMDT
+}
+class "SystemDeploymentCapabilityStatusType" <<complexType>> {
+  --
+}
+class "SystemDeploymentCapabilityType" <<complexType>> {
+  +CapabilityType: SystemDeploymentEnum
+  +DeployableSystem: DeployableSystemIdentityType
+  +DeployFrom: EnvironmentEnum
+  +DeployTo: EnvironmentEnum
+  +CapabilityOptions: SystemDeploymentOptionsType
+}
+class "SystemDeploymentOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +ConcurrentOperationSupported: boolean
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TacticalOrderCapabilityMDT" <<complexType>> {
+  +Capability: TacticalOrderCapabilityType
+}
+class "TacticalOrderCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: TacticalOrderCapabilityMDT
+}
+class "TacticalOrderCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+}
+class "TacticalOrderCapabilityStatusMT" <<complexType>> {
+  +MessageData: TacticalOrderCapabilityStatusMDT
+}
+class "TacticalOrderCapabilityType" <<complexType>> {
+  +CapabilityType: TacticalOrderCapabilityEnum
+}
+class "TimedZoneType" <<complexType>> {
+  +Schedule: ScheduleType
+}
+class "TrackOptionsID_Type" <<complexType>> {
+  --
+}
+class "UMID_AudioID_Type" <<complexType>> {
+  --
+}
+class "UMID_DataID_Type" <<complexType>> {
+  --
+}
+class "UMID_SystemID_Type" <<complexType>> {
+  --
+}
+class "UMID_VideoID_Type" <<complexType>> {
+  --
+}
+class "UnsignedIntegerMinMaxType" <<complexType>> {
+  +Min: unsignedInt
+  +Max: unsignedInt
+}
+class "VehicleIdentificationType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +VehicleUniqueIdentifier: VehicleUniqueIdentifierType
+  +IFF: IFF_Type
+  +CallSign: CallSignType
+  +RadarCrossSection: ForeignKeyType
+  +DataLinkIdentifier: DataLinkIdentifierPET
+}
+class "VehicleUniqueIdentifierType" <<complexType>> {
+  --
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+class "VideoEncoderOutputType" <<complexType>> {
+  --
+}
+class "VideoEncoderSettingsType" <<complexType>> {
+  +EncodingType: ForeignKeyType
+  +Profile: VisibleString32Type
+  +EncodingBlocks: VideoBlockSizeEnum
+  +ChromaSubsample: VideoChromaSubsampleEnum
+  +FrameRate: FrequencyType
+  +HDR: boolean
+  +BitRate: unsignedInt
+  +EmbedKLV_Metadata: boolean
+  +EmbedPlatformMetadata: boolean
+  +SkipFrames: unsignedByte
+  +QuantMinMax: UnsignedIntegerMinMaxType
+  +CompressionMode: VideoEncoderCompressionModeEnum
+  +B_Frames: unsignedByte
+  +GOP_Size: unsignedShort
+  +IntraRefreshMode: boolean
+  +IntraRefreshPercentage: PercentType
+  +ColorBitDepth: unsignedByte
+  +Crop: CropType
+  +Scaling: PercentType
+}
+class "VideoOutputSettingsType" <<complexType>> {
+  +Enable: boolean
+  +SourceChannel: unsignedShort
+  +Output: VideoEncoderOutputType
+  +EncoderSettings: VideoEncoderSettingsType
+}
+class "WeatherRadarCapabilityMDT" <<complexType>> {
+  +Capability: WeatherRadarCapabilityType
+}
+class "WeatherRadarCapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: WeatherRadarCapabilityMDT
+}
+class "WeatherRadarCapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +EmissionBalanceState: EmissionBalanceEnum
+  +CurrentMessageOutput: WeatherRadarMessageOutputsEnum
+  +ElectronicProtectionOptionsEnabled: ElectronicProtectionOptionsEnabledType
+}
+class "WeatherRadarCapabilityStatusMT" <<complexType>> {
+  +MessageData: WeatherRadarCapabilityStatusMDT
+}
+class "WeatherRadarCapabilityType" <<complexType>> {
+  +CapabilityType: WeatherRadarCapabilityEnum
+  +CapabilityOptions: WeatherRadarOptionsType
+  +Band: FrequencyRangeType
+  +MessageOutput: WeatherRadarMessageOutputsEnum
+}
+class "WeatherRadarOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+  +ElectronicProtectionOptionsSupported: ElectronicProtectionOptionsSupportedType
+}
+class "ZoneType" <<complexType>> {
+  +Shape: AreaChoiceType
+  +MinAltitude: AltitudeType
+  +MaxAltitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+}
+
+"AMTI_Capability" --> "AMTI_CapabilityMT" : payload
+"AMTI_CapabilityStatus" --> "AMTI_CapabilityStatusMT" : payload
+"AO_Capability" --> "AO_CapabilityMT" : payload
+"AO_CapabilityStatus" --> "AO_CapabilityStatusMT" : payload
+"ActionCapability" --> "ActionCapabilityMT" : payload
+"ActionCapabilityStatus" --> "ActionCapabilityStatusMT" : payload
+"AirSampleCapability" --> "AirSampleCapabilityMT" : payload
+"AirSampleCapabilityStatus" --> "AirSampleCapabilityStatusMT" : payload
+"COMINT_Capability" --> "COMINT_CapabilityMT" : payload
+"COMINT_CapabilityStatus" --> "COMINT_CapabilityStatusMT" : payload
+"CapabilityCoverageArea" --> "CapabilityCoverageAreaMT" : payload
+"CapabilityCoverageAreaRequest" --> "CapabilityCoverageAreaRequestMT" : payload
+"CapabilityCoverageAreaRequestStatus" --> "CapabilityCoverageAreaRequestStatusMT" : payload
+"CargoDeliveryCapability" --> "CargoDeliveryCapabilityMT" : payload
+"CargoDeliveryCapabilityStatus" --> "CargoDeliveryCapabilityStatusMT" : payload
+"CommRelayCapability" --> "CommRelayCapabilityMT" : payload
+"CommRelayCapabilityStatus" --> "CommRelayCapabilityStatusMT" : payload
+"CommTerminalCapability" --> "CommTerminalCapabilityMT" : payload
+"CommTerminalCapabilityStatus" --> "CommTerminalCapabilityStatusMT" : payload
+"CounterSpaceCapability" --> "CounterSpaceCapabilityMT" : payload
+"CounterSpaceCapabilityStatus" --> "CounterSpaceCapabilityStatusMT" : payload
+"EA_Capability" --> "EA_CapabilityMT" : payload
+"EA_CapabilityStatus" --> "EA_CapabilityStatusMT" : payload
+"ESM_Capability" --> "ESM_CapabilityMT" : payload
+"ESM_CapabilityStatus" --> "ESM_CapabilityStatusMT" : payload
+"EffectCapability" --> "EffectCapabilityMT" : payload
+"EffectCapabilityStatus" --> "EffectCapabilityStatusMT" : payload
+"FlightCapability" --> "FlightCapabilityMT" : payload
+"FlightCapabilityStatus" --> "FlightCapabilityStatusMT" : payload
+"GatewayCapability" --> "GatewayCapabilityMT" : payload
+"GatewayCapabilityStatus" --> "GatewayCapabilityStatusMT" : payload
+"IFF_Capability" --> "IFF_CapabilityMT" : payload
+"IFF_CapabilityStatus" --> "IFF_CapabilityStatusMT" : payload
+"MA_AMTI_Capability" --> "MA_AMTI_CapabilityMT" : payload
+"MA_ActionCapability" --> "MA_ActionCapabilityMT" : payload
+"MA_CapabilitySet" --> "MA_CapabilitySetMT" : payload
+"MA_EffectCapability" --> "MA_EffectCapabilityMT" : payload
+"MA_EscortCapability" --> "MA_EscortCapabilityMT" : payload
+"MA_EscortCapabilityStatus" --> "MA_EscortCapabilityStatusMT" : payload
+"MA_FlightCapability" --> "MA_FlightCapabilityMT" : payload
+"MA_FlightCapabilityStatus" --> "MA_FlightCapabilityStatusMT" : payload
+"MA_StrikeCapability" --> "MA_StrikeCapabilityMT" : payload
+"OpaqueCapability" --> "OpaqueCapabilityMT" : payload
+"OpaqueCapabilityStatus" --> "OpaqueCapabilityStatusMT" : payload
+"OrbitChangeCapability" --> "OrbitChangeCapabilityMT" : payload
+"OrbitChangeCapabilityStatus" --> "OrbitChangeCapabilityStatusMT" : payload
+"OrbitalSurveillanceCapability" --> "OrbitalSurveillanceCapabilityMT" : payload
+"OrbitalSurveillanceCapabilityStatus" --> "OrbitalSurveillanceCapabilityStatusMT" : payload
+"OrbitalSurveillanceSensorCapability" --> "OrbitalSurveillanceSensorCapabilityMT" : payload
+"OrbitalSurveillanceSensorCapabilityStatus" --> "OrbitalSurveillanceSensorCapabilityStatusMT" : payload
+"PO_Capability" --> "PO_CapabilityMT" : payload
+"PO_CapabilityStatus" --> "PO_CapabilityStatusMT" : payload
+"RadarAltimeterCapability" --> "RadarAltimeterCapabilityMT" : payload
+"RadarAltimeterCapabilityStatus" --> "RadarAltimeterCapabilityStatusMT" : payload
+"ReferenceCapability" --> "ReferenceCapabilityMT" : payload
+"ReferenceCapabilityStatus" --> "ReferenceCapabilityStatusMT" : payload
+"RefuelCapability" --> "RefuelCapabilityMT" : payload
+"RefuelCapabilityStatus" --> "RefuelCapabilityStatusMT" : payload
+"ResponseCapability" --> "ResponseCapabilityMT" : payload
+"ResponseCapabilityStatus" --> "ResponseCapabilityStatusMT" : payload
+"SAR_Capability" --> "SAR_CapabilityMT" : payload
+"SAR_CapabilityStatus" --> "SAR_CapabilityStatusMT" : payload
+"SMTI_Capability" --> "SMTI_CapabilityMT" : payload
+"SMTI_CapabilityStatus" --> "SMTI_CapabilityStatusMT" : payload
+"SharedApertureSupportCapabilityStatus" --> "SharedApertureSupportCapabilityStatusMT" : payload
+"StoreCarriageCapabilityStatus" --> "StoreCarriageCapabilityStatusMT" : payload
+"StrikeCapability" --> "StrikeCapabilityMT" : payload
+"StrikeCapabilityStatus" --> "StrikeCapabilityStatusMT" : payload
+"SystemDeploymentCapability" --> "SystemDeploymentCapabilityMT" : payload
+"SystemDeploymentCapabilityStatus" --> "SystemDeploymentCapabilityStatusMT" : payload
+"TacticalOrderCapability" --> "TacticalOrderCapabilityMT" : payload
+"TacticalOrderCapabilityStatus" --> "TacticalOrderCapabilityStatusMT" : payload
+"WeatherRadarCapability" --> "WeatherRadarCapabilityMT" : payload
+"WeatherRadarCapabilityStatus" --> "WeatherRadarCapabilityStatusMT" : payload
+"CapabilityBaseType" <|-- "AMTI_CapabilityMDT"
+"AMTI_CapabilityMDT" --> "AMTI_CapabilityType" : Capability
+"MessageType" <|-- "AMTI_CapabilityMT"
+"AMTI_CapabilityMT" --> "AMTI_CapabilityMDT" : MessageData
+"AMTI_CapabilityOptionsType" --> "MultistaticOptionsSupportedType" : MultistaticOptionsSupported
+"AMTI_CapabilityOptionsType" --> "ElectronicProtectionOptionsSupportedType" : ElectronicProtectionOptionsSupported
+"CapabilityStatusBaseType" <|-- "AMTI_CapabilityStatusMDT"
+"AMTI_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"AMTI_CapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"AMTI_CapabilityStatusMDT" --> "EmconSettingType" : DefaultEmcon
+"AMTI_CapabilityStatusMDT" --> "ElectronicProtectionOptionsEnabledType" : ElectronicProtectionOptionsEnabled
+"MessageType" <|-- "AMTI_CapabilityStatusMT"
+"AMTI_CapabilityStatusMT" --> "AMTI_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "AMTI_CapabilityType"
+"AMTI_CapabilityType" --> "AMTI_CapabilityOptionsType" : CapabilityOptions
+"AMTI_CapabilityType" --> "FrequencyRangeType" : SupportedFrequencies
+"CapabilityBaseType" <|-- "AO_CapabilityMDT"
+"AO_CapabilityMDT" --> "AO_CapabilityType" : Capability
+"AO_CapabilityMDT" --> "AO_ComponentType" : AO_Component
+"MessageType" <|-- "AO_CapabilityMT"
+"AO_CapabilityMT" --> "AO_CapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "AO_CapabilityStatusMDT"
+"AO_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"AO_CapabilityStatusMDT" --> "AO_ComponentSettingsType" : ComponentSetting
+"AO_CapabilityStatusMDT" --> "NITF_PackingPlanPET" : DefaultPackingPlan
+"AO_CapabilityStatusMDT" --> "JPEG_SettingsType" : DefaultJPEG_Settings
+"MessageType" <|-- "AO_CapabilityStatusMT"
+"AO_CapabilityStatusMT" --> "AO_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "AO_CapabilityType"
+"AO_CapabilityType" --> "AO_CapabilityOptionsType" : CapabilityOptions
+"AO_CapabilityType" --> "ComponentID_Type" : AssociatedComponentID
+"AO_ComponentSettingsType" --> "ComponentID_Type" : ComponentID
+"AO_ComponentSettingsType" --> "AO_CodeType" : AO_Code
+"AO_ComponentType" --> "ComponentID_Type" : ComponentID
+"AO_ComponentType" --> "AO_CodeType" : SupportedCode
+"CapabilityBaseType" <|-- "ActionCapabilityMDT"
+"ActionCapabilityMDT" --> "ActionCapabilityType" : Capability
+"MessageType" <|-- "ActionCapabilityMT"
+"ActionCapabilityMT" --> "ActionCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "ActionCapabilityStatusMDT"
+"ActionCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "ActionCapabilityStatusMT"
+"ActionCapabilityStatusMT" --> "ActionCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "ActionCapabilityType"
+"ActionCapabilityType" --> "ActionCapabilityOptionsType" : CapabilityOptions
+"CapabilityBaseType" <|-- "AirSampleCapabilityMDT"
+"AirSampleCapabilityMDT" --> "AirSampleCapabilityType" : Capability
+"MessageType" <|-- "AirSampleCapabilityMT"
+"AirSampleCapabilityMT" --> "AirSampleCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "AirSampleCapabilityStatusMDT"
+"AirSampleCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"AirSampleCapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"MessageType" <|-- "AirSampleCapabilityStatusMT"
+"AirSampleCapabilityStatusMT" --> "AirSampleCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "AirSampleCapabilityType"
+"AirSampleCapabilityType" --> "AirSampleOptionsType" : CapabilityOptions
+"AvailabilityInfoType" --> "CannotComplyType" : AvailabilityReason
+"CapabilityBaseType" <|-- "COMINT_CapabilityMDT"
+"COMINT_CapabilityMDT" --> "COMINT_CapabilityType" : Capability
+"MessageType" <|-- "COMINT_CapabilityMT"
+"COMINT_CapabilityMT" --> "COMINT_CapabilityMDT" : MessageData
+"COMINT_CapabilityOptionsType" --> "CapabilityID_Type" : CapabilityDependencyID
+"COMINT_CapabilityOptionsType" --> "ForeignKeyType" : SupportedModes
+"COMINT_CapabilityOptionsType" --> "ForeignKeyType" : CompressionType
+"CapabilityStatusBaseType" <|-- "COMINT_CapabilityStatusMDT"
+"COMINT_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"COMINT_CapabilityStatusMDT" --> "CapabilityRF_ProfileStatusType" : RF_Profile
+"MessageType" <|-- "COMINT_CapabilityStatusMT"
+"COMINT_CapabilityStatusMT" --> "COMINT_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "COMINT_CapabilityType"
+"COMINT_CapabilityType" --> "COMINT_CapabilityOptionsType" : CapabilityOptions
+"COMINT_CapabilityType" --> "ESM_DwellCoverageType" : DwellCoverage
+"COMINT_CapabilityType" --> "ForeignKeyType" : ApplicationKey
+"CS_CapabilitiesType" --> "ForeignKeyType" : SubCapabilityName
+"CS_CapabilitiesType" --> "FrequencyRangeType" : TxFrequency
+"CS_CapabilitiesType" --> "FrequencyRangeType" : RxFrequency
+"CS_CapabilitiesType" --> "Point3D_Type" : Location
+"CS_CapabilitiesType" --> "CS_ObscuraDataType" : ObscuraData
+"CS_CapabilitiesType" --> "CS_SensorDataType" : SensorData
+"CommandableCapabilityDeclarationType" <|-- "CS_CapabilityType"
+"CS_CapabilityType" --> "CS_ForceType" : Force
+"CS_ForceType" --> "ForeignKeyType" : ForceName
+"CS_ForceType" --> "ForeignKeyType" : Tactics
+"CS_ForceType" --> "CS_PostureType" : Posture
+"CS_ForceType" --> "CS_FreeFormatType" : FreeFormat
+"CS_ForceType" --> "CS_ObscuraDataType" : ObscuraData
+"CS_ForceType" --> "CS_CapabilitiesType" : ForceCapability
+"CS_FreeFormatType" --> "FileLocationID_Type" : ThreatsID
+"CS_FreeFormatType" --> "FileLocationID_Type" : DescriptionID
+"CS_FreeFormatType" --> "FileLocationID_Type" : PerformanceID
+"CS_FreeFormatType" --> "FileLocationID_Type" : CommentsID
+"CS_ObscuraDataType" --> "CS_ObscuraType" : Obscura
+"ForeignKeyType" <|-- "CallSignType"
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"CapabilityBaseType" --> "MDF_Type" : AvailableMDF
+"CapabilityCoverageAreaDataType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityCoverageAreaDataType" --> "Point3D_Type" : SensorPosition
+"CapabilityCoverageAreaDataType" --> "OrientationType" : SensorOrientation
+"CapabilityCoverageAreaDataType" --> "ZoneType" : Region
+"ID_Type" <|-- "CapabilityCoverageAreaID_Type"
+"CapabilityCoverageAreaMDT" --> "CapabilityCoverageAreaID_Type" : CapabilityCoverageAreaID
+"CapabilityCoverageAreaMDT" --> "RequestID_Type" : CapabilityCoverageAreaRequestID
+"CapabilityCoverageAreaMDT" --> "CapabilityCoverageAreaDataType" : CapabilityCoverageAreaDetails
+"MessageType" <|-- "CapabilityCoverageAreaMT"
+"CapabilityCoverageAreaMT" --> "CapabilityCoverageAreaMDT" : MessageData
+"CapabilityCoverageAreaRequestDataType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityCoverageAreaRequestDataType" --> "Point3D_Type" : SensorPosition
+"CapabilityCoverageAreaRequestDataType" --> "OrientationType" : SensorOrientation
+"RequestBaseType" <|-- "CapabilityCoverageAreaRequestMDT"
+"CapabilityCoverageAreaRequestMDT" --> "CapabilityCoverageAreaRequestDataType" : CapabilityCoverageAreaRequestDetails
+"MessageType" <|-- "CapabilityCoverageAreaRequestMT"
+"CapabilityCoverageAreaRequestMT" --> "CapabilityCoverageAreaRequestMDT" : MessageData
+"RequestStatusBaseType" <|-- "CapabilityCoverageAreaRequestStatusMDT"
+"CapabilityCoverageAreaRequestStatusMDT" --> "CapabilityCoverageAreaDataType" : CapabilityCoverageAreaDetails
+"MessageType" <|-- "CapabilityCoverageAreaRequestStatusMT"
+"CapabilityCoverageAreaRequestStatusMT" --> "CapabilityCoverageAreaRequestStatusMDT" : MessageData
+"CapabilityDeclarationBaseType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityDeclarationBaseType" --> "ProductOutputType" : ProductOutput
+"ID_Type" <|-- "CapabilityID_Type"
+"CapabilityRF_ProfileStatusType" --> "RF_ProfileID_Type" : RF_ProfileID
+"CapabilityRF_ProfileStatusType" --> "TimedZoneType" : TimedZone
+"CapabilityStatusBaseType" --> "MDF_StatusType" : MDF_Status
+"CapabilityStatusType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusType" --> "AvailabilityInfoType" : AvailabilityInfo
+"CapabilityStatusType" --> "ForeignKeyType" : RepresentationKey
+"CargoDeliveryCapabilityMDT" --> "CargoDeliveryCapabilityType" : Capability
+"MessageType" <|-- "CargoDeliveryCapabilityMT"
+"CargoDeliveryCapabilityMT" --> "CargoDeliveryCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "CargoDeliveryCapabilityStatusMDT"
+"CargoDeliveryCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"CargoDeliveryCapabilityStatusMDT" --> "CargoID_Type" : LoadedCargoID
+"CargoDeliveryCapabilityStatusMDT" --> "CargoType" : AvailableCargoType
+"MessageType" <|-- "CargoDeliveryCapabilityStatusMT"
+"CargoDeliveryCapabilityStatusMT" --> "CargoDeliveryCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "CargoDeliveryCapabilityType"
+"CargoDeliveryCapabilityType" --> "CargoType" : CargoItem
+"ID_Type" <|-- "CargoID_Type"
+"CargoType" --> "CargoSizeType" : CargoSize
+"CollectionConstraintsType" --> "AngleHalfPairType" : MapAngleConstraints
+"CollectionConstraintsType" --> "AngleQuarterPairType" : GrazingAngleConstraints
+"CollectionConstraintsType" --> "AnglePairType" : LookAngleConstraints
+"CollectionConstraintsType" --> "AngleHalfPairType" : ElevationAngleConstraints
+"CollectionConstraintsType" --> "SlantRangeConstraintsType" : SlantRangeConstraints
+"UnsignedIntegerMinMaxType" <|-- "ColorDepthSettingsType"
+"ID_Type" <|-- "CommProfileID_Type"
+"CapabilityBaseType" <|-- "CommRelayCapabilityMDT"
+"CommRelayCapabilityMDT" --> "CommRelayCapabilityType" : Capability
+"MessageType" <|-- "CommRelayCapabilityMT"
+"CommRelayCapabilityMT" --> "CommRelayCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "CommRelayCapabilityStatusMDT"
+"CommRelayCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"CommRelayCapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"MessageType" <|-- "CommRelayCapabilityStatusMT"
+"CommRelayCapabilityStatusMT" --> "CommRelayCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "CommRelayCapabilityType"
+"CommRelayCapabilityType" --> "CommRelayOptionsType" : CapabilityOptions
+"CapabilityBaseType" <|-- "CommTerminalCapabilityMDT"
+"CommTerminalCapabilityMDT" --> "SubsystemID_Type" : SubsystemID
+"CommTerminalCapabilityMDT" --> "CommTerminalCapabilityType" : Capability
+"MessageType" <|-- "CommTerminalCapabilityMT"
+"CommTerminalCapabilityMT" --> "CommTerminalCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "CommTerminalCapabilityStatusMDT"
+"CommTerminalCapabilityStatusMDT" --> "CommTerminalCapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "CommTerminalCapabilityStatusMT"
+"CommTerminalCapabilityStatusMT" --> "CommTerminalCapabilityStatusMDT" : MessageData
+"CapabilityStatusType" <|-- "CommTerminalCapabilityStatusType"
+"CommTerminalCapabilityStatusType" --> "MDF_StatusType" : MDF_Status
+"CommTerminalCapabilityStatusType" --> "AvailableConnectionType" : AvailableConnections
+"CommandableCapabilityDeclarationType" <|-- "CommTerminalCapabilityType"
+"CommTerminalCapabilityType" --> "ForeignKeyType" : SubCapabilityType
+"CommTerminalCapabilityType" --> "CommCapabilityOptionsType" : CapabilityOptions
+"CommTerminalCapabilityType" --> "CommProfileID_Type" : AvailableProfileID
+"CommTerminalCapabilityType" --> "ForeignKeyType" : TerminalUniqueKey
+"CommTerminalCapabilityType" --> "MilliwattPowerRatioRangeType" : TxPowerRange
+"CommTerminalCapabilityType" --> "FrequencyRangeType" : TransmitFrequencyRange
+"CommTerminalCapabilityType" --> "FrequencyRangeType" : ReceiveFrequencyRange
+"CommTerminalCapabilityType" --> "CommUserIO_ID_Type" : AssociatedUserIO_ID
+"CommTerminalCapabilityType" --> "CommUserLinkType" : AssociatedUserLink
+"CommTerminalCapabilityType" --> "ComponentID_Type" : AssociatedAntennaID
+"ID_Type" <|-- "CommUserIO_ID_Type"
+"ID_Type" <|-- "CommUserLinkID_Type"
+"CommUserLinkType" --> "CommUserLinkID_Type" : UserLinkID
+"CommUserLinkType" --> "CommLinkDetailsType" : Details
+"CapabilityDeclarationBaseType" <|-- "CommandableCapabilityDeclarationType"
+"ComponentFieldOfRegardType" --> "ComponentID_Type" : ComponentID
+"ComponentFieldOfRegardType" --> "FieldOfRegardType" : FieldOfRegard
+"ID_Type" <|-- "ComponentID_Type"
+"FloatMinMaxType" <|-- "CompressionRatioSettingsType"
+"CapabilityBaseType" <|-- "CounterSpaceCapabilityMDT"
+"CounterSpaceCapabilityMDT" --> "CS_CapabilityType" : Capability
+"MessageType" <|-- "CounterSpaceCapabilityMT"
+"CounterSpaceCapabilityMT" --> "CounterSpaceCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "CounterSpaceCapabilityStatusMDT"
+"CounterSpaceCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "CounterSpaceCapabilityStatusMT"
+"CounterSpaceCapabilityStatusMT" --> "CounterSpaceCapabilityStatusMDT" : MessageData
+"CropType" --> "CropSettingsType" : Settings
+"DataRecordBaseType" --> "DataRecordInstanceID_Type" : DataRecordInstanceID
+"ID_Type" <|-- "DataRecordInstanceID_Type"
+"DeployableSystemIdentityType" --> "PlatformIdentityType" : Platform
+"DeployableSystemIdentityType" --> "SpecificIdentityType" : Specific
+"DeployableSystemIdentityType" --> "VehicleIdentificationType" : SpecificVehicle
+"DeployableSystemIdentityType" --> "StoreType" : Weapon
+"CapabilityBaseType" <|-- "EA_CapabilityMDT"
+"EA_CapabilityMDT" --> "EA_CapabilityType" : Capability
+"EA_CapabilityMDT" --> "EA_ComponentType" : EA_Component
+"MessageType" <|-- "EA_CapabilityMT"
+"EA_CapabilityMT" --> "EA_CapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "EA_CapabilityStatusMDT"
+"EA_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"EA_CapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"MessageType" <|-- "EA_CapabilityStatusMT"
+"EA_CapabilityStatusMT" --> "EA_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "EA_CapabilityType"
+"EA_CapabilityType" --> "EA_CapabilityOptionsType" : CapabilityOptions
+"EA_CapabilityType" --> "EA_TechniqueType" : Technique
+"EA_CapabilityType" --> "ComponentID_Type" : AssociatedComponentID
+"EA_CapabilityType" --> "EA_TechniqueGroupIdentifierType" : TechniqueGroupIdentifier
+"EA_ComponentType" --> "ComponentID_Type" : ComponentID
+"EA_ComponentType" --> "FieldOfRegardType" : FieldOfRegard
+"EA_ComponentType" --> "FrequencyRangeType" : Band
+"ForeignKeyType" <|-- "EA_TechniqueIdentifierType"
+"EA_TechniqueType" --> "EA_TechniqueIdentifierType" : TechniqueIdentifier
+"EA_TechniqueType" --> "FrequencyRangeType" : Band
+"EA_TechniqueType" --> "ComponentID_Type" : ComponentID
+"EA_TechniqueType" --> "EmitterIdentityType" : Emitter
+"EA_TechniqueType" --> "SpecificEmitterIdentityType" : SpecificEmitter
+"CapabilityBaseType" <|-- "ESM_CapabilityMDT"
+"ESM_CapabilityMDT" --> "ESM_CapabilityType" : Capability
+"MessageType" <|-- "ESM_CapabilityMT"
+"ESM_CapabilityMT" --> "ESM_CapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "ESM_CapabilityStatusMDT"
+"ESM_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"ESM_CapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"MessageType" <|-- "ESM_CapabilityStatusMT"
+"ESM_CapabilityStatusMT" --> "ESM_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "ESM_CapabilityType"
+"ESM_CapabilityType" --> "ESM_CapabilityOptionsType" : CapabilityOptions
+"ESM_CapabilityType" --> "ESM_DwellCoverageType" : DwellCoverage
+"ESM_CapabilityType" --> "ESM_PerformanceProfileType" : ESM_PerformanceProfile
+"ESM_DwellCoverageType" --> "FrequencyRangeType" : Band
+"ESM_DwellCoverageType" --> "ComponentID_Type" : ComponentID
+"ESM_DwellCoverageType" --> "EmitterIdentityType" : Emitter
+"ESM_DwellCoverageType" --> "SpecificEmitterIdentityType" : SpecificEmitter
+"ESM_PerformanceProfileType" --> "FieldOfRegardType" : FieldOfRegard
+"ESM_PerformanceProfileType" --> "FrequencyRangeType" : Band
+"CapabilityBaseType" <|-- "EffectCapabilityMDT"
+"EffectCapabilityMDT" --> "EffectCapabilityType" : Capability
+"MessageType" <|-- "EffectCapabilityMT"
+"EffectCapabilityMT" --> "EffectCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "EffectCapabilityStatusMDT"
+"EffectCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "EffectCapabilityStatusMT"
+"EffectCapabilityStatusMT" --> "EffectCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "EffectCapabilityType"
+"EffectCapabilityType" --> "EffectCapabilityOptionsType" : CapabilityOptions
+"ElectronicProtectionOptionsEnabledType" --> "ForeignKeyType" : ElectronicProtectionOptionsKey
+"ElectronicProtectionOptionsSupportedType" --> "ForeignKeyType" : Reference
+"EmitterIdentityType" --> "EmitterIdentityCategoryType" : EmitterCategory
+"FOR_Type" --> "LOS_VariableA_Type" : LOS
+"FieldOfRegardType" --> "SensorFieldOfRegardType" : Field
+"FieldOfRegardType" --> "SlantRangeConstraintsType" : NearRange
+"FieldOfRegardType" --> "SlantRangeConstraintsType" : FarRange
+"ID_Type" <|-- "FileLocationID_Type"
+"CapabilityBaseType" <|-- "FlightCapabilityMDT"
+"FlightCapabilityMDT" --> "FlightCapabilityType" : Capability
+"MessageType" <|-- "FlightCapabilityMT"
+"FlightCapabilityMT" --> "FlightCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "FlightCapabilityStatusMDT"
+"FlightCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "FlightCapabilityStatusMT"
+"FlightCapabilityStatusMT" --> "FlightCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "FlightCapabilityType"
+"FocalPlaneArrayOperationNonUniformityCorrectionType" --> "UnsignedIntegerMinMaxType" : NUC_TablesSettings
+"FocalPlaneArrayOperationNonUniformityCorrectionType" --> "FocalPlaneArrayNonUniformityCorrectionReferenceType" : NUC_ReferenceOffsetSettings
+"FuzeType" --> "FuzeTriggerType" : FuzeTrigger
+"CapabilityBaseType" <|-- "GatewayCapabilityMDT"
+"GatewayCapabilityMDT" --> "ServiceID_Type" : GatewayServiceID
+"GatewayCapabilityMDT" --> "GatewayCapabilityType" : Capability
+"MessageType" <|-- "GatewayCapabilityMT"
+"GatewayCapabilityMT" --> "GatewayCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "GatewayCapabilityStatusMDT"
+"GatewayCapabilityStatusMDT" --> "ServiceID_Type" : GatewayServiceID
+"GatewayCapabilityStatusMDT" --> "GatewayCapabilityStatusType" : CapabilityStatus
+"GatewayCapabilityStatusMDT" --> "AvailableConnectionType" : AvailConnections
+"MessageType" <|-- "GatewayCapabilityStatusMT"
+"GatewayCapabilityStatusMT" --> "GatewayCapabilityStatusMDT" : MessageData
+"CapabilityStatusType" <|-- "GatewayCapabilityStatusType"
+"GatewayCapabilityStatusType" --> "MDF_StatusType" : MDF_Status
+"GatewayCapabilityStatusType" --> "AvailableConnectionType" : AvailConnections
+"CommandableCapabilityDeclarationType" <|-- "GatewayCapabilityType"
+"GatewayCapabilityType" --> "ForeignKeyType" : SubCapabilityType
+"GatewayCapabilityType" --> "GatewayCapabilityOptionsType" : CapabilityOptions
+"GatewayCapabilityType" --> "CommProfileID_Type" : AvailableProfileID
+"GimbalAxisControlStatusType" --> "GimbalAxisID_Type" : AxisID
+"GimbalAxisControlStatusType" --> "PO_AngleConstraintControlsStatusType" : Axis
+"ID_Type" <|-- "GimbalAxisID_Type"
+"GimbalAxisPairType" --> "GimbalAxisID_Type" : AxisID
+"GimbalAxisPairType" --> "AnglePairType" : Axis
+"GimbalOrientationPairType" --> "ComponentID_Type" : ComponentID
+"GimbalOrientationPairType" --> "AnglePairType" : Pitch
+"GimbalOrientationPairType" --> "AnglePairType" : Roll
+"GimbalOrientationPairType" --> "AnglePairType" : Yaw
+"GimbalOrientationPairType" --> "GimbalAxisPairType" : Axis
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"CapabilityBaseType" <|-- "IFF_CapabilityMDT"
+"IFF_CapabilityMDT" --> "IFF_CapabilityType" : Capability
+"MessageType" <|-- "IFF_CapabilityMT"
+"IFF_CapabilityMT" --> "IFF_CapabilityMDT" : MessageData
+"IFF_CapabilityOptionsType" --> "ElectronicProtectionOptionsSupportedType" : ElectronicProtectionOptionsSupported
+"CapabilityStatusBaseType" <|-- "IFF_CapabilityStatusMDT"
+"IFF_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"IFF_CapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"IFF_CapabilityStatusMDT" --> "EmconSettingType" : DefaultEmcon
+"MessageType" <|-- "IFF_CapabilityStatusMT"
+"IFF_CapabilityStatusMT" --> "IFF_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "IFF_CapabilityType"
+"IFF_CapabilityType" --> "IFF_ModesAvailableType" : IFF_ModesAvailable
+"IFF_CapabilityType" --> "IFF_CapabilityOptionsType" : CapabilityOptions
+"IFF_Type" --> "IFF_Mode1Type" : Mode1
+"IFF_Type" --> "IFF_OctalModeType" : Mode2
+"IFF_Type" --> "IFF_OctalModeType" : Mode3A
+"IFF_Type" --> "IFF_OctalModeType" : Mode3LC
+"IFF_Type" --> "IFF_Mode4Type" : Mode4
+"IFF_Type" --> "IFF_Mode5Type" : Mode5
+"IFF_Type" --> "IFF_ModeS_Type" : ModeS
+"IFF_Type" --> "IFF_OctalModeType" : ModeC
+"IdentityBasicType" --> "StandardIdentityType" : Standard
+"IdentityBasicType" --> "PlatformIdentityType" : Platform
+"IdentityBasicType" --> "SpecificIdentityType" : Specific
+"JPEG_SettingsType" --> "JPEG_WaveletTransformType" : WaveletTransform
+"LOS_VariableA_Type" <|-- "LOS_VariableB_Type"
+"LOS_VariableB_Type" --> "LOS_RatesType" : Rates
+"CapabilityBaseType" <|-- "MA_AMTI_CapabilityMDT"
+"MA_AMTI_CapabilityMDT" --> "MA_AMTI_CapabilityType" : Capability
+"MessageType" <|-- "MA_AMTI_CapabilityMT"
+"MA_AMTI_CapabilityMT" --> "MA_AMTI_CapabilityMDT" : MessageData
+"AMTI_CapabilityType" <|-- "MA_AMTI_CapabilityType"
+"MA_AMTI_CapabilityType" --> "ComponentFieldOfRegardType" : ComponentFieldOfRegard
+"MA_AccelerationLimitsType" --> "MA_BodyReferenceAccelerationType" : AccelerationLimit
+"MA_AccelerationLimitsType" --> "MA_AccelerationLimitPairType" : AccelerationLimitPair
+"CapabilityBaseType" <|-- "MA_ActionCapabilityMDT"
+"MA_ActionCapabilityMDT" --> "MA_ActionCapabilityType" : Capability
+"MessageType" <|-- "MA_ActionCapabilityMT"
+"MA_ActionCapabilityMT" --> "MA_ActionCapabilityMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "MA_ActionCapabilityType"
+"MA_ActionCapabilityType" --> "ActionCapabilityOptionsType" : CapabilityOptions
+"MA_AirspeedLimitType" --> "PathSegmentSpeedValueType" : AirspeedLimit
+"MA_AirspeedLimitType" --> "AltitudeReferenceType" : AltitudePair
+"MA_AvailabilityInfoType" --> "MA_CannotComplyType" : AvailabilityReason
+"MA_CannotComplyType" --> "ID_Type" : AssociatedID
+"ID_Type" <|-- "MA_CapabilitySetID_Type"
+"DataRecordBaseType" <|-- "MA_CapabilitySetMDT"
+"MA_CapabilitySetMDT" --> "MA_CapabilitySetID_Type" : CapabilitySetID
+"MA_CapabilitySetMDT" --> "CapabilityID_Type" : CapabilityID
+"MA_CapabilitySetMDT" --> "SystemID_Type" : ApplicableSystemID
+"MA_CapabilitySetMDT" --> "MissionPlanID_Type" : MissionPlanID
+"MA_CapabilitySetMDT" --> "MissionID_Type" : MissionID
+"MessageType" <|-- "MA_CapabilitySetMT"
+"MA_CapabilitySetMT" --> "MA_CapabilitySetMDT" : MessageData
+"MA_CapabilityStatusType" --> "CapabilityID_Type" : CapabilityID
+"MA_CapabilityStatusType" --> "MA_AvailabilityInfoType" : AvailabilityInfo
+"MA_CapabilityStatusType" --> "ForeignKeyType" : RepresentationKey
+"CapabilityBaseType" <|-- "MA_EffectCapabilityMDT"
+"MA_EffectCapabilityMDT" --> "MA_EffectCapabilityType" : Capability
+"MessageType" <|-- "MA_EffectCapabilityMT"
+"MA_EffectCapabilityMT" --> "MA_EffectCapabilityMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "MA_EffectCapabilityType"
+"MA_EffectCapabilityType" --> "EffectCapabilityOptionsType" : CapabilityOptions
+"CapabilityBaseType" <|-- "MA_EscortCapabilityMDT"
+"MA_EscortCapabilityMDT" --> "MA_EscortCapabilityType" : Capability
+"MessageType" <|-- "MA_EscortCapabilityMT"
+"MA_EscortCapabilityMT" --> "MA_EscortCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "MA_EscortCapabilityStatusMDT"
+"MA_EscortCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "MA_EscortCapabilityStatusMT"
+"MA_EscortCapabilityStatusMT" --> "MA_EscortCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "MA_EscortCapabilityType"
+"MA_EscortCapabilityType" --> "SpeedRangeType" : SpeedRange
+"CapabilityBaseType" <|-- "MA_FlightCapabilityMDT"
+"MA_FlightCapabilityMDT" --> "MA_FlightCapabilityType" : Capability
+"MessageType" <|-- "MA_FlightCapabilityMT"
+"MA_FlightCapabilityMT" --> "MA_FlightCapabilityMDT" : MessageData
+"MA_FlightCapabilityPerformanceProfileType" --> "MA_FlightControlModesPerformanceProfileType" : HSA_CSA_PerformanceProfile
+"MA_FlightCapabilityPerformanceProfileType" --> "MA_FlightControlModesPerformanceProfileType" : WaypointFollowingPerformanceProfile
+"MA_FlightCapabilityPerformanceProfileType" --> "MA_FlightControlModesPerformanceProfileType" : CurveFollowingPerformanceProfile
+"CapabilityStatusBaseType" <|-- "MA_FlightCapabilityStatusMDT"
+"MA_FlightCapabilityStatusMDT" --> "MA_CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "MA_FlightCapabilityStatusMT"
+"MA_FlightCapabilityStatusMT" --> "MA_FlightCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "MA_FlightCapabilityType"
+"MA_FlightCapabilityType" --> "MA_FlightCapabilityPerformanceProfileType" : FlightCapabilityPerformanceProfile
+"MA_FlightControlModesPerformanceProfileType" --> "MA_AirspeedLimitType" : MinAirspeed
+"MA_FlightControlModesPerformanceProfileType" --> "MA_AirspeedLimitType" : MaxAirspeed
+"MA_FlightControlModesPerformanceProfileType" --> "MA_AirspeedLimitType" : BestEnduranceAirspeed
+"MA_FlightControlModesPerformanceProfileType" --> "MA_AirspeedLimitType" : BestRangeAirspeed
+"MA_FlightControlModesPerformanceProfileType" --> "AltitudeReferenceType" : MinAltitude
+"MA_FlightControlModesPerformanceProfileType" --> "AltitudeReferenceType" : MaxAltitude
+"MA_FlightControlModesPerformanceProfileType" --> "MA_AccelerationLimitsType" : MinAccelerationLimits
+"MA_FlightControlModesPerformanceProfileType" --> "MA_AccelerationLimitsType" : MaxAccelerationLimits
+"MA_FlightControlModesPerformanceProfileType" --> "OrientationType" : MaxOrientationLimits
+"MA_FlightControlModesPerformanceProfileType" --> "MA_OrientationRateLimitsType" : MaxOrientationRateLimits
+"MA_OrientationRateLimitsType" --> "MA_BodyReferenceOrientationRateType" : OrientationRateLimits
+"MA_OrientationRateLimitsType" --> "PathSegmentSpeedValueType" : AirspeedPair
+"StoreInformationBaseType" <|-- "MA_StoreInformationType"
+"MA_StoreInformationType" --> "FuzeType" : Fuzes
+"MA_StoreInformationType" --> "StoreReportedConfigurationType" : StoreReportedConfiguration
+"CapabilityBaseType" <|-- "MA_StrikeCapabilityMDT"
+"MA_StrikeCapabilityMDT" --> "MA_StrikeCapabilityType" : Capability
+"MA_StrikeCapabilityMDT" --> "StoreCarriageCapabilityType" : Carriage
+"MA_StrikeCapabilityMDT" --> "StoreVerificationStatusType" : Verification
+"MessageType" <|-- "MA_StrikeCapabilityMT"
+"MA_StrikeCapabilityMT" --> "MA_StrikeCapabilityMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "MA_StrikeCapabilityType"
+"MA_StrikeCapabilityType" --> "StoreType" : CapabilityType
+"MA_StrikeCapabilityType" --> "StrikeCapabilityOptionsType" : CapabilityOptions
+"MA_StrikeCapabilityType" --> "AO_CodeType" : SupportedCode
+"MA_StrikeCapabilityType" --> "MA_StoreInformationType" : StoreInformation
+"MA_StrikeCapabilityType" --> "StoreVerificationStatusType" : Verification
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryFileID_Type" : FileID
+"MDF_CommandType" --> "MDF_ID_Type" : MDF_ID
+"MDF_CommandType" --> "MDF_CommandSubCategoryType" : SubCategory
+"MDF_FileType" --> "MDF_SubCategoryFileID_Type" : FileID
+"ID_Type" <|-- "MDF_ID_Type"
+"MDF_StatusType" --> "MDF_CommandType" : CurrentMDF
+"MDF_StatusType" --> "MDF_CommandType" : CommandedMDF
+"MDF_StatusType" --> "MDF_CommandType" : FailedMDF
+"ID_Type" <|-- "MDF_SubCategoryFileID_Type"
+"ID_Type" <|-- "MDF_SubCategoryID_Type"
+"MDF_SubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_SubCategoryType" --> "MDF_FileType" : File
+"MDF_Type" --> "MDF_ID_Type" : MDF_ID
+"MDF_Type" --> "MDF_SubCategoryType" : SubCategory
+"MISP_PackingPlanType" --> "MissionID_Type" : MissionID
+"MISP_PackingPlanType" --> "UMID_VideoID_Type" : UMID_VideoID
+"MISP_PackingPlanType" --> "UMID_AudioID_Type" : UMID_AudioID
+"MISP_PackingPlanType" --> "UMID_DataID_Type" : UMID_DataID
+"MISP_PackingPlanType" --> "UMID_SystemID_Type" : UMID_SystemID
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"VersionedID_Type" <|-- "MissionID_Type"
+"VersionedID_Type" <|-- "MissionPlanID_Type"
+"CapabilityBaseType" <|-- "OpaqueCapabilityMDT"
+"OpaqueCapabilityMDT" --> "OpaqueCapabilityType" : Capability
+"MessageType" <|-- "OpaqueCapabilityMT"
+"OpaqueCapabilityMT" --> "OpaqueCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "OpaqueCapabilityStatusMDT"
+"OpaqueCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "OpaqueCapabilityStatusMT"
+"OpaqueCapabilityStatusMT" --> "OpaqueCapabilityStatusMDT" : MessageData
+"OpaqueCapabilityType" --> "CapabilityID_Type" : CapabilityID
+"CollectionConstraintsType" <|-- "OpticalCollectionConstraintsType"
+"OpticalCollectionConstraintsType" --> "AngleHalfPairType" : SunElevAngles
+"OpticalCollectionConstraintsType" --> "AnglePairType" : SunAzimuthAngles
+"OpticalCollectionConstraintsType" --> "GimbalOrientationPairType" : GimbalOrientation
+"CapabilityBaseType" <|-- "OrbitChangeCapabilityMDT"
+"OrbitChangeCapabilityMDT" --> "OrbitChangeCapabilityType" : Capability
+"MessageType" <|-- "OrbitChangeCapabilityMT"
+"OrbitChangeCapabilityMT" --> "OrbitChangeCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "OrbitChangeCapabilityStatusMDT"
+"OrbitChangeCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "OrbitChangeCapabilityStatusMT"
+"OrbitChangeCapabilityStatusMT" --> "OrbitChangeCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "OrbitChangeCapabilityType"
+"OrbitChangeCapabilityType" --> "OrbitChangeMagnitudeType" : SupportedChange
+"OrbitChangeMagnitudeType" --> "OrbitRegimeType" : DestinationOrbit
+"CapabilityBaseType" <|-- "OrbitalSurveillanceCapabilityMDT"
+"OrbitalSurveillanceCapabilityMDT" --> "OrbitalSurveillanceCapabilityType" : Capability
+"MessageType" <|-- "OrbitalSurveillanceCapabilityMT"
+"OrbitalSurveillanceCapabilityMT" --> "OrbitalSurveillanceCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "OrbitalSurveillanceCapabilityStatusMDT"
+"OrbitalSurveillanceCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "OrbitalSurveillanceCapabilityStatusMT"
+"OrbitalSurveillanceCapabilityStatusMT" --> "OrbitalSurveillanceCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "OrbitalSurveillanceCapabilityType"
+"OrbitalSurveillanceCapabilityType" --> "SensorConstraintsBaseType" : SensorConstraints
+"CapabilityBaseType" <|-- "OrbitalSurveillanceSensorCapabilityMDT"
+"OrbitalSurveillanceSensorCapabilityMDT" --> "OrbitalSurveillanceSensorCapabilityType" : Capability
+"MessageType" <|-- "OrbitalSurveillanceSensorCapabilityMT"
+"OrbitalSurveillanceSensorCapabilityMT" --> "OrbitalSurveillanceSensorCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "OrbitalSurveillanceSensorCapabilityStatusMDT"
+"OrbitalSurveillanceSensorCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "OrbitalSurveillanceSensorCapabilityStatusMT"
+"OrbitalSurveillanceSensorCapabilityStatusMT" --> "OrbitalSurveillanceSensorCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "OrbitalSurveillanceSensorCapabilityType"
+"OrbitalSurveillanceSensorCapabilityType" --> "OrbitalSurveillanceSensorSubCapabilityType" : SubCapabilityType
+"OrbitalSurveillanceSensorCapabilityType" --> "SensorConstraintsBaseType" : SensorConstraints
+"OrbitalSurveillanceSensorSubCapabilityType" --> "SensorFunctionalityType" : FunctionalCapability
+"PO_AngleConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_AngleConstraintControlsStatusType" --> "AnglePairType" : Settings
+"ID_Type" <|-- "PO_ApertureID_Type"
+"CapabilityBaseType" <|-- "PO_CapabilityMDT"
+"PO_CapabilityMDT" --> "PO_CapabilityType" : Capability
+"PO_CapabilityMDT" --> "PO_SubCapabilityType" : SubCapability
+"PO_CapabilityMDT" --> "PO_ComponentType" : PO_Component
+"PO_CapabilityMDT" --> "PO_TrackCapabilityType" : TrackOption
+"PO_CapabilityMDT" --> "PO_CollectionConstraintsType" : CollectionConstraints
+"PO_CapabilityMDT" --> "FOR_Type" : CapabilityFOR
+"PO_CapabilityMDT" --> "FOR_Type" : CapabilityThermalBlankingFOR
+"MessageType" <|-- "PO_CapabilityMT"
+"PO_CapabilityMT" --> "PO_CapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "PO_CapabilityStatusMDT"
+"PO_CapabilityStatusMDT" --> "PO_CapabilityStatusType" : CapabilityStatus
+"PO_CapabilityStatusMDT" --> "PO_SubCapabilitySettingsType" : SubCapabilityStatus
+"PO_CapabilityStatusMDT" --> "PO_TrackStatusType" : TrackStatus
+"PO_CapabilityStatusMDT" --> "PO_ComponentStatusType" : ComponentStatus
+"PO_CapabilityStatusMDT" --> "PO_CollectionConstraintsStatusType" : CollectionConstraintsStatus
+"PO_CapabilityStatusMDT" --> "FOR_Type" : CurrentFOR
+"PO_CapabilityStatusMDT" --> "FOR_Type" : CurrentThermalBlankingFOR
+"MessageType" <|-- "PO_CapabilityStatusMT"
+"PO_CapabilityStatusMT" --> "PO_CapabilityStatusMDT" : MessageData
+"CapabilityStatusType" <|-- "PO_CapabilityStatusType"
+"PO_CapabilityStatusType" --> "ProductOutputStatusType" : ProductOutputStatus
+"CommandableCapabilityDeclarationType" <|-- "PO_CapabilityType"
+"PO_CapabilityType" --> "SubCapabilityID_Type" : AssociatedSubCapabilityID
+"PO_CapabilityType" --> "PO_CapabilityOptionsType" : CapabilityOptions
+"PO_CapabilityType" --> "ComponentID_Type" : AssociatedComponentID
+"PO_CapabilityType" --> "TrackOptionsID_Type" : AssociatedTrackOptionID
+"PO_CoastSettingOptionsType" --> "DurationRangeType" : CoastTimeSettings
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : MapAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : GrazingAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : LookAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : ElevationAngleConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_SlantRangeConstraintControlsStatusType" : SlantRangeConstraints
+"PO_CollectionConstraintsStatusType" --> "PO_ColorPatternConstraintControlsStatusType" : CollectionPattern
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : SunElevAngles
+"PO_CollectionConstraintsStatusType" --> "PO_AngleConstraintControlsStatusType" : SunAzimuthAngles
+"PO_CollectionConstraintsStatusType" --> "PO_SweepSpeedConstraintControlsStatusType" : SweepSpeed
+"PO_CollectionConstraintsStatusType" --> "PO_GimbalOrientationConstraintControlsStatusType" : GimbalOrientation
+"OpticalCollectionConstraintsType" <|-- "PO_CollectionConstraintsType"
+"PO_CollectionConstraintsType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ColorPatternConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_ComponentApertureType" --> "PO_ApertureID_Type" : ApertureID
+"PO_ComponentApertureType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentApertureType" --> "PO_ComponentF_StopType" : F_Stop
+"PO_ComponentFilterType" --> "PO_FilterID_Type" : FilterID
+"PO_ComponentFilterType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentFilterType" --> "FrequencyRangeType" : BandpassFrequency
+"PO_ComponentFilterType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentFocalPlaneArrayChannelType" --> "PO_FPA_ChannelID_Type" : ChannelID
+"PO_ComponentFocalPlaneArrayChannelType" --> "ComponentControllabilityB_Type" : Controllability
+"PO_ComponentFocalPlaneArrayChannelType" --> "PO_ComponentFocalPlaneArrayOpticalBandType" : OpticalBand
+"PO_ComponentFocalPlaneArrayChannelType" --> "PO_ComponentFocalPlaneArrayOperationType" : Operation
+"PO_ComponentFocalPlaneArrayOperationType" --> "UnsignedIntegerMinMaxType" : PixelAggregationSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "DoubleMinMaxType" : TimeDelayIntegrationSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "PixelScalingSettingsType" : PixelScalingSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "DurationRangeType" : CollectionTimeSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "FocalPlaneArrayOperationNonUniformityCorrectionType" : NonUniformityCorrectionSettings
+"PO_ComponentFocalPlaneArrayOperationType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentFocalPlaneArrayOpticalBandType" --> "FrequencyRangeType" : Band
+"PO_ComponentFocalPlaneArrayType" --> "PO_FPA_ID_Type" : FocalPlaneArrayID
+"PO_ComponentFocalPlaneArrayType" --> "PO_ComponentFocalPlaneArrayChannelType" : Channel
+"PO_ComponentFocalPlaneArrayType" --> "PO_ComponentWindowType" : Window
+"PO_ComponentFocalPlaneArrayType" --> "ComponentControllabilityB_Type" : Controllability
+"PO_ComponentLensAssemblyType" --> "PO_LensID_Type" : LensID
+"PO_ComponentLensAssemblyType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentLensAssemblyType" --> "PO_ComponentLensAssemblyFieldOfViewType" : FOV
+"PO_ComponentLensAssemblyType" --> "PO_ComponentLensAssemblyFocusType" : Focus
+"PO_ComponentLensAssemblyType" --> "PO_ComponentSettingsFocusSweepSettingsType" : FocusSweepSettings
+"PO_ComponentLensAssemblyType" --> "ComponentControllabilityB_Type" : Controllability
+"PO_ComponentProcessingStageType" --> "PO_ProcessingStageID_Type" : StageID
+"PO_ComponentProcessingStageType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentProcessingStageType" --> "PixelScalingSettingsType" : PixelScalingSettings
+"PO_ComponentProcessingStageType" --> "DoubleMinMaxType" : GammaValueSettings
+"PO_ComponentProcessingStageType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentProductGeneratorType" --> "PO_ProductGeneratorID_Type" : GeneratorID
+"PO_ComponentProductGeneratorType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentProductGeneratorType" --> "ComponentControllabilityA_Type" : Controllability
+"PO_ComponentProductGeneratorType" --> "PO_ComponentSettingsProductGeneratorSettingsType" : ProductGeneratorSettings
+"PO_ComponentProductGeneratorType" --> "ProductOutputCapabilityImageryType" : ComponentProductOutput
+"PO_ComponentProductGeneratorType" --> "PO_ComponentSettingsOutputProductSettingsType" : OutputProductSettings
+"PO_ComponentSettingsFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepTimeType" : StepTime
+"PO_ComponentSettingsFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStartingPositionType" : StartingPosition
+"PO_ComponentSettingsFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepIncrementType" : StepIncrement
+"PO_ComponentStatusApertureSettingsType" --> "PO_ApertureID_Type" : ApertureID
+"PO_ComponentStatusApertureSettingsType" --> "ComponentControlsStatusType" : ApertureControlsStatus
+"PO_ComponentStatusBandpassFrequencyType" --> "FrequencyRangeType" : Band
+"PO_ComponentStatusFilterType" --> "PO_FilterID_Type" : FilterID
+"PO_ComponentStatusFilterType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentStatusFilterType" --> "ComponentControlsStatusType" : FilterControlsStatus
+"PO_ComponentStatusFilterType" --> "PO_ComponentStatusBandpassFrequencyType" : BandpassFrequency
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_FPA_ChannelID_Type" : ChannelID
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "ComponentControlsStatusType" : ChannelControlsStatus
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayOpticalBandType" : OpticalBand
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayPixelAggregationType" : PixelAggregation
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayTimeDelayIntegrationType" : TimeDelayIntegration
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayPixelScalingType" : PixelScaling
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayPixelPolarityType" : PixelPolarity
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayCollectionTimeType" : CollectionTime
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType" : NonUniformityCorrection
+"PO_ComponentStatusFocalPlaneArrayChannelType" --> "PO_ComponentStatusFocalPlaneArrayScanDirectionType" : ScanDirection
+"PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionType" --> "PO_ComponentStatusFocalPlaneArrayNonUniformityCorrectionDataType" : NUC_Setting
+"PO_ComponentStatusFocalPlaneArrayOpticalBandType" --> "FrequencyRangeType" : BandSetting
+"PO_ComponentStatusFocalPlaneArrayType" --> "PO_FPA_ID_Type" : FocalPlaneArrayID
+"PO_ComponentStatusFocalPlaneArrayType" --> "ComponentControlsStatusType" : FPA_ControlsStatus
+"PO_ComponentStatusFocalPlaneArrayType" --> "PO_ComponentStatusFocalPlaneArrayChannelType" : Channel
+"PO_ComponentStatusFocalPlaneArrayType" --> "PO_ComponentWindowType" : Window
+"PO_ComponentStatusFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepTimeType" : StepTime
+"PO_ComponentStatusFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStartingPositionType" : StartingPosition
+"PO_ComponentStatusFocusSweepSettingsType" --> "PO_ComponentSettingsFocusSweepSettingsStepIncrementType" : StepIncrement
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VisibleImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : InfraredImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : HyperspectralImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : ImageSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipVisibleSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipInfraredSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipHyperspectralSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoClipSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamVisibleSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamInfraredSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamHyperspectralSetting
+"PO_ComponentStatusGeneratorSettingsType" --> "DoubleMinMaxType" : VideoStreamSetting
+"PO_ComponentStatusLensAssemblyType" --> "PO_LensID_Type" : LensID
+"PO_ComponentStatusLensAssemblyType" --> "ComponentControlsStatusType" : LensControlsStatus
+"PO_ComponentStatusLensAssemblyType" --> "PO_ComponentStatusLensAssemblyFieldOfViewType" : FOV
+"PO_ComponentStatusLensAssemblyType" --> "PO_ComponentStatusLensAssemblyFocusType" : Focus
+"PO_ComponentStatusLensAssemblyType" --> "PO_ComponentStatusFocusSweepSettingsType" : FocusSweepSettings
+"PO_ComponentStatusOutputProductSettingsType" --> "PO_ComponentStatusProductSettingsType" : ProductSettings
+"PO_ComponentStatusProcessingStageProcessingSettingsType" --> "PO_ComponentStatusProcessingStagePixelScalingType" : PixelScaling
+"PO_ComponentStatusProcessingStageProcessingSettingsType" --> "HSB_ColorControlType" : HSB_ColorControlStatus
+"PO_ComponentStatusProcessingStageProcessingSettingsType" --> "RGB_ColorControlType" : RGB_ColorControlStatus
+"PO_ComponentStatusProcessingStageSettingsType" --> "PO_ComponentStatusProcessingStageProcessingSettingsType" : ProcessingSettings
+"PO_ComponentStatusProcessingStageType" --> "PO_ProcessingStageID_Type" : ProcessingStageID
+"PO_ComponentStatusProcessingStageType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentStatusProcessingStageType" --> "ComponentControlsStatusType" : ProcessingStageControlsStatus
+"PO_ComponentStatusProcessingStageType" --> "PO_ComponentStatusProcessingStageSettingsType" : Settings
+"PO_ComponentStatusProductGeneratorSettingsType" --> "PO_ComponentStatusGeneratorSettingsType" : GeneratorSettings
+"PO_ComponentStatusProductGeneratorType" --> "PO_ProductGeneratorID_Type" : GeneratorID
+"PO_ComponentStatusProductGeneratorType" --> "PO_FPA_ID_Type" : FPA_ID
+"PO_ComponentStatusProductGeneratorType" --> "ComponentControlsStatusType" : ProductGeneratorStatus
+"PO_ComponentStatusProductGeneratorType" --> "PO_ComponentStatusProductGeneratorSettingsType" : ProductGeneratorSettings
+"PO_ComponentStatusProductGeneratorType" --> "PO_ComponentStatusOutputProductSettingsType" : OutputProductSettings
+"PO_ComponentStatusProductSettingsType" --> "PO_ProductGeneratorOutputID_Type" : GeneratorOutputID
+"PO_ComponentStatusProductSettingsType" --> "SecurityInformationType" : ProductClassification
+"PO_ComponentStatusProductSettingsType" --> "JPEG_SettingsType" : JPEG_Settings
+"PO_ComponentStatusProductSettingsType" --> "NITF_PackingPlanPET" : NITF_PackingPlan
+"PO_ComponentStatusProductSettingsType" --> "MISP_PackingPlanType" : MISP_Settings
+"PO_ComponentStatusProductSettingsType" --> "ProductResolutionType" : ProductResolution
+"PO_ComponentStatusProductSettingsType" --> "VideoOutputSettingsType" : VideoOutput
+"PO_ComponentStatusProductSettingsType" --> "ComponentControlsStatusType" : ProductOutputStatus
+"PO_ComponentStatusType" --> "ComponentID_Type" : ComponentID
+"PO_ComponentStatusType" --> "PO_ComponentStatusFocalPlaneArrayType" : FocalPlane
+"PO_ComponentStatusType" --> "PO_ComponentStatusLensAssemblyType" : Lens
+"PO_ComponentStatusType" --> "PO_ComponentStatusApertureSettingsType" : Aperture
+"PO_ComponentStatusType" --> "PO_ComponentStatusFilterType" : Filter
+"PO_ComponentStatusType" --> "PO_ComponentStatusProcessingStageType" : ProcessingStage
+"PO_ComponentStatusType" --> "PO_ComponentStatusProductGeneratorType" : ProductGenerator
+"PO_ComponentType" --> "ComponentID_Type" : ComponentID
+"PO_ComponentType" --> "PO_ComponentFocalPlaneArrayType" : FocalPlaneArray
+"PO_ComponentType" --> "PO_ComponentLensAssemblyType" : Lens
+"PO_ComponentType" --> "PO_ComponentApertureType" : Aperture
+"PO_ComponentType" --> "PO_ComponentFilterType" : Filter
+"PO_ComponentType" --> "PO_ComponentProcessingStageType" : ProcessingStage
+"PO_ComponentType" --> "PO_ComponentProductGeneratorType" : ProductGenerator
+"PO_ComponentWindowType" --> "PO_WindowID_Type" : PO_WindowID
+"ID_Type" <|-- "PO_FPA_ChannelID_Type"
+"ID_Type" <|-- "PO_FPA_ID_Type"
+"ID_Type" <|-- "PO_FilterID_Type"
+"PO_GimbalOrientationConstraintControlsStatusType" --> "ComponentID_Type" : ComponentID
+"PO_GimbalOrientationConstraintControlsStatusType" --> "PO_AngleConstraintControlsStatusType" : PitchAngle
+"PO_GimbalOrientationConstraintControlsStatusType" --> "PO_AngleConstraintControlsStatusType" : RollAngle
+"PO_GimbalOrientationConstraintControlsStatusType" --> "PO_AngleConstraintControlsStatusType" : YawAngle
+"PO_GimbalOrientationConstraintControlsStatusType" --> "GimbalAxisControlStatusType" : Axis
+"ID_Type" <|-- "PO_LensID_Type"
+"PO_OffsetTrackSettingsType" --> "DoubleMinMaxType" : AzimuthSettings
+"PO_OffsetTrackSettingsType" --> "DoubleMinMaxType" : ElevationSettings
+"PO_OffsetTrackSettingsType" --> "DoubleMinMaxType" : RollSettings
+"PO_OffsetTrackSettingsType" --> "RatesSettingsType" : RatesSettings
+"ID_Type" <|-- "PO_ProcessingStageID_Type"
+"ID_Type" <|-- "PO_ProductGeneratorID_Type"
+"ID_Type" <|-- "PO_ProductGeneratorOutputID_Type"
+"PO_SlantRangeConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_SubCapabilitySettingsType" --> "SubCapabilityID_Type" : SubCapabilityID
+"PO_SubCapabilitySettingsType" --> "PO_TechniqueSettingType" : TechniqueSettings
+"PO_SubCapabilityType" --> "SubCapabilityID_Type" : SubCapabilityID
+"PO_SubCapabilityType" --> "PO_TechniqueCapabilityType" : TechniqueSettings
+"PO_SweepSpeedConstraintControlsStatusType" --> "ComponentControlsStatusType" : Status
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : Intensity
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : Constellation
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : Stride
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : PointIntensity
+"PO_TechniqueCapabilityType" --> "FloatMinMaxType" : EdgeIntensity
+"PO_TrackCapabilityType" --> "TrackOptionsID_Type" : TrackOptionID
+"PO_TrackCapabilityType" --> "IdentityBasicType" : ATR_Filter
+"PO_TrackCapabilityType" --> "PO_OffsetTrackSettingsType" : OffsetTrackSettings
+"PO_TrackCapabilityType" --> "DurationRangeType" : ObservedEntityThresholdSettings
+"PO_TrackCapabilityType" --> "DoubleMinMaxType" : TrackingRange
+"PO_TrackCapabilityType" --> "PO_CoastSettingOptionsType" : CoastSettingOptions
+"PO_TrackStatusType" --> "TrackOptionsID_Type" : TrackOptionID
+"PO_TrackStatusType" --> "IdentityBasicType" : ATR_FilterStatus
+"PO_TrackStatusType" --> "LOS_VariableB_Type" : OffsetTrackSetting
+"PO_TrackStatusType" --> "PO_CoastSettingValueType" : CoastSetting
+"PO_TrackStatusType" --> "PO_AirTargetVolumeType" : BlankingVolumeStatus
+"ID_Type" <|-- "PO_WindowID_Type"
+"UnsignedIntegerMinMaxType" <|-- "PixelCountSettingsType"
+"PixelScalingSettingsType" --> "DoubleMinMaxType" : GainSettings
+"PixelScalingSettingsType" --> "IntegerMinMaxType" : OffsetSettings
+"ProductOutputType" <|-- "ProductOutputCapabilityImageryType"
+"ProductOutputCapabilityImageryType" --> "PO_ProductGeneratorOutputID_Type" : GeneratorOutputID
+"ProductOutputCapabilityImageryType" --> "CompressionRatioSettingsType" : CompressionRatioSettings
+"ProductOutputCapabilityImageryType" --> "ProductRateSettingsType" : ProductRateSettings
+"ProductOutputCapabilityImageryType" --> "ProductSizeSettingsType" : ProductSizeSettings
+"ProductOutputCapabilityImageryType" --> "ProductResolutionSettingsType" : ProductResolutionSettings
+"ProductOutputCapabilityImageryType" --> "ComponentControllabilityA_Type" : Controllability
+"ProductOutputCapabilityStatusImageryType" --> "PO_ProductGeneratorOutputID_Type" : ProductOutputGeneratorID
+"ProductOutputCapabilityStatusImageryType" --> "ProductResolutionType" : ProductResolution
+"ProductOutputCapabilityStatusImageryType" --> "VideoOutputSettingsType" : VideoOutput
+"ProductOutputCapabilityStatusImageryType" <|-- "ProductOutputStatusType"
+"ProductOutputType" --> "FileFormatType" : ProductFormat
+"UnsignedIntegerMinMaxType" <|-- "ProductRateSettingsType"
+"ProductResolutionSettingsType" --> "PixelCountSettingsType" : PixelHorizontalSettings
+"ProductResolutionSettingsType" --> "PixelCountSettingsType" : PixelVerticalSettings
+"ProductResolutionSettingsType" --> "ColorDepthSettingsType" : ColorDepthSettings
+"UnsignedIntegerMinMaxType" <|-- "ProductSizeSettingsType"
+"ID_Type" <|-- "RF_ProfileID_Type"
+"RF_ProfileType" --> "RF_ProfileID_Type" : RF_ProfileID
+"RF_ProfileType" --> "TimedZoneType" : TimedZone
+"CapabilityBaseType" <|-- "RadarAltimeterCapabilityMDT"
+"RadarAltimeterCapabilityMDT" --> "RadarAltimeterCapabilityType" : Capability
+"MessageType" <|-- "RadarAltimeterCapabilityMT"
+"RadarAltimeterCapabilityMT" --> "RadarAltimeterCapabilityMDT" : MessageData
+"RadarAltimeterCapabilityOptionsType" --> "ElectronicProtectionOptionsSupportedType" : ElectronicProtectionOptionsSupported
+"CapabilityStatusBaseType" <|-- "RadarAltimeterCapabilityStatusMDT"
+"RadarAltimeterCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"RadarAltimeterCapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"RadarAltimeterCapabilityStatusMDT" --> "ElectronicProtectionOptionsEnabledType" : ElectronicProtectionOptionsEnabled
+"MessageType" <|-- "RadarAltimeterCapabilityStatusMT"
+"RadarAltimeterCapabilityStatusMT" --> "RadarAltimeterCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "RadarAltimeterCapabilityType"
+"RadarAltimeterCapabilityType" --> "RadarAltimeterCapabilityOptionsType" : CapabilityOptions
+"RadarAltimeterCapabilityType" --> "FrequencyRangeType" : FrequencyRange
+"RatesSettingsType" --> "DoubleMinMaxType" : AzimuthRateSettings
+"RatesSettingsType" --> "DoubleMinMaxType" : ElevationRateSettings
+"RatesSettingsType" --> "DoubleMinMaxType" : RollRateSettings
+"CapabilityBaseType" <|-- "ReferenceCapabilityMDT"
+"ReferenceCapabilityMDT" --> "ReferenceCapabilityType" : Capability
+"MessageType" <|-- "ReferenceCapabilityMT"
+"ReferenceCapabilityMT" --> "ReferenceCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "ReferenceCapabilityStatusMDT"
+"ReferenceCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "ReferenceCapabilityStatusMT"
+"ReferenceCapabilityStatusMT" --> "ReferenceCapabilityStatusMDT" : MessageData
+"CapabilityDeclarationBaseType" <|-- "ReferenceCapabilityType"
+"ReferenceCapabilityType" --> "ReferenceCapabilityTaxonomyType" : CapabilityType
+"CapabilityBaseType" <|-- "RefuelCapabilityMDT"
+"RefuelCapabilityMDT" --> "RefuelCapabilityType" : Capability
+"MessageType" <|-- "RefuelCapabilityMT"
+"RefuelCapabilityMT" --> "RefuelCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "RefuelCapabilityStatusMDT"
+"RefuelCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"RefuelCapabilityStatusMDT" --> "AvailableFuelType" : FuelRemaining
+"RefuelCapabilityStatusMDT" --> "RefuelCapabilityStatusType" : RefuelCapabilityStatus
+"MessageType" <|-- "RefuelCapabilityStatusMT"
+"RefuelCapabilityStatusMT" --> "RefuelCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "RefuelCapabilityType"
+"RequestBaseType" --> "RequestID_Type" : RequestID
+"ID_Type" <|-- "RequestID_Type"
+"RequestStatusBaseType" --> "RequestID_Type" : RequestID
+"RequestStatusBaseType" --> "CannotComplyType" : RequestProcessingStateReason
+"CapabilityBaseType" <|-- "ResponseCapabilityMDT"
+"ResponseCapabilityMDT" --> "ResponseCapabilityType" : Capability
+"MessageType" <|-- "ResponseCapabilityMT"
+"ResponseCapabilityMT" --> "ResponseCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "ResponseCapabilityStatusMDT"
+"ResponseCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "ResponseCapabilityStatusMT"
+"ResponseCapabilityStatusMT" --> "ResponseCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "ResponseCapabilityType"
+"ResponseCapabilityType" --> "RequirementTaxonomyType" : AssociatedRequirements
+"CapabilityBaseType" <|-- "SAR_CapabilityMDT"
+"SAR_CapabilityMDT" --> "SAR_CapabilityType" : Capability
+"MessageType" <|-- "SAR_CapabilityMT"
+"SAR_CapabilityMT" --> "SAR_CapabilityMDT" : MessageData
+"SAR_CapabilityOptionsType" --> "MultistaticOptionsSupportedType" : MultistaticOptionsSupported
+"SAR_CapabilityOptionsType" --> "ElectronicProtectionOptionsSupportedType" : ElectronicProtectionOptionsSupported
+"SAR_CapabilityOptionsType" --> "SupportedResolutionType" : SupportedResolution
+"CapabilityStatusBaseType" <|-- "SAR_CapabilityStatusMDT"
+"SAR_CapabilityStatusMDT" --> "SAR_CapabilityStatusType" : CapabilityStatus
+"SAR_CapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"SAR_CapabilityStatusMDT" --> "NITF_PackingPlanPET" : DefaultPackingPlan
+"SAR_CapabilityStatusMDT" --> "JPEG_SettingsType" : DefaultJPEG_Settings
+"SAR_CapabilityStatusMDT" --> "ElectronicProtectionOptionsEnabledType" : ElectronicProtectionOptionsEnabled
+"MessageType" <|-- "SAR_CapabilityStatusMT"
+"SAR_CapabilityStatusMT" --> "SAR_CapabilityStatusMDT" : MessageData
+"CapabilityStatusType" <|-- "SAR_CapabilityStatusType"
+"SAR_CapabilityStatusType" --> "SupportedResolutionAvailabilityType" : SupportedResolutionAvailability
+"CommandableCapabilityDeclarationType" <|-- "SAR_CapabilityType"
+"SAR_CapabilityType" --> "SAR_CapabilityOptionsType" : CapabilityOptions
+"SAR_CapabilityType" --> "FrequencyRangeType" : Band
+"SAR_CapabilityType" --> "ComponentFieldOfRegardType" : ComponentFieldOfRegard
+"CapabilityBaseType" <|-- "SMTI_CapabilityMDT"
+"SMTI_CapabilityMDT" --> "SMTI_CapabilityType" : Capability
+"MessageType" <|-- "SMTI_CapabilityMT"
+"SMTI_CapabilityMT" --> "SMTI_CapabilityMDT" : MessageData
+"SMTI_CapabilityOptionsType" --> "MultistaticOptionsSupportedType" : MultistaticOptionsSupported
+"SMTI_CapabilityOptionsType" --> "ElectronicProtectionOptionsSupportedType" : ElectronicProtectionOptionsSupported
+"CapabilityStatusBaseType" <|-- "SMTI_CapabilityStatusMDT"
+"SMTI_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"SMTI_CapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"SMTI_CapabilityStatusMDT" --> "STANAG_4607_PackingPlanPET" : DefaultPackingPlan
+"SMTI_CapabilityStatusMDT" --> "ElectronicProtectionOptionsEnabledType" : ElectronicProtectionOptionsEnabled
+"MessageType" <|-- "SMTI_CapabilityStatusMT"
+"SMTI_CapabilityStatusMT" --> "SMTI_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "SMTI_CapabilityType"
+"SMTI_CapabilityType" --> "SMTI_CapabilityOptionsType" : CapabilityOptions
+"SMTI_CapabilityType" --> "FrequencyRangeType" : Band
+"SMTI_CapabilityType" --> "ComponentFieldOfRegardType" : ComponentFieldOfRegard
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"SensorConstraintsBaseType" --> "CountryCodeType" : OwnerOperatorCountry
+"ID_Type" <|-- "ServiceID_Type"
+"SupportCapabilityStatusBaseType" <|-- "SharedApertureSupportCapabilityStatusMDT"
+"SharedApertureSupportCapabilityStatusMDT" --> "SharedApertureSupportCapabilityStatusItemType" : SupportCapabilityStatusItem
+"MessageType" <|-- "SharedApertureSupportCapabilityStatusMT"
+"SharedApertureSupportCapabilityStatusMT" --> "SharedApertureSupportCapabilityStatusMDT" : MessageData
+"SpecificEmitterIdentityType" --> "ForeignKeyType" : SpecificEmitterKey
+"StandardIdentityType" --> "CountryCodeType" : Allegiance
+"SupportCapabilityStatusBaseType" <|-- "StoreCarriageCapabilityStatusBaseType"
+"StoreCarriageCapabilityStatusBaseType" --> "StoreCarriageStatusType" : CarriageStatus
+"StoreCarriageCapabilityStatusMDT" --> "StoreCarriageCapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "StoreCarriageCapabilityStatusMT"
+"StoreCarriageCapabilityStatusMT" --> "StoreCarriageCapabilityStatusMDT" : MessageData
+"StoreCarriageCapabilityStatusBaseType" <|-- "StoreCarriageCapabilityStatusType"
+"StoreCarriageCapabilityStatusType" --> "SubsystemID_Type" : SubsystemID
+"StoreCarriageCapabilityType" --> "SupportCapabilityID_Type" : SupportCapabilityID
+"StoreCarriageCapabilityType" --> "StoreInformationBaseType" : CarriageInformation
+"StoreCarriageCapabilityType" --> "StoreVerificationStatusType" : Verification
+"StoreStatusType" <|-- "StoreCarriageStatusType"
+"StoreInformationBaseType" <|-- "StoreInformationType"
+"StoreInformationType" --> "FuzeType" : Fuzes
+"StoreStatusBaseType" --> "StoreStatusDetailsType" : StoreStateDetail
+"StoreStatusBaseType" --> "CannotComplyType" : StoreStateReason
+"StoreStatusBaseType" <|-- "StoreStatusType"
+"StoreType" --> "ForeignKeyType" : StoreTypeVariant
+"StoreVerificationStatusType" --> "CannotComplyType" : VerificationStateReason
+"CapabilityBaseType" <|-- "StrikeCapabilityMDT"
+"StrikeCapabilityMDT" --> "StrikeCapabilityType" : Capability
+"StrikeCapabilityMDT" --> "StoreCarriageCapabilityType" : Carriage
+"StrikeCapabilityMDT" --> "StoreVerificationStatusType" : Verification
+"MessageType" <|-- "StrikeCapabilityMT"
+"StrikeCapabilityMT" --> "StrikeCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "StrikeCapabilityStatusMDT"
+"StrikeCapabilityStatusMDT" --> "StrikeCapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "StrikeCapabilityStatusMT"
+"StrikeCapabilityStatusMT" --> "StrikeCapabilityStatusMDT" : MessageData
+"CapabilityStatusType" <|-- "StrikeCapabilityStatusType"
+"StrikeCapabilityStatusType" --> "StoreStatusType" : StoreStatus
+"CommandableCapabilityDeclarationType" <|-- "StrikeCapabilityType"
+"StrikeCapabilityType" --> "StoreType" : CapabilityType
+"StrikeCapabilityType" --> "StrikeCapabilityOptionsType" : CapabilityOptions
+"StrikeCapabilityType" --> "AO_CodeType" : SupportedCode
+"StrikeCapabilityType" --> "StoreInformationType" : StoreInformation
+"StrikeCapabilityType" --> "StoreVerificationStatusType" : Verification
+"ID_Type" <|-- "SubCapabilityID_Type"
+"ID_Type" <|-- "SubsystemID_Type"
+"ID_Type" <|-- "SupportCapabilityID_Type"
+"SupportCapabilityStatusBaseType" --> "SupportCapabilityID_Type" : SupportCapabilityID
+"SupportCapabilityStatusBaseType" --> "AvailabilityInfoType" : AvailabilityInfo
+"SupportedResolutionAvailabilityType" --> "SupportedResolutionID_Type" : SupportedResolutionID
+"SupportedResolutionAvailabilityType" --> "AvailabilityInfoType" : AvailabilityInfo
+"ID_Type" <|-- "SupportedResolutionID_Type"
+"SupportedResolutionType" --> "SupportedResolutionID_Type" : SupportedResolutionID
+"CapabilityBaseType" <|-- "SystemDeploymentCapabilityMDT"
+"SystemDeploymentCapabilityMDT" --> "SystemDeploymentCapabilityType" : Capability
+"MessageType" <|-- "SystemDeploymentCapabilityMT"
+"SystemDeploymentCapabilityMT" --> "SystemDeploymentCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "SystemDeploymentCapabilityStatusMDT"
+"SystemDeploymentCapabilityStatusMDT" --> "SystemDeploymentCapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "SystemDeploymentCapabilityStatusMT"
+"SystemDeploymentCapabilityStatusMT" --> "SystemDeploymentCapabilityStatusMDT" : MessageData
+"CapabilityStatusType" <|-- "SystemDeploymentCapabilityStatusType"
+"CommandableCapabilityDeclarationType" <|-- "SystemDeploymentCapabilityType"
+"SystemDeploymentCapabilityType" --> "DeployableSystemIdentityType" : DeployableSystem
+"SystemDeploymentCapabilityType" --> "SystemDeploymentOptionsType" : CapabilityOptions
+"ID_Type" <|-- "SystemID_Type"
+"CapabilityBaseType" <|-- "TacticalOrderCapabilityMDT"
+"TacticalOrderCapabilityMDT" --> "TacticalOrderCapabilityType" : Capability
+"MessageType" <|-- "TacticalOrderCapabilityMT"
+"TacticalOrderCapabilityMT" --> "TacticalOrderCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "TacticalOrderCapabilityStatusMDT"
+"TacticalOrderCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"MessageType" <|-- "TacticalOrderCapabilityStatusMT"
+"TacticalOrderCapabilityStatusMT" --> "TacticalOrderCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "TacticalOrderCapabilityType"
+"ZoneType" <|-- "TimedZoneType"
+"TimedZoneType" --> "ScheduleType" : Schedule
+"ID_Type" <|-- "TrackOptionsID_Type"
+"ID_Type" <|-- "UMID_AudioID_Type"
+"ID_Type" <|-- "UMID_DataID_Type"
+"ID_Type" <|-- "UMID_SystemID_Type"
+"ID_Type" <|-- "UMID_VideoID_Type"
+"VehicleIdentificationType" --> "SystemID_Type" : SystemID
+"VehicleIdentificationType" --> "VehicleUniqueIdentifierType" : VehicleUniqueIdentifier
+"VehicleIdentificationType" --> "IFF_Type" : IFF
+"VehicleIdentificationType" --> "CallSignType" : CallSign
+"VehicleIdentificationType" --> "ForeignKeyType" : RadarCrossSection
+"VehicleIdentificationType" --> "DataLinkIdentifierPET" : DataLinkIdentifier
+"ID_Type" <|-- "VersionedID_Type"
+"VideoEncoderSettingsType" --> "ForeignKeyType" : EncodingType
+"VideoEncoderSettingsType" --> "UnsignedIntegerMinMaxType" : QuantMinMax
+"VideoEncoderSettingsType" --> "CropType" : Crop
+"VideoOutputSettingsType" --> "VideoEncoderOutputType" : Output
+"VideoOutputSettingsType" --> "VideoEncoderSettingsType" : EncoderSettings
+"CapabilityBaseType" <|-- "WeatherRadarCapabilityMDT"
+"WeatherRadarCapabilityMDT" --> "WeatherRadarCapabilityType" : Capability
+"MessageType" <|-- "WeatherRadarCapabilityMT"
+"WeatherRadarCapabilityMT" --> "WeatherRadarCapabilityMDT" : MessageData
+"CapabilityStatusBaseType" <|-- "WeatherRadarCapabilityStatusMDT"
+"WeatherRadarCapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"WeatherRadarCapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"WeatherRadarCapabilityStatusMDT" --> "ElectronicProtectionOptionsEnabledType" : ElectronicProtectionOptionsEnabled
+"MessageType" <|-- "WeatherRadarCapabilityStatusMT"
+"WeatherRadarCapabilityStatusMT" --> "WeatherRadarCapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "WeatherRadarCapabilityType"
+"WeatherRadarCapabilityType" --> "WeatherRadarOptionsType" : CapabilityOptions
+"WeatherRadarCapabilityType" --> "FrequencyRangeType" : Band
+"WeatherRadarOptionsType" --> "ElectronicProtectionOptionsSupportedType" : ElectronicProtectionOptionsSupported
+"ZoneType" --> "AreaChoiceType" : Shape
+@enduml

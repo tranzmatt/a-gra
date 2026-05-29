@@ -1,0 +1,703 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Family: SMTI_*
+
+class "SMTI_Activity" <<element>> {
+  +type: SMTI_ActivityMT
+}
+class "SMTI_Capability" <<element>> {
+  +type: SMTI_CapabilityMT
+}
+class "SMTI_CapabilityStatus" <<element>> {
+  +type: SMTI_CapabilityStatusMT
+}
+class "SMTI_Command" <<element>> {
+  +type: SMTI_CommandMT
+}
+class "SMTI_CommandStatus" <<element>> {
+  +type: SMTI_CommandStatusMT
+}
+class "SMTI_SettingsCommand" <<element>> {
+  +type: SMTI_SettingsCommandMT
+}
+class "SMTI_SettingsCommandStatus" <<element>> {
+  +type: SMTI_SettingsCommandStatusMT
+}
+
+class "ActivityBaseType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +CapabilityID: CapabilityID_Type
+  +Interactive: boolean
+  +ActivityState: ActivityStateEnum
+  +Basis: ActivityBasisEnum
+  +ActivityRank: ComparableRankingType
+  +ActivityReason: CannotComplyType
+  +Source: ActivitySourceType
+  +EstimatedStartTime: DateTimeType
+  +EstimatedCompletionTime: DateTimeType
+  +EstimatedPercentComplete: PercentType
+}
+class "ActivityID_Type" <<complexType>> {
+  --
+}
+class "ActivitySourceType" <<complexType>> {
+  --
+}
+class "AntennaResourceChoiceType" <<complexType>> {
+  --
+}
+class "AreaChoiceType" <<complexType>> {
+  --
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AvailabilityInfoType" <<complexType>> {
+  +Availability: CapabilityAvailabilityEnum
+  +AvailabilityReason: CannotComplyType
+  +NextAvailableWindow: DateTimeType
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityBaseType" <<complexType>> {
+  +AvailableMDF: MDF_Type
+}
+class "CapabilityCommandStatusBaseType" <<complexType>> {
+  +Activity: ResultingActivityType
+}
+class "CapabilityDeclarationBaseType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +DomainPairing: EnvironmentPairingEnum
+  +ProductOutput: ProductOutputType
+  +PackageOperation: PackageOperationEnum
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CapabilityPrecedenceType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityPrecedence: unsignedInt
+}
+class "CapabilitySettingsCommandBaseType" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +ActivateMDF: MDF_CommandType
+  +CapabilityPrecedence: CapabilityPrecedenceType
+  +CapabilityState: CapabilityStateType
+  +RepresentationKey: ForeignKeyType
+}
+class "CapabilitySettingsCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "CapabilityStateType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +CapabilityCommandState: CapabilityCommandStateEnum
+}
+class "CapabilityStatusBaseType" <<complexType>> {
+  +MDF_Status: MDF_StatusType
+}
+class "CapabilityStatusType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +AvailabilityInfo: AvailabilityInfoType
+  +CapabilityPrecedence: unsignedInt
+  +RepresentationKey: ForeignKeyType
+}
+class "CommandBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandState: CommandStateEnum
+}
+class "CommandID_Type" <<complexType>> {
+  --
+}
+class "CommandStatusBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+}
+class "CommandableCapabilityDeclarationType" <<complexType>> {
+  +AcceptedInterface: CapabilityControlInterfacesEnum
+  +CommsRequired: boolean
+}
+class "ComparableRankingType" <<complexType>> {
+  +Priority: unsignedShort
+  +PrecedenceWithinPriority: unsignedShort
+}
+class "ComponentFieldOfRegardType" <<complexType>> {
+  +ComponentID: ComponentID_Type
+  +FieldOfRegard: FieldOfRegardType
+}
+class "ComponentID_Type" <<complexType>> {
+  --
+}
+class "ConcurrentCollectionDetailsType" <<complexType>> {
+  +ConcurrentActivityID: ActivityID_Type
+  +TimeOfConcurrentCollections: TimeWindowType
+}
+class "DateTimeRangeType" <<complexType>> {
+  +Begin: DateTimeType
+  +End: DateTimeType
+}
+class "DependentActivityType" <<complexType>> {
+  +TypeOfDependency: TypeOfDependencyEnum
+  +DependentActivityID: ActivityID_Type
+}
+class "ElectronicProtectionOptionsDefaultType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +ElectronicProtectionOptions: ElectronicProtectionOptionsEnableType
+}
+class "ElectronicProtectionOptionsEnableType" <<complexType>> {
+  +ElectronicProtectionOptionsKey: ForeignKeyType
+  +ElectronicProtectionOptionStatus: EP_CommandedStateEnum
+}
+class "ElectronicProtectionOptionsEnabledType" <<complexType>> {
+  +ElectronicProtectionOptionsKey: ForeignKeyType
+  +ElectronicProtectionOptionStatus: EP_StatusEnum
+}
+class "ElectronicProtectionOptionsSupportedType" <<complexType>> {
+  +ElectronicProtectionOptionState: EP_StateEnum
+  +Reference: ForeignKeyType
+}
+class "EmconSettingType" <<complexType>> {
+  --
+}
+class "EstimatedPerformanceType" <<complexType>> {
+  +TargetEnvironmentType: EnvironmentEnum
+  +TargetClass: MTI_TargetClassType
+  +EstimatedProbabilityOfDetection: PercentType
+  +EstimatedMDV: SpeedType
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "FieldOfRegardType" <<complexType>> {
+  +Field: SensorFieldOfRegardType
+  +NearRange: SlantRangeConstraintsType
+  +FarRange: SlantRangeConstraintsType
+  +Mnemonic: VisibleString256Type
+  +TypeOfFOR: FieldOfRegardTypeEnum
+}
+class "FileFormatType" <<complexType>> {
+  --
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "FrequencyRangeType" <<complexType>> {
+  +Min: FrequencyType
+  +Max: FrequencyType
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "MDF_CommandSubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +FileID: MDF_SubCategoryFileID_Type
+}
+class "MDF_CommandType" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +SubCategory: MDF_CommandSubCategoryType
+}
+class "MDF_FileType" <<complexType>> {
+  +FileID: MDF_SubCategoryFileID_Type
+  +FileStatus: MDF_StatusEnum
+}
+class "MDF_ID_Type" <<complexType>> {
+  --
+}
+class "MDF_StatusType" <<complexType>> {
+  +CurrentMDF: MDF_CommandType
+  +CommandedMDF: MDF_CommandType
+  +FailedMDF: MDF_CommandType
+}
+class "MDF_SubCategoryFileID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryID_Type" <<complexType>> {
+  --
+}
+class "MDF_SubCategoryType" <<complexType>> {
+  +SubCategoryID: MDF_SubCategoryID_Type
+  +SubCategoryStatus: MDF_StatusEnum
+  +File: MDF_FileType
+}
+class "MDF_Type" <<complexType>> {
+  +MDF_ID: MDF_ID_Type
+  +MDF_Status: MDF_StatusEnum
+  +SubCategory: MDF_SubCategoryType
+}
+class "MTI_ActivityStatusBaseType" <<complexType>> {
+  +NumberOfTimesSearched: unsignedInt
+  +TimeLastSearched: DateTimeType
+  +Attempts: unsignedInt
+  +ActualRevisitPeriod: DurationType
+  +PercentageInFOR: PercentType
+  +ActualStartTime: DateTimeType
+  +ActualStopTime: DateTimeType
+  +PercentSearched: PercentType
+  +EntitiesReported: unsignedInt
+  +CueAcquired: boolean
+  +ConcurrentActivity: ConcurrentCollectionDetailsType
+  +PercentOccluded: PercentType
+  +PercentRadarTimeline: PercentType
+  +PercentageInFOV: PercentType
+  +RelativeDirectionOfTarget: RelativeDirectionEnum
+}
+class "MTI_ActivityStatusDetailType" <<complexType>> {
+  +EstimatedERP: DecibelType
+  +ProductsProduced: unsignedInt
+  +HitsReported: unsignedInt
+  +EstimatedPerformance: EstimatedPerformanceType
+  +TargetAreaScanned: AreaChoiceType
+  +TimeToService: DurationType
+  +AverageTimeToService: DurationType
+}
+class "MTI_PredictedActivityDetailType" <<complexType>> {
+  +ActivityState: ActivityStateEnum
+  +ActivityReason: CannotComplyType
+  +EstimatedPercentageOccluded: PercentType
+  +RevisitIndex: unsignedInt
+  +EstimatedRevisitPeriod: DurationType
+  +EstimatedPercentageInFOR: PercentType
+  +EstimatedStartTime: DateTimeType
+  +EstimatedStopTime: DateTimeType
+  +EstimatedERP: DecibelType
+  +EstimatedPerformance: EstimatedPerformanceType
+  +ConcurrentExecutionAssumed: boolean
+  +EstimatedSweepTime: DurationType
+  +EstimatedTargetAreaScanned: AreaChoiceType
+}
+class "MTI_TargetClassType" <<complexType>> {
+  --
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MetricValueType" <<complexType>> {
+  +MetricIdentifier: ForeignKeyType
+  +DescriptionOfMetric: VisibleString256Type
+  +NegotiableOptions: NegotiableOptionsEnum
+  +Weight: UnitIntervalFloatType
+  +Value: float
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "MultistaticEmitterDataID_Type" <<complexType>> {
+  --
+}
+class "MultistaticModeOptionsEmployedType" <<complexType>> {
+  +MultistaticModeStatus: MultistaticModeStatusEnum
+  +MultistaticEmitterDataID: MultistaticEmitterDataID_Type
+}
+class "MultistaticOptionsSupportedType" <<complexType>> {
+  +MultistaticEmitterDataRequired: boolean
+  +MultistaticOnly: EmptyType
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PerformanceMetricSetType" <<complexType>> {
+  +PerformanceConstraintIndex: unsignedInt
+  +Merit: int
+  +NegotiableOptions: NegotiableOptionsEnum
+  +PerformanceMetricSet: MetricValueType
+}
+class "PeriodPerformanceFeedbackType" <<complexType>> {
+  +AccessPeriodIndex: unsignedInt
+  +PercentAccessAllocated: PercentType
+  +PercentAccessRequested: PercentType
+  +PercentAccessAchieved: PercentType
+  +UnusableGrantedTime: PercentType
+  +PercentInterruption: PercentType
+  +LongestUninterruptedTime: DurationType
+}
+class "Point3D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+}
+class "ProductOutputType" <<complexType>> {
+  +ProductType: ProductTypeEnum
+  +ProcessingType: ProcessingTypeEnum
+  +ProductFormat: FileFormatType
+}
+class "RF_ProfileID_Type" <<complexType>> {
+  --
+}
+class "RF_ProfileType" <<complexType>> {
+  +RF_ProfileID: RF_ProfileID_Type
+  +TimedZone: TimedZoneType
+  +Expires: DateTimeType
+}
+class "RadarPointingTargetType" <<complexType>> {
+  --
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RepetitionType" <<complexType>> {
+  --
+}
+class "ResourceStatusSelectedType" <<complexType>> {
+  +SystemThreadIndex: unsignedInt
+  +SelectedAntenna: SelectAntennaType
+  +RF_Mode: RF_TypeEnum
+  +ResourceAccessPriority: unsignedInt
+  +PeriodPerformanceFeedback: PeriodPerformanceFeedbackType
+}
+class "ResultingActivityType" <<complexType>> {
+  +ActivityID: ActivityID_Type
+  +NewActivity: boolean
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "SMTI_ActivityMDT" <<complexType>> {
+  +SubsystemID: SubsystemID_Type
+  +Activity: SMTI_ActivityType
+}
+class "SMTI_ActivityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: SMTI_ActivityMDT
+}
+class "SMTI_ActivityType" <<complexType>> {
+  +SubCapability: SMTI_SubCapabilityEnum
+  +RadarPointingTarget: RadarPointingTargetType
+  +Metrics: MTI_ActivityStatusDetailType
+  +Repetition: RepetitionType
+  +PolicyApplied: boolean
+  +AllProductsAndMessagesProduced: boolean
+  +PredictedCollections: SMTI_PredictedCollectionsType
+  +ElectronicProtectionOptionsEmployed: ForeignKeyType
+  +MultistaticModeOptionsEmployed: MultistaticModeOptionsEmployedType
+}
+class "SMTI_CapabilityMDT" <<complexType>> {
+  +Capability: SMTI_CapabilityType
+}
+class "SMTI_CapabilityMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: SMTI_CapabilityMDT
+}
+class "SMTI_CapabilityOptionsType" <<complexType>> {
+  +InterruptOtherActivities: boolean
+  +CollectionPolicy: boolean
+  +HRR_Supported: boolean
+  +FTI_Supported: boolean
+  +TrackingSupported: boolean
+  +PackingPlan: boolean
+  +ConcurrentOperationSupported: boolean
+  +MultistaticOptionsSupported: MultistaticOptionsSupportedType
+  +COARPS_SMTI_CollectionOption: COARPS_SMTI_CollectionOptionsEnum
+  +FalseAlarmLevelUpperLimit: unsignedByte
+  +ElectronicProtectionOptionsSupported: ElectronicProtectionOptionsSupportedType
+}
+class "SMTI_CapabilityStatusMDT" <<complexType>> {
+  +CapabilityStatus: CapabilityStatusType
+  +RF_Profile: RF_ProfileType
+  +EmissionBalanceState: EmissionBalanceEnum
+  +MessageOutput: SMTI_MessageOutputsEnum
+  +DefaultPackingPlan: STANAG_4607_PackingPlanPET
+  +ElectronicProtectionOptionsEnabled: ElectronicProtectionOptionsEnabledType
+}
+class "SMTI_CapabilityStatusMT" <<complexType>> {
+  +MessageData: SMTI_CapabilityStatusMDT
+}
+class "SMTI_CapabilityType" <<complexType>> {
+  +CapabilityType: SMTI_CapabilityEnum
+  +SubCapabilityType: SMTI_SubCapabilityEnum
+  +CapabilityOptions: SMTI_CapabilityOptionsType
+  +Band: FrequencyRangeType
+  +MT_IIRS_Level: NIIRS_Type
+  +MessageOutput: SMTI_MessageOutputsEnum
+  +ComponentFieldOfRegard: ComponentFieldOfRegardType
+}
+class "SMTI_CommandMDT" <<complexType>> {
+  +Command: SMTI_CommandType
+}
+class "SMTI_CommandMT" <<complexType>> {
+  +MessageData: SMTI_CommandMDT
+}
+class "SMTI_CommandStatusMDT" <<complexType>> {
+  --
+}
+class "SMTI_CommandStatusMT" <<complexType>> {
+  +MessageData: SMTI_CommandStatusMDT
+}
+class "SMTI_CommandType" <<complexType>> {
+  --
+}
+class "SMTI_PredictedCollectionsType" <<complexType>> {
+  +OwnshipLocation: Point3D_Type
+  +PredictedCollectionMetrics: MTI_PredictedActivityDetailType
+}
+class "SMTI_SettingsCommandMDT" <<complexType>> {
+  +EmissionBalanceState: EmissionBalanceEnum
+  +MessageOutput: SMTI_MessageOutputsEnum
+  +DefaultPackingPlan: STANAG_4607_PackingPlanPET
+  +UnassignAll: boolean
+  +DefaultEmcon: EmconSettingType
+  +DefaultElectronicProtectionOptions: ElectronicProtectionOptionsDefaultType
+}
+class "SMTI_SettingsCommandMT" <<complexType>> {
+  +MessageData: SMTI_SettingsCommandMDT
+}
+class "SMTI_SettingsCommandStatusMDT" <<complexType>> {
+  --
+}
+class "SMTI_SettingsCommandStatusMT" <<complexType>> {
+  +MessageData: SMTI_SettingsCommandStatusMDT
+}
+class "STANAG_4607_PackingPlanPET" <<complexType>> {
+  --
+}
+class "ScheduleType" <<complexType>> {
+  --
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "SelectAntennaType" <<complexType>> {
+  +SupportCapabilityID: SupportCapabilityID_Type
+  +AntennaResourceChoice: AntennaResourceChoiceType
+}
+class "SensorFieldOfRegardType" <<complexType>> {
+  --
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "SharedRF_ApertureActivityBaseType" <<complexType>> {
+  +DependentActivity: DependentActivityType
+  +SharedApertureResourceStatus: ResourceStatusSelectedType
+  +ActivityPerformanceFeedback: PerformanceMetricSetType
+}
+class "SlantRangeConstraintsType" <<complexType>> {
+  +Min: DistanceType
+  +Max: DistanceType
+  +Absolute: boolean
+}
+class "SubsystemID_Type" <<complexType>> {
+  --
+}
+class "SupportCapabilityID_Type" <<complexType>> {
+  --
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TimeWindowType" <<complexType>> {
+  +Range: DateTimeRangeType
+  +Duration: DurationType
+}
+class "TimedZoneType" <<complexType>> {
+  +Schedule: ScheduleType
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+class "ZoneType" <<complexType>> {
+  +Shape: AreaChoiceType
+  +MinAltitude: AltitudeType
+  +MaxAltitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+}
+
+"SMTI_Activity" --> "SMTI_ActivityMT" : payload
+"SMTI_Capability" --> "SMTI_CapabilityMT" : payload
+"SMTI_CapabilityStatus" --> "SMTI_CapabilityStatusMT" : payload
+"SMTI_Command" --> "SMTI_CommandMT" : payload
+"SMTI_CommandStatus" --> "SMTI_CommandStatusMT" : payload
+"SMTI_SettingsCommand" --> "SMTI_SettingsCommandMT" : payload
+"SMTI_SettingsCommandStatus" --> "SMTI_SettingsCommandStatusMT" : payload
+"ActivityBaseType" --> "ActivityID_Type" : ActivityID
+"ActivityBaseType" --> "CapabilityID_Type" : CapabilityID
+"ActivityBaseType" --> "ComparableRankingType" : ActivityRank
+"ActivityBaseType" --> "CannotComplyType" : ActivityReason
+"ActivityBaseType" --> "ActivitySourceType" : Source
+"ID_Type" <|-- "ActivityID_Type"
+"AvailabilityInfoType" --> "CannotComplyType" : AvailabilityReason
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"CapabilityBaseType" --> "MDF_Type" : AvailableMDF
+"CommandStatusBaseType" <|-- "CapabilityCommandStatusBaseType"
+"CapabilityCommandStatusBaseType" --> "ResultingActivityType" : Activity
+"CapabilityDeclarationBaseType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityDeclarationBaseType" --> "ProductOutputType" : ProductOutput
+"ID_Type" <|-- "CapabilityID_Type"
+"CapabilityPrecedenceType" --> "CapabilityID_Type" : CapabilityID
+"CommandBaseType" <|-- "CapabilitySettingsCommandBaseType"
+"CapabilitySettingsCommandBaseType" --> "SubsystemID_Type" : SubsystemID
+"CapabilitySettingsCommandBaseType" --> "MDF_CommandType" : ActivateMDF
+"CapabilitySettingsCommandBaseType" --> "CapabilityPrecedenceType" : CapabilityPrecedence
+"CapabilitySettingsCommandBaseType" --> "CapabilityStateType" : CapabilityState
+"CapabilitySettingsCommandBaseType" --> "ForeignKeyType" : RepresentationKey
+"CommandStatusBaseType" <|-- "CapabilitySettingsCommandStatusBaseType"
+"CapabilityStateType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusBaseType" --> "MDF_StatusType" : MDF_Status
+"CapabilityStatusType" --> "CapabilityID_Type" : CapabilityID
+"CapabilityStatusType" --> "AvailabilityInfoType" : AvailabilityInfo
+"CapabilityStatusType" --> "ForeignKeyType" : RepresentationKey
+"CommandBaseType" --> "CommandID_Type" : CommandID
+"ID_Type" <|-- "CommandID_Type"
+"CommandStatusBaseType" --> "CommandID_Type" : CommandID
+"CommandStatusBaseType" --> "CannotComplyType" : CommandProcessingStateReason
+"CapabilityDeclarationBaseType" <|-- "CommandableCapabilityDeclarationType"
+"ComponentFieldOfRegardType" --> "ComponentID_Type" : ComponentID
+"ComponentFieldOfRegardType" --> "FieldOfRegardType" : FieldOfRegard
+"ID_Type" <|-- "ComponentID_Type"
+"ConcurrentCollectionDetailsType" --> "ActivityID_Type" : ConcurrentActivityID
+"ConcurrentCollectionDetailsType" --> "TimeWindowType" : TimeOfConcurrentCollections
+"DependentActivityType" --> "ActivityID_Type" : DependentActivityID
+"ElectronicProtectionOptionsDefaultType" --> "CapabilityID_Type" : CapabilityID
+"ElectronicProtectionOptionsDefaultType" --> "ElectronicProtectionOptionsEnableType" : ElectronicProtectionOptions
+"ElectronicProtectionOptionsEnableType" --> "ForeignKeyType" : ElectronicProtectionOptionsKey
+"ElectronicProtectionOptionsEnabledType" --> "ForeignKeyType" : ElectronicProtectionOptionsKey
+"ElectronicProtectionOptionsSupportedType" --> "ForeignKeyType" : Reference
+"EstimatedPerformanceType" --> "MTI_TargetClassType" : TargetClass
+"FieldOfRegardType" --> "SensorFieldOfRegardType" : Field
+"FieldOfRegardType" --> "SlantRangeConstraintsType" : NearRange
+"FieldOfRegardType" --> "SlantRangeConstraintsType" : FarRange
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_CommandSubCategoryType" --> "MDF_SubCategoryFileID_Type" : FileID
+"MDF_CommandType" --> "MDF_ID_Type" : MDF_ID
+"MDF_CommandType" --> "MDF_CommandSubCategoryType" : SubCategory
+"MDF_FileType" --> "MDF_SubCategoryFileID_Type" : FileID
+"ID_Type" <|-- "MDF_ID_Type"
+"MDF_StatusType" --> "MDF_CommandType" : CurrentMDF
+"MDF_StatusType" --> "MDF_CommandType" : CommandedMDF
+"MDF_StatusType" --> "MDF_CommandType" : FailedMDF
+"ID_Type" <|-- "MDF_SubCategoryFileID_Type"
+"ID_Type" <|-- "MDF_SubCategoryID_Type"
+"MDF_SubCategoryType" --> "MDF_SubCategoryID_Type" : SubCategoryID
+"MDF_SubCategoryType" --> "MDF_FileType" : File
+"MDF_Type" --> "MDF_ID_Type" : MDF_ID
+"MDF_Type" --> "MDF_SubCategoryType" : SubCategory
+"MTI_ActivityStatusBaseType" --> "ConcurrentCollectionDetailsType" : ConcurrentActivity
+"MTI_ActivityStatusBaseType" <|-- "MTI_ActivityStatusDetailType"
+"MTI_ActivityStatusDetailType" --> "EstimatedPerformanceType" : EstimatedPerformance
+"MTI_ActivityStatusDetailType" --> "AreaChoiceType" : TargetAreaScanned
+"MTI_PredictedActivityDetailType" --> "CannotComplyType" : ActivityReason
+"MTI_PredictedActivityDetailType" --> "EstimatedPerformanceType" : EstimatedPerformance
+"MTI_PredictedActivityDetailType" --> "AreaChoiceType" : EstimatedTargetAreaScanned
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"MetricValueType" --> "ForeignKeyType" : MetricIdentifier
+"VersionedID_Type" <|-- "MissionID_Type"
+"ID_Type" <|-- "MultistaticEmitterDataID_Type"
+"MultistaticModeOptionsEmployedType" --> "MultistaticEmitterDataID_Type" : MultistaticEmitterDataID
+"PerformanceMetricSetType" --> "MetricValueType" : PerformanceMetricSet
+"ProductOutputType" --> "FileFormatType" : ProductFormat
+"ID_Type" <|-- "RF_ProfileID_Type"
+"RF_ProfileType" --> "RF_ProfileID_Type" : RF_ProfileID
+"RF_ProfileType" --> "TimedZoneType" : TimedZone
+"ResourceStatusSelectedType" --> "SelectAntennaType" : SelectedAntenna
+"ResourceStatusSelectedType" --> "PeriodPerformanceFeedbackType" : PeriodPerformanceFeedback
+"ResultingActivityType" --> "ActivityID_Type" : ActivityID
+"SMTI_ActivityMDT" --> "SubsystemID_Type" : SubsystemID
+"SMTI_ActivityMDT" --> "SMTI_ActivityType" : Activity
+"MessageType" <|-- "SMTI_ActivityMT"
+"SMTI_ActivityMT" --> "SMTI_ActivityMDT" : MessageData
+"SharedRF_ApertureActivityBaseType" <|-- "SMTI_ActivityType"
+"SMTI_ActivityType" --> "RadarPointingTargetType" : RadarPointingTarget
+"SMTI_ActivityType" --> "MTI_ActivityStatusDetailType" : Metrics
+"SMTI_ActivityType" --> "RepetitionType" : Repetition
+"SMTI_ActivityType" --> "SMTI_PredictedCollectionsType" : PredictedCollections
+"SMTI_ActivityType" --> "ForeignKeyType" : ElectronicProtectionOptionsEmployed
+"SMTI_ActivityType" --> "MultistaticModeOptionsEmployedType" : MultistaticModeOptionsEmployed
+"CapabilityBaseType" <|-- "SMTI_CapabilityMDT"
+"SMTI_CapabilityMDT" --> "SMTI_CapabilityType" : Capability
+"MessageType" <|-- "SMTI_CapabilityMT"
+"SMTI_CapabilityMT" --> "SMTI_CapabilityMDT" : MessageData
+"SMTI_CapabilityOptionsType" --> "MultistaticOptionsSupportedType" : MultistaticOptionsSupported
+"SMTI_CapabilityOptionsType" --> "ElectronicProtectionOptionsSupportedType" : ElectronicProtectionOptionsSupported
+"CapabilityStatusBaseType" <|-- "SMTI_CapabilityStatusMDT"
+"SMTI_CapabilityStatusMDT" --> "CapabilityStatusType" : CapabilityStatus
+"SMTI_CapabilityStatusMDT" --> "RF_ProfileType" : RF_Profile
+"SMTI_CapabilityStatusMDT" --> "STANAG_4607_PackingPlanPET" : DefaultPackingPlan
+"SMTI_CapabilityStatusMDT" --> "ElectronicProtectionOptionsEnabledType" : ElectronicProtectionOptionsEnabled
+"MessageType" <|-- "SMTI_CapabilityStatusMT"
+"SMTI_CapabilityStatusMT" --> "SMTI_CapabilityStatusMDT" : MessageData
+"CommandableCapabilityDeclarationType" <|-- "SMTI_CapabilityType"
+"SMTI_CapabilityType" --> "SMTI_CapabilityOptionsType" : CapabilityOptions
+"SMTI_CapabilityType" --> "FrequencyRangeType" : Band
+"SMTI_CapabilityType" --> "ComponentFieldOfRegardType" : ComponentFieldOfRegard
+"SMTI_CommandMDT" --> "SMTI_CommandType" : Command
+"MessageType" <|-- "SMTI_CommandMT"
+"SMTI_CommandMT" --> "SMTI_CommandMDT" : MessageData
+"CapabilityCommandStatusBaseType" <|-- "SMTI_CommandStatusMDT"
+"MessageType" <|-- "SMTI_CommandStatusMT"
+"SMTI_CommandStatusMT" --> "SMTI_CommandStatusMDT" : MessageData
+"SMTI_PredictedCollectionsType" --> "Point3D_Type" : OwnshipLocation
+"SMTI_PredictedCollectionsType" --> "MTI_PredictedActivityDetailType" : PredictedCollectionMetrics
+"CapabilitySettingsCommandBaseType" <|-- "SMTI_SettingsCommandMDT"
+"SMTI_SettingsCommandMDT" --> "STANAG_4607_PackingPlanPET" : DefaultPackingPlan
+"SMTI_SettingsCommandMDT" --> "EmconSettingType" : DefaultEmcon
+"SMTI_SettingsCommandMDT" --> "ElectronicProtectionOptionsDefaultType" : DefaultElectronicProtectionOptions
+"MessageType" <|-- "SMTI_SettingsCommandMT"
+"SMTI_SettingsCommandMT" --> "SMTI_SettingsCommandMDT" : MessageData
+"CapabilitySettingsCommandStatusBaseType" <|-- "SMTI_SettingsCommandStatusMDT"
+"MessageType" <|-- "SMTI_SettingsCommandStatusMT"
+"SMTI_SettingsCommandStatusMT" --> "SMTI_SettingsCommandStatusMDT" : MessageData
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"SelectAntennaType" --> "SupportCapabilityID_Type" : SupportCapabilityID
+"SelectAntennaType" --> "AntennaResourceChoiceType" : AntennaResourceChoice
+"ID_Type" <|-- "ServiceID_Type"
+"ActivityBaseType" <|-- "SharedRF_ApertureActivityBaseType"
+"SharedRF_ApertureActivityBaseType" --> "DependentActivityType" : DependentActivity
+"SharedRF_ApertureActivityBaseType" --> "ResourceStatusSelectedType" : SharedApertureResourceStatus
+"SharedRF_ApertureActivityBaseType" --> "PerformanceMetricSetType" : ActivityPerformanceFeedback
+"ID_Type" <|-- "SubsystemID_Type"
+"ID_Type" <|-- "SupportCapabilityID_Type"
+"ID_Type" <|-- "SystemID_Type"
+"TimeWindowType" --> "DateTimeRangeType" : Range
+"ZoneType" <|-- "TimedZoneType"
+"TimedZoneType" --> "ScheduleType" : Schedule
+"ID_Type" <|-- "VersionedID_Type"
+"ZoneType" --> "AreaChoiceType" : Shape
+@enduml

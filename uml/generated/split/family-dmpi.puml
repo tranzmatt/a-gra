@@ -1,0 +1,413 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Family: DMPI_*
+
+class "DMPI_CancelCommand" <<element>> {
+  +type: DMPI_CancelCommandMT
+}
+class "DMPI_CancelCommandStatus" <<element>> {
+  +type: DMPI_CancelCommandStatusMT
+}
+class "DMPI_Designation" <<element>> {
+  +type: DMPI_DesignationMT
+}
+class "DMPI_DesignationRequest" <<element>> {
+  +type: DMPI_DesignationRequestMT
+}
+class "DMPI_DesignationRequestStatus" <<element>> {
+  +type: DMPI_DesignationRequestStatusMT
+}
+class "DMPI_Pattern" <<element>> {
+  +type: DMPI_PatternMT
+}
+class "DMPI_Status" <<element>> {
+  +type: DMPI_StatusMT
+}
+
+class "ActivityPlanReferenceType" <<complexType>> {
+  +ActivityPlanID: ActivityPlansID_ChoiceType
+  +MissionPlanID: MissionPlanID_Type
+  +PlannedActivityID: PlannedActivityID_Type
+}
+class "ActivityPlansID_ChoiceType" <<complexType>> {
+  --
+}
+class "AltitudeRangeType" <<complexType>> {
+  +Min: AltitudeType
+  +Max: AltitudeType
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AvailableWeaponsType" <<complexType>> {
+  +Quantity: unsignedInt
+  +Weapon: StoreType
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CommandBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandState: CommandStateEnum
+}
+class "CommandID_Type" <<complexType>> {
+  --
+}
+class "CommandStatusBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+}
+class "ComparableRankingType" <<complexType>> {
+  +Priority: unsignedShort
+  +PrecedenceWithinPriority: unsignedShort
+}
+class "DMPI_CancelCommandMDT" <<complexType>> {
+  +DMPI_ID: DMPI_ID_Type
+}
+class "DMPI_CancelCommandMT" <<complexType>> {
+  +MessageData: DMPI_CancelCommandMDT
+}
+class "DMPI_CancelCommandStatusMDT" <<complexType>> {
+  +StateReason: CannotComplyType
+  +SourceID: SourceID_ChoiceType
+}
+class "DMPI_CancelCommandStatusMT" <<complexType>> {
+  +MessageData: DMPI_CancelCommandStatusMDT
+}
+class "DMPI_DesignationID_Type" <<complexType>> {
+  --
+}
+class "DMPI_DesignationMDT" <<complexType>> {
+  +DMPI_DesignationID: DMPI_DesignationID_Type
+  +TaskID: TaskID_Type
+  +Remarks: VisibleString1024Type
+  +DMPI_Details: DMPI_DesignationParametersType
+  +DMPI_PatternID: DMPI_PatternID_Type
+}
+class "DMPI_DesignationMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: DMPI_DesignationMDT
+}
+class "DMPI_DesignationParametersType" <<complexType>> {
+  +DMPI_ID: DMPI_ID_Type
+  +StrikeState: StrikeStateEnum
+  +AlternateDMPI_ID: DMPI_ID_Type
+  +DMPI_Ranking: ComparableRankingType
+}
+class "DMPI_DesignationRequestMDT" <<complexType>> {
+  +TaskID: TaskID_Type
+  +ProductMetadataID: ProductMetadataID_Type
+  +RecommendedWeapons: RecommendedWeaponsType
+  +AvailableWeapons: AvailableWeaponsType
+  +RespondBy: DateTimeType
+  +ProposedDMPI_Coordinates: Point2D_Type
+  +ReferencePixelCoordinate: PixelReferenceCoordinateType
+}
+class "DMPI_DesignationRequestMT" <<complexType>> {
+  +MessageData: DMPI_DesignationRequestMDT
+}
+class "DMPI_DesignationRequestStatusMDT" <<complexType>> {
+  +DMPI_DesignationID: DMPI_DesignationID_Type
+}
+class "DMPI_DesignationRequestStatusMT" <<complexType>> {
+  +MessageData: DMPI_DesignationRequestStatusMDT
+}
+class "DMPI_ID_Type" <<complexType>> {
+  --
+}
+class "DMPI_PatternChoiceType" <<complexType>> {
+  --
+}
+class "DMPI_PatternID_Type" <<complexType>> {
+  --
+}
+class "DMPI_PatternMDT" <<complexType>> {
+  +DMPI_PatternID: DMPI_PatternID_Type
+  +Pattern: DMPI_PatternChoiceType
+}
+class "DMPI_PatternMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: DMPI_PatternMDT
+}
+class "DMPI_StatusMDT" <<complexType>> {
+  +DMPI_ID: DMPI_ID_Type
+  +DMPI_State: DMPI_StateEnum
+  +DMPI_StrikeState: StrikeStateEnum
+  +SystemID: SystemID_Type
+  +AssociatedRoutePlan: RoutePlanReferencesType
+  +AssociatedActivityPlan: ActivityPlanReferenceType
+  +StoreStatus: DMPI_StoreStatusType
+  +TaskID: TaskID_Type
+}
+class "DMPI_StatusMT" <<complexType>> {
+  +MessageData: DMPI_StatusMDT
+}
+class "DMPI_StoreStatusType" <<complexType>> {
+  +StoreState: DMPI_StoreStateEnum
+  +CapabilityID: CapabilityID_Type
+  +Reason: VisibleString1024Type
+  +TimeOfImpact: DateTimeType
+}
+class "DataRecordBaseType" <<complexType>> {
+  +DataRecordInstanceID: DataRecordInstanceID_Type
+}
+class "DataRecordInstanceID_Type" <<complexType>> {
+  --
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "MissionPlanID_Type" <<complexType>> {
+  --
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PathConstraintsType" <<complexType>> {
+  --
+}
+class "PathID_Type" <<complexType>> {
+  --
+}
+class "PixelDataType" <<complexType>> {
+  +PixelColumn: unsignedInt
+  +PixelRow: unsignedInt
+}
+class "PixelReferenceCoordinateType" <<complexType>> {
+  +PixelCoordinate: PixelDataType
+  +File: FileNameType
+  +ProductID: ProductMetadataID_Type
+  +Reference: ForeignKeyType
+}
+class "PlannedActivityID_Type" <<complexType>> {
+  --
+}
+class "Point2D_Type" <<complexType>> {
+  +Latitude: AngleHalfType
+  +Longitude: AngleType
+  +Altitude: AltitudeType
+  +AltitudeRange: AltitudeRangeType
+  +AltitudeReference: AltitudeReferenceEnum
+  +Timestamp: DateTimeType
+}
+class "ProductMetadataID_Type" <<complexType>> {
+  --
+}
+class "RecommendedWeaponsType" <<complexType>> {
+  +Quantity: unsignedInt
+  +Weapon: StoreType
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RequestBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestState: RequestStateEnum
+}
+class "RequestID_Type" <<complexType>> {
+  --
+}
+class "RequestStatusBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestProcessingState: RequestProcessingStateEnum
+  +RequestProcessingStateReason: CannotComplyType
+}
+class "RoutePlanID_Type" <<complexType>> {
+  --
+}
+class "RoutePlanReferencesType" <<complexType>> {
+  +RoutePlanID: RoutePlanID_Type
+  +MissionPlanID: MissionPlanID_Type
+  +PathID: PathID_Type
+  +SegmentID: SegmentID_Type
+  +Constraints: PathConstraintsType
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "SegmentID_Type" <<complexType>> {
+  --
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "SourceID_ChoiceType" <<complexType>> {
+  --
+}
+class "StoreType" <<complexType>> {
+  +StoreType: unsignedInt
+  +StoreCategory: StoreCategoryEnum
+  +StoreTypeVariant: ForeignKeyType
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TaskID_Type" <<complexType>> {
+  --
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+
+"DMPI_CancelCommand" --> "DMPI_CancelCommandMT" : payload
+"DMPI_CancelCommandStatus" --> "DMPI_CancelCommandStatusMT" : payload
+"DMPI_Designation" --> "DMPI_DesignationMT" : payload
+"DMPI_DesignationRequest" --> "DMPI_DesignationRequestMT" : payload
+"DMPI_DesignationRequestStatus" --> "DMPI_DesignationRequestStatusMT" : payload
+"DMPI_Pattern" --> "DMPI_PatternMT" : payload
+"DMPI_Status" --> "DMPI_StatusMT" : payload
+"ActivityPlanReferenceType" --> "ActivityPlansID_ChoiceType" : ActivityPlanID
+"ActivityPlanReferenceType" --> "MissionPlanID_Type" : MissionPlanID
+"ActivityPlanReferenceType" --> "PlannedActivityID_Type" : PlannedActivityID
+"AvailableWeaponsType" --> "StoreType" : Weapon
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"ID_Type" <|-- "CapabilityID_Type"
+"CommandBaseType" --> "CommandID_Type" : CommandID
+"ID_Type" <|-- "CommandID_Type"
+"CommandStatusBaseType" --> "CommandID_Type" : CommandID
+"CommandStatusBaseType" --> "CannotComplyType" : CommandProcessingStateReason
+"CommandBaseType" <|-- "DMPI_CancelCommandMDT"
+"DMPI_CancelCommandMDT" --> "DMPI_ID_Type" : DMPI_ID
+"MessageType" <|-- "DMPI_CancelCommandMT"
+"DMPI_CancelCommandMT" --> "DMPI_CancelCommandMDT" : MessageData
+"CommandStatusBaseType" <|-- "DMPI_CancelCommandStatusMDT"
+"DMPI_CancelCommandStatusMDT" --> "CannotComplyType" : StateReason
+"DMPI_CancelCommandStatusMDT" --> "SourceID_ChoiceType" : SourceID
+"MessageType" <|-- "DMPI_CancelCommandStatusMT"
+"DMPI_CancelCommandStatusMT" --> "DMPI_CancelCommandStatusMDT" : MessageData
+"ID_Type" <|-- "DMPI_DesignationID_Type"
+"DataRecordBaseType" <|-- "DMPI_DesignationMDT"
+"DMPI_DesignationMDT" --> "DMPI_DesignationID_Type" : DMPI_DesignationID
+"DMPI_DesignationMDT" --> "TaskID_Type" : TaskID
+"DMPI_DesignationMDT" --> "DMPI_DesignationParametersType" : DMPI_Details
+"DMPI_DesignationMDT" --> "DMPI_PatternID_Type" : DMPI_PatternID
+"MessageType" <|-- "DMPI_DesignationMT"
+"DMPI_DesignationMT" --> "DMPI_DesignationMDT" : MessageData
+"DMPI_DesignationParametersType" --> "DMPI_ID_Type" : DMPI_ID
+"DMPI_DesignationParametersType" --> "DMPI_ID_Type" : AlternateDMPI_ID
+"DMPI_DesignationParametersType" --> "ComparableRankingType" : DMPI_Ranking
+"RequestBaseType" <|-- "DMPI_DesignationRequestMDT"
+"DMPI_DesignationRequestMDT" --> "TaskID_Type" : TaskID
+"DMPI_DesignationRequestMDT" --> "ProductMetadataID_Type" : ProductMetadataID
+"DMPI_DesignationRequestMDT" --> "RecommendedWeaponsType" : RecommendedWeapons
+"DMPI_DesignationRequestMDT" --> "AvailableWeaponsType" : AvailableWeapons
+"DMPI_DesignationRequestMDT" --> "Point2D_Type" : ProposedDMPI_Coordinates
+"DMPI_DesignationRequestMDT" --> "PixelReferenceCoordinateType" : ReferencePixelCoordinate
+"MessageType" <|-- "DMPI_DesignationRequestMT"
+"DMPI_DesignationRequestMT" --> "DMPI_DesignationRequestMDT" : MessageData
+"RequestStatusBaseType" <|-- "DMPI_DesignationRequestStatusMDT"
+"DMPI_DesignationRequestStatusMDT" --> "DMPI_DesignationID_Type" : DMPI_DesignationID
+"MessageType" <|-- "DMPI_DesignationRequestStatusMT"
+"DMPI_DesignationRequestStatusMT" --> "DMPI_DesignationRequestStatusMDT" : MessageData
+"VersionedID_Type" <|-- "DMPI_ID_Type"
+"ID_Type" <|-- "DMPI_PatternID_Type"
+"DataRecordBaseType" <|-- "DMPI_PatternMDT"
+"DMPI_PatternMDT" --> "DMPI_PatternID_Type" : DMPI_PatternID
+"DMPI_PatternMDT" --> "DMPI_PatternChoiceType" : Pattern
+"MessageType" <|-- "DMPI_PatternMT"
+"DMPI_PatternMT" --> "DMPI_PatternMDT" : MessageData
+"DMPI_StatusMDT" --> "DMPI_ID_Type" : DMPI_ID
+"DMPI_StatusMDT" --> "SystemID_Type" : SystemID
+"DMPI_StatusMDT" --> "RoutePlanReferencesType" : AssociatedRoutePlan
+"DMPI_StatusMDT" --> "ActivityPlanReferenceType" : AssociatedActivityPlan
+"DMPI_StatusMDT" --> "DMPI_StoreStatusType" : StoreStatus
+"DMPI_StatusMDT" --> "TaskID_Type" : TaskID
+"MessageType" <|-- "DMPI_StatusMT"
+"DMPI_StatusMT" --> "DMPI_StatusMDT" : MessageData
+"DMPI_StoreStatusType" --> "CapabilityID_Type" : CapabilityID
+"DataRecordBaseType" --> "DataRecordInstanceID_Type" : DataRecordInstanceID
+"ID_Type" <|-- "DataRecordInstanceID_Type"
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"VersionedID_Type" <|-- "MissionID_Type"
+"VersionedID_Type" <|-- "MissionPlanID_Type"
+"VersionedID_Type" <|-- "PathID_Type"
+"PixelReferenceCoordinateType" --> "PixelDataType" : PixelCoordinate
+"PixelReferenceCoordinateType" --> "ProductMetadataID_Type" : ProductID
+"PixelReferenceCoordinateType" --> "ForeignKeyType" : Reference
+"ID_Type" <|-- "PlannedActivityID_Type"
+"Point2D_Type" --> "AltitudeRangeType" : AltitudeRange
+"ID_Type" <|-- "ProductMetadataID_Type"
+"RecommendedWeaponsType" --> "StoreType" : Weapon
+"RequestBaseType" --> "RequestID_Type" : RequestID
+"ID_Type" <|-- "RequestID_Type"
+"RequestStatusBaseType" --> "RequestID_Type" : RequestID
+"RequestStatusBaseType" --> "CannotComplyType" : RequestProcessingStateReason
+"VersionedID_Type" <|-- "RoutePlanID_Type"
+"RoutePlanReferencesType" --> "RoutePlanID_Type" : RoutePlanID
+"RoutePlanReferencesType" --> "MissionPlanID_Type" : MissionPlanID
+"RoutePlanReferencesType" --> "PathID_Type" : PathID
+"RoutePlanReferencesType" --> "SegmentID_Type" : SegmentID
+"RoutePlanReferencesType" --> "PathConstraintsType" : Constraints
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"VersionedID_Type" <|-- "SegmentID_Type"
+"ID_Type" <|-- "ServiceID_Type"
+"StoreType" --> "ForeignKeyType" : StoreTypeVariant
+"ID_Type" <|-- "SystemID_Type"
+"VersionedID_Type" <|-- "TaskID_Type"
+"ID_Type" <|-- "VersionedID_Type"
+@enduml

@@ -1,0 +1,558 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+title A-GRA ASK 5.0a - Family: RF_*
+
+class "RF_ControlCommand" <<element>> {
+  +type: RF_ControlCommandMT
+}
+class "RF_ControlCommandStatus" <<element>> {
+  +type: RF_ControlCommandStatusMT
+}
+class "RF_Profile" <<element>> {
+  +type: RF_ProfileMT
+}
+class "RF_Report" <<element>> {
+  +type: RF_ReportMT
+}
+class "RF_ResourceAllocation" <<element>> {
+  +type: RF_ResourceAllocationMT
+}
+class "RF_ResourceAllocationRequest" <<element>> {
+  +type: RF_ResourceAllocationRequestMT
+}
+class "RF_ResourceAllocationRequestStatus" <<element>> {
+  +type: RF_ResourceAllocationRequestStatusMT
+}
+class "RF_ThreadInstanceSetupCommand" <<element>> {
+  +type: RF_ThreadInstanceSetupCommandMT
+}
+class "RF_ThreadInstanceSetupCommandStatus" <<element>> {
+  +type: RF_ThreadInstanceSetupCommandStatusMT
+}
+
+class "ActivityID_Type" <<complexType>> {
+  --
+}
+class "AntennaAndResourceInstanceType" <<complexType>> {
+  +AntennaSupportCapabilityID: SupportCapabilityID_Type
+  +AntennaResourceInstanceID: AntennaResourceID_Type
+}
+class "AntennaResourceChoiceType" <<complexType>> {
+  --
+}
+class "AntennaResourceID_Type" <<complexType>> {
+  --
+}
+class "AperturePointingOptionsType" <<complexType>> {
+  --
+}
+class "AreaChoiceType" <<complexType>> {
+  --
+}
+class "AtomicEnergyMarkingsChoiceType" <<complexType>> {
+  --
+}
+class "AzElRequiredReferenceType" <<complexType>> {
+  +Reference: LOS_ReferenceEnum
+  +Azimuth: AngleType
+  +Elevation: AngleHalfType
+}
+class "BlankingLimitType" <<complexType>> {
+  +TxPercentBlankLimit: PercentType
+  +BlankingSource: BlankingSourceType
+  +ActivityID: ActivityID_Type
+}
+class "BlankingSourceType" <<complexType>> {
+  --
+}
+class "CannotComplyType" <<complexType>> {
+  +Reason: CannotComplyEnum
+  +Description: VisibleString1024Type
+  +AssociatedID: ID_Type
+}
+class "CapabilityID_Type" <<complexType>> {
+  --
+}
+class "CommandBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandState: CommandStateEnum
+}
+class "CommandID_Type" <<complexType>> {
+  --
+}
+class "CommandStatusBaseType" <<complexType>> {
+  +CommandID: CommandID_Type
+  +CommandProcessingState: CommandProcessingStateEnum
+  +CommandProcessingStateReason: CannotComplyType
+}
+class "ComparableRankingType" <<complexType>> {
+  +Priority: unsignedShort
+  +PrecedenceWithinPriority: unsignedShort
+}
+class "ComponentResourceType" <<complexType>> {
+  --
+}
+class "ConfigureInteroperabilityReportType" <<complexType>> {
+  +ConfigureInteroperabilityReportIndex: unsignedInt
+  +RF_Transmission: RF_TransmissionType
+}
+class "DateTimeRangeBeginType" <<complexType>> {
+  +Begin: DateTimeType
+  +End: DateTimeType
+}
+class "DateTimeRangeType" <<complexType>> {
+  +Begin: DateTimeType
+  +End: DateTimeType
+}
+class "DependentActivityType" <<complexType>> {
+  +TypeOfDependency: TypeOfDependencyEnum
+  +DependentActivityID: ActivityID_Type
+}
+class "DurationRangeType" <<complexType>> {
+  +Min: DurationType
+  +Max: DurationType
+}
+class "FGI_SourceOpenChoiceType" <<complexType>> {
+  --
+}
+class "FOV_VolumeType" <<complexType>> {
+  +AzimuthExtent: AnglePositiveType
+  +ElevationExtent: AngleHalfPositiveType
+}
+class "ForeignKeyType" <<complexType>> {
+  +Key: VisibleString256Type
+  +SystemName: VisibleString256Type
+}
+class "FrequencyRangeType" <<complexType>> {
+  +Min: FrequencyType
+  +Max: FrequencyType
+}
+class "HeaderType" <<complexType>> {
+  +SystemID: SystemID_Type
+  +Timestamp: DateTimeType
+  +SchemaVersion: UCI_SchemaVersionStringType
+  +Mode: MessageModeEnum
+  +ServiceID: ServiceID_Type
+  +MissionID: MissionID_Type
+}
+class "ID_Type" <<complexType>> {
+  +UUID: UniversallyUniqueIdentifierType
+  +DescriptiveLabel: VisibleString256Type
+}
+class "MFA_AddressType" <<complexType>> {
+  +MFA_SupportCapabilityID: SupportCapabilityID_Type
+  +AntennaResourceChoice: AntennaResourceChoiceType
+  +OnAntennaProcessingIndex: unsignedInt
+  +DeltaInputPowerConsumption: PowerType
+}
+class "MessageType" <<complexType>> {
+  +SecurityInformation: SecurityInformationType
+  +MessageHeader: HeaderType
+}
+class "MetricValueType" <<complexType>> {
+  +MetricIdentifier: ForeignKeyType
+  +DescriptionOfMetric: VisibleString256Type
+  +NegotiableOptions: NegotiableOptionsEnum
+  +Weight: UnitIntervalFloatType
+  +Value: float
+}
+class "MissionID_Type" <<complexType>> {
+  --
+}
+class "NonIC_MarkingsChoiceType" <<complexType>> {
+  --
+}
+class "OwnerProducerChoiceType" <<complexType>> {
+  --
+}
+class "PercentRangeType" <<complexType>> {
+  +Minimum: PercentType
+  +Maximum: PercentType
+}
+class "PerformanceMetricSetType" <<complexType>> {
+  +PerformanceConstraintIndex: unsignedInt
+  +Merit: int
+  +NegotiableOptions: NegotiableOptionsEnum
+  +PerformanceMetricSet: MetricValueType
+}
+class "PolarizationControlType" <<complexType>> {
+  +PortPolarization: PolarizationPortEnum
+  +Duration: DurationType
+  +PolarizationDescription: PolarizationType
+}
+class "PolarizationType" <<complexType>> {
+  +PolarizationTiltAngle: AngleType
+  +PolarizationAxialRatio: DecibelType
+  +PolarizationSense: PolarizationSenseEnum
+  +PolarizationCharacter: PolarizationEnum
+}
+class "RF_ControlCommandMDT" <<complexType>> {
+  +ApplicableCapabilityID: CapabilityID_Type
+  +Profile: RF_ProfileType
+}
+class "RF_ControlCommandMT" <<complexType>> {
+  +MessageData: RF_ControlCommandMDT
+}
+class "RF_ControlCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RF_ControlCommandStatusMT" <<complexType>> {
+  +MessageData: RF_ControlCommandStatusMDT
+}
+class "RF_OperationType" <<complexType>> {
+  +CapabilityID: CapabilityID_Type
+  +ActivityID: ActivityID_Type
+  +Receive: boolean
+  +Transmit: boolean
+  +EmissionLocation: FOV_VolumeType
+  +Modulation: ModulationEnum
+  +PRI: DurationRangeType
+  +PulseWidthMax: DurationType
+  +Time: DateTimeRangeBeginType
+  +DutyCycle: PercentRangeType
+  +ConfigureInteroperabilityReport: ConfigureInteroperabilityReportType
+}
+class "RF_ProfileBandType" <<complexType>> {
+  +Frequency: FrequencyRangeType
+  +ReceiveAllowed: boolean
+  +TransmitAllowed: boolean
+  +MaximumTransmitPower: MilliwattPowerRatioType
+  +DutyCycle: PercentType
+}
+class "RF_ProfileID_Type" <<complexType>> {
+  --
+}
+class "RF_ProfileMDT" <<complexType>> {
+  +RF_ProfileID: RF_ProfileID_Type
+  +ProfileBand: RF_ProfileBandType
+}
+class "RF_ProfileMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: RF_ProfileMDT
+}
+class "RF_ProfileType" <<complexType>> {
+  +RF_ProfileID: RF_ProfileID_Type
+  +TimedZone: TimedZoneType
+  +Expires: DateTimeType
+}
+class "RF_ReportID_Type" <<complexType>> {
+  --
+}
+class "RF_ReportMDT" <<complexType>> {
+  +RF_ReportID: RF_ReportID_Type
+  +RF_ReportState: RF_ReportStateEnum
+  +RF_Operation: RF_OperationType
+  +ActiveProfile: RF_ProfileType
+}
+class "RF_ReportMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: RF_ReportMDT
+}
+class "RF_ResourceAllocationID_Type" <<complexType>> {
+  --
+}
+class "RF_ResourceAllocationMDT" <<complexType>> {
+  +RF_ResourceAllocationID: RF_ResourceAllocationID_Type
+  +Allocations: RF_ResourceAllocationType
+}
+class "RF_ResourceAllocationMT" <<complexType>> {
+  +ObjectState: ObjectStateEnum
+  +MessageData: RF_ResourceAllocationMDT
+}
+class "RF_ResourceAllocationRequestDigitalRemovalType" <<complexType>> {
+  +StreamIndex: unsignedInt
+  +MFA_Address: MFA_AddressType
+}
+class "RF_ResourceAllocationRequestMDT" <<complexType>> {
+  +ResourceAllocator_SupportCapabilityID: SupportCapabilityID_Type
+  +TerminatedResources: RF_ResourceAllocationRequestRemovalType
+  +RequestingFunction: RequestingFunctionID_ChoiceType
+  +Ranking: ComparableRankingType
+  +PointingVectorParameters: AperturePointingOptionsType
+  +ResourceRequestOptions: ResourceRequestOptionType
+}
+class "RF_ResourceAllocationRequestMT" <<complexType>> {
+  +MessageData: RF_ResourceAllocationRequestMDT
+}
+class "RF_ResourceAllocationRequestRF_RemovalType" <<complexType>> {
+  +RF_ThreadInstanceIndex: unsignedInt
+  +AntennaAndResourceInstance: AntennaAndResourceInstanceType
+}
+class "RF_ResourceAllocationRequestRemovalType" <<complexType>> {
+  +RemoveRF_Resources: RF_ResourceAllocationRequestRF_RemovalType
+  +RemoveDigitalResources: RF_ResourceAllocationRequestDigitalRemovalType
+}
+class "RF_ResourceAllocationRequestStatusMDT" <<complexType>> {
+  +RF_ThreadInstanceIndex: unsignedInt
+  +AllocationState: ResourceAllocationStatusEnum
+  +AllocationStateReason: CannotComplyType
+}
+class "RF_ResourceAllocationRequestStatusMT" <<complexType>> {
+  +MessageData: RF_ResourceAllocationRequestStatusMDT
+}
+class "RF_ResourceAllocationType" <<complexType>> {
+  +ResourceRequestID: RequestID_Type
+  +RequestingFunction: RequestingFunctionID_ChoiceType
+  +ResourceAllocationState: ResourceAllocationStateEnum
+  +DurationRange: DateTimeRangeType
+  +ConfigureInteroperabilityReportIndex: unsignedInt
+  +ResourceDefinitions: ResourceDefinitionChoiceType
+}
+class "RF_ThreadInstanceCommandType" <<complexType>> {
+  --
+}
+class "RF_ThreadInstanceSetupCommandMDT" <<complexType>> {
+  +SupportCapabilityID: SupportCapabilityID_Type
+  +Command: RF_ThreadInstanceCommandType
+}
+class "RF_ThreadInstanceSetupCommandMT" <<complexType>> {
+  +MessageData: RF_ThreadInstanceSetupCommandMDT
+}
+class "RF_ThreadInstanceSetupCommandStatusMDT" <<complexType>> {
+  --
+}
+class "RF_ThreadInstanceSetupCommandStatusMT" <<complexType>> {
+  +MessageData: RF_ThreadInstanceSetupCommandStatusMDT
+}
+class "RF_TransmissionType" <<complexType>> {
+  +RF_ThreadInstanceIndex: unsignedInt
+  +AntennaResource: AntennaAndResourceInstanceType
+  +ResourceAccessPriority: unsignedInt
+  +Frequency: FrequencyRangeType
+  +Polarization: PolarizationControlType
+  +MaximumTransmitERP: DecibelType
+  +BlankingLimit: BlankingLimitType
+  +MinimumReceiveSensitivity: DecibelType
+  +PercentInterruptable: PercentType
+}
+class "ReleasableToChoiceType" <<complexType>> {
+  --
+}
+class "RequestBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestState: RequestStateEnum
+}
+class "RequestID_Type" <<complexType>> {
+  --
+}
+class "RequestStatusBaseType" <<complexType>> {
+  +RequestID: RequestID_Type
+  +RequestProcessingState: RequestProcessingStateEnum
+  +RequestProcessingStateReason: CannotComplyType
+}
+class "RequestingFunctionID_ChoiceType" <<complexType>> {
+  --
+}
+class "ResourceDefinitionChoiceType" <<complexType>> {
+  --
+}
+class "ResourceRequestOptionType" <<complexType>> {
+  +ResourceRequestOptionIndex: unsignedInt
+  +ResourceRequest: ResourceRequestType
+  +DurationRange: DateTimeRangeType
+  +RequestedFrequencyRange: FrequencyRangeType
+  +Merit: unsignedInt
+  +PerformanceMetric: PerformanceMetricSetType
+}
+class "ResourceRequestPeriodType" <<complexType>> {
+  +AccessPeriodIndex: unsignedInt
+  +AccessPeriodRF_Mode: RF_TypeEnum
+  +PeriodRanking: ComparableRankingType
+  +TypicalAccessPeriodDuration: DurationType
+  +MaxAccessWidthRequested: DurationType
+  +TypicalAccessRequestToReleaseDuration: DurationType
+  +TypicalAccessReleaseToRequestDuration: DurationType
+  +PercentAccessDuringThePeriod: PercentRangeType
+}
+class "ResourceRequestType" <<complexType>> {
+  +DependentActivity: DependentActivityType
+  +MaxPercentInterruption: PercentType
+  +RF_Mode: RF_TypeEnum
+  +AccessPeriod: ResourceRequestPeriodType
+  +SelectResources: ComponentResourceType
+}
+class "SCI_ControlsChoiceType" <<complexType>> {
+  --
+}
+class "ScheduleType" <<complexType>> {
+  --
+}
+class "SecurityInformationType" <<complexType>> {
+  +Classification: ClassificationEnum
+  +OwnerProducer: OwnerProducerChoiceType
+  +Joint: boolean
+  +SCI_Controls: SCI_ControlsChoiceType
+  +SAR_Identifier: SAR_IdentifierType
+  +AtomicEnergyMarkings: AtomicEnergyMarkingsChoiceType
+  +DisseminationControls: DisseminationControlsEnum
+  +DisplayOnlyTo: ReleasableToChoiceType
+  +FGI_SourceOpen: FGI_SourceOpenChoiceType
+  +ReleasableTo: ReleasableToChoiceType
+  +NonIC_Markings: NonIC_MarkingsChoiceType
+  +ClassifiedBy: WhitespaceVisibleString1024Type
+  +CompilationReason: WhitespaceVisibleString1024Type
+  +DerivativelyClassifiedBy: WhitespaceVisibleString1024Type
+  +ClassificationReason: WhitespaceVisibleString4096Type
+  +NonUS_Controls: NonUS_ControlsEnum
+  +DerivedFrom: WhitespaceVisibleString1024Type
+  +DeclassDate: dateTime
+  +DeclassEvent: WhitespaceVisibleString1024Type
+  +DeclassException: DeclassExceptionEnum
+}
+class "ServiceID_Type" <<complexType>> {
+  +ServiceVersion: VisibleString256Type
+}
+class "SupportCapabilityCommandStatusBaseType" <<complexType>> {
+  --
+}
+class "SupportCapabilityID_Type" <<complexType>> {
+  --
+}
+class "SystemID_Type" <<complexType>> {
+  --
+}
+class "TimedZoneType" <<complexType>> {
+  +Schedule: ScheduleType
+}
+class "VersionedID_Type" <<complexType>> {
+  +Version: unsignedInt
+}
+class "ZoneType" <<complexType>> {
+  +Shape: AreaChoiceType
+  +MinAltitude: AltitudeType
+  +MaxAltitude: AltitudeType
+  +AltitudeReference: AltitudeReferenceEnum
+}
+
+"RF_ControlCommand" --> "RF_ControlCommandMT" : payload
+"RF_ControlCommandStatus" --> "RF_ControlCommandStatusMT" : payload
+"RF_Profile" --> "RF_ProfileMT" : payload
+"RF_Report" --> "RF_ReportMT" : payload
+"RF_ResourceAllocation" --> "RF_ResourceAllocationMT" : payload
+"RF_ResourceAllocationRequest" --> "RF_ResourceAllocationRequestMT" : payload
+"RF_ResourceAllocationRequestStatus" --> "RF_ResourceAllocationRequestStatusMT" : payload
+"RF_ThreadInstanceSetupCommand" --> "RF_ThreadInstanceSetupCommandMT" : payload
+"RF_ThreadInstanceSetupCommandStatus" --> "RF_ThreadInstanceSetupCommandStatusMT" : payload
+"ID_Type" <|-- "ActivityID_Type"
+"AntennaAndResourceInstanceType" --> "SupportCapabilityID_Type" : AntennaSupportCapabilityID
+"AntennaAndResourceInstanceType" --> "AntennaResourceID_Type" : AntennaResourceInstanceID
+"ID_Type" <|-- "AntennaResourceID_Type"
+"BlankingLimitType" --> "BlankingSourceType" : BlankingSource
+"BlankingLimitType" --> "ActivityID_Type" : ActivityID
+"CannotComplyType" --> "ID_Type" : AssociatedID
+"ID_Type" <|-- "CapabilityID_Type"
+"CommandBaseType" --> "CommandID_Type" : CommandID
+"ID_Type" <|-- "CommandID_Type"
+"CommandStatusBaseType" --> "CommandID_Type" : CommandID
+"CommandStatusBaseType" --> "CannotComplyType" : CommandProcessingStateReason
+"ConfigureInteroperabilityReportType" --> "RF_TransmissionType" : RF_Transmission
+"DependentActivityType" --> "ActivityID_Type" : DependentActivityID
+"AzElRequiredReferenceType" <|-- "FOV_VolumeType"
+"HeaderType" --> "SystemID_Type" : SystemID
+"HeaderType" --> "ServiceID_Type" : ServiceID
+"HeaderType" --> "MissionID_Type" : MissionID
+"MFA_AddressType" --> "SupportCapabilityID_Type" : MFA_SupportCapabilityID
+"MFA_AddressType" --> "AntennaResourceChoiceType" : AntennaResourceChoice
+"MessageType" --> "SecurityInformationType" : SecurityInformation
+"MessageType" --> "HeaderType" : MessageHeader
+"MetricValueType" --> "ForeignKeyType" : MetricIdentifier
+"VersionedID_Type" <|-- "MissionID_Type"
+"PerformanceMetricSetType" --> "MetricValueType" : PerformanceMetricSet
+"PolarizationControlType" --> "PolarizationType" : PolarizationDescription
+"CommandBaseType" <|-- "RF_ControlCommandMDT"
+"RF_ControlCommandMDT" --> "CapabilityID_Type" : ApplicableCapabilityID
+"RF_ControlCommandMDT" --> "RF_ProfileType" : Profile
+"MessageType" <|-- "RF_ControlCommandMT"
+"RF_ControlCommandMT" --> "RF_ControlCommandMDT" : MessageData
+"CommandStatusBaseType" <|-- "RF_ControlCommandStatusMDT"
+"MessageType" <|-- "RF_ControlCommandStatusMT"
+"RF_ControlCommandStatusMT" --> "RF_ControlCommandStatusMDT" : MessageData
+"RF_OperationType" --> "CapabilityID_Type" : CapabilityID
+"RF_OperationType" --> "ActivityID_Type" : ActivityID
+"RF_OperationType" --> "FOV_VolumeType" : EmissionLocation
+"RF_OperationType" --> "DurationRangeType" : PRI
+"RF_OperationType" --> "DateTimeRangeBeginType" : Time
+"RF_OperationType" --> "PercentRangeType" : DutyCycle
+"RF_OperationType" --> "ConfigureInteroperabilityReportType" : ConfigureInteroperabilityReport
+"RF_ProfileBandType" --> "FrequencyRangeType" : Frequency
+"ID_Type" <|-- "RF_ProfileID_Type"
+"RF_ProfileMDT" --> "RF_ProfileID_Type" : RF_ProfileID
+"RF_ProfileMDT" --> "RF_ProfileBandType" : ProfileBand
+"MessageType" <|-- "RF_ProfileMT"
+"RF_ProfileMT" --> "RF_ProfileMDT" : MessageData
+"RF_ProfileType" --> "RF_ProfileID_Type" : RF_ProfileID
+"RF_ProfileType" --> "TimedZoneType" : TimedZone
+"ID_Type" <|-- "RF_ReportID_Type"
+"RF_ReportMDT" --> "RF_ReportID_Type" : RF_ReportID
+"RF_ReportMDT" --> "RF_OperationType" : RF_Operation
+"RF_ReportMDT" --> "RF_ProfileType" : ActiveProfile
+"MessageType" <|-- "RF_ReportMT"
+"RF_ReportMT" --> "RF_ReportMDT" : MessageData
+"ID_Type" <|-- "RF_ResourceAllocationID_Type"
+"RF_ResourceAllocationMDT" --> "RF_ResourceAllocationID_Type" : RF_ResourceAllocationID
+"RF_ResourceAllocationMDT" --> "RF_ResourceAllocationType" : Allocations
+"MessageType" <|-- "RF_ResourceAllocationMT"
+"RF_ResourceAllocationMT" --> "RF_ResourceAllocationMDT" : MessageData
+"RF_ResourceAllocationRequestDigitalRemovalType" --> "MFA_AddressType" : MFA_Address
+"RequestBaseType" <|-- "RF_ResourceAllocationRequestMDT"
+"RF_ResourceAllocationRequestMDT" --> "SupportCapabilityID_Type" : ResourceAllocator_SupportCapabilityID
+"RF_ResourceAllocationRequestMDT" --> "RF_ResourceAllocationRequestRemovalType" : TerminatedResources
+"RF_ResourceAllocationRequestMDT" --> "RequestingFunctionID_ChoiceType" : RequestingFunction
+"RF_ResourceAllocationRequestMDT" --> "ComparableRankingType" : Ranking
+"RF_ResourceAllocationRequestMDT" --> "AperturePointingOptionsType" : PointingVectorParameters
+"RF_ResourceAllocationRequestMDT" --> "ResourceRequestOptionType" : ResourceRequestOptions
+"MessageType" <|-- "RF_ResourceAllocationRequestMT"
+"RF_ResourceAllocationRequestMT" --> "RF_ResourceAllocationRequestMDT" : MessageData
+"RF_ResourceAllocationRequestRF_RemovalType" --> "AntennaAndResourceInstanceType" : AntennaAndResourceInstance
+"RF_ResourceAllocationRequestRemovalType" --> "RF_ResourceAllocationRequestRF_RemovalType" : RemoveRF_Resources
+"RF_ResourceAllocationRequestRemovalType" --> "RF_ResourceAllocationRequestDigitalRemovalType" : RemoveDigitalResources
+"RequestStatusBaseType" <|-- "RF_ResourceAllocationRequestStatusMDT"
+"RF_ResourceAllocationRequestStatusMDT" --> "CannotComplyType" : AllocationStateReason
+"MessageType" <|-- "RF_ResourceAllocationRequestStatusMT"
+"RF_ResourceAllocationRequestStatusMT" --> "RF_ResourceAllocationRequestStatusMDT" : MessageData
+"RF_ResourceAllocationType" --> "RequestID_Type" : ResourceRequestID
+"RF_ResourceAllocationType" --> "RequestingFunctionID_ChoiceType" : RequestingFunction
+"RF_ResourceAllocationType" --> "DateTimeRangeType" : DurationRange
+"RF_ResourceAllocationType" --> "ResourceDefinitionChoiceType" : ResourceDefinitions
+"CommandBaseType" <|-- "RF_ThreadInstanceSetupCommandMDT"
+"RF_ThreadInstanceSetupCommandMDT" --> "SupportCapabilityID_Type" : SupportCapabilityID
+"RF_ThreadInstanceSetupCommandMDT" --> "RF_ThreadInstanceCommandType" : Command
+"MessageType" <|-- "RF_ThreadInstanceSetupCommandMT"
+"RF_ThreadInstanceSetupCommandMT" --> "RF_ThreadInstanceSetupCommandMDT" : MessageData
+"SupportCapabilityCommandStatusBaseType" <|-- "RF_ThreadInstanceSetupCommandStatusMDT"
+"MessageType" <|-- "RF_ThreadInstanceSetupCommandStatusMT"
+"RF_ThreadInstanceSetupCommandStatusMT" --> "RF_ThreadInstanceSetupCommandStatusMDT" : MessageData
+"RF_TransmissionType" --> "AntennaAndResourceInstanceType" : AntennaResource
+"RF_TransmissionType" --> "FrequencyRangeType" : Frequency
+"RF_TransmissionType" --> "PolarizationControlType" : Polarization
+"RF_TransmissionType" --> "BlankingLimitType" : BlankingLimit
+"RequestBaseType" --> "RequestID_Type" : RequestID
+"ID_Type" <|-- "RequestID_Type"
+"RequestStatusBaseType" --> "RequestID_Type" : RequestID
+"RequestStatusBaseType" --> "CannotComplyType" : RequestProcessingStateReason
+"ResourceRequestOptionType" --> "ResourceRequestType" : ResourceRequest
+"ResourceRequestOptionType" --> "DateTimeRangeType" : DurationRange
+"ResourceRequestOptionType" --> "FrequencyRangeType" : RequestedFrequencyRange
+"ResourceRequestOptionType" --> "PerformanceMetricSetType" : PerformanceMetric
+"ResourceRequestPeriodType" --> "ComparableRankingType" : PeriodRanking
+"ResourceRequestPeriodType" --> "PercentRangeType" : PercentAccessDuringThePeriod
+"ResourceRequestType" --> "DependentActivityType" : DependentActivity
+"ResourceRequestType" --> "ResourceRequestPeriodType" : AccessPeriod
+"ResourceRequestType" --> "ComponentResourceType" : SelectResources
+"SecurityInformationType" --> "OwnerProducerChoiceType" : OwnerProducer
+"SecurityInformationType" --> "SCI_ControlsChoiceType" : SCI_Controls
+"SecurityInformationType" --> "AtomicEnergyMarkingsChoiceType" : AtomicEnergyMarkings
+"SecurityInformationType" --> "ReleasableToChoiceType" : DisplayOnlyTo
+"SecurityInformationType" --> "FGI_SourceOpenChoiceType" : FGI_SourceOpen
+"SecurityInformationType" --> "ReleasableToChoiceType" : ReleasableTo
+"SecurityInformationType" --> "NonIC_MarkingsChoiceType" : NonIC_Markings
+"ID_Type" <|-- "ServiceID_Type"
+"CommandStatusBaseType" <|-- "SupportCapabilityCommandStatusBaseType"
+"ID_Type" <|-- "SupportCapabilityID_Type"
+"ID_Type" <|-- "SystemID_Type"
+"ZoneType" <|-- "TimedZoneType"
+"TimedZoneType" --> "ScheduleType" : Schedule
+"ID_Type" <|-- "VersionedID_Type"
+"ZoneType" --> "AreaChoiceType" : Shape
+@enduml
